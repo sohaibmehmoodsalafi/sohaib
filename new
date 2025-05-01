@@ -1,0 +1,691 @@
+
+Adding product image upload functionality to a fully client-side single HTML file ecommerce site means we can allow the user to select an image file from their device, preview it, and add the product with that uploaded image (using a client-side object URL). Since there's no backend, the image won't persist beyond the session, but we can keep it in memory for this session.
+
+Plan:
+- Add a section or button to "Add New Product" with fields: product name, price, and image upload input.
+- When image is uploaded, preview the image.
+- When user submits the form, add the new product to the products array and re-render product grid.
+- The image will be stored as a temporary local URL using URL.createObjectURL from the uploaded file.
+- Keep all existing functionality (cart, adding to cart) unchanged.
+- Add UI for the product upload form somewhere visible, maybe above products grid or as a collapsible section.
+
+No backend, so this is fully client-side and volatile.
+
+Proceed to update the existing single HTML file accordingly.
+
+
+`lingerie-ecommerce.html`
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lingerie Boutique</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #fff0f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #d6336c;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+    }
+
+    .cart-button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background: #ffc107;
+      color: #333;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      user-select: none;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Add product form */
+    .add-product-form {
+      background: white;
+      border-radius: 12px;
+      padding: 1rem 2rem 2rem 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 16px rgba(214,51,108,0.1);
+      max-width: 600px;
+    }
+
+    .add-product-form h2 {
+      color: #d6336c;
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #6f2a4b;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #d6336c;
+      border-radius: 6px;
+      outline-offset: 2px;
+    }
+
+    input[type="file"] {
+      padding: 0.3rem;
+    }
+
+    .preview-image {
+      max-width: 150px;
+      max-height: 150px;
+      margin-top: 0.5rem;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid #d6336c;
+      display: none;
+    }
+
+    button.btn-submit {
+      margin-top: 0.5rem;
+      background-color: #d6336c;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    button.btn-submit:disabled {
+      background-color: #e79ac4;
+      cursor: not-allowed;
+    }
+
+    button.btn-submit:hover:not(:disabled) {
+      background-color: #a52555;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(214,51,108,0.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(214,51,108,0.3);
+    }
+
+    .product-image {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-info {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #d6336c;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #6f2a4b;
+      font-weight: 700;
+    }
+
+    .btn-add {
+      background-color: #d6336c;
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+      align-self: flex-start;
+    }
+
+    .btn-add:hover {
+      background-color: #a52555;
+    }
+
+    /* Cart Modal */
+    .cart-modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1500;
+      padding: 1rem;
+    }
+
+    .cart-modal.active {
+      display: flex;
+    }
+
+    .cart-content {
+      background: white;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 8px 24px rgba(214,51,108,0.3);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-header {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-header h2 {
+      margin: 0;
+      color: #d6336c;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .cart-close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #d6336c;
+      font-weight: 700;
+      padding: 0 0.25rem 0 0;
+      line-height: 1;
+    }
+
+    .cart-items {
+      padding: 1rem 1.5rem;
+      flex-grow: 1;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .cart-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 1rem;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+    }
+
+    .cart-item-name {
+      font-weight: 600;
+      color: #6f2a4b;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .cart-item-price {
+      font-size: 0.9rem;
+      color: #a52f5f;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .cart-item-qty {
+      display: flex;
+      align-items: center;
+    }
+
+    .qty-btn {
+      background-color: #d6336c;
+      border: none;
+      color: white;
+      font-weight: 700;
+      padding: 0 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 28px;
+      height: 28px;
+      line-height: 1;
+      user-select: none;
+      margin: 0 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .qty-btn:disabled {
+      background-color: #e7a6bb;
+      cursor: not-allowed;
+    }
+
+    .qty-btn:hover:not(:disabled) {
+      background-color: #a52555;
+    }
+
+    .cart-total {
+      padding: 1rem 1.5rem;
+      border-top: 1px solid #ddd;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #d6336c;
+      text-align: right;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #999;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .product-image {
+        height: 200px;
+      }
+      .cart-content {
+        max-width: 95vw;
+      }
+      .add-product-form {
+        margin: 0 1rem 2rem 1rem;
+        max-width: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lingerie Boutique</h1>
+    <button class="cart-button" aria-label="View shopping cart" id="cartButton">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="add-product-form" aria-label="Add new product">
+      <h2>Add New Lingerie Product</h2>
+      <form id="newProductForm">
+        <div class="form-group">
+          <label for="productName">Product Name *</label>
+          <input type="text" id="productName" name="productName" required placeholder="Enter product name" />
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Price (USD) *</label>
+          <input type="number" id="productPrice" name="productPrice" step="0.01" min="0" required placeholder="Enter price" />
+        </div>
+        <div class="form-group">
+          <label for="productImage">Product Image *</label>
+          <input type="file" id="productImage" name="productImage" accept="image/*" required />
+          <img id="imagePreview" class="preview-image" alt="Preview of uploaded product image" />
+        </div>
+        <button type="submit" class="btn-submit" id="submitProduct" disabled>Add Product</button>
+      </form>
+    </section>
+
+    <section class="products-grid" id="productsGrid" aria-label="Lingerie products">
+      <!-- Products will be injected here -->
+    </section>
+  </main>
+
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+    <div class="cart-content">
+      <header class="cart-header">
+        <h2 id="cartTitle">Your Cart</h2>
+        <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+      </header>
+      <section class="cart-items" id="cartItems">
+        <!-- Cart items here -->
+      </section>
+      <div class="cart-total" id="cartTotal">Total: $0.00</div>
+    </div>
+  </div>
+
+  <script>
+    // Sample product data
+    let products = [
+      {
+        id: 1,
+        name: 'Elegant Lace Teddy',
+        price: 49.99,
+        image: 'https://images.unsplash.com/photo-1545289414-49eac3890924?auto=format&fit=crop&w=500&q=60',
+      },
+      {
+        id: 2,
+        name: 'Silky Satin Chemise',
+        price: 39.99,
+        image: 'https://images.unsplash.com/photo-1602810315411-73388c9e2410?auto=format&fit=crop&w=500&q=60',
+      },
+      {
+        id: 3,
+        name: 'Sheer Mesh Bra & Panty Set',
+        price: 59.99,
+        image: 'https://images.unsplash.com/photo-1500883645999-fd7b6a80e1eb?auto=format&fit=crop&w=500&q=60',
+      },
+      {
+        id: 4,
+        name: 'Floral Lace Bralette',
+        price: 29.99,
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=500&q=60',
+      },
+      {
+        id: 5,
+        name: 'Sexy Robe with Satin Belt',
+        price: 44.99,
+        image: 'https://images.unsplash.com/photo-1590080877777-4aad91937336?auto=format&fit=crop&w=500&q=60',
+      },
+      {
+        id: 6,
+        name: 'Vintage Style Corset',
+        price: 69.99,
+        image: 'https://images.unsplash.com/photo-1550246142-52dad1787aae?auto=format&fit=crop&w=500&q=60',
+      }
+    ];
+
+    // Cart data: array of { productId, quantity }
+    let cart = [];
+
+    // DOM elements
+    const productsGrid = document.getElementById('productsGrid');
+    const cartButton = document.getElementById('cartButton');
+    const cartModal = document.getElementById('cartModal');
+    const cartClose = document.getElementById('cartClose');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartCountElem = document.getElementById('cartCount');
+    const cartTotalElem = document.getElementById('cartTotal');
+
+    // Add product form elements
+    const productNameInput = document.getElementById('productName');
+    const productPriceInput = document.getElementById('productPrice');
+    const productImageInput = document.getElementById('productImage');
+    const imagePreview = document.getElementById('imagePreview');
+    const newProductForm = document.getElementById('newProductForm');
+    const submitProductButton = document.getElementById('submitProduct');
+
+    // Format number as price string
+    function formatPrice(num) {
+      return '$' + num.toFixed(2);
+    }
+
+    // Render products on page
+    function renderProducts() {
+      productsGrid.innerHTML = '';
+      products.forEach(product => {
+        const card = document.createElement('article');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <img class="product-image" src="${product.image}" alt="${product.name}" loading="lazy" />
+          <div class="product-info">
+            <h3 class="product-name">${product.name}</h3>
+            <p class="product-price">${formatPrice(product.price)}</p>
+            <button class="btn-add" data-product-id="${product.id}">Add to Cart</button>
+          </div>
+        `;
+        productsGrid.appendChild(card);
+      });
+    }
+
+    // Update cart count global indicator
+    function updateCartCount() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCountElem.textContent = totalItems;
+      cartCountElem.style.display = totalItems > 0 ? 'inline-block' : 'none';
+    }
+
+    // Render cart contents
+    function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="empty-cart">Your cart is empty.</p>';
+        cartTotalElem.textContent = 'Total: $0.00';
+        return;
+      }
+      let total = 0;
+      cart.forEach(cartItem => {
+        const product = products.find(p => p.id === cartItem.productId);
+        if (!product) return;
+
+        total += product.price * cartItem.quantity;
+
+        const itemElem = document.createElement('div');
+        itemElem.className = 'cart-item';
+        itemElem.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" />
+          <div class="cart-item-details">
+            <p class="cart-item-name">${product.name}</p>
+            <p class="cart-item-price">${formatPrice(product.price)}</p>
+            <div class="cart-item-qty" aria-label="Quantity controls for ${product.name}">
+              <button class="qty-btn" data-action="decrease" data-product-id="${product.id}" aria-label="Decrease quantity">-</button>
+              <span aria-live="polite" aria-atomic="true" style="min-width: 24px; display: inline-block; text-align:center;">${cartItem.quantity}</span>
+              <button class="qty-btn" data-action="increase" data-product-id="${product.id}" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+        `;
+        cartItemsContainer.appendChild(itemElem);
+      });
+      cartTotalElem.textContent = 'Total: ' + formatPrice(total);
+    }
+
+    // Add product to cart
+    function addToCart(productId) {
+      const item = cart.find(i => i.productId === productId);
+      if (item) {
+        item.quantity++;
+      } else {
+        cart.push({ productId, quantity: 1 });
+      }
+      updateCartCount();
+      renderCart();
+    }
+
+    // Change quantity in cart
+    function changeQuantity(productId, action) {
+      const item = cart.find(i => i.productId === productId);
+      if (!item) return;
+
+      if (action === 'increase') {
+        item.quantity++;
+      } else if (action === 'decrease') {
+        item.quantity--;
+        if (item.quantity <= 0) {
+          cart = cart.filter(i => i.productId !== productId);
+        }
+      }
+      updateCartCount();
+      renderCart();
+    }
+
+    // Validate add product form (enables submit button if all fields valid)
+    function validateAddProductForm() {
+      const nameOk = productNameInput.value.trim().length > 0;
+      const priceOk = parseFloat(productPriceInput.value) > 0;
+      const imageOk = productImageInput.files.length > 0;
+      submitProductButton.disabled = !(nameOk && priceOk && imageOk);
+    }
+
+    // Preview the uploaded image
+    productImageInput.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (file) {
+        const url = URL.createObjectURL(file);
+        imagePreview.src = url;
+        imagePreview.style.display = 'block';
+      } else {
+        imagePreview.src = '';
+        imagePreview.style.display = 'none';
+      }
+      validateAddProductForm();
+    });
+
+    // Validate inputs live
+    productNameInput.addEventListener('input', validateAddProductForm);
+    productPriceInput.addEventListener('input', validateAddProductForm);
+
+    // Handle new product form submission
+    newProductForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = productNameInput.value.trim();
+      const price = parseFloat(productPriceInput.value);
+      const file = productImageInput.files[0];
+
+      if (!name || price <= 0 || !file) {
+        alert('Please fill all fields correctly.');
+        return;
+      }
+
+      const imageUrl = URL.createObjectURL(file);
+
+      // Generate new unique product ID
+      const newId = products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1;
+
+      // Create new product object
+      const newProduct = {
+        id: newId,
+        name: name,
+        price: price,
+        image: imageUrl
+      };
+
+      products.push(newProduct);
+      renderProducts();
+
+      // Reset form
+      newProductForm.reset();
+      imagePreview.src = '';
+      imagePreview.style.display = 'none';
+      submitProductButton.disabled = true;
+
+      alert('Product added successfully!');
+    });
+
+    // Event listeners
+    productsGrid.addEventListener('click', e => {
+      if (e.target.classList.contains('btn-add')) {
+        const productId = parseInt(e.target.dataset.productId, 10);
+        addToCart(productId);
+      }
+    });
+
+    cartButton.addEventListener('click', () => {
+      renderCart();
+      cartModal.classList.add('active');
+    });
+
+    cartClose.addEventListener('click', () => {
+      cartModal.classList.remove('active');
+    });
+
+    cartModal.addEventListener('click', e => {
+      if (e.target === cartModal) {
+        cartModal.classList.remove('active');
+      }
+    });
+
+    cartItemsContainer.addEventListener('click', e => {
+      if (e.target.classList.contains('qty-btn')) {
+        const productId = parseInt(e.target.dataset.productId, 10);
+        const action = e.target.dataset.action;
+        changeQuantity(productId, action);
+      }
+    });
+
+    // Initialize display
+    updateCartCount();
+    renderProducts();
+  </script>
+</body>
+</html>
+
+```
+
