@@ -1,9 +1,8 @@
 "use client";
 
-"use client";
-
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { encodeImageFileForPortfolio } from "@/lib/encode-portfolio-image";
 import {
   DEFAULT_SITE_CONTENT,
   mergeSiteContent,
@@ -44,6 +43,8 @@ function newPortfolioPiece(): PortfolioPiece {
     subtitle: "",
     src: "",
     span: "default",
+    projectUrl: "",
+    projectLabel: "Visit project",
   };
 }
 
@@ -81,6 +82,9 @@ export function AdminDashboard() {
   const [draft, setDraft] = useState<SiteContent>(DEFAULT_SITE_CONTENT);
   const [tab, setTab] = useState<Tab>("hero");
   const [loaded, setLoaded] = useState(false);
+  const [busyPortfolioImage, setBusyPortfolioImage] = useState<number | null>(
+    null,
+  );
 
   useEffect(() => {
     if (!adminEnabled) return;
@@ -148,6 +152,26 @@ export function AdminDashboard() {
     a.click();
     URL.revokeObjectURL(url);
   }, [draft]);
+
+  const handlePortfolioImageUpload = useCallback((index: number, file: File) => {
+    void (async () => {
+      setBusyPortfolioImage(index);
+      try {
+        const result = await encodeImageFileForPortfolio(file);
+        if (!result.trim()) return;
+        setDraft((d) => {
+          const next = [...d.portfolio.pieces];
+          next[index] = { ...next[index], src: result };
+          return {
+            ...d,
+            portfolio: { ...d.portfolio, pieces: next },
+          };
+        });
+      } finally {
+        setBusyPortfolioImage((v) => (v === index ? null : v));
+      }
+    })();
+  }, []);
 
   if (!adminEnabled) {
     return (
@@ -255,10 +279,9 @@ export function AdminDashboard() {
               <code className="rounded bg-black/40 px-1">public_html</code> or{" "}
               <code className="rounded bg-black/40 px-1">out</code> folder) and do a{" "}
               <strong className="font-medium text-gold-bright/90">hard refresh</strong>{" "}
-              (<kbd className="rounded bg-black/40 px-1">Ctrl+F5</kbd>). Portfolio image
-              links must start with{" "}
-              <code className="rounded bg-black/40 px-1">https://</code> — use Unsplash /
-              your own uploads. After upload, old text still appears? Bump{" "}
+              (<kbd className="rounded bg-black/40 px-1">Ctrl+F5</kbd>). Portfolio photos are
+              uploaded from your device in the editor (no URLs required). After upload, old
+              text still appears? Bump{" "}
               <code className="rounded bg-black/40 px-1">
                 NEXT_PUBLIC_SITE_JSON_REV
               </code>{" "}
@@ -1129,21 +1152,146 @@ export function AdminDashboard() {
                       }
                       className={`${inputClass} mt-2 resize-y`}
                     />
-                    <input
-                      placeholder="Image URL (https://…)"
-                      value={piece.src}
-                      onChange={(e) =>
-                        setDraft((d) => {
-                          const next = [...d.portfolio.pieces];
-                          next[i] = { ...next[i], src: e.target.value };
-                          return {
-                            ...d,
-                            portfolio: { ...d.portfolio, pieces: next },
-                          };
-                        })
-                      }
-                      className={`${inputClass} mt-2 font-mono text-xs`}
-                    />
+                    <div className="mt-4 rounded-lg border border-white/[0.08] bg-black/25 p-4">
+                      <label className={labelClass}>Project photo</label>
+                      <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-stretch">
+                        <div className="relative isolate h-44 w-full shrink-0 overflow-hidden rounded-md border border-white/[0.08] bg-black/45 sm:h-auto sm:w-52">
+                          {piece.src ? (
+                            <>
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={piece.src}
+                                alt=""
+                                className="h-full w-full object-cover"
+                              />
+                            </>
+                          ) : (
+                            <div className="flex h-full flex-col items-center justify-center px-4 text-center">
+                              <p className="text-[11px] uppercase tracking-[0.18em] text-muted">
+                                Choose an image below
+                              </p>
+                            </div>
+                          )}
+                          {busyPortfolioImage === i ? (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black/65 text-[11px] font-semibold uppercase tracking-[0.14em] text-gold-bright backdrop-blur-sm">
+                              Processing…
+                            </div>
+                          ) : null}
+                        </div>
+                        <div className="flex min-h-0 min-w-0 flex-1 flex-col gap-3">
+                          <div className="flex flex-wrap gap-2">
+                            <input
+                              id={`portfolio-upload-${piece.id}`}
+                              type="file"
+                              accept="image/jpeg,image/png,image/webp,image/gif"
+                              className="sr-only"
+                              disabled={busyPortfolioImage === i}
+                              onChange={(e) => {
+                                const file = e.target.files?.[0];
+                                if (!file) return;
+                                handlePortfolioImageUpload(i, file);
+                                e.currentTarget.value = "";
+                              }}
+                            />
+                            <label
+                              htmlFor={`portfolio-upload-${piece.id}`}
+                              className="inline-flex cursor-pointer items-center rounded-md bg-gradient-to-r from-[#f3e6c8] via-gold to-[#8a6f35] px-4 py-2.5 font-heading text-[10px] font-bold uppercase tracking-[0.16em] text-black transition hover:brightness-110"
+                            >
+                              Choose image
+                            </label>
+                            {piece.src ? (
+                              <button
+                                type="button"
+                                disabled={busyPortfolioImage === i}
+                                onClick={() =>
+                                  setDraft((d) => {
+                                    const next = [...d.portfolio.pieces];
+                                    next[i] = { ...next[i], src: "" };
+                                    return {
+                                      ...d,
+                                      portfolio: { ...d.portfolio, pieces: next },
+                                    };
+                                  })
+                                }
+                                className="rounded-md border border-white/25 px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-muted transition hover:border-gold/40 hover:text-gold-bright disabled:opacity-40"
+                              >
+                                Remove photo
+                              </button>
+                            ) : null}
+                          </div>
+                          <p className="text-[11px] leading-relaxed text-muted">
+                            Image is bundled into{" "}
+                            <code className="rounded bg-black/35 px-1 text-gold/90">
+                              site.json
+                            </code>{" "}
+                            when you click <strong>Download site.json</strong> — upload that file on
+                            hosting to go live (no separate image FTP needed).
+                          </p>
+                          <details className="rounded-md border border-white/10 bg-black/30 p-3">
+                            <summary className="cursor-pointer select-none text-[11px] font-semibold uppercase tracking-[0.12em] text-gold-bright/90">
+                              Advanced — paste image link
+                            </summary>
+                            <input
+                              placeholder="https://… (Unsplash, CDN, etc.)"
+                              value={piece.src?.startsWith("http") ? piece.src : ""}
+                              onChange={(e) =>
+                                setDraft((d) => {
+                                  const next = [...d.portfolio.pieces];
+                                  next[i] = { ...next[i], src: e.target.value };
+                                  return {
+                                    ...d,
+                                    portfolio: { ...d.portfolio, pieces: next },
+                                  };
+                                })
+                              }
+                              className={`${inputClass} mt-3 font-mono text-xs`}
+                            />
+                            <p className="mt-2 text-[10px] text-muted">
+                              If you use a link, your previous uploaded photo in this field is
+                              replaced with that URL.
+                            </p>
+                          </details>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-2 grid gap-3 sm:grid-cols-2">
+                      <div>
+                        <label className={labelClass}>Project link (optional)</label>
+                        <input
+                          placeholder="https://..."
+                          value={piece.projectUrl ?? ""}
+                          onChange={(e) =>
+                            setDraft((d) => {
+                              const next = [...d.portfolio.pieces];
+                              next[i] = { ...next[i], projectUrl: e.target.value };
+                              return {
+                                ...d,
+                                portfolio: { ...d.portfolio, pieces: next },
+                              };
+                            })
+                          }
+                          className={inputClass}
+                        />
+                      </div>
+                      <div>
+                        <label className={labelClass}>Link button text</label>
+                        <input
+                          placeholder="Visit project"
+                          value={piece.projectLabel ?? ""}
+                          onChange={(e) =>
+                            setDraft((d) => {
+                              const next = [...d.portfolio.pieces];
+                              next[i] = { ...next[i], projectLabel: e.target.value };
+                              return {
+                                ...d,
+                                portfolio: { ...d.portfolio, pieces: next },
+                              };
+                            })
+                          }
+                          className={inputClass}
+                        />
+                      </div>
+                    </div>
                     <div className="mt-2">
                       <label className={labelClass}>Layout</label>
                       <select

@@ -19,6 +19,8 @@ function PortfolioCard({
     [piece.src],
   );
   const showImg = Boolean(attrs.src) && !failed;
+  const safeProjectUrl = (piece.projectUrl ?? "").trim();
+  const hasProjectLink = safeProjectUrl.startsWith("http://") || safeProjectUrl.startsWith("https://");
 
   return (
     <motion.figure
@@ -72,6 +74,16 @@ function PortfolioCard({
         <p className="mt-2 text-xs font-light leading-relaxed text-muted sm:text-sm">
           {piece.subtitle}
         </p>
+        {hasProjectLink ? (
+          <a
+            href={safeProjectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex rounded-md border border-gold/35 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-gold-bright transition hover:bg-gold/10"
+          >
+            {(piece.projectLabel ?? "Visit project").trim() || "Visit project"}
+          </a>
+        ) : null}
       </figcaption>
     </motion.figure>
   );

@@ -12,6 +12,8 @@ export type PortfolioPiece = {
   subtitle: string;
   src: string;
   span: PortfolioSpan;
+  projectUrl?: string;
+  projectLabel?: string;
 };
 
 export type VentureCard = {
@@ -115,6 +117,8 @@ function mergePiece(v: unknown, fallback: PortfolioPiece): PortfolioPiece {
     subtitle,
     src,
     span: portfolioSpan(v.span, fallback.span),
+    projectUrl: str(v.projectUrl, fallback.projectUrl ?? ""),
+    projectLabel: str(v.projectLabel, fallback.projectLabel ?? "Visit project"),
   };
 }
 
@@ -287,6 +291,8 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         subtitle: "Identity system · high-contrast product storytelling",
         src: "https://images.unsplash.com/photo-1541701494587-cebafcdbc6fb",
         span: "tall",
+        projectUrl: "https://softdesksolution.com",
+        projectLabel: "Visit website",
       },
       {
         id: "pulse-launch",
@@ -294,6 +300,8 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         subtitle: "Campaign architecture · motion-ready key art",
         src: "https://images.unsplash.com/photo-1486325212027-8081e485278e",
         span: "default",
+        projectUrl: "",
+        projectLabel: "View project",
       },
       {
         id: "pulse-suite",
@@ -301,6 +309,8 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         subtitle: "UI rhythm · cinematic stills for paid social",
         src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
         span: "wide",
+        projectUrl: "",
+        projectLabel: "View project",
       },
       {
         id: "sds-web",
@@ -308,6 +318,8 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         subtitle: "Lead-gen landing · executive typography",
         src: "https://images.unsplash.com/photo-1497366216548-37526070297c",
         span: "default",
+        projectUrl: "https://softdesksolution.com",
+        projectLabel: "Visit website",
       },
       {
         id: "peace-inst",
@@ -315,6 +327,8 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         subtitle: "Foundation + academy admissions · parent-student journeys",
         src: "https://images.unsplash.com/photo-1487958449943-2429e8be8627",
         span: "default",
+        projectUrl: "https://peace.org.pk",
+        projectLabel: "Visit website",
       },
     ],
   },
@@ -425,6 +439,8 @@ export function mergeSiteContent(raw: unknown): SiteContent {
           subtitle: "",
           src: "",
           span: "default",
+          projectUrl: "",
+          projectLabel: "Visit project",
         },
       ),
     );
