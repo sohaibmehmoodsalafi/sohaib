@@ -20,7 +20,7 @@ const montserrat = Montserrat({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "http://localhost:3000";
+  "https://meetsohaib.com";
 const ogImage = `${siteUrl}/sohaib-logo.png`;
 const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
 

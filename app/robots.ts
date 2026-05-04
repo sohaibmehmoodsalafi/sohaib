@@ -4,7 +4,7 @@ export const dynamic = "force-static";
 
 const host =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "http://localhost:3000";
+  "https://meetsohaib.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
