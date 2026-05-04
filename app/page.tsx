@@ -1,4 +1,5 @@
 import { Hero } from "@/components/Hero";
+import { MainWork } from "@/components/MainWork";
 import { Philosophy } from "@/components/Philosophy";
 import { Portfolio } from "@/components/Portfolio";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -11,6 +12,7 @@ export default function Home() {
       <SiteHeader />
       <main>
         <Hero />
+        <MainWork />
         <Ventures />
         <Philosophy />
         <Portfolio />
