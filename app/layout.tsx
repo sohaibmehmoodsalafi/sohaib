@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
+import { FloatingWhatsapp } from "@/components/FloatingWhatsapp";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -86,6 +87,13 @@ export default function RootLayout({
       className={`${inter.variable} ${montserrat.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full bg-bg font-sans text-foreground">
+        <a
+          href="#main-content"
+          className="sr-only underline decoration-gold underline-offset-4 focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-md focus:bg-gold focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-black focus:outline-none"
+        >
+          Skip to main content
+        </a>
+        <FloatingWhatsapp />
         <Script
           id="json-ld-person"
           type="application/ld+json"
@@ -101,6 +109,8 @@ export default function RootLayout({
               "https://softdesksolution.com",
               "https://peace.org.pk",
               "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
+              "https://www.facebook.com/sohaibmehmoodsalafi",
+              "https://www.instagram.com/sohaibsalafi1996/",
             ],
           })}
         </Script>

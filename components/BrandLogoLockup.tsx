@@ -8,14 +8,14 @@ export function BrandLogoLockup({
 }) {
   return (
     <span
-      className={`relative inline-block h-14 w-[228px] sm:h-[64px] sm:w-[288px] ${className}`}
+      className={`relative inline-block h-[3.75rem] w-[245px] sm:h-[4.5rem] sm:w-[310px] md:h-[5rem] md:w-[340px] ${className}`}
     >
       <Image
         src="/sohaib-logo.png"
         alt="Sohaib Mehmood — Scaling Brands. Empowering Souls."
         fill
-        className="object-contain object-left"
-        sizes="(max-width:640px) 228px, 288px"
+        className="object-contain object-left drop-shadow-[0_2px_12px_rgba(198,163,90,0.22)]"
+        sizes="(max-width:640px) 245px, 340px"
       />
     </span>
   );

@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
 import { HeroBackground } from "@/components/HeroBackground";
-import { PORTRAIT_IMAGE } from "@/lib/portrait";
+import { PORTRAIT_FALLBACK, PORTRAIT_LOCAL } from "@/lib/portrait";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -19,6 +20,8 @@ const fadeUp = {
 };
 
 export function Hero() {
+  const [portraitSrc, setPortraitSrc] = useState(PORTRAIT_LOCAL);
+
   return (
     <section
       id="top"
@@ -26,62 +29,33 @@ export function Hero() {
     >
       <HeroBackground />
 
-      <div className="relative mx-auto flex min-h-[100dvh] max-w-6xl flex-col justify-end px-5 pb-24 pt-28 sm:px-8 sm:pb-32 sm:pt-36 lg:pt-32">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_min(320px,36vw)] lg:items-end lg:gap-14">
-          {/* Portrait — mobile first for personal presence */}
-          <motion.div
-            custom={0}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="flex justify-center lg:col-start-2 lg:row-start-1 lg:justify-end"
-          >
-            <div className="relative">
-              <div
-                className="pointer-events-none absolute -inset-3 rounded-3xl bg-[conic-gradient(from_140deg,rgba(232,213,163,0.35),rgba(198,163,90,0.08),rgba(80,60,24,0.45),rgba(232,213,163,0.2))] opacity-90 blur-2xl"
-                aria-hidden
-              />
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gold/25 via-gold/[0.08] to-amber-950/40 p-[3px] shadow-[0_0_0_1px_rgba(232,213,163,0.15),0_25px_60px_-15px_rgba(198,163,90,0.35)]">
-                <div className="relative aspect-square w-[min(260px,72vw)] overflow-hidden rounded-[13px] bg-black sm:w-[280px] lg:w-[300px]">
-                  <Image
-                    src={PORTRAIT_IMAGE}
-                    alt="Sohaib Mehmood"
-                    fill
-                    priority
-                    className="object-cover object-top"
-                    sizes="(max-width:1024px) 72vw, 300px"
-                  />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <div className="lg:col-start-1 lg:row-start-1">
+      <div className="relative mx-auto flex min-h-[100dvh] w-full max-w-6xl flex-col justify-end px-4 pb-20 pt-24 sm:px-6 sm:pb-28 sm:pt-28 md:px-8 md:pb-32 lg:pt-28">
+        <div className="grid w-full min-w-0 grid-cols-1 gap-10 md:gap-12 lg:grid-cols-2 lg:items-end lg:gap-14">
+          <div className="min-w-0 lg:order-1">
             <motion.p
-              custom={1}
+              custom={0}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mb-4 font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold sm:text-xs"
+              className="mb-3 font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold sm:mb-4 sm:text-xs"
             >
               Founder · Growth · Impact
             </motion.p>
             <motion.h1
-              custom={2}
+              custom={1}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="max-w-4xl bg-gradient-to-br from-white via-white to-gold-bright/80 bg-clip-text font-heading text-3xl font-extrabold leading-[1.08] tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-[3.35rem] lg:leading-[1.05]"
+              className="max-w-[100%] bg-gradient-to-br from-white via-white to-gold-bright/80 bg-clip-text font-heading text-[1.65rem] font-extrabold leading-[1.1] tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-[3.1rem] lg:leading-[1.05]"
             >
               Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth.
             </motion.h1>
             <motion.p
-              custom={3}
+              custom={2}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mt-6 max-w-2xl text-base font-light leading-relaxed text-muted sm:text-lg"
+              className="mt-5 max-w-2xl text-[0.95rem] font-light leading-relaxed text-muted sm:mt-6 sm:text-lg"
             >
               I build bridges between{" "}
               <span className="font-medium text-gold-bright">Deen and digital</span>:
@@ -90,26 +64,55 @@ export function Hero() {
               entering the workforce.
             </motion.p>
             <motion.div
-              custom={4}
+              custom={3}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="mt-10 flex flex-wrap gap-4"
+              className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
             >
               <a
                 href="#ventures"
-                className="inline-flex items-center justify-center bg-gradient-to-r from-[#f3e6c8] via-gold to-[#8a6f35] px-7 py-3.5 font-heading text-xs font-bold uppercase tracking-[0.2em] text-black shadow-[0_0_50px_-10px_rgba(232,213,163,0.55)] transition hover:brightness-110"
+                className="inline-flex w-full min-h-[48px] items-center justify-center bg-gradient-to-r from-[#f3e6c8] via-gold to-[#8a6f35] px-6 py-3.5 font-heading text-[11px] font-bold uppercase tracking-[0.18em] text-black shadow-[0_0_50px_-10px_rgba(232,213,163,0.55)] transition hover:brightness-110 sm:w-auto sm:px-7 sm:text-xs sm:tracking-[0.2em]"
               >
                 Explore ventures
               </a>
               <a
                 href="#work"
-                className="inline-flex items-center justify-center border border-gold/45 bg-black/20 px-7 py-3.5 font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-bright backdrop-blur-sm transition hover:border-gold/70 hover:bg-gold/10"
+                className="inline-flex w-full min-h-[48px] items-center justify-center border border-gold/45 bg-black/40 px-6 py-3.5 font-heading text-[11px] font-bold uppercase tracking-[0.18em] text-gold-bright backdrop-blur-sm transition hover:border-gold/70 hover:bg-gold/10 sm:w-auto sm:px-7 sm:text-xs sm:tracking-[0.2em]"
               >
                 Selected work
               </a>
             </motion.div>
           </div>
+
+          {/* Portrait: transparent-friendly — no fill behind photo; ring only */}
+          <motion.div
+            custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="isolate flex w-full justify-center lg:order-2 lg:justify-end"
+          >
+            <div className="w-full max-w-[260px] sm:max-w-[280px] md:max-w-[300px]">
+              <div className="rounded-2xl p-[2px] shadow-[0_24px_64px_rgba(0,0,0,0.55)] [background:linear-gradient(135deg,rgba(243,230,200,0.55),rgba(198,163,90,0.35)_40%,rgba(90,70,35,0.5))]">
+                <div className="relative aspect-square w-full overflow-hidden rounded-[14px] bg-transparent">
+                  <Image
+                    src={portraitSrc}
+                    alt="Sohaib Mehmood"
+                    fill
+                    priority
+                    onError={() => setPortraitSrc(PORTRAIT_FALLBACK)}
+                    className={
+                      portraitSrc === PORTRAIT_LOCAL
+                        ? "object-contain object-center"
+                        : "object-cover object-top"
+                    }
+                    sizes="(max-width:640px) 260px, (max-width:1024px) 280px, 300px"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
 

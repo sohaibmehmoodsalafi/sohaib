@@ -9,15 +9,15 @@ export function BrandLogo({
 }) {
   return (
     <span
-      className={`relative inline-block h-[3.25rem] w-[220px] sm:h-[4rem] sm:w-[280px] md:h-[4.25rem] md:w-[300px] ${className}`}
+      className={`relative inline-block h-[3.85rem] w-[255px] sm:h-[4.6rem] sm:w-[310px] md:h-[5rem] md:w-[340px] ${className}`}
     >
       <Image
         src="/sohaib-logo.png"
         alt="Sohaib Mehmood — Scaling Brands. Empowering Souls."
         fill
         priority={priority}
-        className="object-contain object-left"
-        sizes="(max-width:640px) 220px, 300px"
+        className="object-contain object-left drop-shadow-[0_2px_14px_rgba(198,163,90,0.28)]"
+        sizes="(max-width:640px) 255px, 340px"
       />
     </span>
   );

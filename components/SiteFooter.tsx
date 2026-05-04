@@ -6,22 +6,35 @@ import { BrandLogo } from "@/components/BrandLogo";
 import { BrandLogoLockup } from "@/components/BrandLogoLockup";
 import {
   IconBookOpen,
+  IconFacebook,
+  IconInstagram,
   IconLinkedIn,
   IconLaptop,
 } from "@/components/FooterIcons";
+import { CONTACT_EMAIL, SOCIAL } from "@/lib/social";
 
 const quickLinks = [
-  { href: "#ventures", label: "Ventures" },
-  { href: "#philosophy", label: "Philosophy" },
-  { href: "#work", label: "Work" },
-  { href: "#connect", label: "Connect" },
+  { href: "/#ventures", label: "Ventures" },
+  { href: "/#philosophy", label: "Philosophy" },
+  { href: "/#work", label: "Work" },
+  { href: "/#connect", label: "Connect" },
 ] as const;
 
 const iconLinks = [
   {
-    href: "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
+    href: SOCIAL.linkedin,
     label: "LinkedIn",
     Icon: IconLinkedIn,
+  },
+  {
+    href: SOCIAL.facebook,
+    label: "Facebook",
+    Icon: IconFacebook,
+  },
+  {
+    href: SOCIAL.instagram,
+    label: "Instagram",
+    Icon: IconInstagram,
   },
   {
     href: "https://softdesksolution.com",
@@ -90,6 +103,15 @@ export function SiteFooter() {
             <p className="mt-4 text-sm font-light leading-relaxed text-muted sm:text-base">
               Partnerships in growth, creative direction, and faith-forward
               digital programs — introductions via LinkedIn work best.
+            </p>
+            <p className="mt-3 text-sm font-light text-muted">
+              Email:{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="text-gold-bright underline decoration-gold/40 underline-offset-4 hover:text-foreground"
+              >
+                {CONTACT_EMAIL}
+              </a>
             </p>
             <div className="mt-8 hidden sm:block">
               <BrandLogoLockup />

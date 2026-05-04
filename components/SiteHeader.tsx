@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BrandLogo } from "@/components/BrandLogo";
 
+/** `/#…` so section links always target landing page sections */
 const links = [
-  { href: "#main-work", label: "Main work" },
-  { href: "#ventures", label: "Ventures" },
-  { href: "#philosophy", label: "Philosophy" },
-  { href: "#work", label: "Work" },
-  { href: "#connect", label: "Connect" },
+  { href: "/#main-work", label: "Main work" },
+  { href: "/#ventures", label: "Ventures" },
+  { href: "/#philosophy", label: "Philosophy" },
+  { href: "/#work", label: "Work" },
+  { href: "/#connect", label: "Connect" },
 ];
 
 export function SiteHeader() {
@@ -24,13 +25,13 @@ export function SiteHeader() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent animate-gold-line"
         aria-hidden
       />
-      <div className="mx-auto flex min-h-[4.75rem] max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:min-h-[5.5rem] sm:px-8 sm:py-2.5">
+      <div className="mx-auto flex min-h-[5rem] max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:min-h-[5.75rem] sm:px-8 sm:py-3">
         <Link
-          href="#top"
-          className="group flex shrink-0 items-center outline-none ring-gold/30 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
-          aria-label="Sohaib Mehmood — home"
+          href="/"
+          className="group flex shrink-0 items-center rounded-lg outline-none ring-gold/35 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          aria-label="Sohaib Mehmood — back to home"
         >
-          <BrandLogo className="transition duration-500 group-hover:drop-shadow-[0_0_16px_rgba(198,163,90,0.45)]" priority />
+          <BrandLogo className="transition duration-300 group-hover:brightness-110 group-hover:drop-shadow-[0_0_22px_rgba(232,213,163,0.35)]" priority />
         </Link>
         <nav
           className="flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1 sm:gap-x-2"
