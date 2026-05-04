@@ -21,6 +21,8 @@ const montserrat = Montserrat({
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
   "http://localhost:3000";
+const ogImage = `${siteUrl}/sohaib-logo.png`;
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -49,6 +51,14 @@ export const metadata: Metadata = {
       "Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth",
     description:
       "B2B growth (Soft Desk) and Islamic trust + academy work (Peace Institute).",
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 1200,
+        alt: "Sohaib Mehmood brand mark",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -56,6 +66,7 @@ export const metadata: Metadata = {
       "Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth",
     description:
       "B2B growth (Soft Desk) and Islamic trust + academy impact (Peace Institute).",
+    images: [ogImage],
   },
   robots: {
     index: true,
@@ -67,6 +78,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/sohaib-logo.png",
     apple: "/sohaib-logo.png",
+  },
+  verification: {
+    google: googleVerification,
   },
 };
 
@@ -101,16 +115,26 @@ export default function RootLayout({
         >
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Sohaib Mehmood",
-            url: siteUrl,
-            jobTitle: "Founder",
-            sameAs: [
-              "https://softdesksolution.com",
-              "https://peace.org.pk",
-              "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
-              "https://www.facebook.com/sohaibmehmoodsalafi",
-              "https://www.instagram.com/sohaibsalafi1996/",
+            "@graph": [
+              {
+                "@type": "Person",
+                name: "Sohaib Mehmood",
+                url: siteUrl,
+                image: ogImage,
+                jobTitle: "Founder",
+                sameAs: [
+                  "https://softdesksolution.com",
+                  "https://peace.org.pk",
+                  "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
+                  "https://www.facebook.com/sohaibmehmoodsalafi",
+                  "https://www.instagram.com/sohaibsalafi1996/",
+                ],
+              },
+              {
+                "@type": "WebSite",
+                name: "Sohaib Mehmood",
+                url: siteUrl,
+              },
             ],
           })}
         </Script>

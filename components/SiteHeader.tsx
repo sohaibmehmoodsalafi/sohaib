@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
 
 /** `/#…` so section links always target landing page sections */
@@ -14,6 +15,8 @@ const links = [
 ];
 
 export function SiteHeader() {
+  const [open, setOpen] = useState(false);
+
   return (
     <motion.header
       initial={{ y: -20, opacity: 0 }}
@@ -33,10 +36,7 @@ export function SiteHeader() {
         >
           <BrandLogo className="transition duration-300 group-hover:brightness-110 group-hover:drop-shadow-[0_0_22px_rgba(232,213,163,0.35)]" priority />
         </Link>
-        <nav
-          className="flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1 sm:gap-x-2"
-          aria-label="Primary"
-        >
+        <nav className="hidden items-center gap-x-1.5 sm:gap-x-2 md:flex" aria-label="Primary">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -47,7 +47,32 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
+        <button
+          type="button"
+          className="md:hidden inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md border border-white/15 bg-white/[0.04] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-bright"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
       </div>
+      {open ? (
+        <div className="border-t border-white/[0.08] bg-black/95 px-4 pb-4 pt-3 md:hidden">
+          <nav className="flex flex-col gap-1.5" aria-label="Mobile primary">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="rounded-md px-3 py-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-muted transition-colors hover:bg-white/[0.05] hover:text-gold-bright"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      ) : null}
     </motion.header>
   );
 }
