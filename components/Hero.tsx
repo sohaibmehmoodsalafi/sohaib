@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { HeroBackground } from "@/components/HeroBackground";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -22,19 +22,7 @@ export function Hero() {
       id="top"
       className="relative min-h-[100dvh] overflow-hidden border-b border-white/[0.06]"
     >
-      <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1487958449943-2429f8d83225?auto=format&fit=crop&w=2000&q=80"
-          alt=""
-          fill
-          priority
-          className="object-cover opacity-[0.32] saturate-[0.85]"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg via-bg/[0.94] to-bg" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_55%_at_50%_-15%,rgba(198,163,90,0.14),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_40%_at_80%_90%,rgba(198,163,90,0.06),transparent)]" />
-      </div>
+      <HeroBackground />
 
       <div className="relative mx-auto flex min-h-[100dvh] max-w-6xl flex-col justify-end px-5 pb-24 pt-32 sm:px-8 sm:pb-32 sm:pt-40">
         <motion.p
