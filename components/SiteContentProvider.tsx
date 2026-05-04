@@ -31,9 +31,25 @@ export function SiteContentProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
+    const rev =
+      typeof process !== "undefined" &&
+      process.env.NEXT_PUBLIC_SITE_JSON_REV?.trim()
+        ? process.env.NEXT_PUBLIC_SITE_JSON_REV.trim()
+        : "";
+    const jsonUrl =
+      rev.length > 0
+        ? `/data/site.json?v=${encodeURIComponent(rev)}`
+        : "/data/site.json";
+
     (async () => {
       try {
-        const res = await fetch("/data/site.json", { cache: "no-store" });
+        const res = await fetch(jsonUrl, {
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+            Pragma: "no-cache",
+          },
+        });
         if (!res.ok) throw new Error(String(res.status));
         const raw: unknown = await res.json();
         if (!cancelled) setContent(mergeSiteContent(raw));

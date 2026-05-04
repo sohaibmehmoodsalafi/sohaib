@@ -253,8 +253,18 @@ export function AdminDashboard() {
               </code>{" "}
               on hosting (inside your exported{" "}
               <code className="rounded bg-black/40 px-1">public_html</code> or{" "}
-              <code className="rounded bg-black/40 px-1">out</code> folder) and refresh
-              the site.
+              <code className="rounded bg-black/40 px-1">out</code> folder) and do a{" "}
+              <strong className="font-medium text-gold-bright/90">hard refresh</strong>{" "}
+              (<kbd className="rounded bg-black/40 px-1">Ctrl+F5</kbd>). Portfolio image
+              links must start with{" "}
+              <code className="rounded bg-black/40 px-1">https://</code> — use Unsplash /
+              your own uploads. After upload, old text still appears? Bump{" "}
+              <code className="rounded bg-black/40 px-1">
+                NEXT_PUBLIC_SITE_JSON_REV
+              </code>{" "}
+              and rebuild once, or rely on{" "}
+              <code className="rounded bg-black/40 px-1">public/data/.htaccess</code>{" "}
+              (included in export).
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
