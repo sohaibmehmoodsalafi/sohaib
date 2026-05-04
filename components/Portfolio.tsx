@@ -42,7 +42,10 @@ const pieces: Piece[] = [
 
 export function Portfolio() {
   return (
-    <section id="work" className="scroll-mt-24 bg-surface/30 py-20 sm:py-28">
+    <section
+      id="work"
+      className="scroll-mt-24 border-b border-white/[0.06] bg-gradient-to-b from-bg to-surface/50 py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -51,7 +54,7 @@ export function Portfolio() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-muted">
+          <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold">
             Portfolio
           </p>
           <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -75,7 +78,7 @@ export function Portfolio() {
                 delay: 0.06 * i,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`mb-4 break-inside-avoid overflow-hidden border border-border bg-bg sm:mb-5 ${
+              className={`group/card mb-4 break-inside-avoid overflow-hidden border border-white/[0.08] bg-bg shadow-[0_0_0_1px_rgba(255,255,255,0.02)] transition duration-500 hover:border-gold/25 sm:mb-5 ${
                 p.span === "tall" ? "sm:min-h-[420px]" : ""
               }`}
             >
@@ -96,7 +99,7 @@ export function Portfolio() {
                   sizes="(max-width:640px)100vw,(max-width:1024px)50vw,33vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-90" />
-                <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.06]" />
+                <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.06] transition group-hover/card:ring-gold/20" />
               </div>
               <figcaption className="p-5 sm:p-6">
                 <h3 className="font-heading text-base font-bold tracking-tight text-foreground sm:text-lg">

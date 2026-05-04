@@ -6,17 +6,17 @@ export function Philosophy() {
   return (
     <section
       id="philosophy"
-      className="scroll-mt-24 border-b border-border py-20 sm:py-28"
+      className="scroll-mt-24 border-b border-white/[0.06] py-20 sm:py-28"
     >
       <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
           className="lg:col-span-5"
         >
-          <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-muted">
+          <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold">
             About / Philosophy
           </p>
           <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -27,12 +27,16 @@ export function Philosophy() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.65, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            duration: 0.65,
+            delay: 0.08,
+            ease: [0.22, 1, 0.36, 1] as const,
+          }}
           className="space-y-6 text-sm font-light leading-relaxed text-muted sm:text-base lg:col-span-7"
         >
           <p>
             For the past two years I have lived inside{" "}
-            <span className="text-foreground/90">Quran academy marketing</span>
+            <span className="font-medium text-gold-bright">Quran academy marketing</span>
             — not as a distant consultant, but as someone shaping enrollment
             narratives, parent trust, and digital touchpoints that carry sacred
             responsibility. That work taught me a non-negotiable lesson: impact
@@ -41,7 +45,7 @@ export function Philosophy() {
           </p>
           <p>
             My vision is straightforward:{" "}
-            <span className="text-foreground/90">
+            <span className="font-medium text-gold-bright">
               dignified jobs for youth
             </span>{" "}
             where technical fluency (automation, creative production, growth
@@ -49,7 +53,7 @@ export function Philosophy() {
             intention. I want young Muslims to earn with skill — without
             compromising the values that define who we are online and offline.
           </p>
-          <p className="border-l border-white/15 pl-6 text-foreground/85">
+          <p className="border-l border-gold/35 pl-6 text-foreground/90">
             If the digital economy is the new marketplace of ideas, then our
             presence there should be as disciplined as our presence in the
             masjid: composed, useful, and uncompromising on the red lines.

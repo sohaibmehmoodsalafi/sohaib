@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const links = [
   { href: "#ventures", label: "Ventures" },
@@ -13,24 +14,31 @@ const links = [
 export function SiteHeader() {
   return (
     <motion.header
-      initial={{ y: -16, opacity: 0 }}
+      initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-bg/75 backdrop-blur-md"
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] as const }}
+      className="fixed inset-x-0 top-0 z-[60] border-b border-white/[0.06] bg-bg/80 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.85)] backdrop-blur-xl"
     >
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 sm:h-16 sm:px-8">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent animate-gold-line"
+        aria-hidden
+      />
+      <div className="mx-auto flex h-[4.25rem] max-w-6xl items-center justify-between gap-6 px-4 sm:h-[4.5rem] sm:px-8">
         <Link
           href="#top"
-          className="font-heading text-xs font-semibold uppercase tracking-[0.2em] text-foreground sm:text-sm"
+          className="group flex items-center outline-none ring-gold/30 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
         >
-          SM
+          <BrandLogo className="transition duration-500 group-hover:drop-shadow-[0_0_14px_rgba(198,163,90,0.4)]" priority />
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-4" aria-label="Primary">
+        <nav
+          className="flex items-center gap-0.5 sm:gap-1"
+          aria-label="Primary"
+        >
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="rounded-md px-2 py-1.5 text-[11px] font-medium text-muted transition-colors hover:text-foreground sm:px-3 sm:text-xs"
+              className="rounded-md px-2.5 py-2 text-[10px] font-medium uppercase tracking-[0.14em] text-muted transition-colors hover:text-gold-bright sm:px-3 sm:text-[11px] sm:tracking-[0.16em]"
             >
               {l.label}
             </Link>

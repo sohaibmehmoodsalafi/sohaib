@@ -61,6 +61,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "./",
   },
+  icons: {
+    icon: "/sohaib-logo.png",
+    apple: "/sohaib-logo.png",
+  },
 };
 
 export const viewport: Viewport = {

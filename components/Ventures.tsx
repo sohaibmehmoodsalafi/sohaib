@@ -24,7 +24,7 @@ export function Ventures() {
   return (
     <section
       id="ventures"
-      className="scroll-mt-24 border-b border-border bg-surface/40 py-20 sm:py-28"
+      className="scroll-mt-24 border-b border-white/[0.06] bg-gradient-to-b from-surface/80 to-bg py-20 sm:py-28"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <motion.div
@@ -34,7 +34,7 @@ export function Ventures() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-muted">
+          <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold">
             Dual ventures
           </p>
           <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -55,10 +55,10 @@ export function Ventures() {
         >
           <motion.article
             variants={item}
-            className="group relative overflow-hidden border border-border bg-bg p-8 sm:p-10"
+            className="group relative overflow-hidden border border-white/[0.08] bg-bg/90 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-sm transition duration-500 hover:border-gold/35 hover:shadow-[0_0_60px_-20px_rgba(198,163,90,0.18)] sm:p-10"
           >
-            <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-white/[0.04] blur-3xl transition group-hover:bg-white/[0.07]" />
-            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-faint">
+            <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/[0.06] blur-3xl transition group-hover:bg-gold/[0.1]" />
+            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-gold/80">
               Venture 01
             </p>
             <h3 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
@@ -71,15 +71,15 @@ export function Ventures() {
             </p>
             <ul className="mt-6 space-y-2 text-sm font-light text-muted">
               <li className="flex gap-2">
-                <span className="text-foreground/50">—</span>
+                <span className="text-gold/50">—</span>
                 Pipeline-focused lead generation
               </li>
               <li className="flex gap-2">
-                <span className="text-foreground/50">—</span>
+                <span className="text-gold/50">—</span>
                 Executive-grade web &amp; brand design
               </li>
               <li className="flex gap-2">
-                <span className="text-foreground/50">—</span>
+                <span className="text-gold/50">—</span>
                 Messaging that closes without hype
               </li>
             </ul>
@@ -87,7 +87,7 @@ export function Ventures() {
               href="https://softdesksolution.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-foreground underline-offset-4 transition hover:underline"
+              className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-bright underline-offset-4 transition hover:text-gold hover:underline"
             >
               softdesksolution.com
             </Link>
@@ -95,10 +95,10 @@ export function Ventures() {
 
           <motion.article
             variants={item}
-            className="group relative overflow-hidden border border-border bg-bg p-8 sm:p-10"
+            className="group relative overflow-hidden border border-white/[0.08] bg-bg/90 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-sm transition duration-500 hover:border-gold/35 hover:shadow-[0_0_60px_-20px_rgba(198,163,90,0.18)] sm:p-10"
           >
-            <div className="pointer-events-none absolute -left-12 bottom-0 h-40 w-40 rounded-full bg-white/[0.035] blur-3xl transition group-hover:bg-white/[0.06]" />
-            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-faint">
+            <div className="pointer-events-none absolute -left-12 bottom-0 h-40 w-40 rounded-full bg-gold/[0.05] blur-3xl transition group-hover:bg-gold/[0.09]" />
+            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-gold/80">
               Venture 02
             </p>
             <h3 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
@@ -111,15 +111,15 @@ export function Ventures() {
             </p>
             <ul className="mt-6 space-y-2 text-sm font-light text-muted">
               <li className="flex gap-2">
-                <span className="text-foreground/50">—</span>
+                <span className="text-gold/50">—</span>
                 Quran literacy &amp; retention pathways
               </li>
               <li className="flex gap-2">
-                <span className="text-foreground/50">—</span>
+                <span className="text-gold/50">—</span>
                 Ethical, skills-based youth programming
               </li>
               <li className="flex gap-2">
-                <span className="text-foreground/50">—</span>
+                <span className="text-gold/50">—</span>
                 Community-first digital outreach
               </li>
             </ul>
@@ -127,7 +127,7 @@ export function Ventures() {
               href="https://peace.org.pk"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-foreground underline-offset-4 transition hover:underline"
+              className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-bright underline-offset-4 transition hover:text-gold hover:underline"
             >
               peace.org.pk
             </Link>
