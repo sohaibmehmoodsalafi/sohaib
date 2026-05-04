@@ -1,5 +1,7 @@
 /** Editable homepage copy + portfolio. Runtime source: `/data/site.json` (optional). */
 
+import { normalizeImageSrc } from "@/lib/portfolio-image";
+
 export const SITE_CONTENT_VERSION = 1;
 
 export type PortfolioSpan = "default" | "tall" | "wide";
@@ -101,11 +103,17 @@ function portfolioSpan(v: unknown, fallback: PortfolioSpan): PortfolioSpan {
 
 function mergePiece(v: unknown, fallback: PortfolioPiece): PortfolioPiece {
   if (!isRecord(v)) return fallback;
+  const id = str(v.id, fallback.id).trim() || fallback.id;
+  const title = str(v.title, fallback.title);
+  const subtitle = str(v.subtitle, fallback.subtitle);
+  const fromJson = typeof v.src === "string" ? normalizeImageSrc(v.src) : "";
+  const fromFallback = normalizeImageSrc(fallback.src);
+  const src = fromJson || fromFallback;
   return {
-    id: str(v.id, fallback.id),
-    title: str(v.title, fallback.title),
-    subtitle: str(v.subtitle, fallback.subtitle),
-    src: str(v.src, fallback.src),
+    id,
+    title,
+    subtitle,
+    src,
     span: portfolioSpan(v.span, fallback.span),
   };
 }
@@ -277,35 +285,35 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
         id: "ozone",
         title: "Ozone Ltd",
         subtitle: "Identity system · high-contrast product storytelling",
-        src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
+        src: "https://images.unsplash.com/photo-1541701494587-cebafcdbc6fb",
         span: "tall",
       },
       {
         id: "pulse-launch",
         title: "Pulse — Launch narrative",
         subtitle: "Campaign architecture · motion-ready key art",
-        src: "https://images.unsplash.com/photo-1518005055574-5f84337a6701?auto=format&fit=crop&w=1200&q=80",
+        src: "https://images.unsplash.com/photo-1486325212027-8081e485278e",
         span: "default",
       },
       {
         id: "pulse-suite",
         title: "Pulse — Product suite",
         subtitle: "UI rhythm · cinematic stills for paid social",
-        src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+        src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
         span: "wide",
       },
       {
         id: "sds-web",
         title: "Soft Desk — Web presence",
         subtitle: "Lead-gen landing · executive typography",
-        src: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&w=1200&q=80",
+        src: "https://images.unsplash.com/photo-1497366216548-37526070297c",
         span: "default",
       },
       {
         id: "peace-inst",
         title: "Peace Institute — Trust & academy",
         subtitle: "Foundation + academy admissions · parent-student journeys",
-        src: "https://images.unsplash.com/photo-1511818966892-d7d67189bc04?auto=format&fit=crop&w=1200&q=80",
+        src: "https://images.unsplash.com/photo-1487958449943-2429e8be8627",
         span: "default",
       },
     ],
