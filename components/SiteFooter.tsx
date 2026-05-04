@@ -19,7 +19,7 @@ const quickLinks = [
 
 const iconLinks = [
   {
-    href: "https://www.linkedin.com/in/sohaib-mehmood/",
+    href: "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
     label: "LinkedIn",
     Icon: IconLinkedIn,
   },

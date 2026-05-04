@@ -100,7 +100,7 @@ export default function RootLayout({
             sameAs: [
               "https://softdesksolution.com",
               "https://peace.org.pk",
-              "https://www.linkedin.com/in/sohaib-mehmood/",
+              "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
             ],
           })}
         </Script>
