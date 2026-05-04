@@ -18,8 +18,8 @@ const services = [
   {
     title: "Education and community funnels",
     description:
-      "Digital experiences for academies, founders, and programs that depend on trust, clarity, and continuity.",
-    detail: "Admissions pages, nurture flows, and community touchpoints.",
+      "Digital journeys for Islamic trust foundations, in-house academies, and community programs that need trust, clarity, and continuity.",
+    detail: "Admissions, nurture flows, and parent–student touchpoints.",
   },
 ];
 

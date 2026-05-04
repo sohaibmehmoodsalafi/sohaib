@@ -24,23 +24,16 @@ export function SiteHeader() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/45 to-transparent animate-gold-line"
         aria-hidden
       />
-      <div className="mx-auto flex h-[5rem] max-w-6xl items-center justify-between gap-5 px-4 sm:h-[5.25rem] sm:px-8">
+      <div className="mx-auto flex min-h-[4.75rem] max-w-6xl items-center justify-between gap-4 px-4 py-2 sm:min-h-[5.5rem] sm:px-8 sm:py-2.5">
         <Link
           href="#top"
-          className="group flex items-center gap-3 outline-none ring-gold/30 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          className="group flex shrink-0 items-center outline-none ring-gold/30 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+          aria-label="Sohaib Mehmood — home"
         >
-          <BrandLogo className="transition duration-500 group-hover:drop-shadow-[0_0_14px_rgba(198,163,90,0.4)]" priority />
-          <span className="hidden flex-col leading-none sm:flex">
-            <span className="font-heading text-[11px] font-bold uppercase tracking-[0.22em] text-foreground">
-              Sohaib Mehmood
-            </span>
-            <span className="mt-1 text-[10px] uppercase tracking-[0.28em] text-gold/80">
-              Digital growth &amp; impact
-            </span>
-          </span>
+          <BrandLogo className="transition duration-500 group-hover:drop-shadow-[0_0_16px_rgba(198,163,90,0.45)]" priority />
         </Link>
         <nav
-          className="flex items-center gap-0.5 sm:gap-1"
+          className="flex flex-wrap items-center justify-end gap-x-1.5 gap-y-1 sm:gap-x-2"
           aria-label="Primary"
         >
           {links.map((l) => (

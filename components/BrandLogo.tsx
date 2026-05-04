@@ -9,7 +9,7 @@ export function BrandLogo({
 }) {
   return (
     <span
-      className={`relative inline-block h-12 w-[180px] sm:h-14 sm:w-[228px] ${className}`}
+      className={`relative inline-block h-[3.25rem] w-[220px] sm:h-[4rem] sm:w-[280px] md:h-[4.25rem] md:w-[300px] ${className}`}
     >
       <Image
         src="/sohaib-logo.png"
@@ -17,7 +17,7 @@ export function BrandLogo({
         fill
         priority={priority}
         className="object-contain object-left"
-        sizes="(max-width:640px) 180px, 228px"
+        sizes="(max-width:640px) 220px, 300px"
       />
     </span>
   );

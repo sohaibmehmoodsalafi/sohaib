@@ -34,8 +34,8 @@ const pieces: Piece[] = [
     src: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Peace Institute — Digital admissions",
-    subtitle: "Trust-first funnels for parents & students",
+    title: "Peace Institute — Trust & academy",
+    subtitle: "Foundation + academy admissions · parent-student journeys",
     src: "https://images.unsplash.com/photo-1511818966892-d7d67189bc04?auto=format&fit=crop&w=1200&q=80",
   },
 ];

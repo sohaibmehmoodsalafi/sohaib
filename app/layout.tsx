@@ -25,11 +25,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth",
   description:
-    "Bridging Deen and digital: Soft Desk Solution for B2B lead generation and premium design; Peace Institute for Quran teaching, social impact, and Shariah-conscious digital skills for youth.",
+    "Bridging Deen and digital: Soft Desk Solution for B2B lead generation and premium design; Peace Institute — an Islamic trust foundation with an academy for Quran teaching, tarbiyah, and Shariah-conscious digital skills.",
   keywords: [
     "Sohaib Mehmood",
     "Soft Desk Solution",
     "Peace Institute",
+    "Islamic trust foundation",
+    "Islamic academy",
     "Islamic marketing",
     "ethical growth",
     "lead generation",
@@ -45,14 +47,14 @@ export const metadata: Metadata = {
     title:
       "Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth",
     description:
-      "Bridging Deen and digital: ventures in B2B growth and faith-aligned social impact.",
+      "B2B growth (Soft Desk) and Islamic trust + academy work (Peace Institute).",
   },
   twitter: {
     card: "summary_large_image",
     title:
       "Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth",
     description:
-      "Bridging Deen and digital: ventures in B2B growth and faith-aligned social impact.",
+      "B2B growth (Soft Desk) and Islamic trust + academy impact (Peace Institute).",
   },
   robots: {
     index: true,

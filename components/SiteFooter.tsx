@@ -30,7 +30,7 @@ const iconLinks = [
   },
   {
     href: "https://peace.org.pk",
-    label: "Peace Institute website",
+    label: "Peace Institute — Islamic trust & academy",
     Icon: IconBookOpen,
   },
 ] as const;

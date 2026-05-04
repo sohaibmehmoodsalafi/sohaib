@@ -105,22 +105,27 @@ export function Ventures() {
               Peace Institute
             </h3>
             <p className="mt-4 text-sm font-light leading-relaxed text-muted">
-              Social impact rooted in the Book: structured Quran teaching,
-              tarbiyah-forward environments, and digital skills taught within
-              Shariah-conscious guardrails.
+              An{" "}
+              <span className="text-foreground/90">
+                Islamic trust foundation
+              </span>{" "}
+              with a dedicated{" "}
+              <span className="text-foreground/90">academy inside</span> —
+              structured Quran teaching and tarbiyah in one institution, plus
+              Shariah-conscious digital skills for youth and families.
             </p>
             <ul className="mt-6 space-y-2 text-sm font-light text-muted">
               <li className="flex gap-2">
                 <span className="text-gold/50">—</span>
-                Quran literacy &amp; retention pathways
+                Academy programs under the trust umbrella
               </li>
               <li className="flex gap-2">
                 <span className="text-gold/50">—</span>
-                Ethical, skills-based youth programming
+                Quran literacy, retention &amp; character-led learning
               </li>
               <li className="flex gap-2">
                 <span className="text-gold/50">—</span>
-                Community-first digital outreach
+                Community impact &amp; faith-aligned digital outreach
               </li>
             </ul>
             <Link
