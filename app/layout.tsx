@@ -3,6 +3,7 @@ import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { FloatingWhatsapp } from "@/components/FloatingWhatsapp";
+import { SiteContentProvider } from "@/components/SiteContentProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -108,6 +109,7 @@ export default function RootLayout({
           Skip to main content
         </a>
         <FloatingWhatsapp />
+        <SiteContentProvider>{children}</SiteContentProvider>
         <Script
           id="json-ld-person"
           type="application/ld+json"
@@ -138,7 +140,6 @@ export default function RootLayout({
             ],
           })}
         </Script>
-        {children}
       </body>
     </html>
   );

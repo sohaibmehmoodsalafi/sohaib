@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 import { HeroBackground } from "@/components/HeroBackground";
+import { useSiteContent } from "@/components/SiteContentProvider";
 import { PORTRAIT_FALLBACK, PORTRAIT_LOCAL } from "@/lib/portrait";
 
 const fadeUp = {
@@ -19,7 +20,29 @@ const fadeUp = {
   }),
 };
 
+function SubtitleWithHighlight({
+  text,
+  highlight,
+}: {
+  text: string;
+  highlight: string;
+}) {
+  if (!highlight.trim() || !text.includes(highlight)) {
+    return <>{text}</>;
+  }
+  const parts = text.split(highlight);
+  return (
+    <>
+      {parts[0]}
+      <span className="font-medium text-gold-bright">{highlight}</span>
+      {parts.slice(1).join(highlight)}
+    </>
+  );
+}
+
 export function Hero() {
+  const { content } = useSiteContent();
+  const { hero } = content;
   const [portraitSrc, setPortraitSrc] = useState(PORTRAIT_LOCAL);
 
   return (
@@ -39,7 +62,7 @@ export function Hero() {
               animate="visible"
               className="mb-3 font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold sm:mb-4 sm:text-xs"
             >
-              Founder · Growth · Impact
+              {hero.kicker}
             </motion.p>
             <motion.h1
               custom={1}
@@ -48,7 +71,7 @@ export function Hero() {
               animate="visible"
               className="max-w-[100%] bg-gradient-to-br from-white via-white to-gold-bright/80 bg-clip-text font-heading text-[1.65rem] font-extrabold leading-[1.1] tracking-tight text-transparent sm:text-4xl md:text-5xl lg:text-[3.1rem] lg:leading-[1.05]"
             >
-              Sohaib Mehmood — Architect of Digital Ecosystems & Ethical Growth.
+              {hero.headline}
             </motion.h1>
             <motion.p
               custom={2}
@@ -57,11 +80,10 @@ export function Hero() {
               animate="visible"
               className="mt-5 max-w-2xl text-[0.95rem] font-light leading-relaxed text-muted sm:mt-6 sm:text-lg"
             >
-              I build bridges between{" "}
-              <span className="font-medium text-gold-bright">Deen and digital</span>:
-              systems that respect sacred values while delivering measurable
-              outcomes for businesses, academies, and the next generation
-              entering the workforce.
+              <SubtitleWithHighlight
+                text={hero.subtitle}
+                highlight={hero.subtitleHighlight}
+              />
             </motion.p>
             <motion.div
               custom={3}
@@ -71,16 +93,16 @@ export function Hero() {
               className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4"
             >
               <a
-                href="#ventures"
+                href={hero.primaryCtaHref}
                 className="inline-flex w-full min-h-[48px] items-center justify-center bg-gradient-to-r from-[#f3e6c8] via-gold to-[#8a6f35] px-6 py-3.5 font-heading text-[11px] font-bold uppercase tracking-[0.18em] text-black shadow-[0_0_50px_-10px_rgba(232,213,163,0.55)] transition hover:brightness-110 sm:w-auto sm:px-7 sm:text-xs sm:tracking-[0.2em]"
               >
-                Explore ventures
+                {hero.primaryCtaLabel}
               </a>
               <a
-                href="#work"
+                href={hero.secondaryCtaHref}
                 className="inline-flex w-full min-h-[48px] items-center justify-center border border-gold/45 bg-black/40 px-6 py-3.5 font-heading text-[11px] font-bold uppercase tracking-[0.18em] text-gold-bright backdrop-blur-sm transition hover:border-gold/70 hover:bg-gold/10 sm:w-auto sm:px-7 sm:text-xs sm:tracking-[0.2em]"
               >
-                Selected work
+                {hero.secondaryCtaLabel}
               </a>
             </motion.div>
           </div>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useSiteContent } from "@/components/SiteContentProvider";
 
 const container = {
   hidden: { opacity: 0 },
@@ -21,6 +22,9 @@ const item = {
 };
 
 export function Ventures() {
+  const { content } = useSiteContent();
+  const v = content.ventures;
+
   return (
     <section
       id="ventures"
@@ -35,14 +39,13 @@ export function Ventures() {
           className="max-w-2xl"
         >
           <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold">
-            Dual ventures
+            {v.kicker}
           </p>
           <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            One mission. Two expressions.
+            {v.title}
           </h2>
           <p className="mt-4 text-sm font-light leading-relaxed text-muted sm:text-base">
-            Commercial excellence funds purpose-led education — so growth in
-            dunya never comes at the cost of akhirah-aligned practice.
+            {v.intro}
           </p>
         </motion.div>
 
@@ -53,90 +56,46 @@ export function Ventures() {
           viewport={{ once: true, margin: "-60px" }}
           className="mt-12 grid gap-6 md:grid-cols-2"
         >
-          <motion.article
-            variants={item}
-            className="group relative overflow-hidden border border-white/[0.08] bg-bg/90 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-sm transition duration-500 hover:border-gold/35 hover:shadow-[0_0_60px_-20px_rgba(198,163,90,0.18)] sm:p-10"
-          >
-            <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/[0.06] blur-3xl transition group-hover:bg-gold/[0.1]" />
-            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-gold/80">
-              Venture 01
-            </p>
-            <h3 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-              Soft Desk Solution
-            </h3>
-            <p className="mt-4 text-sm font-light leading-relaxed text-muted">
-              B2B growth with restraint: high-intent lead systems, conversion
-              architecture, and premium digital experiences for brands that
-              refuse to look generic.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm font-light text-muted">
-              <li className="flex gap-2">
-                <span className="text-gold/50">—</span>
-                Pipeline-focused lead generation
-              </li>
-              <li className="flex gap-2">
-                <span className="text-gold/50">—</span>
-                Executive-grade web &amp; brand design
-              </li>
-              <li className="flex gap-2">
-                <span className="text-gold/50">—</span>
-                Messaging that closes without hype
-              </li>
-            </ul>
-            <Link
-              href="https://softdesksolution.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-bright underline-offset-4 transition hover:text-gold hover:underline"
+          {v.cards.map((card, index) => (
+            <motion.article
+              key={card.id}
+              variants={item}
+              className="group relative overflow-hidden border border-white/[0.08] bg-bg/90 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-sm transition duration-500 hover:border-gold/35 hover:shadow-[0_0_60px_-20px_rgba(198,163,90,0.18)] sm:p-10"
             >
-              softdesksolution.com
-            </Link>
-          </motion.article>
-
-          <motion.article
-            variants={item}
-            className="group relative overflow-hidden border border-white/[0.08] bg-bg/90 p-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02)] backdrop-blur-sm transition duration-500 hover:border-gold/35 hover:shadow-[0_0_60px_-20px_rgba(198,163,90,0.18)] sm:p-10"
-          >
-            <div className="pointer-events-none absolute -left-12 bottom-0 h-40 w-40 rounded-full bg-gold/[0.05] blur-3xl transition group-hover:bg-gold/[0.09]" />
-            <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-gold/80">
-              Venture 02
-            </p>
-            <h3 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
-              Peace Institute
-            </h3>
-            <p className="mt-4 text-sm font-light leading-relaxed text-muted">
-              An{" "}
-              <span className="text-foreground/90">
-                Islamic trust foundation
-              </span>{" "}
-              with a dedicated{" "}
-              <span className="text-foreground/90">academy inside</span> —
-              structured Quran teaching and tarbiyah in one institution, plus
-              Shariah-conscious digital skills for youth and families.
-            </p>
-            <ul className="mt-6 space-y-2 text-sm font-light text-muted">
-              <li className="flex gap-2">
-                <span className="text-gold/50">—</span>
-                Academy programs under the trust umbrella
-              </li>
-              <li className="flex gap-2">
-                <span className="text-gold/50">—</span>
-                Quran literacy, retention &amp; character-led learning
-              </li>
-              <li className="flex gap-2">
-                <span className="text-gold/50">—</span>
-                Community impact &amp; faith-aligned digital outreach
-              </li>
-            </ul>
-            <Link
-              href="https://peace.org.pk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-bright underline-offset-4 transition hover:text-gold hover:underline"
-            >
-              peace.org.pk
-            </Link>
-          </motion.article>
+              <div
+                className={
+                  index === 0
+                    ? "pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-gold/[0.06] blur-3xl transition group-hover:bg-gold/[0.1]"
+                    : "pointer-events-none absolute -left-12 bottom-0 h-40 w-40 rounded-full bg-gold/[0.05] blur-3xl transition group-hover:bg-gold/[0.09]"
+                }
+              />
+              <p className="font-heading text-[10px] font-bold uppercase tracking-[0.3em] text-gold/80">
+                {card.badge}
+              </p>
+              <h3 className="mt-4 font-heading text-xl font-bold tracking-tight text-foreground sm:text-2xl">
+                {card.title}
+              </h3>
+              <p className="mt-4 text-sm font-light leading-relaxed text-muted">
+                {card.body}
+              </p>
+              <ul className="mt-6 space-y-2 text-sm font-light text-muted">
+                {card.bullets.map((b, bi) => (
+                  <li key={`${card.id}-b-${bi}`} className="flex gap-2">
+                    <span className="text-gold/50">—</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={card.ctaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex font-heading text-xs font-bold uppercase tracking-[0.2em] text-gold-bright underline-offset-4 transition hover:text-gold hover:underline"
+              >
+                {card.ctaLabel}
+              </Link>
+            </motion.article>
+          ))}
         </motion.div>
       </div>
     </section>

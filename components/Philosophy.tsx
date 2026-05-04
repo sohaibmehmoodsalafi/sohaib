@@ -1,8 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useSiteContent } from "@/components/SiteContentProvider";
+
+function BodyWithHighlight({
+  text,
+  highlight,
+}: {
+  text: string;
+  highlight: string | undefined;
+}) {
+  const h = highlight?.trim();
+  if (!h || !text.includes(h)) {
+    return <>{text}</>;
+  }
+  const parts = text.split(h);
+  return (
+    <>
+      {parts[0]}
+      <span className="font-medium text-gold-bright">{h}</span>
+      {parts.slice(1).join(h)}
+    </>
+  );
+}
 
 export function Philosophy() {
+  const { content } = useSiteContent();
+  const p = content.philosophy;
   return (
     <section
       id="philosophy"
@@ -17,10 +41,10 @@ export function Philosophy() {
           className="lg:col-span-5"
         >
           <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold">
-            About / Philosophy
+            {p.kicker}
           </p>
           <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Grounded in academies. Built for scale.
+            {p.title}
           </h2>
         </motion.div>
         <motion.div
@@ -34,30 +58,23 @@ export function Philosophy() {
           }}
           className="space-y-6 text-sm font-light leading-relaxed text-muted sm:text-base lg:col-span-7"
         >
-          <p>
-            For the past two years I have lived inside{" "}
-            <span className="font-medium text-gold-bright">Quran academy marketing</span>
-            — not as a distant consultant, but as someone shaping enrollment
-            narratives, parent trust, and digital touchpoints that carry sacred
-            responsibility. That work taught me a non-negotiable lesson: impact
-            and aesthetics must align with adab, transparency, and long-term
-            barakah over vanity metrics.
-          </p>
-          <p>
-            My vision is straightforward:{" "}
-            <span className="font-medium text-gold-bright">
-              dignified jobs for youth
-            </span>{" "}
-            where technical fluency (automation, creative production, growth
-            systems) is taught alongside adab, financial ethics, and clarity of
-            intention. I want young Muslims to earn with skill — without
-            compromising the values that define who we are online and offline.
-          </p>
-          <p className="border-l border-gold/35 pl-6 text-foreground/90">
-            If the digital economy is the new marketplace of ideas, then our
-            presence there should be as disciplined as our presence in the
-            masjid: composed, useful, and uncompromising on the red lines.
-          </p>
+          {p.blocks.map((block, i) =>
+            block.variant === "quote" ? (
+              <p
+                key={`ph-${i}`}
+                className="border-l border-gold/35 pl-6 text-foreground/90"
+              >
+                {block.text}
+              </p>
+            ) : (
+              <p key={`ph-${i}`}>
+                <BodyWithHighlight
+                  text={block.text}
+                  highlight={block.highlight}
+                />
+              </p>
+            ),
+          )}
         </motion.div>
       </div>
     </section>

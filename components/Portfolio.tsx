@@ -1,46 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
-
-type Piece = {
-  title: string;
-  subtitle: string;
-  src: string;
-  span?: "tall" | "wide";
-};
-
-const pieces: Piece[] = [
-  {
-    title: "Ozone Ltd",
-    subtitle: "Identity system · high-contrast product storytelling",
-    src: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80",
-    span: "tall",
-  },
-  {
-    title: "Pulse — Launch narrative",
-    subtitle: "Campaign architecture · motion-ready key art",
-    src: "https://images.unsplash.com/photo-1518005055574-5f84337a6701?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Pulse — Product suite",
-    subtitle: "UI rhythm · cinematic stills for paid social",
-    src: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
-    span: "wide",
-  },
-  {
-    title: "Soft Desk — Web presence",
-    subtitle: "Lead-gen landing · executive typography",
-    src: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Peace Institute — Trust & academy",
-    subtitle: "Foundation + academy admissions · parent-student journeys",
-    src: "https://images.unsplash.com/photo-1511818966892-d7d67189bc04?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+import { useSiteContent } from "@/components/SiteContentProvider";
 
 export function Portfolio() {
+  const { content } = useSiteContent();
+  const pf = content.portfolio;
+
   return (
     <section
       id="work"
@@ -55,21 +21,18 @@ export function Portfolio() {
           className="max-w-2xl"
         >
           <p className="font-heading text-[10px] font-bold uppercase tracking-[0.35em] text-gold">
-            Portfolio
+            {pf.kicker}
           </p>
           <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            Cinematic stills, disciplined grids.
+            {pf.title}
           </h2>
-          <p className="mt-4 text-sm font-light text-muted sm:text-base">
-            A sampling of brand and digital work — lighting-forward, typographic,
-            and built for conversion in competitive categories.
-          </p>
+          <p className="mt-4 text-sm font-light text-muted sm:text-base">{pf.intro}</p>
         </motion.div>
 
         <div className="mt-12 columns-1 gap-4 sm:columns-2 sm:gap-5 lg:columns-3">
-          {pieces.map((p, i) => (
+          {pf.pieces.map((p, i) => (
             <motion.figure
-              key={p.title}
+              key={p.id}
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -91,13 +54,13 @@ export function Portfolio() {
                       : "aspect-[4/3]"
                 }`}
               >
-                <Image
-                  src={p.src}
-                  alt=""
-                  fill
-                  className="object-cover contrast-[1.05] saturate-[0.85]"
-                  sizes="(max-width:640px)100vw,(max-width:1024px)50vw,33vw"
-                />
+                {p.src ? (
+                  <img
+                    src={p.src}
+                    alt={p.title}
+                    className="absolute inset-0 h-full w-full object-cover contrast-[1.05] saturate-[0.85]"
+                  />
+                ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-bg via-bg/20 to-transparent opacity-90" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/[0.06] transition group-hover/card:ring-gold/20" />
               </div>
