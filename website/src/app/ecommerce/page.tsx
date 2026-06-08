@@ -17,11 +17,28 @@ export const metadata: Metadata = {
     "digital marketing for e-commerce",
     "Sohaib Mehmood",
   ],
+  alternates: {
+    canonical: "https://meetsohaib.com/ecommerce",
+  },
   openGraph: {
     title: "Scale Your E-commerce Store to 5× ROAS | Digital Marketing Expert",
     description:
       "Full-funnel Meta Ads & Google Ads campaigns — audience research, scroll-stopping creatives, and conversion-optimized landing pages. 5.6× average ROAS.",
     url: "https://meetsohaib.com/ecommerce",
+    images: [
+      {
+        url: "https://meetsohaib.com/images/sohaib-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Scale Your E-commerce Store to 5× ROAS — Sohaib Mehmood",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Scale Your E-commerce Store to 5× ROAS",
+    description: "Full-funnel Meta & Google Ads. 500+ SKU stores managed, 5.6× ROAS.",
+    images: ["https://meetsohaib.com/images/sohaib-og.jpg"],
   },
 };
 

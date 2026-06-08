@@ -88,11 +88,15 @@ img { max-width: 100%; display: block; }
 }
 .whatsapp-pulse { animation: whatsappPulse 2.5s infinite; }
 
-/* ── Fade-in on scroll ── */
+/* ── Fade-in: visible by default, JS enhances with scroll trigger ── */
 .fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in-up.will-animate {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 .fade-in-up.visible {
   opacity: 1;
@@ -102,6 +106,14 @@ img { max-width: 100%; display: block; }
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+
+/* ── Hero entrance (CSS-only, no JS dependency) ── */
+.hero-fade { opacity: 0; animation: fadeUp .8s ease forwards; }
+.hero-fade-d1 { animation-delay: .1s; }
+.hero-fade-d2 { animation-delay: .2s; }
+.hero-fade-d3 { animation-delay: .35s; }
+.hero-fade-d4 { animation-delay: .5s; }
+.hero-fade-d5 { animation-delay: .65s; }
 
 /* ── Cursor hide on touch ── */
 @media (hover: none) { .cursor-dot { display: none !important; } }

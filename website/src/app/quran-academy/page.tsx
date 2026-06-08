@@ -16,11 +16,28 @@ export const metadata: Metadata = {
     "digital marketing for Quran Academy",
     "Sohaib Mehmood",
   ],
+  alternates: {
+    canonical: "https://meetsohaib.com/quran-academy",
+  },
   openGraph: {
     title: "Get 80+ Students/Month for Your Quran Academy | Digital Marketing Expert",
     description:
       "Targeted Meta Ads & Google Ads in USA, UK & Canada reaching parents who want online Quran classes. 85+ students/month. 12.6% conversion rate.",
     url: "https://meetsohaib.com/quran-academy",
+    images: [
+      {
+        url: "https://meetsohaib.com/images/sohaib-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Get 80+ Students/Month for Your Quran Academy — Sohaib Mehmood",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Get 80+ Students/Month for Your Quran Academy",
+    description: "Targeted Meta Ads in USA, UK & Canada. 85+ students/month, PKR 352 cost per student.",
+    images: ["https://meetsohaib.com/images/sohaib-og.jpg"],
   },
 };
 

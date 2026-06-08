@@ -14,7 +14,7 @@ export default function ProblemSection() {
     <section className="py-20 px-6" data-animate>
       <div className="max-w-[1140px] mx-auto">
         <span className="section-label">The Problem</span>
-        <h2 className="font-playfair text-[26px] md:text-[36px] leading-[1.12] tracking-[-0.01em] mb-10 max-w-2xl">
+        <h2 className="font-bebas text-[26px] md:text-[36px] leading-[1.12] tracking-[-0.01em] mb-10 max-w-2xl">
           Most businesses waste money on ads because nobody set up the system right.
         </h2>
         <div className="grid md:grid-cols-2 gap-x-12 gap-y-0 mb-10">

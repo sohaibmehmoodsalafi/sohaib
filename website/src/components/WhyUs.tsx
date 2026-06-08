@@ -12,7 +12,7 @@ export default function WhyUs() {
       <div className="max-w-[900px] mx-auto">
         <div className="text-center mb-12">
           <span className="section-label">Comparison</span>
-          <h2 className="font-playfair text-[26px] md:text-[34px] leading-[1.12] tracking-[-0.01em]">
+          <h2 className="font-bebas text-[26px] md:text-[34px] leading-[1.12] tracking-[-0.01em]">
             Agency vs Our System
           </h2>
         </div>

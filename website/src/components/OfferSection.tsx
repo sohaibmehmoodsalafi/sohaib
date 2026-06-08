@@ -11,7 +11,7 @@ export default function OfferSection() {
       <div className="max-w-[700px] mx-auto">
         <div className="rounded-[2px] p-8 md:p-10" style={{ background: "#111111", border: "0.5px solid rgba(255,255,255,0.06)" }}>
           <span className="section-label">Free Audit</span>
-          <h2 className="font-playfair text-[24px] md:text-[30px] leading-[1.15] tracking-[-0.01em] mb-6">
+          <h2 className="font-bebas text-[24px] md:text-[30px] leading-[1.15] tracking-[-0.01em] mb-6">
             Start With a Free Growth Audit
           </h2>
           <div className="space-y-3 mb-8">

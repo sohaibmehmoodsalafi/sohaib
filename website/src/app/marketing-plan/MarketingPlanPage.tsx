@@ -270,7 +270,7 @@ function SectionLabel({ children }: { children: string }) {
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="font-playfair text-[28px] md:text-[38px] leading-[1.12] text-[#f0ede6] mb-3">{children}</h2>;
+  return <h2 className="font-bebas text-[28px] md:text-[38px] leading-[1.12] text-[#f0ede6] mb-3">{children}</h2>;
 }
 
 function Card({ children, gold }: { children: React.ReactNode; gold?: boolean }) {
@@ -340,7 +340,7 @@ export default function MarketingPlanPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#c8a96e] animate-pulse" />
             <span className="text-[11px] text-[#888]">Full Marketing Strategy 2026</span>
           </div>
-          <h1 className="font-playfair text-[32px] md:text-[52px] leading-[1.1] mb-5">
+          <h1 className="font-bebas text-[32px] md:text-[52px] leading-[1.1] mb-5">
             Complete Growth Blueprint for{" "}
             <span className="text-[#c8a96e]">Meet Sohaib</span>
           </h1>
@@ -356,7 +356,7 @@ export default function MarketingPlanPage() {
               { val: "30", label: "Day Sprint" },
             ].map(s => (
               <div key={s.label} className="bg-[#111] rounded-xl p-4 text-center" style={{ border: "0.5px solid #1e1e1e" }}>
-                <span className="font-playfair text-[28px] text-[#c8a96e]">{s.val}</span>
+                <span className="font-bebas text-[28px] text-[#c8a96e]">{s.val}</span>
                 <p className="text-[10px] text-[#666] mt-1 uppercase tracking-wider">{s.label}</p>
               </div>
             ))}
@@ -376,7 +376,7 @@ export default function MarketingPlanPage() {
           {/* USP */}
           <Card gold>
             <p className="text-[10px] uppercase tracking-[0.15em] text-[#c8a96e] mb-3">Core USP</p>
-            <p className="font-playfair text-[22px] md:text-[28px] text-[#f0ede6] leading-snug">
+            <p className="font-bebas text-[22px] md:text-[28px] text-[#f0ede6] leading-snug">
               &ldquo;Your Ads, Creatives & Landing Pages &mdash; One Expert. One System. Real Growth.&rdquo;
             </p>
           </Card>
@@ -420,7 +420,7 @@ export default function MarketingPlanPage() {
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] bg-[#c8a96e] text-[#0a0a0a] px-3 py-0.5 rounded font-semibold uppercase tracking-wider">Primary</span>
                 )}
                 <Badge color={a.tag === "Primary" ? "gold" : a.tag === "Secondary" ? "green" : undefined}>{a.tag}</Badge>
-                <h3 className="text-[16px] font-playfair text-[#f0ede6] mt-3 mb-4">{a.title}</h3>
+                <h3 className="text-[16px] font-bebas text-[#f0ede6] mt-3 mb-4">{a.title}</h3>
                 <div className="space-y-2 mb-4 flex-1">
                   {a.details.map(d => (
                     <div key={d.label} className="flex gap-2">
@@ -556,7 +556,7 @@ export default function MarketingPlanPage() {
                   </div>
                   <div className="flex-1">
                     <div className="flex flex-wrap items-center gap-3 mb-2">
-                      <h3 className="text-[18px] font-playfair text-[#f0ede6]">{stage.name}</h3>
+                      <h3 className="text-[18px] font-bebas text-[#f0ede6]">{stage.name}</h3>
                       <Badge>{stage.label}</Badge>
                     </div>
                     <p className="text-[13px] text-[#777] mb-4">{stage.goal}</p>
@@ -663,7 +663,7 @@ export default function MarketingPlanPage() {
           {/* Total */}
           <div className="bg-[#111] rounded-xl p-5 flex items-center justify-between" style={{ border: "1px solid #c8a96e44" }}>
             <span className="text-[16px] font-medium text-[#f0ede6]">Total</span>
-            <span className="font-playfair text-[24px] text-[#c8a96e]">PKR 140,000</span>
+            <span className="font-bebas text-[24px] text-[#c8a96e]">PKR 140,000</span>
           </div>
 
           <div className="mt-6">
@@ -687,7 +687,7 @@ export default function MarketingPlanPage() {
               <div key={w.week} className="bg-[#111] rounded-xl p-6" style={{ border: "0.5px solid #1e1e1e" }}>
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <h3 className="text-[16px] font-playfair text-[#f0ede6]">{w.week}</h3>
+                    <h3 className="text-[16px] font-bebas text-[#f0ede6]">{w.week}</h3>
                     <p className="text-[12px] text-[#c8a96e]">{w.title}</p>
                   </div>
                   <span className="text-[11px] text-[#555] bg-[#0a0a0a] px-3 py-1 rounded" style={{ border: "0.5px solid #1a1a1a" }}>
@@ -711,7 +711,7 @@ export default function MarketingPlanPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 mb-10">
             {targets.map(t => (
               <div key={t.metric} className="bg-[#111] rounded-xl p-4 text-center" style={{ border: "0.5px solid #1e1e1e" }}>
-                <span className="font-playfair text-[24px] text-[#c8a96e] block mb-1">{t.target}</span>
+                <span className="font-bebas text-[24px] text-[#c8a96e] block mb-1">{t.target}</span>
                 <p className="text-[10px] text-[#666] uppercase tracking-wider">{t.metric}</p>
               </div>
             ))}
@@ -724,7 +724,7 @@ export default function MarketingPlanPage() {
         <div className="max-w-3xl mx-auto text-center">
           <Card gold>
             <p className="text-[10px] uppercase tracking-[0.15em] text-[#c8a96e] mb-4">The Bottom Line</p>
-            <p className="font-playfair text-[20px] md:text-[26px] text-[#f0ede6] leading-snug mb-4">
+            <p className="font-bebas text-[20px] md:text-[26px] text-[#f0ede6] leading-snug mb-4">
               The #1 priority for Month 1 is <span className="text-[#c8a96e]">PROOF</span>.
             </p>
             <p className="text-[14px] text-[#888] leading-[1.8] mb-6">
@@ -735,7 +735,7 @@ export default function MarketingPlanPage() {
                 &ldquo;A single case study showing PKR 1,000 ad spend &rarr; PKR 56,000 in sales is worth more than PKR 100,000 in ads.&rdquo;
               </p>
             </div>
-            <p className="font-playfair text-[18px] text-[#f0ede6] italic">
+            <p className="font-bebas text-[18px] text-[#f0ede6] italic">
               Your competitive advantage is that you ARE the product.<br />
               <span className="text-[#c8a96e]">Agencies can&apos;t replicate one-person consistency. Lean into that.</span>
             </p>

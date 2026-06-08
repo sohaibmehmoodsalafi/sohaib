@@ -11,7 +11,7 @@ export default function HowItWorks() {
       <div className="max-w-[1140px] mx-auto">
         <div className="text-center mb-14">
           <span className="section-label">Onboarding</span>
-          <h2 className="font-playfair text-[26px] md:text-[34px] leading-[1.12] tracking-[-0.01em]">
+          <h2 className="font-bebas text-[26px] md:text-[34px] leading-[1.12] tracking-[-0.01em]">
             From zero to clients in 4 steps
           </h2>
         </div>

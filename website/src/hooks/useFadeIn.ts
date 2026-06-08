@@ -7,6 +7,9 @@ export function useFadeIn(threshold = 0.12) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    // Step 1: Add base class + hide (only when JS is running)
+    el.classList.add("fade-in-up", "will-animate");
+    // Step 2: Reveal on scroll
     const obs = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
@@ -16,7 +19,6 @@ export function useFadeIn(threshold = 0.12) {
       },
       { threshold }
     );
-    el.classList.add("fade-in-up");
     obs.observe(el);
     return () => obs.disconnect();
   }, [threshold]);

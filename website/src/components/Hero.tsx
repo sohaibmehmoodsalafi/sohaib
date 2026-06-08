@@ -145,11 +145,6 @@ function HeroStat({ num, suf, lbl, last }: { num: string; suf: string; lbl: stri
 
 /* ── Main Hero ── */
 export default function Hero() {
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setLoaded(true), 100);
-    return () => clearTimeout(t);
-  }, []);
 
   const stats = [
     { num: "120", suf: "+", lbl: "Businesses grown" },
@@ -342,10 +337,8 @@ export default function Hero() {
             letterSpacing: ".04em",
             marginBottom: 36,
             backdropFilter: "blur(10px)",
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? "none" : "translateY(-10px)",
-            transition: "all .6s ease",
           }}
+          className="hero-fade hero-fade-d1"
         >
           <span
             style={{
@@ -369,10 +362,8 @@ export default function Hero() {
             letterSpacing: ".01em",
             color: "#f5f0e8",
             marginBottom: 8,
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? "none" : "translateY(30px)",
-            transition: "all .8s ease .1s",
           }}
+          className="hero-fade hero-fade-d2"
         >
           ADS THAT
           <br />
@@ -404,10 +395,8 @@ export default function Hero() {
             maxWidth: 560,
             margin: "24px 0 44px",
             lineHeight: 1.7,
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? "none" : "translateY(20px)",
-            transition: "all .8s ease .25s",
           }}
+          className="hero-fade hero-fade-d3"
         >
           <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>
             Meta Ads, Google Ads, Social Media Marketing
@@ -417,15 +406,12 @@ export default function Hero() {
 
         {/* CTAs */}
         <div
-          className="hero-btns"
+          className="hero-btns hero-fade hero-fade-d4"
           style={{
             display: "flex",
             gap: 14,
             flexWrap: "wrap",
             marginBottom: 72,
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? "none" : "translateY(20px)",
-            transition: "all .8s ease .35s",
           }}
         >
           <a
@@ -495,7 +481,7 @@ export default function Hero() {
 
         {/* Stats */}
         <div
-          className="hero-stats"
+          className="hero-stats hero-fade hero-fade-d5"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4,1fr)",
@@ -506,9 +492,6 @@ export default function Hero() {
             background: "rgba(212,160,23,0.02)",
             backdropFilter: "blur(10px)",
             animation: "borderPulse 4s ease-in-out infinite",
-            opacity: loaded ? 1 : 0,
-            transform: loaded ? "none" : "translateY(20px)",
-            transition: "all .8s ease .5s",
           }}
         >
           {stats.map((s, i) => (

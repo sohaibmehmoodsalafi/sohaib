@@ -4,7 +4,7 @@ export default function ProblemBar() {
       <div className="max-w-4xl mx-auto text-center">
         <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-4">THE REAL PROBLEM</p>
 
-        <h2 className="font-playfair text-[24px] md:text-[30px] leading-snug text-[#f0ede6] mb-4">
+        <h2 className="font-bebas text-[24px] md:text-[30px] leading-snug text-[#f0ede6] mb-4">
           You are hiring 3 different people.
           <br />
           And none of them talk to each other.
