@@ -1,13 +1,11 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://meetsohaib.com/sitemap.xml
-
-# Block dev/build files
-User-agent: *
+Disallow: /admin
 Disallow: /assets/
 Disallow: /_next/
 Disallow: /*.json$
+
+Sitemap: https://meetsohaib.com/sitemap.xml
 
 # Allow all major crawlers
 User-agent: Googlebot
