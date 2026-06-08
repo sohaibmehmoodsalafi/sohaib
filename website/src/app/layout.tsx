@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "ADD_YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "0geIT-NKRqCWCBixhGNsipKj7kJocVBKZlP49IOTWYQ",
   },
   category: "Digital Marketing",
 };
