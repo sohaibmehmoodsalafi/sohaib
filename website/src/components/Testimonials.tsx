@@ -37,12 +37,12 @@ function TestiCard({ init, name, role, text, highlight }: { init: string; name: 
 export default function Testimonials() {
   const ref = useFadeIn();
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} style={{ padding: "120px 4vw" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} className="section-pad" style={{ padding: "120px 4vw" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Reviews
         </div>
-        <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>WHAT CLIENTS<br />ACTUALLY SAY.</h2>
+        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>WHAT CLIENTS<br />ACTUALLY SAY.</h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 500, lineHeight: 1.7, marginBottom: 64 }}>Real clients. Real results. Ask me for references to verify directly.</p>
         <div className="testi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {TESTIMONIALS.map((t, i) => <TestiCard key={i} {...t} />)}
@@ -53,7 +53,7 @@ export default function Testimonials() {
           }}>
             <div style={{ fontSize: 36 }}>⭐</div>
             <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.7 }}>47+ verified clients across Pakistan, UAE, UK and USA. References available on request.</p>
-            <a href="https://wa.me/923363710499" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer"
               style={{ background: "transparent", color: "#f5f0e8", fontWeight: 500, fontSize: 13, padding: "10px 22px", borderRadius: 99, border: "1px solid rgba(255,255,255,.12)", textDecoration: "none", transition: "border-color .2s" }}
               onMouseEnter={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,.3)"}
               onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(255,255,255,.12)"}

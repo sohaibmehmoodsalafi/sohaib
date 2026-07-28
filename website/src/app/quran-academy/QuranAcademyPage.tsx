@@ -106,7 +106,7 @@ export default function QuranAcademyPage() {
           </div>
         </a>
         <a
-          href="https://wa.me/923363710499?text=Hi%20Sohaib!%20I%20run%20a%20Quran%20Academy%20and%20want%20to%20get%20more%20students."
+          href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20run%20a%20Quran%20Academy%20and%20want%20to%20get%20more%20students."
           target="_blank" rel="noopener noreferrer"
           style={{
             background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
@@ -181,7 +181,7 @@ export default function QuranAcademyPage() {
             display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 60,
           }} className="hero-fade hero-fade-d4">
             <a
-              href="https://wa.me/923363710499?text=Hi%20Sohaib!%20I%20run%20a%20Quran%20Academy%20and%20want%20to%20get%20more%20students."
+              href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20run%20a%20Quran%20Academy%20and%20want%20to%20get%20more%20students."
               target="_blank" rel="noopener noreferrer"
               style={{
                 background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15,
@@ -434,7 +434,7 @@ export default function QuranAcademyPage() {
 
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/923363710499?text=Hi%20Sohaib!%20I%20run%20a%20Quran%20Academy%20and%20want%20to%20get%20more%20students."
+              href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20run%20a%20Quran%20Academy%20and%20want%20to%20get%20more%20students."
               target="_blank" rel="noopener noreferrer"
               style={{
                 background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15,

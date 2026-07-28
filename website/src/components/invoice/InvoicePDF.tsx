@@ -21,7 +21,11 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
   const st = statusLabel[invoice.status];
 
   const handlePrint = () => {
+    const prevTitle = document.title;
+    // Browser uses document.title for the print header & default PDF filename
+    document.title = `Invoice ${invoice.invoiceNumber} — Sohaib Mehmood`;
     window.print();
+    setTimeout(() => { document.title = prevTitle; }, 500);
   };
 
   const handleWhatsApp = () => {
@@ -30,9 +34,9 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
       invoice.items.map((i) => `- ${i.description}: ${fmt(i.qty * i.rate, invoice.currency)}`).join("\n") +
       `\n\n*Total: ${fmt(total, invoice.currency)}*\n` +
       `Due: ${new Date(invoice.dueDate).toLocaleDateString()}\n\n` +
-      `Payment: JazzCash/EasyPaisa: 0336-3710499\nBank: Meezan Bank\nAccount: Sohaib Mehmood\n\nThank you!`
+      `Payment Details:\nBank: Allied Bank\nAccount Name: Sohaib Mehmood\nAccount Number: 10940010076669450013\nIBAN: PK42ABPA0010076669450013\nBranch Code: 1094\nJazzCash/EasyPaisa: 03022702808\n\nThank you!`
     );
-    window.open(`https://wa.me/${invoice.client.phone.replace(/[^0-9]/g, "")}?text=${msg}`, "_blank");
+    window.open(`https://wa.me/${((invoice.client.countryCode || "") + invoice.client.phone).replace(/[^0-9]/g, "")}?text=${msg}`, "_blank");
   };
 
   return (
@@ -80,7 +84,7 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
             <div style={{ fontSize: 16, fontWeight: 600 }}>{invoice.client.name}</div>
             {invoice.client.company && <div style={{ fontSize: 13, color: "#666" }}>{invoice.client.company}</div>}
             {invoice.client.email && <div style={{ fontSize: 13, color: "#666" }}>{invoice.client.email}</div>}
-            {invoice.client.phone && <div style={{ fontSize: 13, color: "#666" }}>{invoice.client.phone}</div>}
+            {invoice.client.phone && <div style={{ fontSize: 13, color: "#666" }}>{(invoice.client.countryCode ? invoice.client.countryCode + " " : "") + invoice.client.phone}</div>}
             {invoice.client.address && <div style={{ fontSize: 13, color: "#666", marginTop: 4 }}>{invoice.client.address}</div>}
           </div>
           <div style={{ textAlign: "right" }}>
@@ -153,16 +157,28 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
           </div>
         </div>
 
+        {/* Tax Disclaimer - centered & prominent */}
+        <div style={{ padding: "0 48px 8px" }}>
+          <div style={{
+            textAlign: "center", fontSize: 12, fontWeight: 600, color: "#c0392b", fontStyle: "italic",
+            background: "#fdecea", border: "1px solid #f5c6c0", borderRadius: 8, padding: "12px 16px", lineHeight: 1.5,
+          }}>
+            All prices quoted are exclusive of taxes and statutory duties, if applicable.
+          </div>
+        </div>
+
         {/* Notes & Payment */}
         <div style={{ padding: "24px 48px 40px", background: "#f9f9f9", borderTop: "1px solid #eee" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 32 }}>
             <div>
               <div style={{ fontSize: 10, fontWeight: 700, color: "#999", letterSpacing: ".1em", textTransform: "uppercase", marginBottom: 8 }}>PAYMENT DETAILS</div>
               <div style={{ fontSize: 13, color: "#555", lineHeight: 1.8 }}>
-                <strong>Bank:</strong> Meezan Bank<br />
-                <strong>Account:</strong> Sohaib Mehmood<br />
-                <strong>JazzCash/EasyPaisa:</strong> 0336-3710499<br />
-                <strong>Wise (International):</strong> meetsohaib@gmail.com
+                <strong>Bank:</strong> Allied Bank<br />
+                <strong>Account Name:</strong> Sohaib Mehmood<br />
+                <strong>Account Number:</strong> 10940010076669450013<br />
+                <strong>IBAN:</strong> PK42ABPA0010076669450013<br />
+                <strong>Branch Code:</strong> 1094<br />
+                <strong>JazzCash/EasyPaisa:</strong> 03022702808
               </div>
             </div>
             {invoice.notes && (
@@ -174,7 +190,7 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
           </div>
           <div style={{ textAlign: "center", marginTop: 32, paddingTop: 20, borderTop: "1px solid #ddd" }}>
             <div style={{ fontSize: 12, color: "#999" }}>Thank you for your business!</div>
-            <div style={{ fontSize: 11, color: "#bbb", marginTop: 4 }}>meetsohaib.com &middot; +92 336 3710499 &middot; meetsohaib@gmail.com</div>
+            <div style={{ fontSize: 11, color: "#bbb", marginTop: 4 }}>meetsohaib.com &middot; +92 304 8885206 &middot; sohaib@meetsohaib.com</div>
           </div>
         </div>
       </div>

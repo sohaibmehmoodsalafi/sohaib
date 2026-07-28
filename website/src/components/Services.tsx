@@ -5,19 +5,19 @@ import { useFadeIn } from "@/hooks/useFadeIn";
 
 const CORE_SERVICES = [
   {
-    n: "01", icon: "📢", title: "Meta Ads", subtitle: "Facebook & Instagram",
-    desc: "High-converting campaigns on Facebook & Instagram — audience research, ad creatives, retargeting funnels, and daily optimization. I turn your ad spend into predictable leads and sales.",
+    n: "01", icon: "📢", title: "Meta Ads", subtitle: "Meta Advertising Solutions",
+    desc: "Expert meta advertising solutions for Facebook & Instagram — social media advertising campaigns with audience research, ad creatives, retargeting funnels, and daily optimization. I turn your ad spend into predictable leads.",
     results: ["5.6× Average ROAS", "Retargeting Funnels", "Daily Optimization", "Custom Audiences"],
   },
   {
-    n: "02", icon: "🎯", title: "Google Ads", subtitle: "Search & Display",
-    desc: "Capture high-intent buyers actively searching for your services. Google Search campaigns, Display ads, and remarketing — so your brand shows up when it matters most.",
-    results: ["High-Intent Traffic", "Search Campaigns", "Display & Remarketing", "Conversion Tracking"],
+    n: "02", icon: "🎯", title: "Google Ads", subtitle: "Google Pay Per Click Advertising",
+    desc: "Google Ads optimization and paid search advertising that captures high-intent buyers. Pay per click campaign management with Search ads, Display ads, and remarketing — complete PPC advertising services.",
+    results: ["Google Ads Optimization", "Paid Search Ads", "Display & Remarketing", "Conversion Tracking"],
   },
   {
-    n: "03", icon: "📱", title: "Social Media Marketing", subtitle: "Complete SMM",
-    desc: "Strategic social media presence that builds trust and generates leads organically. Content strategy, reels, stories, engagement — your brand stays active 24/7.",
-    results: ["Content Strategy", "Reels & Stories", "Community Growth", "Engagement Management"],
+    n: "03", icon: "📱", title: "Social Media Marketing", subtitle: "Social Media Advertising Campaign",
+    desc: "Strategic social media advertising campaigns that build trust and generate leads. Digital branding, content strategy, reels, stories, engagement — your brand stays active 24/7.",
+    results: ["Content Strategy", "Reels & Stories", "Community Growth", "Digital Branding"],
   },
 ];
 
@@ -76,17 +76,17 @@ export default function Services() {
   const [funnelHov, setFunnelHov] = useState<number | null>(null);
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="services" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="services" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Header */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />What I do
         </div>
-        <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
+        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
           COMPLETE DIGITAL<br />MARKETING ECOSYSTEM
         </h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>
-          I don&apos;t just run one campaign — I build your <strong style={{ color: "#f5f0e8" }}>entire growth funnel</strong>. From the first ad click to the final conversion, every step is designed, optimized, and managed by me.
+          I don&apos;t just run one pay per click campaign — I build your <strong style={{ color: "#f5f0e8" }}>entire digital marketing campaign</strong>. From PPC advertising services to the final conversion, every step is designed, optimized, and managed by your dedicated digital marketing consultant.
         </p>
 
         {/* 3 Core Services */}
@@ -155,7 +155,7 @@ export default function Services() {
               No agencies, no juniors, no miscommunication. Just results.
             </p>
           </div>
-          <a href="https://wa.me/923363710499" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer"
             style={{ background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15, padding: "15px 32px", borderRadius: 99, textDecoration: "none", transition: "background .2s", whiteSpace: "nowrap" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "#b8860b")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "#d4a017")}

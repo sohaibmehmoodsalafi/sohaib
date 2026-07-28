@@ -137,7 +137,7 @@ export default function EcommercePage() {
           </div>
         </a>
         <a
-          href="https://wa.me/923363710499?text=Hi%20Sohaib!%20I%20have%20an%20e-commerce%20store%20and%20want%20to%20scale%20with%20Meta%20Ads."
+          href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20have%20an%20e-commerce%20store%20and%20want%20to%20scale%20with%20Meta%20Ads."
           target="_blank" rel="noopener noreferrer"
           style={{
             background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
@@ -211,7 +211,7 @@ export default function EcommercePage() {
             display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 60,
           }}>
             <a
-              href="https://wa.me/923363710499?text=Hi%20Sohaib!%20I%20have%20an%20e-commerce%20store%20and%20want%20to%20scale%20with%20Meta%20Ads."
+              href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20have%20an%20e-commerce%20store%20and%20want%20to%20scale%20with%20Meta%20Ads."
               target="_blank" rel="noopener noreferrer"
               style={{
                 background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15,
@@ -484,7 +484,7 @@ export default function EcommercePage() {
 
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href="https://wa.me/923363710499?text=Hi%20Sohaib!%20I%20have%20an%20e-commerce%20store%20and%20want%20to%20scale%20with%20Meta%20Ads."
+              href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20have%20an%20e-commerce%20store%20and%20want%20to%20scale%20with%20Meta%20Ads."
               target="_blank" rel="noopener noreferrer"
               style={{
                 background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15,

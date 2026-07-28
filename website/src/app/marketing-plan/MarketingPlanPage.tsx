@@ -314,7 +314,7 @@ export default function MarketingPlanPage() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-sm" style={{ borderBottom: "0.5px solid #1e1e1e" }}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <a href="/" className="text-[14px] text-[#f0ede6] font-medium">Sohaib Mehmood</a>
-          <a href="https://wa.me/923363710499" target="_blank" rel="noopener noreferrer"
+          <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer"
             className="text-[13px] px-5 py-2 bg-[#c8a96e] text-[#0a0a0a] rounded-md font-medium hover:bg-[#b8974e] transition-colors">
             Get Free Audit
           </a>

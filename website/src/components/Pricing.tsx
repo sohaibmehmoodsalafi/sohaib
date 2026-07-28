@@ -48,7 +48,7 @@ function PkgCard({ tier, name, price, featured, items }: { tier: string; name: s
           </li>
         ))}
       </ul>
-      <a href="https://wa.me/923363710499" target="_blank" rel="noopener noreferrer"
+      <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer"
         style={{
           display: "block", textAlign: "center", padding: "14px 32px", borderRadius: 99,
           fontWeight: 700, fontSize: 14, textDecoration: "none", transition: "all .2s",
@@ -72,12 +72,12 @@ function PkgCard({ tier, name, price, featured, items }: { tier: string; name: s
 export default function Pricing() {
   const ref = useFadeIn();
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="packages" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="packages" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Pricing
         </div>
-        <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>SIMPLE PLANS.<br />REAL RESULTS.</h2>
+        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>SIMPLE PLANS.<br />REAL RESULTS.</h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 500, lineHeight: 1.7, marginBottom: 64 }}>Pick what fits. Scale when ready. All prices are starting points — final quote based on your scope.</p>
         <div className="pkg-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {PACKAGES.map((p) => <PkgCard key={p.name} {...p} />)}

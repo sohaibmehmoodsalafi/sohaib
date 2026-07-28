@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>Admin Panel — Sohaib Mehmood</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080808;font-family:'Outfit',sans-serif;color:#f5f0e8;min-height:100vh}
+.hid{display:none!important}
+input,select,textarea,button{font-family:'Outfit',sans-serif}
+.inp{width:100%;padding:12px 14px;background:#1e1e1e;border:1px solid rgba(255,255,255,.1);border-radius:10px;color:#f5f0e8;font-size:13px;outline:none;transition:border-color .2s}
+.inp:focus{border-color:#d4a017}
+select.inp{cursor:pointer;color-scheme:dark}
+.lbl{font-size:11px;color:#8a8a8a;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;display:block}
+.bg{padding:10px 24px;background:#d4a017;color:#080808;font-weight:700;font-size:13px;border:none;border-radius:10px;cursor:pointer;transition:opacity .2s}
+.bg:hover{opacity:.85}
+.cd{background:#161616;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:28px 24px}
+.tb{background:#0f0f0f;border-bottom:1px solid rgba(255,255,255,.07);padding:16px 32px;display:flex;justify-content:space-between;align-items:center}
+.bk{background:none;border:none;color:#8a8a8a;font-size:20px;cursor:pointer;padding:0;line-height:1}
+@page{margin:0}
+@media print{.np{display:none!important}#pv{margin:0!important;border-radius:0!important;box-shadow:none!important}body{background:#fff!important}}
+@media(max-width:700px){.g2{grid-template-columns:1fr!important}.g5{grid-template-columns:1fr!important}.g5 .hm{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ========== LOGIN ========== -->
+<div id="L" style="min-height:100vh;display:flex;align-items:center;justify-content:center">
+<div class="cd" style="width:380px;text-align:center;padding:48px 40px">
+<img src="/images/sohaib-logo.png" alt="Logo" style="width:56px;height:56px;margin:0 auto 20px;display:block" onerror="this.style.display='none'"/>
+<h1 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:.06em;margin-bottom:8px">ADMIN PANEL</h1>
+<p style="font-size:13px;color:#8a8a8a;margin-bottom:28px">Enter password to continue</p>
+<input id="pi" type="password" placeholder="Password" class="inp" style="margin-bottom:16px;padding:14px 18px;font-size:14px"/>
+<p id="pe" class="hid" style="color:#ff4444;font-size:12px;margin-bottom:12px">Incorrect password</p>
+<button id="lb" class="bg" style="width:100%;padding:14px;font-size:14px">Log In</button>
+<a href="/" style="display:block;margin-top:20px;font-size:12px;color:#8a8a8a;text-decoration:none">&larr; Back to website</a>
+</div>
+</div>
+
+<!-- ========== DASHBOARD ========== -->
+<div id="D" class="hid">
+<div class="tb np">
+<div style="display:flex;align-items:center;gap:12px">
+<img src="/images/sohaib-logo.png" alt="Logo" style="width:32px;height:32px" onerror="this.style.display='none'"/>
+<span style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em">INVOICE DASHBOARD</span>
+</div>
+<div style="display:flex;gap:12px;align-items:center">
+<a href="/" style="font-size:13px;color:#8a8a8a;text-decoration:none">Website</a>
+<button id="lo" style="font-size:13px;color:#8a8a8a;background:none;border:none;cursor:pointer">Logout</button>
+</div>
+</div>
+<div style="max-width:1200px;margin:0 auto;padding:32px 24px">
+<div id="sr" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px"></div>
+<div id="mr" style="margin-bottom:32px"></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:16px">
+<div id="fb" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+<div style="display:flex;gap:12px;align-items:center">
+<input id="si" placeholder="Search client or invoice #" class="inp" style="width:220px"/>
+<button id="nb" class="bg" style="white-space:nowrap;display:flex;align-items:center;gap:6px">+ New Invoice</button>
+</div>
+</div>
+<div id="il"></div>
+</div>
+</div>
+
+<!-- ========== FORM ========== -->
+<div id="F" class="hid">
+<div class="tb np">
+<div style="display:flex;align-items:center;gap:12px">
+<button class="bk" id="fbb">&larr;</button>
+<span id="ft" style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em">NEW INVOICE</span>
+</div>
+<div style="display:flex;gap:12px">
+<button id="fcb" style="padding:10px 20px;background:#1e1e1e;color:#9a9a9a;border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:13px;cursor:pointer">Cancel</button>
+<button id="fsb" class="bg">Save Invoice</button>
+</div>
+</div>
+<div style="max-width:900px;margin:0 auto;padding:32px 24px">
+<!-- Client -->
+<div class="cd" style="margin-bottom:24px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em">CLIENT DETAILS</h2>
+<button id="scb" class="hid" style="padding:6px 14px;background:#1e1e1e;color:#d4a017;border:1px solid rgba(212,160,23,.2);border-radius:8px;font-size:12px;cursor:pointer">Select Saved Client</button>
+</div>
+<div id="scl" class="hid" style="background:#1e1e1e;border-radius:12px;padding:12px;margin-bottom:16px;max-height:200px;overflow-y:auto"></div>
+<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div><label class="lbl">Client Name *</label><input id="fn" class="inp" placeholder="e.g. Muhammad Ahmed"/></div>
+<div><label class="lbl">Company</label><input id="fc" class="inp" placeholder="e.g. ABC Corp"/></div>
+<div><label class="lbl">Email</label><input id="fe" class="inp" placeholder="client@email.com"/></div>
+<div><label class="lbl">Phone</label><div style="display:flex;gap:8px"><select id="fcc" class="inp" style="width:120px;cursor:pointer;flex:none"><option value="+92">🇵🇰 +92</option><option value="+1">🇺🇸 +1</option><option value="+44">🇬🇧 +44</option><option value="+971">🇦🇪 +971</option><option value="+966">🇸🇦 +966</option><option value="+91">🇮🇳 +91</option><option value="+61">🇦🇺 +61</option><option value="+60">🇲🇾 +60</option><option value="+49">🇩🇪 +49</option><option value="+33">🇫🇷 +33</option><option value="+90">🇹🇷 +90</option><option value="+880">🇧🇩 +880</option></select><input id="fp" class="inp" placeholder="300 1234567"/></div></div>
+<div style="grid-column:span 2"><label class="lbl">Address</label><input id="fa" class="inp" placeholder="Full address"/></div>
+</div>
+</div>
+<!-- Items -->
+<div class="cd" style="margin-bottom:24px">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em">LINE ITEMS</h2>
+<select id="fpk" class="inp" style="width:auto;min-width:220px;color:#d4a017;border-color:rgba(212,160,23,.3)"></select>
+</div>
+<div class="g5 hm" style="display:grid;grid-template-columns:3fr 1fr 1fr 1fr 40px;gap:8px;margin-bottom:8px">
+<span class="lbl">Description</span><span class="lbl">Qty</span><span class="lbl">Rate</span><span class="lbl">Amount</span><span></span>
+</div>
+<div id="ic"></div>
+<button id="aib" style="padding:10px;background:transparent;color:#d4a017;border:1px dashed rgba(212,160,23,.3);border-radius:10px;font-size:13px;cursor:pointer;margin-top:8px;width:100%">+ Add Item</button>
+</div>
+<!-- Settings + Summary -->
+<div class="g2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+<div class="cd">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;margin-bottom:20px">SETTINGS</h2>
+<div style="display:grid;gap:16px">
+<div><label class="lbl">Invoice Number</label><input id="fin" class="inp" placeholder="e.g. SM-0001"/></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div><label class="lbl">Currency</label><select id="fcu" class="inp"><option>PKR</option><option>USD</option><option>GBP</option><option>AED</option></select></div>
+<div><label class="lbl">Status</label><select id="fs" class="inp"><option value="draft">Draft</option><option value="sent">Sent</option><option value="paid">Paid</option><option value="overdue">Overdue</option></select></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div><label class="lbl">Tax %</label><input id="ftx" class="inp" type="number" min="0" value="0"/></div>
+<div><label class="lbl">Discount</label><input id="fd" class="inp" type="number" min="0" value="0"/></div>
+</div>
+<div><label class="lbl">Due Date</label><input id="fdu" class="inp" type="date" style="color-scheme:dark"/></div>
+<div><label class="lbl">Notes</label><textarea id="fno" class="inp" style="min-height:80px;resize:vertical" placeholder="Payment terms, bank details..."></textarea></div>
+</div>
+</div>
+<div class="cd">
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.04em;margin-bottom:20px">SUMMARY</h2>
+<div id="sb"></div>
+<button id="fsb2" class="bg" style="width:100%;padding:16px;margin-top:32px;font-size:15px">Save Invoice</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ========== PDF VIEW ========== -->
+<div id="P" class="hid">
+<div class="tb np">
+<div style="display:flex;align-items:center;gap:12px">
+<button class="bk" id="pbb">&larr;</button>
+<span id="pt" style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.06em">INVOICE</span>
+</div>
+<div style="display:flex;gap:12px">
+<button id="wb" class="bg" style="background:#25d366;color:#fff;font-weight:600">Send via WhatsApp</button>
+<button id="prb" class="bg">Print / Save PDF</button>
+</div>
+</div>
+<div id="pv" style="max-width:800px;margin:32px auto;background:#fff;color:#1a1a1a;border-radius:16px;overflow:hidden"></div>
+</div>
+
+<script>
+/* ── Config ── */
+var PASS='sohaib2026',IK='sm_invoices',CK='sm_clients',NK='sm_invoice_counter';
+var CS={PKR:'Rs.',USD:'$',GBP:'£',AED:'AED '};
+var SC={draft:'#8a8a8a',sent:'#3b82f6',paid:'#22c55e',overdue:'#ef4444'};
+var SL={draft:{t:'DRAFT',b:'#8a8a8a20',c:'#8a8a8a'},sent:{t:'SENT',b:'#3b82f620',c:'#3b82f6'},paid:{t:'PAID',b:'#22c55e20',c:'#22c55e'},overdue:{t:'OVERDUE',b:'#ef444420',c:'#ef4444'}};
+/* Predefined service packages */
+var PKGS=[
+  {id:'starter',label:'Starter — Single Platform',d:'Single Platform (Meta OR Google Ads) — Campaign setup & optimization, 5 ad creatives/mo, landing page setup, monthly report',r:25000},
+  {id:'growth',label:'Growth — Full Funnel',d:'Full Funnel (Meta + Google Ads) — Complete funnel, 15 creatives/mo, landing pages & lead forms, SMM (15 posts), retargeting, weekly reports',r:55000},
+  {id:'scale',label:'Scale — Ecosystem Package',d:'Ecosystem Package — Everything in Growth + full SMM (30 posts + reels), WhatsApp automation, multi-funnel strategy, dedicated account management',r:90000}
+];
+
+/* ── State ── */
+var curFilter='all',editId=null,formItems=[{d:'',q:1,r:0}],curInvNum='',pdfInv=null;
+
+/* ── Helpers ── */
+function gLS(k,f){try{var r=localStorage.getItem(k);return r?JSON.parse(r):f}catch(e){return f}}
+function sLS(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function uid(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
+function fmt(n,c){return CS[c]+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0})}
+function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML}
+
+/* ── Invoice CRUD ── */
+function getInvoices(){return gLS(IK,[])}
+function getInvoice(id){return getInvoices().find(function(i){return i.id===id})}
+function saveInvoice(inv){var a=getInvoices(),idx=-1;for(var j=0;j<a.length;j++)if(a[j].id===inv.id){idx=j;break}if(idx>=0)a[idx]=inv;else a.unshift(inv);sLS(IK,a)}
+function deleteInvoice(id){sLS(IK,getInvoices().filter(function(i){return i.id!==id}))}
+function nextNum(){var n=gLS(NK,0)+1;sLS(NK,n);return'SM-'+('000'+n).slice(-4)}
+
+/* ── Client CRUD ── */
+function getClients(){return gLS(CK,[])}
+function saveClient(c){var a=getClients(),idx=-1;for(var j=0;j<a.length;j++)if(a[j].id===c.id){idx=j;break}if(idx>=0)a[idx]=c;else a.unshift(c);sLS(CK,a)}
+
+/* ── Calculations ── */
+function invSub(items){var s=0;for(var i=0;i<items.length;i++)s+=items[i].qty*items[i].rate;return s}
+function invTotal(inv){var s=invSub(inv.items);return s+s*(inv.taxPercent/100)-inv.discount}
+
+/* ── $ shortcut ── */
+function $(id){return document.getElementById(id)}
+
+/* ========== LOGIN ========== */
+$('pi').addEventListener('keydown',function(e){if(e.key==='Enter')doLogin()});
+$('lb').addEventListener('click',doLogin);
+
+function doLogin(){
+  if($('pi').value===PASS){sessionStorage.setItem('sm_admin','1');showDash()}
+  else{$('pe').classList.remove('hid');setTimeout(function(){$('pe').classList.add('hid')},2000)}
+}
+
+$('lo').addEventListener('click',function(){sessionStorage.removeItem('sm_admin');location.reload()});
+
+/* ========== SHOW SCREENS ========== */
+function showDash(){
+  $('L').classList.add('hid');$('D').classList.remove('hid');$('F').classList.add('hid');$('P').classList.add('hid');
+  renderStats();renderMonthly();renderFilters();renderList();
+}
+function showForm(id){
+  editId=id||null;
+  var v=id?getInvoice(id):null;
+  curInvNum=v?v.invoiceNumber:nextNum();
+  $('fin').value=curInvNum;
+  $('ft').textContent=(v?'EDIT INVOICE':'NEW INVOICE')+' — '+curInvNum;
+  $('fn').value=v?v.client.name:'';
+  $('fc').value=v&&v.client.company?v.client.company:'';
+  $('fe').value=v?v.client.email:'';
+  $('fcc').value=v&&v.client.countryCode?v.client.countryCode:'+92';
+  $('fp').value=v?v.client.phone:'';
+  $('fa').value=v&&v.client.address?v.client.address:'';
+  $('fcu').value=v?v.currency:'PKR';
+  $('fs').value=v?v.status:'draft';
+  $('ftx').value=v?v.taxPercent:0;
+  $('fd').value=v?v.discount:0;
+  $('fdu').value=v?v.dueDate.slice(0,10):new Date(Date.now()+15*864e5).toISOString().slice(0,10);
+  $('fno').value=v?v.notes:'';
+  formItems=v?v.items.map(function(x){return{d:x.description,q:x.qty,r:x.rate}}):[{d:'',q:1,r:0}];
+  /* saved clients button */
+  var cls=getClients();
+  if(cls.length>0){$('scb').classList.remove('hid');renderSavedClients(cls)}else{$('scb').classList.add('hid')}
+  $('scl').classList.add('hid');
+  renderItems();
+  $('D').classList.add('hid');$('F').classList.remove('hid');$('P').classList.add('hid');
+}
+function showPDF(id){
+  pdfInv=getInvoice(id);if(!pdfInv)return;
+  $('pt').textContent='INVOICE '+pdfInv.invoiceNumber;
+  renderPDF(pdfInv);
+  $('D').classList.add('hid');$('F').classList.add('hid');$('P').classList.remove('hid');
+}
+
+/* ========== DASHBOARD ========== */
+function renderStats(){
+  var a=getInvoices(),p=a.filter(function(i){return i.status==='paid'}),
+    u=a.filter(function(i){return i.status==='sent'||i.status==='overdue'}),
+    dr=a.filter(function(i){return i.status==='draft'}),
+    rv=0,pn=0;
+  for(var i=0;i<p.length;i++)rv+=invTotal(p[i]);
+  for(var i=0;i<u.length;i++)pn+=invTotal(u[i]);
+  var cards=[
+    {l:'Total Invoices',v:a.length,c:'#d4a017'},
+    {l:'Paid',v:p.length,c:'#22c55e'},
+    {l:'Pending',v:u.length,c:'#3b82f6'},
+    {l:'Draft',v:dr.length,c:'#8a8a8a'},
+    {l:'Total Revenue',v:'Rs.'+rv.toLocaleString(),c:'#22c55e'},
+    {l:'Pending Amount',v:'Rs.'+pn.toLocaleString(),c:'#ef4444'}
+  ];
+  var h='';for(var i=0;i<cards.length;i++){
+    var s=cards[i];
+    h+='<div class="cd" style="padding:24px 20px;position:relative;overflow:hidden">'
+      +'<div style="position:absolute;top:0;left:0;width:3px;height:100%;background:'+s.c+'"></div>'
+      +'<div style="font-size:12px;color:#8a8a8a;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px">'+s.l+'</div>'
+      +'<div style="font-family:\'Bebas Neue\',sans-serif;font-size:32px;color:'+s.c+';line-height:1">'+s.v+'</div></div>';
+  }
+  $('sr').innerHTML=h;
+}
+
+function renderMonthly(){
+  var a=getInvoices(),map={};
+  for(var i=0;i<a.length;i++){
+    var v=a[i],d=new Date(v.createdAt),key=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2);
+    if(!map[key])map[key]={count:0,billed:0,paid:0,pending:0,y:d.getFullYear(),m:d.getMonth()};
+    var t=invTotal(v);
+    map[key].count++;map[key].billed+=t;
+    if(v.status==='paid')map[key].paid+=t;
+    else if(v.status==='sent'||v.status==='overdue')map[key].pending+=t;
+  }
+  var keys=Object.keys(map).sort().reverse();
+  if(!keys.length){$('mr').innerHTML='';return;}
+  var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var hd=['Month','Invoices','Billed','Paid','Pending'];
+  var h='<div class="cd" style="padding:24px 20px">'
+    +'<div style="font-family:\'Bebas Neue\',sans-serif;font-size:20px;letter-spacing:.04em;margin-bottom:16px">MONTHLY SUMMARY</div>'
+    +'<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr style="border-bottom:1px solid rgba(255,255,255,.07)">';
+  for(var j=0;j<hd.length;j++)h+='<th style="text-align:'+(j===0?'left':'right')+';padding:10px 12px;font-size:11px;color:#8a8a8a;font-weight:600;letter-spacing:.06em;text-transform:uppercase">'+hd[j]+'</th>';
+  h+='</tr></thead><tbody>';
+  for(var k=0;k<keys.length;k++){
+    var o=map[keys[k]];
+    h+='<tr style="border-bottom:1px solid rgba(255,255,255,.04)">'
+      +'<td style="padding:12px;font-size:13px;font-weight:600;color:#d4a017">'+MN[o.m]+' '+o.y+'</td>'
+      +'<td style="padding:12px;font-size:13px;text-align:right">'+o.count+'</td>'
+      +'<td style="padding:12px;font-size:13px;text-align:right">Rs.'+o.billed.toLocaleString()+'</td>'
+      +'<td style="padding:12px;font-size:13px;text-align:right;color:#22c55e">Rs.'+o.paid.toLocaleString()+'</td>'
+      +'<td style="padding:12px;font-size:13px;text-align:right;color:#ef4444">Rs.'+o.pending.toLocaleString()+'</td></tr>';
+  }
+  h+='</tbody></table></div></div>';
+  $('mr').innerHTML=h;
+}
+
+function renderFilters(){
+  var a=getInvoices(),fs=['all','draft','sent','paid','overdue'],h='';
+  for(var i=0;i<fs.length;i++){
+    var f=fs[i],cnt=f==='all'?a.length:a.filter(function(x){return x.status===f}).length,
+      ac=curFilter===f;
+    h+='<button data-f="'+f+'" style="padding:8px 16px;border-radius:99px;font-size:12px;font-weight:600;cursor:pointer;'
+      +'background:'+(ac?'#d4a017':'#1e1e1e')+';color:'+(ac?'#080808':'#9a9a9a')
+      +';border:1px solid '+(ac?'#d4a017':'rgba(255,255,255,.07)')
+      +';text-transform:capitalize;transition:all .2s">'+f+' ('+cnt+')</button>';
+  }
+  $('fb').innerHTML=h;
+  $('fb').querySelectorAll('button').forEach(function(b){
+    b.addEventListener('click',function(){curFilter=this.getAttribute('data-f');renderFilters();renderList()});
+  });
+}
+
+function renderList(){
+  var a=getInvoices(),q=($('si').value||'').toLowerCase(),r=[];
+  for(var i=0;i<a.length;i++){
+    var x=a[i];
+    if(curFilter!=='all'&&x.status!==curFilter)continue;
+    if(q&&x.client.name.toLowerCase().indexOf(q)<0&&x.invoiceNumber.toLowerCase().indexOf(q)<0)continue;
+    r.push(x);
+  }
+  if(!r.length){
+    $('il').innerHTML='<div style="text-align:center;padding:80px 20px;color:#8a8a8a">'
+      +'<div style="font-size:48px;margin-bottom:16px">&#128203;</div>'
+      +'<p style="font-size:16px;margin-bottom:8px">No invoices yet</p>'
+      +'<p style="font-size:13px">Click "+ New Invoice" to create your first invoice</p></div>';
+    return;
+  }
+  var h='<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse"><thead><tr style="border-bottom:1px solid rgba(255,255,255,.07)">';
+  var cols=['Invoice #','Client','Amount','Status','Date','Actions'];
+  for(var i=0;i<cols.length;i++)h+='<th style="text-align:left;padding:12px 16px;font-size:11px;color:#8a8a8a;font-weight:600;letter-spacing:.06em;text-transform:uppercase">'+cols[i]+'</th>';
+  h+='</tr></thead><tbody>';
+  for(var i=0;i<r.length;i++){
+    var v=r[i],c=SC[v.status]||'#8a8a8a';
+    h+='<tr style="border-bottom:1px solid rgba(255,255,255,.04)">'
+      +'<td style="padding:16px;font-size:14px;font-weight:600;color:#d4a017">'+esc(v.invoiceNumber)+'</td>'
+      +'<td style="padding:16px"><div style="font-size:14px;font-weight:500">'+esc(v.client.name)+'</div>'
+      +(v.client.company?'<div style="font-size:11px;color:#8a8a8a">'+esc(v.client.company)+'</div>':'')+'</td>'
+      +'<td style="padding:16px;font-size:14px;font-weight:600">'+fmt(invTotal(v),v.currency)+'</td>'
+      +'<td style="padding:16px"><select data-sid="'+v.id+'" class="stsel" style="padding:6px 12px;border-radius:99px;font-size:11px;font-weight:700;'
+      +'background:'+c+'18;color:'+c+';border:1px solid '+c+'40;cursor:pointer;text-transform:uppercase;letter-spacing:.04em;font-family:Outfit,sans-serif">'
+      +'<option value="draft"'+(v.status==='draft'?' selected':'')+'>draft</option>'
+      +'<option value="sent"'+(v.status==='sent'?' selected':'')+'>sent</option>'
+      +'<option value="paid"'+(v.status==='paid'?' selected':'')+'>paid</option>'
+      +'<option value="overdue"'+(v.status==='overdue'?' selected':'')+'>overdue</option>'
+      +'</select></td>'
+      +'<td style="padding:16px;font-size:13px;color:#9a9a9a">'+new Date(v.createdAt).toLocaleDateString()+'</td>'
+      +'<td style="padding:16px"><div style="display:flex;gap:6px">'
+      +'<button data-vid="'+v.id+'" class="vbtn" style="padding:6px 12px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;background:#3b82f615;color:#3b82f6;border:1px solid #3b82f630">View</button>'
+      +'<button data-eid="'+v.id+'" class="ebtn" style="padding:6px 12px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;background:#d4a01715;color:#d4a017;border:1px solid #d4a01730">Edit</button>'
+      +'<button data-did="'+v.id+'" class="dbtn" style="padding:6px 12px;border-radius:8px;font-size:11px;font-weight:600;cursor:pointer;background:#ef444415;color:#ef4444;border:1px solid #ef444430">Del</button>'
+      +'</div></td></tr>';
+  }
+  h+='</tbody></table></div>';
+  $('il').innerHTML=h;
+  /* bind events */
+  document.querySelectorAll('.stsel').forEach(function(s){
+    s.addEventListener('change',function(){
+      var inv=getInvoice(this.getAttribute('data-sid'));
+      if(!inv)return;
+      inv.status=this.value;
+      if(this.value==='paid')inv.paidAt=new Date().toISOString();
+      saveInvoice(inv);renderStats();renderFilters();renderList();
+    });
+  });
+  document.querySelectorAll('.vbtn').forEach(function(b){b.addEventListener('click',function(){showPDF(this.getAttribute('data-vid'))})});
+  document.querySelectorAll('.ebtn').forEach(function(b){b.addEventListener('click',function(){showForm(this.getAttribute('data-eid'))})});
+  document.querySelectorAll('.dbtn').forEach(function(b){b.addEventListener('click',function(){
+    if(confirm('Delete this invoice?')){deleteInvoice(this.getAttribute('data-did'));renderStats();renderFilters();renderList()}
+  })});
+}
+
+$('si').addEventListener('input',renderList);
+$('nb').addEventListener('click',function(){showForm()});
+
+/* ========== FORM ========== */
+$('fbb').addEventListener('click',showDash);
+$('fcb').addEventListener('click',showDash);
+$('fsb').addEventListener('click',doSave);
+$('fsb2').addEventListener('click',doSave);
+$('aib').addEventListener('click',function(){formItems.push({d:'',q:1,r:0});renderItems()});
+/* Invoice number — keep header in sync */
+$('fin').addEventListener('input',function(){curInvNum=this.value;$('ft').textContent=(editId?'EDIT INVOICE':'NEW INVOICE')+' — '+curInvNum});
+/* Package dropdown — populate + add line item */
+(function(){
+  var h='<option value="">+ Add from My Packages</option>';
+  for(var i=0;i<PKGS.length;i++)h+='<option value="'+PKGS[i].id+'">'+PKGS[i].label+' (Rs.'+PKGS[i].r.toLocaleString()+')</option>';
+  h+='<option value="__other__">Others (Custom Item)</option>';
+  $('fpk').innerHTML=h;
+})();
+$('fpk').addEventListener('change',function(){
+  var val=this.value;this.value='';
+  if(!val)return;
+  var lastEmpty=formItems.length===1&&!formItems[0].d&&!formItems[0].r;
+  if(val==='__other__'){if(!lastEmpty)formItems.push({d:'',q:1,r:0});renderItems();return}
+  var p=null;for(var i=0;i<PKGS.length;i++)if(PKGS[i].id===val)p=PKGS[i];
+  if(!p)return;
+  var item={d:p.d,q:1,r:p.r};
+  if(lastEmpty)formItems[0]=item;else formItems.push(item);
+  renderItems();
+});
+$('ftx').addEventListener('input',updateSummary);
+$('fd').addEventListener('input',updateSummary);
+$('fcu').addEventListener('change',updateSummary);
+
+$('scb').addEventListener('click',function(){$('scl').classList.toggle('hid')});
+
+function renderSavedClients(cls){
+  var h='';
+  for(var i=0;i<cls.length;i++){
+    var c=cls[i];
+    h+='<div data-ci="'+i+'" class="scli" style="padding:10px 12px;border-radius:8px;cursor:pointer;margin-bottom:4px;transition:background .2s">'
+      +'<div style="font-size:13px;font-weight:500">'+esc(c.name)+'</div>'
+      +'<div style="font-size:11px;color:#8a8a8a">'+(c.company?esc(c.company)+' · ':'')+esc(c.email)+'</div></div>';
+  }
+  $('scl').innerHTML=h;
+  document.querySelectorAll('.scli').forEach(function(el){
+    el.addEventListener('mouseenter',function(){this.style.background='rgba(255,255,255,.05)'});
+    el.addEventListener('mouseleave',function(){this.style.background='transparent'});
+    el.addEventListener('click',function(){
+      var c=cls[+this.getAttribute('data-ci')];
+      $('fn').value=c.name;$('fc').value=c.company||'';$('fe').value=c.email;$('fp').value=c.phone;$('fcc').value=c.countryCode||'+92';$('fa').value=c.address||'';
+      $('scl').classList.add('hid');
+    });
+  });
+}
+
+function renderItems(){
+  var h='';
+  for(var i=0;i<formItems.length;i++){
+    var it=formItems[i],amt=it.q*it.r;
+    h+='<div class="g5" style="display:grid;grid-template-columns:3fr 1fr 1fr 1fr 40px;gap:8px;margin-bottom:8px;align-items:center">'
+      +'<input class="inp fi-d" data-i="'+i+'" value="'+esc(it.d)+'" placeholder="Service description"/>'
+      +'<input class="inp fi-q" data-i="'+i+'" type="number" min="1" value="'+it.q+'"/>'
+      +'<input class="inp fi-r" data-i="'+i+'" type="number" min="0" value="'+it.r+'"/>'
+      +'<div style="padding:12px 14px;color:#d4a017;font-weight:600;font-size:13px">'+amt.toLocaleString()+'</div>'
+      +(formItems.length>1?'<button class="fi-x" data-i="'+i+'" style="background:none;border:none;color:#ef4444;font-size:18px;cursor:pointer">&times;</button>':'<span></span>')
+      +'</div>';
+  }
+  $('ic').innerHTML=h;
+  document.querySelectorAll('.fi-d').forEach(function(el){el.addEventListener('input',function(){formItems[+this.getAttribute('data-i')].d=this.value;updateSummary()})});
+  document.querySelectorAll('.fi-q').forEach(function(el){el.addEventListener('input',function(){formItems[+this.getAttribute('data-i')].q=+this.value||0;renderItems()})});
+  document.querySelectorAll('.fi-r').forEach(function(el){el.addEventListener('input',function(){formItems[+this.getAttribute('data-i')].r=+this.value||0;renderItems()})});
+  document.querySelectorAll('.fi-x').forEach(function(el){el.addEventListener('click',function(){formItems.splice(+this.getAttribute('data-i'),1);renderItems()})});
+  updateSummary();
+}
+
+function updateSummary(){
+  var sub=0;for(var i=0;i<formItems.length;i++)sub+=formItems[i].q*formItems[i].r;
+  var tp=+($('ftx').value||0),dc=+($('fd').value||0),tx=sub*(tp/100),tot=sub+tx-dc,cu=$('fcu').value;
+  var h='<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px"><span style="color:#8a8a8a">Subtotal</span><span>'+sub.toLocaleString()+'</span></div>'
+    +'<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px"><span style="color:#8a8a8a">Tax ('+tp+'%)</span><span>'+tx.toLocaleString()+'</span></div>';
+  if(dc>0)h+='<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px"><span style="color:#8a8a8a">Discount</span><span style="color:#22c55e">-'+dc.toLocaleString()+'</span></div>';
+  h+='<div style="display:flex;justify-content:space-between;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);margin-top:8px">'
+    +'<span style="font-size:16px;font-weight:700">Total</span>'
+    +'<span style="font-size:20px;font-weight:700;font-family:\'Bebas Neue\',sans-serif;color:#d4a017">'+cu+' '+tot.toLocaleString()+'</span></div>';
+  $('sb').innerHTML=h;
+}
+
+function doSave(){
+  var inum=$('fin').value.trim();
+  if(!inum){alert('Invoice number is required');return}
+  var nm=$('fn').value.trim();
+  if(!nm){alert('Client name is required');return}
+  var items=[];
+  for(var i=0;i<formItems.length;i++){
+    if(formItems[i].d.trim())items.push({description:formItems[i].d.trim(),qty:formItems[i].q,rate:formItems[i].r});
+  }
+  if(!items.length){alert('Add at least one line item');return}
+  var ex=editId?getInvoice(editId):null;
+  var cl={id:ex&&ex.client?ex.client.id:uid(),name:nm,email:$('fe').value.trim(),phone:$('fp').value.trim(),
+    countryCode:$('fcc').value,company:$('fc').value.trim()||undefined,address:$('fa').value.trim()||undefined};
+  saveClient(cl);
+  var inv={id:ex?ex.id:uid(),invoiceNumber:inum,client:cl,
+    items:items,status:$('fs').value,currency:$('fcu').value,
+    taxPercent:+($('ftx').value||0),discount:+($('fd').value||0),
+    notes:$('fno').value.trim(),
+    createdAt:ex?ex.createdAt:new Date().toISOString(),
+    dueDate:new Date($('fdu').value).toISOString(),
+    paidAt:ex?ex.paidAt:undefined};
+  saveInvoice(inv);
+  showDash();
+}
+
+/* ========== PDF VIEW ========== */
+$('pbb').addEventListener('click',showDash);
+$('prb').addEventListener('click',function(){
+  var pt=document.title;
+  document.title=(pdfInv?'Invoice '+pdfInv.invoiceNumber:'Invoice')+' — Sohaib Mehmood';
+  window.print();
+  setTimeout(function(){document.title=pt},500);
+});
+$('wb').addEventListener('click',function(){
+  if(!pdfInv)return;
+  var v=pdfInv,tot=invTotal(v);
+  var msg=encodeURIComponent('*Invoice '+v.invoiceNumber+'*\n\nHi '+v.client.name+',\n\nPlease find your invoice details:\n\n'
+    +v.items.map(function(x){return'- '+x.description+': '+fmt(x.qty*x.rate,v.currency)}).join('\n')
+    +'\n\n*Total: '+fmt(tot,v.currency)+'*\nDue: '+new Date(v.dueDate).toLocaleDateString()
+    +'\n\nPayment Details:\nBank: Allied Bank\nAccount Name: Sohaib Mehmood\nAccount Number: 10940010076669450013\nIBAN: PK42ABPA0010076669450013\nBranch Code: 1094\nJazzCash/EasyPaisa: 03022702808\n\nThank you!');
+  window.open('https://wa.me/'+((v.client.countryCode||'')+v.client.phone).replace(/[^0-9]/g,'')+'?text='+msg,'_blank');
+});
+
+function renderPDF(v){
+  var sub=invSub(v.items),tx=sub*(v.taxPercent/100),tot=sub+tx-v.discount,st=SL[v.status]||SL.draft;
+  var h='';
+  /* Header */
+  h+='<div style="background:#080808;padding:40px 48px;display:flex;justify-content:space-between;align-items:flex-start">'
+    +'<div style="display:flex;align-items:center;gap:14px">'
+    +'<img src="/images/sohaib-logo.png" alt="Logo" style="width:48px;height:48px" onerror="this.style.display=\'none\'"/>'
+    +'<div><div style="font-family:\'Bebas Neue\',sans-serif;font-size:22px;letter-spacing:.06em;color:#f5f0e8">SOHAIB MEHMOOD</div>'
+    +'<div style="font-size:11px;color:#d4a017;letter-spacing:.04em">SCALING BRANDS. EMPOWERING SOULS</div></div></div>'
+    +'<div style="text-align:right"><div style="font-family:\'Bebas Neue\',sans-serif;font-size:36px;letter-spacing:.04em;color:#d4a017">INVOICE</div>'
+    +'<div style="font-size:14px;color:#9a9a9a">'+esc(v.invoiceNumber)+'</div></div></div>';
+  /* Bill To */
+  h+='<div style="padding:32px 48px;display:flex;justify-content:space-between;border-bottom:1px solid #eee">'
+    +'<div><div style="font-size:10px;font-weight:700;color:#999;letter-spacing:.1em;margin-bottom:8px">BILL TO</div>'
+    +'<div style="font-size:16px;font-weight:600">'+esc(v.client.name)+'</div>'
+    +(v.client.company?'<div style="font-size:13px;color:#666">'+esc(v.client.company)+'</div>':'')
+    +(v.client.email?'<div style="font-size:13px;color:#666">'+esc(v.client.email)+'</div>':'')
+    +(v.client.phone?'<div style="font-size:13px;color:#666">'+esc((v.client.countryCode?v.client.countryCode+' ':'')+v.client.phone)+'</div>':'')
+    +(v.client.address?'<div style="font-size:13px;color:#666;margin-top:4px">'+esc(v.client.address)+'</div>':'')
+    +'</div>'
+    +'<div style="text-align:right">'
+    +'<span style="display:inline-block;padding:6px 16px;border-radius:99px;font-size:11px;font-weight:700;letter-spacing:.06em;background:'+st.b+';color:'+st.c+';margin-bottom:16px">'+st.t+'</span>'
+    +'<div style="font-size:13px;color:#666;margin-bottom:4px"><strong>Date:</strong> '+new Date(v.createdAt).toLocaleDateString()+'</div>'
+    +'<div style="font-size:13px;color:#666;margin-bottom:4px"><strong>Due:</strong> '+new Date(v.dueDate).toLocaleDateString()+'</div>'
+    +(v.paidAt?'<div style="font-size:13px;color:#22c55e"><strong>Paid:</strong> '+new Date(v.paidAt).toLocaleDateString()+'</div>':'')
+    +'</div></div>';
+  /* Items */
+  h+='<div style="padding:0 48px"><table style="width:100%;border-collapse:collapse"><thead><tr style="border-bottom:2px solid #080808">'
+    +'<th style="text-align:left;padding:16px 0;font-size:10px;font-weight:700;color:#999;letter-spacing:.1em">DESCRIPTION</th>'
+    +'<th style="text-align:center;padding:16px 0;font-size:10px;font-weight:700;color:#999;width:80px">QTY</th>'
+    +'<th style="text-align:right;padding:16px 0;font-size:10px;font-weight:700;color:#999;width:120px">RATE</th>'
+    +'<th style="text-align:right;padding:16px 0;font-size:10px;font-weight:700;color:#999;width:120px">AMOUNT</th>'
+    +'</tr></thead><tbody>';
+  for(var i=0;i<v.items.length;i++){
+    var it=v.items[i];
+    h+='<tr style="border-bottom:1px solid #eee">'
+      +'<td style="padding:14px 0;font-size:14px">'+esc(it.description)+'</td>'
+      +'<td style="padding:14px 0;font-size:14px;text-align:center">'+it.qty+'</td>'
+      +'<td style="padding:14px 0;font-size:14px;text-align:right">'+fmt(it.rate,v.currency)+'</td>'
+      +'<td style="padding:14px 0;font-size:14px;text-align:right;font-weight:600">'+fmt(it.qty*it.rate,v.currency)+'</td></tr>';
+  }
+  h+='</tbody></table></div>';
+  /* Totals */
+  h+='<div style="padding:24px 48px;display:flex;justify-content:flex-end"><div style="width:280px">'
+    +'<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px"><span style="color:#666">Subtotal</span><span>'+fmt(sub,v.currency)+'</span></div>';
+  if(v.taxPercent)h+='<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px"><span style="color:#666">Tax ('+v.taxPercent+'%)</span><span>'+fmt(tx,v.currency)+'</span></div>';
+  if(v.discount)h+='<div style="display:flex;justify-content:space-between;padding:8px 0;font-size:14px"><span style="color:#666">Discount</span><span style="color:#22c55e">-'+fmt(v.discount,v.currency)+'</span></div>';
+  h+='<div style="display:flex;justify-content:space-between;padding:16px 0;border-top:2px solid #080808;margin-top:8px">'
+    +'<span style="font-size:16px;font-weight:700">Total</span>'
+    +'<span style="font-size:22px;font-weight:700;font-family:\'Bebas Neue\',sans-serif;letter-spacing:.02em">'+fmt(tot,v.currency)+'</span></div></div></div>';
+  /* Tax Disclaimer - centered & prominent */
+  h+='<div style="padding:0 48px 8px"><div style="text-align:center;font-size:12px;font-weight:600;color:#c0392b;font-style:italic;background:#fdecea;border:1px solid #f5c6c0;border-radius:8px;padding:12px 16px;line-height:1.5">All prices quoted are exclusive of taxes and statutory duties, if applicable.</div></div>';
+  /* Payment */
+  h+='<div style="padding:24px 48px 40px;background:#f9f9f9;border-top:1px solid #eee">'
+    +'<div style="display:grid;grid-template-columns:'+(v.notes?'1fr 1fr':'1fr')+';gap:32px">'
+    +'<div><div style="font-size:10px;font-weight:700;color:#999;letter-spacing:.1em;margin-bottom:8px">PAYMENT DETAILS</div>'
+    +'<div style="font-size:13px;color:#555;line-height:1.8"><strong>Bank:</strong> Allied Bank<br/>'
+    +'<strong>Account Name:</strong> Sohaib Mehmood<br/>'
+    +'<strong>Account Number:</strong> 10940010076669450013<br/>'
+    +'<strong>IBAN:</strong> PK42ABPA0010076669450013<br/>'
+    +'<strong>Branch Code:</strong> 1094<br/>'
+    +'<strong>JazzCash/EasyPaisa:</strong> 03022702808</div></div>';
+  if(v.notes){
+    h+='<div><div style="font-size:10px;font-weight:700;color:#999;letter-spacing:.1em;margin-bottom:8px">NOTES</div>'
+      +'<div style="font-size:13px;color:#555;line-height:1.8">'+esc(v.notes)+'</div></div>';
+  }
+  h+='</div>'
+    +'<div style="text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid #ddd">'
+    +'<div style="font-size:12px;color:#999">Thank you for your business!</div>'
+    +'<div style="font-size:11px;color:#bbb;margin-top:4px">meetsohaib.com &middot; +92 304 8885206 &middot; sohaib@meetsohaib.com</div></div></div>';
+  $('pv').innerHTML=h;
+}
+
+/* ========== AUTO LOGIN ========== */
+if(sessionStorage.getItem('sm_admin')==='1')showDash();
+</script>
+</body>
+</html>

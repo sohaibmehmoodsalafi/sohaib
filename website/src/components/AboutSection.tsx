@@ -6,7 +6,7 @@ import Counter from "./Counter";
 
 function FloatBadge({ bottom, right, top, left, num, lbl, color }: { bottom?: number; right?: number; top?: number; left?: number; num: string; lbl: string; color: string }) {
   return (
-    <div style={{
+    <div className="about-float" style={{
       position: "absolute", bottom, right, top, left,
       background: "#1e1e1e", border: "1px solid rgba(255,255,255,.12)",
       borderRadius: 14, padding: "16px 20px", minWidth: 140,
@@ -23,13 +23,13 @@ export default function AboutSection() {
   const [imgErr, setImgErr] = useState(false);
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="about" className="about-grid" style={{
+    <section ref={ref as React.RefObject<HTMLElement>} id="about" className="about-grid section-pad" style={{
       padding: "120px 4vw", maxWidth: 1200, margin: "0 auto",
       display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "center",
     }}>
       {/* Visual */}
       <div style={{ position: "relative" }}>
-        <div style={{
+        <div className="about-image" style={{
           background: "#161616", border: "1px solid rgba(255,255,255,.12)",
           borderRadius: 20, aspectRatio: "3/4", display: "flex",
           flexDirection: "column", alignItems: "center", justifyContent: "center",
@@ -60,19 +60,19 @@ export default function AboutSection() {
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />
           About me
         </div>
-        <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,5vw,60px)", lineHeight: 1, letterSpacing: ".02em", marginBottom: 20 }}>
+        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,5vw,60px)", lineHeight: 1, letterSpacing: ".02em", marginBottom: 20 }}>
           ONE EXPERT.<br />FULL RESULTS.
         </h2>
         <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 14 }}>
-          I&apos;m Sohaib Mehmood — a Digital Marketing Expert specializing in Meta Ads, Google Ads, and Social Media Marketing. Based in Pakistan, serving clients across USA, UK, UAE, and Canada for 5+ years.
+          I&apos;m Sohaib Mehmood — a digital marketing consultant specializing in PPC advertising services, Google Ads optimization, and meta advertising solutions. Based in Pakistan, serving clients across USA, UK, UAE, and Canada for 5+ years.
         </p>
         <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 14 }}>
-          I build the complete funnel ecosystem: ad campaigns, landing pages, creatives, retargeting funnels, and the automation that fills your calendar with paying clients. Every element is aligned — because I handle it all personally.
+          I deliver complete digital marketing campaigns: pay per click campaign management, paid search advertising, social media advertising campaigns, digital branding, and the automation that fills your calendar with paying clients. Every element aligned — one expert, one vision.
         </p>
         <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8 }}>
-          Most of my clients came from failed agency experiences. Agencies send juniors. I send results — predictable leads on autopilot.
+          Most of my clients came from failed agency experiences. Agencies send juniors. I provide dedicated PPC consultancy and digital marketing consultancy services — predictable leads on autopilot.
         </p>
-        <div style={{ display: "flex", gap: 32, marginTop: 32, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,.07)", flexWrap: "wrap" }}>
+        <div className="about-counter-row" style={{ display: "flex", gap: 32, marginTop: 32, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,.07)", flexWrap: "wrap" }}>
           {[
             { n: "5", s: "+", l: "Years experience" },
             { n: "4", s: "", l: "Countries served" },

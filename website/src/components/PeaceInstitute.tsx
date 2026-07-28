@@ -2,7 +2,7 @@
 
 export default function PeaceInstitute() {
   return (
-    <section style={{ padding: "80px 4vw", borderTop: "1px solid rgba(255,255,255,.07)", background: "#0f0f0f" }}>
+    <section className="peace-section" style={{ padding: "80px 4vw", borderTop: "1px solid rgba(255,255,255,.07)", background: "#0f0f0f" }}>
       <div style={{
         maxWidth: 900, margin: "0 auto",
         background: "#161616", border: "1px solid rgba(255,255,255,.07)",

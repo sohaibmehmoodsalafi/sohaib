@@ -32,6 +32,21 @@ export default function InvoiceDashboard() {
     .filter((i) => filter === "all" || i.status === filter)
     .filter((i) => !search || i.client.name.toLowerCase().includes(search.toLowerCase()) || i.invoiceNumber.toLowerCase().includes(search.toLowerCase()));
 
+  const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const monthly = (() => {
+    const map: Record<string, { count: number; billed: number; paid: number; pending: number; y: number; m: number }> = {};
+    invoices.forEach((v) => {
+      const d = new Date(v.createdAt);
+      const key = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0");
+      if (!map[key]) map[key] = { count: 0, billed: 0, paid: 0, pending: 0, y: d.getFullYear(), m: d.getMonth() };
+      const t = invoiceTotal(v);
+      map[key].count++; map[key].billed += t;
+      if (v.status === "paid") map[key].paid += t;
+      else if (v.status === "sent" || v.status === "overdue") map[key].pending += t;
+    });
+    return Object.keys(map).sort().reverse().map((k) => map[k]);
+  })();
+
   const handleDelete = (id: string) => {
     if (confirm("Delete this invoice?")) { deleteInvoice(id); refresh(); }
   };
@@ -81,6 +96,35 @@ export default function InvoiceDashboard() {
             </div>
           ))}
         </div>
+
+        {/* Monthly Summary */}
+        {monthly.length > 0 && (
+          <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "24px 20px", marginBottom: 32 }}>
+            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 20, letterSpacing: ".04em", marginBottom: 16 }}>MONTHLY SUMMARY</div>
+            <div style={{ overflowX: "auto" }}>
+              <table style={{ width: "100%", borderCollapse: "collapse" }}>
+                <thead>
+                  <tr style={{ borderBottom: "1px solid rgba(255,255,255,.07)" }}>
+                    {["Month", "Invoices", "Billed", "Paid", "Pending"].map((h, i) => (
+                      <th key={h} style={{ textAlign: i === 0 ? "left" : "right", padding: "10px 12px", fontSize: 11, color: "#6b6b6b", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase" }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {monthly.map((o, i) => (
+                    <tr key={i} style={{ borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+                      <td style={{ padding: "12px", fontSize: 13, fontWeight: 600, color: "#d4a017" }}>{MONTHS[o.m]} {o.y}</td>
+                      <td style={{ padding: "12px", fontSize: 13, textAlign: "right" }}>{o.count}</td>
+                      <td style={{ padding: "12px", fontSize: 13, textAlign: "right" }}>Rs.{o.billed.toLocaleString()}</td>
+                      <td style={{ padding: "12px", fontSize: 13, textAlign: "right", color: "#22c55e" }}>Rs.{o.paid.toLocaleString()}</td>
+                      <td style={{ padding: "12px", fontSize: 13, textAlign: "right", color: "#ef4444" }}>Rs.{o.pending.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
 
         {/* Actions & Filters */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24, flexWrap: "wrap", gap: 16 }}>

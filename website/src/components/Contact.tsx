@@ -50,7 +50,7 @@ export default function Contact() {
       const text = encodeURIComponent(
         `Assalamu Alaikum Sohaib!\n\nMy name is ${form.name}.\n\nI need help with: ${form.service}\n\n${form.msg ? "About my business: " + form.msg + "\n\n" : ""}My email: ${form.email}`
       );
-      window.open(`https://wa.me/923363710499?text=${text}`, "_blank");
+      window.open(`https://wa.me/923048885206?text=${text}`, "_blank");
       setForm({ name: "", email: "", service: "", msg: "" });
       setErrors({});
       setTimeout(() => setStatus("idle"), 5000);
@@ -65,20 +65,20 @@ export default function Contact() {
   });
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="contact" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
       <div className="contact-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "start" }}>
         {/* Left */}
         <div>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
             <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Get in touch
           </div>
-          <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,5vw,64px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 20 }}>
+          <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,5vw,64px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 20 }}>
             LET&apos;S AUDIT YOUR<br /><span style={{ color: "#d4a017" }}>MARKETING FREE.</span>
           </h2>
-          <p style={{ fontSize: 16, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 44 }}>30-minute call — I&apos;ll review your current setup and tell you exactly what to fix. No commitment. No pressure. Just honest marketing advice.</p>
+          <p style={{ fontSize: 16, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 44 }}>30-minute PPC consultancy call — I&apos;ll review your current digital marketing campaign setup, audit your Google Ads optimization, and tell you exactly what to fix. No commitment. No pressure. Just honest advice from an experienced digital marketing consultant.</p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 44 }}>
-            <ContactOpt icon="💬" title="WhatsApp — fastest response" sub="Reply within 1 hour" href="https://wa.me/923363710499" />
+            <ContactOpt icon="💬" title="WhatsApp — fastest response" sub="Reply within 1 hour" href="https://wa.me/923048885206" />
             <ContactOpt icon="📅" title="Book a meeting on Calendly" sub="Pick a time that works for you" href="https://calendly.com/meetsohaib/30min" />
             <ContactOpt icon="💼" title="Connect on LinkedIn" sub="International clients preferred here" href="https://www.linkedin.com/in/sohaibmehmoodsalafi/" />
           </div>

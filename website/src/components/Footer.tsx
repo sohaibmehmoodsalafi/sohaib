@@ -44,7 +44,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer style={{ borderTop: "1px solid rgba(255,255,255,.07)", padding: "72px 4vw 40px" }}>
+      <footer className="footer-section" style={{ borderTop: "1px solid rgba(255,255,255,.07)", padding: "72px 4vw 40px" }}>
         <div className="footer-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "2.5fr 1fr 1fr 1fr", gap: 60, marginBottom: 60 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
@@ -54,7 +54,7 @@ export default function Footer() {
                 <div style={{ fontSize: 11, color: "#6b6b6b", letterSpacing: ".06em" }}>SCALING BRANDS. EMPOWERING SOULS</div>
               </div>
             </div>
-            <p style={{ fontSize: 14, color: "#6b6b6b", lineHeight: 1.75, maxWidth: 300, marginBottom: 24 }}>Meta Ads expert specializing in Quran Academy student leads and e-commerce scaling. 120+ businesses grown across Pakistan, UAE, UK & USA.</p>
+            <p style={{ fontSize: 14, color: "#6b6b6b", lineHeight: 1.75, maxWidth: 300, marginBottom: 24 }}>Digital marketing consultant and PPC advertising company specializing in pay per click campaigns, Google Ads optimization, and meta advertising solutions. 120+ businesses grown across Pakistan, UAE, UK & USA.</p>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               {["🇵🇰 Pakistan", "🇦🇪 UAE", "🇬🇧 UK", "🇺🇸 USA"].map((f) => (
                 <span key={f} style={{ fontSize: 12, color: "#6b6b6b", display: "flex", alignItems: "center", gap: 4 }}>{f}</span>
@@ -63,11 +63,11 @@ export default function Footer() {
           </div>
 
           <FooterCol title="Services" links={[
-            { label: "Meta Ads Management", href: "#services" },
-            { label: "Social Media", href: "#services" },
-            { label: "Landing Pages", href: "#services" },
-            { label: "Logo & Branding", href: "#services" },
-            { label: "Full Growth Package", href: "#services" },
+            { label: "PPC Advertising Services", href: "#services" },
+            { label: "Google Ads Optimization", href: "#services" },
+            { label: "Meta Advertising Solutions", href: "#services" },
+            { label: "Digital Branding", href: "#services" },
+            { label: "Digital Marketing Campaigns", href: "#services" },
           ]} />
           <FooterCol title="Portfolio" links={[
             { label: "Learn Quran Institute", href: "https://learnquraninstitute.org/", ext: true },
@@ -76,7 +76,7 @@ export default function Footer() {
             { label: "Peace Institute", href: "https://peace.org.pk", ext: true },
           ]} />
           <FooterCol title="Legal" links={[
-            { label: "WhatsApp", href: "https://wa.me/923363710499", ext: true },
+            { label: "WhatsApp", href: "https://wa.me/923048885206", ext: true },
             { label: "Book a Call", href: "https://calendly.com/meetsohaib/30min", ext: true },
             { label: "Privacy Policy", onClick: () => openModal("Privacy Policy", "Your data is never shared with third parties. Contact information is used solely for business communication purposes. We do not sell, rent, or share personal information with any third party.") },
             { label: "Terms of Service", onClick: () => openModal("Terms of Service", "All services are subject to a written agreement. Results may vary based on business niche, budget, and market conditions. Sohaib Mehmood reserves the right to decline any project at his discretion.") },

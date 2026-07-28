@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { getInvoice, saveInvoice, nextInvoiceNumber, getClients, saveClient, uid, type Invoice, type InvoiceItem, type Client } from "@/lib/invoiceStore";
+import { SERVICE_PACKAGES } from "@/lib/packages";
 
 const currencies = ["PKR", "USD", "GBP", "AED"] as const;
+const countryCodes = ["+92", "+1", "+44", "+971", "+966", "+91", "+61", "+60", "+49", "+33", "+90", "+880"];
+const ccLabel: Record<string, string> = { "+92": "🇵🇰 +92", "+1": "🇺🇸 +1", "+44": "🇬🇧 +44", "+971": "🇦🇪 +971", "+966": "🇸🇦 +966", "+91": "🇮🇳 +91", "+61": "🇦🇺 +61", "+60": "🇲🇾 +60", "+49": "🇩🇪 +49", "+33": "🇫🇷 +33", "+90": "🇹🇷 +90", "+880": "🇧🇩 +880" };
 
 function emptyItem(): InvoiceItem {
   return { description: "", qty: 1, rate: 0 };
@@ -13,10 +16,11 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
   const isEdit = !!editId;
   const existing = editId ? getInvoice(editId) : null;
 
-  const [invoiceNumber] = useState(existing?.invoiceNumber || nextInvoiceNumber());
+  const [invoiceNumber, setInvoiceNumber] = useState(existing?.invoiceNumber || nextInvoiceNumber());
   const [clientName, setClientName] = useState(existing?.client.name || "");
   const [clientEmail, setClientEmail] = useState(existing?.client.email || "");
   const [clientPhone, setClientPhone] = useState(existing?.client.phone || "");
+  const [clientCountryCode, setClientCountryCode] = useState(existing?.client.countryCode || "+92");
   const [clientCompany, setClientCompany] = useState(existing?.client.company || "");
   const [clientAddress, setClientAddress] = useState(existing?.client.address || "");
   const [items, setItems] = useState<InvoiceItem[]>(existing?.items || [emptyItem()]);
@@ -37,6 +41,27 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
   const removeItem = (idx: number) => setItems((prev) => prev.filter((_, i) => i !== idx));
   const addItem = () => setItems((prev) => [...prev, emptyItem()]);
 
+  const addPackage = (pkgId: string) => {
+    if (!pkgId) return;
+    if (pkgId === "__other__") {
+      // "Others" — blank custom line item
+      setItems((prev) => {
+        const last = prev[prev.length - 1];
+        const isLastEmpty = prev.length === 1 && last && !last.description && last.rate === 0;
+        return isLastEmpty ? prev : [...prev, emptyItem()];
+      });
+      return;
+    }
+    const pkg = SERVICE_PACKAGES.find((p) => p.id === pkgId);
+    if (!pkg) return;
+    const newItem: InvoiceItem = { description: pkg.description, qty: 1, rate: pkg.rate };
+    setItems((prev) => {
+      const last = prev[prev.length - 1];
+      const isLastEmpty = prev.length === 1 && last && !last.description && last.rate === 0;
+      return isLastEmpty ? [newItem] : [...prev, newItem];
+    });
+  };
+
   const subtotal = items.reduce((s, i) => s + i.qty * i.rate, 0);
   const tax = subtotal * (taxPercent / 100);
   const total = subtotal + tax - discount;
@@ -45,12 +70,14 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
     setClientName(c.name);
     setClientEmail(c.email);
     setClientPhone(c.phone);
+    setClientCountryCode(c.countryCode || "+92");
     setClientCompany(c.company || "");
     setClientAddress(c.address || "");
     setShowClientList(false);
   };
 
   const handleSave = () => {
+    if (!invoiceNumber.trim()) { alert("Invoice number is required"); return; }
     if (!clientName.trim()) { alert("Client name is required"); return; }
     if (items.length === 0 || items.every((i) => !i.description)) { alert("Add at least one item"); return; }
 
@@ -59,6 +86,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
       name: clientName.trim(),
       email: clientEmail.trim(),
       phone: clientPhone.trim(),
+      countryCode: clientCountryCode,
       company: clientCompany.trim() || undefined,
       address: clientAddress.trim() || undefined,
     };
@@ -66,7 +94,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
 
     const inv: Invoice = {
       id: existing?.id || uid(),
-      invoiceNumber,
+      invoiceNumber: invoiceNumber.trim(),
       client,
       items: items.filter((i) => i.description.trim()),
       status,
@@ -135,14 +163,40 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
             <div><label style={labelStyle}>Client Name *</label><input style={inputStyle} value={clientName} onChange={(e) => setClientName(e.target.value)} placeholder="e.g. Muhammad Ahmed" /></div>
             <div><label style={labelStyle}>Company</label><input style={inputStyle} value={clientCompany} onChange={(e) => setClientCompany(e.target.value)} placeholder="e.g. ABC Corp" /></div>
             <div><label style={labelStyle}>Email</label><input style={inputStyle} value={clientEmail} onChange={(e) => setClientEmail(e.target.value)} placeholder="client@email.com" /></div>
-            <div><label style={labelStyle}>Phone</label><input style={inputStyle} value={clientPhone} onChange={(e) => setClientPhone(e.target.value)} placeholder="+92..." /></div>
+            <div><label style={labelStyle}>Phone</label>
+              <div style={{ display: "flex", gap: 8 }}>
+                <select style={{ ...inputStyle, width: 110, flex: "none", cursor: "pointer" }} value={clientCountryCode} onChange={(e) => setClientCountryCode(e.target.value)}>
+                  {countryCodes.map((c) => <option key={c} value={c}>{ccLabel[c]}</option>)}
+                </select>
+                <input style={inputStyle} value={clientPhone} onChange={(e) => setClientPhone(e.target.value)} placeholder="300 1234567" />
+              </div>
+            </div>
             <div style={{ gridColumn: "span 2" }}><label style={labelStyle}>Address</label><input style={inputStyle} value={clientAddress} onChange={(e) => setClientAddress(e.target.value)} placeholder="Full address" /></div>
           </div>
         </div>
 
         {/* Items Section */}
         <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px", marginBottom: 24 }}>
-          <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em", marginBottom: 20 }}>LINE ITEMS</h2>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, flexWrap: "wrap", gap: 12 }}>
+            <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em" }}>LINE ITEMS</h2>
+            <select
+              value=""
+              onChange={(e) => { addPackage(e.target.value); e.target.value = ""; }}
+              style={{
+                padding: "10px 16px", background: "#1e1e1e", color: "#d4a017",
+                border: "1px solid rgba(212,160,23,.3)", borderRadius: 10, fontSize: 13,
+                cursor: "pointer", fontFamily: "'Outfit',sans-serif", outline: "none", minWidth: 220,
+              }}
+            >
+              <option value="" disabled style={{ background: "#1e1e1e", color: "#6b6b6b" }}>+ Add from My Packages</option>
+              {SERVICE_PACKAGES.map((p) => (
+                <option key={p.id} value={p.id} style={{ background: "#1e1e1e", color: "#f5f0e8" }}>
+                  {p.tier} — {p.name} (Rs.{p.rate.toLocaleString()})
+                </option>
+              ))}
+              <option value="__other__" style={{ background: "#1e1e1e", color: "#f5f0e8" }}>Others (Custom Item)</option>
+            </select>
+          </div>
           <div style={{ display: "grid", gridTemplateColumns: "3fr 1fr 1fr 1fr 40px", gap: 8, marginBottom: 8 }}>
             <span style={labelStyle}>Description</span>
             <span style={labelStyle}>Qty</span>
@@ -175,6 +229,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
           <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px" }}>
             <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em", marginBottom: 20 }}>SETTINGS</h2>
             <div style={{ display: "grid", gap: 16 }}>
+              <div><label style={labelStyle}>Invoice Number</label><input style={inputStyle} value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} placeholder="e.g. SM-0001" /></div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
                 <div>
                   <label style={labelStyle}>Currency</label>

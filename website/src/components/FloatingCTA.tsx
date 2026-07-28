@@ -15,7 +15,7 @@ export default function FloatingCTA() {
 
   return (
     <a
-      href="https://wa.me/923363710499"
+      href="https://wa.me/923048885206"
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-pulse"

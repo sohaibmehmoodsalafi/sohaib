@@ -51,12 +51,12 @@ function PortCard({ type, title, result, url, img, placeholder }: { type: string
 export default function Portfolio() {
   const ref = useFadeIn();
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="work" style={{ padding: "120px 4vw", background: "#0f0f0f", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="work" className="section-pad" style={{ padding: "120px 4vw", background: "#0f0f0f", borderTop: "1px solid rgba(255,255,255,.07)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Portfolio
         </div>
-        <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>REAL CAMPAIGNS.<br />REAL CLIENTS.</h2>
+        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>REAL CAMPAIGNS.<br />REAL CLIENTS.</h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 500, lineHeight: 1.7, marginBottom: 64 }}>Every project — ads, creatives, and landing pages — handled by one person.</p>
         <div className="port-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {PORTFOLIO.map((p, i) => <PortCard key={i} {...p} />)}
@@ -68,7 +68,7 @@ export default function Portfolio() {
             <div style={{ fontSize: 40, marginBottom: 14 }}>📂</div>
             <p style={{ fontSize: 15, fontWeight: 600, marginBottom: 8 }}>115+ more projects</p>
             <p style={{ fontSize: 13, color: "#9a9a9a", marginBottom: 20 }}>Full case studies with ad spend, leads, and ROAS data.</p>
-            <a href="https://wa.me/923363710499" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer"
               style={{ background: "transparent", color: "#f5f0e8", fontWeight: 500, fontSize: 13, padding: "10px 22px", borderRadius: 99, border: "1px solid rgba(255,255,255,.12)", textDecoration: "none" }}
             >Request Full Portfolio →</a>
           </div>
