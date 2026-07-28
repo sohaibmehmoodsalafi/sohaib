@@ -35,5 +35,14 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps          # cPanel usually supports explicit FTPS; change to "ftp" if it fails
           port: 21
+          timeout: 120000         # give slow/large transfers more time before the socket resets
           local-dir: ./website/build-out/
           server-dir: ./   # this FTP account already opens inside public_html, so upload to root
+          # Skip heavy media that rarely changes and is already on the server — keeps each
+          # transfer small so the FTPS data socket doesn't reset mid-upload.
+          exclude: |
+            **/*.jpg
+            **/*.jpeg
+            **/*.webp
+            **/*.png
+            **/*.mp4
