@@ -1,0 +1,39 @@
+name: Deploy to cPanel
+
+# Runs automatically on every push that touches the website,
+# and can also be triggered manually (1-click) from the GitHub "Actions" tab.
+on:
+  push:
+    branches: [master]
+    paths: ["website/**"]
+  workflow_dispatch: {}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install, build & process for cPanel
+        working-directory: website
+        run: |
+          npm ci
+          npm run build
+          node deploy-cpanel.js
+
+      - name: Upload to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps          # cPanel usually supports explicit FTPS; change to "ftp" if it fails
+          port: 21
+          local-dir: ./website/build-out/
+          server-dir: ./public_html/   # adjust if your FTP account already opens inside public_html (then use ./)
