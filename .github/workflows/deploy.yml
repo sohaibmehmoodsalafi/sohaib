@@ -36,4 +36,4 @@ jobs:
           protocol: ftps          # cPanel usually supports explicit FTPS; change to "ftp" if it fails
           port: 21
           local-dir: ./website/build-out/
-          server-dir: ./public_html/   # adjust if your FTP account already opens inside public_html (then use ./)
+          server-dir: ./   # this FTP account already opens inside public_html, so upload to root
