@@ -135,6 +135,12 @@ img { max-width: 100%; display: block; }
 .system-card:hover { transform: translateY(-6px); border-color: rgba(212,160,23,.35) !important; background: rgba(212,160,23,.035) !important; }
 .system-card:hover .system-num { background: #d4a017 !important; color: #080808 !important; box-shadow: 0 0 18px rgba(212,160,23,.35); }
 
+/* ── Problem section grid ── */
+.problem-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 700px) { .problem-grid { grid-template-columns: 1fr !important; } }
+.problem-card { transition: transform .25s ease, border-color .25s ease; }
+.problem-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,.25) !important; }
+
 /* ── FAQ accordion (native <details> — works without JS) ── */
 .faq-q { list-style: none; }
 .faq-q::-webkit-details-marker { display: none; }
