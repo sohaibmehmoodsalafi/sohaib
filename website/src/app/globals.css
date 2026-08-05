@@ -126,11 +126,14 @@ img { max-width: 100%; display: block; }
 .nav-toggle:checked ~ .main-nav .ham-bar-1 { opacity: 0; }
 .nav-toggle:checked ~ .main-nav .ham-bar-2 { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* ── MarkenExus System grid (5 steps) ── */
+/* ── MarkenExus Growth System grid (5 steps) ── */
 .system-grid { grid-template-columns: repeat(5, 1fr); }
 @media (max-width: 1000px) { .system-grid { grid-template-columns: repeat(3, 1fr) !important; } }
 @media (max-width: 700px) { .system-grid { grid-template-columns: repeat(2, 1fr) !important; } }
 @media (max-width: 460px) { .system-grid { grid-template-columns: 1fr !important; } }
+.system-card { transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.system-card:hover { transform: translateY(-6px); border-color: rgba(212,160,23,.35) !important; background: rgba(212,160,23,.035) !important; }
+.system-card:hover .system-num { background: #d4a017 !important; color: #080808 !important; box-shadow: 0 0 18px rgba(212,160,23,.35); }
 
 /* ── FAQ accordion (native <details> — works without JS) ── */
 .faq-q { list-style: none; }

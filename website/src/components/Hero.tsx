@@ -358,6 +358,18 @@ export default function Hero() {
             Available for new clients — Pakistan · UAE · UK · USA
           </div>
 
+          {/* Name + #1 positioning */}
+          <div
+            className="hero-fade hero-fade-d2 hero-eyebrow"
+            style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 10, marginBottom: 16 }}
+          >
+            <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(20px,2.6vw,32px)", letterSpacing: ".04em", color: "#f5f0e8", lineHeight: 1 }}>SOHAIB MEHMOOD</span>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "rgba(212,160,23,.12)", border: "1px solid rgba(212,160,23,.35)", borderRadius: 99, padding: "5px 13px" }}>
+              <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 19, color: "#d4a017", lineHeight: 1 }}>#1</span>
+              <span style={{ fontSize: 12, fontWeight: 600, color: "#f5f0e8", letterSpacing: ".02em" }}>Meta Ads &amp; Funnel Expert</span>
+            </span>
+          </div>
+
           {/* H1 */}
           <h1
             style={{
