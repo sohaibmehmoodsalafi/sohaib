@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import MarqueeBar from "@/components/MarqueeBar";
 import AboutSection from "@/components/AboutSection";
 import Services from "@/components/Services";
+import MarkenExusSystem from "@/components/MarkenExusSystem";
 import Results from "@/components/Results";
 import Testimonials from "@/components/Testimonials";
 import Portfolio from "@/components/Portfolio";
@@ -26,6 +27,7 @@ export default function Home() {
         <MarqueeBar />
         <AboutSection />
         <Services />
+        <MarkenExusSystem />
         <Results />
         <Testimonials />
         <Portfolio />
