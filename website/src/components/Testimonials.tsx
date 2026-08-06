@@ -17,13 +17,13 @@ function TestiCard({ init, name, role, text, highlight }: { init: string; name: 
       background: "#161616", border: `1px solid ${hov ? "rgba(255,255,255,.12)" : "rgba(255,255,255,.07)"}`,
       borderRadius: 16, padding: 36, transition: "border-color .25s",
     }} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
-      <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 40, color: "#d4a017", marginBottom: 16, lineHeight: 1 }}>&ldquo;</div>
+      <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 40, color: "#d4a017", marginBottom: 16, lineHeight: 1 }}>&ldquo;</div>
       <p style={{ fontSize: 15, color: "#f5f0e8", lineHeight: 1.75, marginBottom: 28, fontWeight: 300 }}>
         {parts[0]}<strong style={{ fontWeight: 600, color: "#d4a017" }}>{highlight}</strong>{parts[1] || ""}
       </p>
       <div style={{ height: 1, background: "rgba(255,255,255,.07)", marginBottom: 22 }} />
       <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-        <div style={{ width: 46, height: 46, borderRadius: "50%", background: "#d4a017", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Bebas Neue',sans-serif", fontSize: 16, color: "#080808", flexShrink: 0 }}>{init}</div>
+        <div style={{ width: 46, height: 46, borderRadius: "50%", background: "#d4a017", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 16, color: "#080808", flexShrink: 0 }}>{init}</div>
         <div>
           <div style={{ fontSize: 14, fontWeight: 600 }}>{name}</div>
           <div style={{ fontSize: 12, color: "#6b6b6b", marginTop: 2 }}>{role}</div>
@@ -42,7 +42,7 @@ export default function Testimonials() {
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Reviews
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>WHAT CLIENTS<br />ACTUALLY SAY.</h2>
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>WHAT CLIENTS<br />ACTUALLY SAY.</h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 500, lineHeight: 1.7, marginBottom: 64 }}>Real clients. Real results. Ask me for references to verify directly.</p>
         <div className="testi-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {TESTIMONIALS.map((t, i) => <TestiCard key={i} {...t} />)}

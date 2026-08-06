@@ -112,23 +112,23 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
 
   const inputStyle: React.CSSProperties = {
     width: "100%", padding: "12px 14px", background: "#1e1e1e", border: "1px solid rgba(255,255,255,.1)",
-    borderRadius: 10, color: "#f5f0e8", fontSize: 13, outline: "none", fontFamily: "'Outfit',sans-serif",
+    borderRadius: 10, color: "#f5f0e8", fontSize: 13, outline: "none", fontFamily: "'Plus Jakarta Sans',sans-serif",
   };
   const labelStyle: React.CSSProperties = { fontSize: 11, color: "#6b6b6b", fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 6, display: "block" };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#080808", fontFamily: "'Outfit',sans-serif", color: "#f5f0e8" }}>
+    <div style={{ minHeight: "100vh", background: "#080808", fontFamily: "'Plus Jakarta Sans',sans-serif", color: "#f5f0e8" }}>
       {/* Top bar */}
       <div style={{ background: "#0f0f0f", borderBottom: "1px solid rgba(255,255,255,.07)", padding: "16px 32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <button onClick={onDone} style={{ background: "none", border: "none", color: "#6b6b6b", fontSize: 20, cursor: "pointer", padding: 0, lineHeight: 1 }}>&larr;</button>
-          <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 20, letterSpacing: ".06em" }}>
+          <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: ".06em" }}>
             {isEdit ? "EDIT INVOICE" : "NEW INVOICE"} — {invoiceNumber}
           </span>
         </div>
         <div style={{ display: "flex", gap: 12 }}>
-          <button onClick={onDone} style={{ padding: "10px 20px", background: "#1e1e1e", color: "#9a9a9a", border: "1px solid rgba(255,255,255,.07)", borderRadius: 10, fontSize: 13, cursor: "pointer", fontFamily: "'Outfit',sans-serif" }}>Cancel</button>
-          <button onClick={handleSave} style={{ padding: "10px 24px", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13, border: "none", borderRadius: 10, cursor: "pointer", fontFamily: "'Outfit',sans-serif" }}>
+          <button onClick={onDone} style={{ padding: "10px 20px", background: "#1e1e1e", color: "#9a9a9a", border: "1px solid rgba(255,255,255,.07)", borderRadius: 10, fontSize: 13, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>Cancel</button>
+          <button onClick={handleSave} style={{ padding: "10px 24px", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13, border: "none", borderRadius: 10, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
             {isEdit ? "Update Invoice" : "Save Invoice"}
           </button>
         </div>
@@ -138,11 +138,11 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
         {/* Client Section */}
         <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px", marginBottom: 24 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
-            <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em" }}>CLIENT DETAILS</h2>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".04em" }}>CLIENT DETAILS</h2>
             {savedClients.length > 0 && (
               <button onClick={() => setShowClientList(!showClientList)} style={{
                 padding: "6px 14px", background: "#1e1e1e", color: "#d4a017", border: "1px solid rgba(212,160,23,.2)",
-                borderRadius: 8, fontSize: 12, cursor: "pointer", fontFamily: "'Outfit',sans-serif",
+                borderRadius: 8, fontSize: 12, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif",
               }}>Select Saved Client</button>
             )}
           </div>
@@ -178,14 +178,14 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
         {/* Items Section */}
         <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px", marginBottom: 24 }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20, flexWrap: "wrap", gap: 12 }}>
-            <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em" }}>LINE ITEMS</h2>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".04em" }}>LINE ITEMS</h2>
             <select
               value=""
               onChange={(e) => { addPackage(e.target.value); e.target.value = ""; }}
               style={{
                 padding: "10px 16px", background: "#1e1e1e", color: "#d4a017",
                 border: "1px solid rgba(212,160,23,.3)", borderRadius: 10, fontSize: 13,
-                cursor: "pointer", fontFamily: "'Outfit',sans-serif", outline: "none", minWidth: 220,
+                cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif", outline: "none", minWidth: 220,
               }}
             >
               <option value="" disabled style={{ background: "#1e1e1e", color: "#6b6b6b" }}>+ Add from My Packages</option>
@@ -219,7 +219,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
           ))}
           <button onClick={addItem} style={{
             padding: "10px 20px", background: "transparent", color: "#d4a017", border: "1px dashed rgba(212,160,23,.3)",
-            borderRadius: 10, fontSize: 13, cursor: "pointer", fontFamily: "'Outfit',sans-serif", marginTop: 8, width: "100%",
+            borderRadius: 10, fontSize: 13, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif", marginTop: 8, width: "100%",
           }}>+ Add Item</button>
         </div>
 
@@ -227,7 +227,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 24 }}>
           {/* Settings */}
           <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px" }}>
-            <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em", marginBottom: 20 }}>SETTINGS</h2>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".04em", marginBottom: 20 }}>SETTINGS</h2>
             <div style={{ display: "grid", gap: 16 }}>
               <div><label style={labelStyle}>Invoice Number</label><input style={inputStyle} value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} placeholder="e.g. SM-0001" /></div>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
@@ -255,7 +255,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
 
           {/* Summary */}
           <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px" }}>
-            <h2 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".04em", marginBottom: 20 }}>SUMMARY</h2>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".04em", marginBottom: 20 }}>SUMMARY</h2>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <Row label="Subtotal" value={subtotal.toLocaleString()} />
               <Row label={`Tax (${taxPercent}%)`} value={tax.toLocaleString()} />
@@ -267,7 +267,7 @@ export default function InvoiceForm({ editId, onDone }: { editId?: string; onDon
             <div style={{ marginTop: 32 }}>
               <button onClick={handleSave} style={{
                 width: "100%", padding: "16px", background: "#d4a017", color: "#080808", fontWeight: 700,
-                fontSize: 15, border: "none", borderRadius: 12, cursor: "pointer", fontFamily: "'Outfit',sans-serif",
+                fontSize: 15, border: "none", borderRadius: 12, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif",
               }}>{isEdit ? "Update Invoice" : "Save Invoice"}</button>
             </div>
           </div>
@@ -281,7 +281,7 @@ function Row({ label, value, bold, color }: { label: string; value: string; bold
   return (
     <div style={{ display: "flex", justifyContent: "space-between" }}>
       <span style={{ fontSize: 14, color: bold ? "#f5f0e8" : "#6b6b6b", fontWeight: bold ? 700 : 400 }}>{label}</span>
-      <span style={{ fontSize: bold ? 20 : 14, fontWeight: bold ? 700 : 500, color: color || (bold ? "#d4a017" : "#f5f0e8"), fontFamily: bold ? "'Bebas Neue',sans-serif" : "inherit", letterSpacing: bold ? ".02em" : "0" }}>{value}</span>
+      <span style={{ fontSize: bold ? 20 : 14, fontWeight: bold ? 700 : 500, color: color || (bold ? "#d4a017" : "#f5f0e8"), fontFamily: bold ? "'Plus Jakarta Sans',sans-serif" : "inherit", letterSpacing: bold ? ".02em" : "0" }}>{value}</span>
     </div>
   );
 }

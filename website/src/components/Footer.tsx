@@ -8,7 +8,7 @@ function FooterCol({ title, links }: { title: string; links: Array<{ label: stri
       <h4 style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".12em", color: "#6b6b6b", textTransform: "uppercase", marginBottom: 20 }}>{title}</h4>
       {links.map((l, i) =>
         l.onClick ? (
-          <button key={i} onClick={l.onClick} style={{ display: "block", fontSize: 14, color: "#9a9a9a", marginBottom: 12, background: "none", border: "none", cursor: "pointer", fontFamily: "'Outfit',sans-serif", padding: 0, textAlign: "left", transition: "color .2s" }}
+          <button key={i} onClick={l.onClick} style={{ display: "block", fontSize: 14, color: "#9a9a9a", marginBottom: 12, background: "none", border: "none", cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif", padding: 0, textAlign: "left", transition: "color .2s" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "#f5f0e8")} onMouseLeave={(e) => (e.currentTarget.style.color = "#9a9a9a")}>{l.label}</button>
         ) : (
           <a key={i} href={l.href} target={l.ext ? "_blank" : undefined} rel={l.ext ? "noopener noreferrer" : undefined}
@@ -50,7 +50,7 @@ export default function Footer() {
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
               <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" style={{ width: 44, height: 44, objectFit: "contain", flexShrink: 0 }} />
               <div>
-                <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 18, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
+                <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 18, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
                 <div style={{ fontSize: 11, color: "#6b6b6b", letterSpacing: ".06em" }}>SCALING BRANDS. EMPOWERING SOULS</div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function Footer() {
               position: "absolute", top: 16, right: 16, background: "none",
               border: "none", color: "#6b6b6b", fontSize: 20, cursor: "pointer", lineHeight: 1,
             }}>&times;</button>
-            <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 28, letterSpacing: ".04em", marginBottom: 16 }}>{modalContent.title}</h3>
+            <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, letterSpacing: ".04em", marginBottom: 16 }}>{modalContent.title}</h3>
             <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.8 }}>{modalContent.body}</p>
           </div>
         </div>

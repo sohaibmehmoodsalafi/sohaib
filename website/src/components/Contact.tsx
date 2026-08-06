@@ -60,7 +60,7 @@ export default function Contact() {
   const inputStyle = (id: string) => ({
     width: "100%", background: "#1e1e1e",
     border: `1px solid ${errors[id] ? "#f87171" : "rgba(255,255,255,.07)"}`,
-    borderRadius: 10, color: "#f5f0e8", fontFamily: "'Outfit',sans-serif",
+    borderRadius: 10, color: "#f5f0e8", fontFamily: "'Plus Jakarta Sans',sans-serif",
     fontSize: 15, padding: "13px 16px", outline: "none",
   });
 
@@ -72,7 +72,7 @@ export default function Contact() {
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
             <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Get in touch
           </div>
-          <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,5vw,64px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 20 }}>
+          <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,5vw,64px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 20 }}>
             LET&apos;S AUDIT YOUR<br /><span style={{ color: "#d4a017" }}>MARKETING FREE.</span>
           </h2>
           <p style={{ fontSize: 16, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 44 }}>30-minute PPC consultancy call — I&apos;ll review your current digital marketing campaign setup, audit your Google Ads optimization, and tell you exactly what to fix. No commitment. No pressure. Just honest advice from an experienced digital marketing consultant.</p>
@@ -133,7 +133,7 @@ export default function Contact() {
           <button onClick={handleSubmit} disabled={status === "loading"}
             style={{
               width: "100%", background: status === "loading" ? "#9a7010" : "#d4a017", color: "#080808",
-              fontFamily: "'Outfit',sans-serif", fontSize: 15, fontWeight: 700,
+              fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: 15, fontWeight: 700,
               padding: 16, borderRadius: 99, border: "none", cursor: status === "loading" ? "not-allowed" : "pointer",
               transition: "background .2s", letterSpacing: ".02em",
             }}>

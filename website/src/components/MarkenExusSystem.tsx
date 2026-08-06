@@ -43,7 +43,7 @@ export default function MarkenExusSystem() {
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />The System
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
           THE MARKENEXUS<br /><span style={{ color: "#d4a017" }}>GROWTH SYSTEM</span><span style={{ color: "#d4a017", fontSize: ".5em", verticalAlign: "top" }}>™</span>
         </h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 560, lineHeight: 1.7, marginBottom: 24 }}>
@@ -71,9 +71,9 @@ export default function MarkenExusSystem() {
               }}
             >
               {/* Faint watermark number */}
-              <span aria-hidden="true" style={{ position: "absolute", top: -14, right: 8, fontFamily: "'Bebas Neue',sans-serif", fontSize: 96, lineHeight: 1, color: "rgba(212,160,23,0.06)", pointerEvents: "none", userSelect: "none" }}>{s.n}</span>
+              <span aria-hidden="true" style={{ position: "absolute", top: -14, right: 8, fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 96, lineHeight: 1, color: "rgba(212,160,23,0.06)", pointerEvents: "none", userSelect: "none" }}>{s.n}</span>
               {/* Number chip */}
-              <div className="system-num" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, borderRadius: 12, background: "rgba(212,160,23,.1)", border: "1px solid rgba(212,160,23,.3)", color: "#d4a017", fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".02em", marginBottom: 18, transition: "all .25s" }}>{s.n}</div>
+              <div className="system-num" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 42, height: 42, borderRadius: 12, background: "rgba(212,160,23,.1)", border: "1px solid rgba(212,160,23,.3)", color: "#d4a017", fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".02em", marginBottom: 18, transition: "all .25s" }}>{s.n}</div>
               <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 10, lineHeight: 1.3 }}>{s.title}</h3>
               <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.7 }}>{s.desc}</p>
             </div>
@@ -85,7 +85,7 @@ export default function MarkenExusSystem() {
             href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20want%20the%20MarkenExus%20System%20for%20my%20business."
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 14, padding: "15px 34px", borderRadius: 99, textDecoration: "none", fontFamily: "'Outfit',sans-serif" }}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 14, padding: "15px 34px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif" }}
           >
             Run the MarkenExus System on my business →
           </a>

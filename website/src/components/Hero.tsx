@@ -135,7 +135,7 @@ function HeroStat({ num, suf, lbl, last }: { num: string; suf: string; lbl: stri
       onMouseEnter={() => setHov(true)}
       onMouseLeave={() => setHov(false)}
     >
-      <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 36, color: "#d4a017", lineHeight: 1, letterSpacing: ".02em" }}>
+      <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, color: "#d4a017", lineHeight: 1, letterSpacing: ".02em" }}>
         <Counter end={num} suffix={suf} />
       </div>
       <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4, letterSpacing: ".03em" }}>{lbl}</div>
@@ -363,9 +363,9 @@ export default function Hero() {
             className="hero-fade hero-fade-d2 hero-eyebrow"
             style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 10, marginBottom: 16 }}
           >
-            <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(20px,2.6vw,32px)", letterSpacing: ".04em", color: "#f5f0e8", lineHeight: 1 }}>SOHAIB MEHMOOD</span>
+            <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(20px,2.6vw,32px)", letterSpacing: ".04em", color: "#f5f0e8", lineHeight: 1 }}>SOHAIB MEHMOOD</span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "rgba(212,160,23,.12)", border: "1px solid rgba(212,160,23,.35)", borderRadius: 99, padding: "5px 13px" }}>
-              <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 19, color: "#d4a017", lineHeight: 1 }}>#1</span>
+              <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 19, color: "#d4a017", lineHeight: 1 }}>#1</span>
               <span style={{ fontSize: 12, fontWeight: 600, color: "#f5f0e8", letterSpacing: ".02em" }}>Meta Ads &amp; Funnel Expert</span>
             </span>
           </div>
@@ -373,7 +373,7 @@ export default function Hero() {
           {/* H1 */}
           <h1
             style={{
-              fontFamily: "'Bebas Neue',sans-serif",
+              fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800,
               fontSize: "clamp(52px,7vw,100px)",
               lineHeight: 0.92,
               letterSpacing: ".01em",
@@ -557,7 +557,7 @@ export default function Hero() {
               right: 24,
               zIndex: 2,
             }}>
-              <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".06em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".06em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
               <div style={{ fontSize: 11, color: "#d4a017", fontWeight: 600, letterSpacing: ".08em", marginTop: 4 }}>DIGITAL MARKETING EXPERT</div>
             </div>
           </div>

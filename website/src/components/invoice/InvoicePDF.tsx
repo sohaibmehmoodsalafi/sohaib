@@ -40,22 +40,22 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
   };
 
   return (
-    <div style={{ minHeight: "100vh", background: "#080808", fontFamily: "'Outfit',sans-serif", color: "#f5f0e8" }}>
+    <div style={{ minHeight: "100vh", background: "#080808", fontFamily: "'Plus Jakarta Sans',sans-serif", color: "#f5f0e8" }}>
       {/* Action bar - hidden in print */}
       <div className="no-print" style={{ background: "#0f0f0f", borderBottom: "1px solid rgba(255,255,255,.07)", padding: "16px 32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <button onClick={onBack} style={{ background: "none", border: "none", color: "#6b6b6b", fontSize: 20, cursor: "pointer", padding: 0, lineHeight: 1 }}>&larr;</button>
-          <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 20, letterSpacing: ".06em" }}>INVOICE {invoice.invoiceNumber}</span>
+          <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: ".06em" }}>INVOICE {invoice.invoiceNumber}</span>
         </div>
         <div style={{ display: "flex", gap: 12 }}>
           <button onClick={handleWhatsApp} style={{
             padding: "10px 20px", background: "#25d366", color: "#fff", fontWeight: 600, fontSize: 13,
-            border: "none", borderRadius: 10, cursor: "pointer", fontFamily: "'Outfit',sans-serif",
+            border: "none", borderRadius: 10, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif",
             display: "flex", alignItems: "center", gap: 6,
           }}>Send via WhatsApp</button>
           <button onClick={handlePrint} style={{
             padding: "10px 20px", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
-            border: "none", borderRadius: 10, cursor: "pointer", fontFamily: "'Outfit',sans-serif",
+            border: "none", borderRadius: 10, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif",
           }}>Print / Save PDF</button>
         </div>
       </div>
@@ -67,12 +67,12 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
           <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
             <img src="/images/sohaib-logo.png" alt="Logo" style={{ width: 48, height: 48 }} />
             <div>
-              <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 22, letterSpacing: ".06em", color: "#f5f0e8" }}>SOHAIB MEHMOOD</div>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".06em", color: "#f5f0e8" }}>SOHAIB MEHMOOD</div>
               <div style={{ fontSize: 11, color: "#d4a017", letterSpacing: ".04em" }}>SCALING BRANDS. EMPOWERING SOULS</div>
             </div>
           </div>
           <div style={{ textAlign: "right" }}>
-            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 36, letterSpacing: ".04em", color: "#d4a017" }}>INVOICE</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, letterSpacing: ".04em", color: "#d4a017" }}>INVOICE</div>
             <div style={{ fontSize: 14, color: "#9a9a9a" }}>{invoice.invoiceNumber}</div>
           </div>
         </div>
@@ -152,7 +152,7 @@ export default function InvoicePDF({ invoice, onBack }: { invoice: Invoice; onBa
             )}
             <div style={{ display: "flex", justifyContent: "space-between", padding: "16px 0", borderTop: "2px solid #080808", marginTop: 8 }}>
               <span style={{ fontSize: 16, fontWeight: 700 }}>Total</span>
-              <span style={{ fontSize: 22, fontWeight: 700, fontFamily: "'Bebas Neue',sans-serif", color: "#080808", letterSpacing: ".02em" }}>{fmt(total, invoice.currency)}</span>
+              <span style={{ fontSize: 22, fontWeight: 800, fontFamily: "'Plus Jakarta Sans',sans-serif", color: "#080808", letterSpacing: ".02em" }}>{fmt(total, invoice.currency)}</span>
             </div>
           </div>
         </div>

@@ -257,7 +257,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body style={{ fontFamily: "'Outfit', sans-serif", background: "#080808", color: "#f5f0e8", overflowX: "hidden" }}>
+      <body style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", background: "#080808", color: "#f5f0e8", overflowX: "hidden" }}>
         {children}
       </body>
     </html>

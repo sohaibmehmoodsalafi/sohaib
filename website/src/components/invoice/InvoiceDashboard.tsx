@@ -61,17 +61,17 @@ export default function InvoiceDashboard() {
   if (view === "pdf" && pdfInvoice) return <InvoicePDF invoice={pdfInvoice} onBack={() => { setView("list"); setPdfInvoice(null); }} />;
 
   return (
-    <div style={{ minHeight: "100vh", background: "#080808", fontFamily: "'Outfit',sans-serif", color: "#f5f0e8" }}>
+    <div style={{ minHeight: "100vh", background: "#080808", fontFamily: "'Plus Jakarta Sans',sans-serif", color: "#f5f0e8" }}>
       {/* Top bar */}
       <div style={{ background: "#0f0f0f", borderBottom: "1px solid rgba(255,255,255,.07)", padding: "16px 32px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           <img src="/images/sohaib-logo.png" alt="Logo" style={{ width: 32, height: 32 }} />
-          <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 20, letterSpacing: ".06em" }}>INVOICE DASHBOARD</span>
+          <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: ".06em" }}>INVOICE DASHBOARD</span>
         </div>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
           <a href="/" style={{ fontSize: 13, color: "#6b6b6b", textDecoration: "none" }}>Website</a>
           <button onClick={() => { sessionStorage.removeItem("sm_admin"); window.location.reload(); }}
-            style={{ fontSize: 13, color: "#6b6b6b", background: "none", border: "none", cursor: "pointer", fontFamily: "'Outfit',sans-serif" }}>Logout</button>
+            style={{ fontSize: 13, color: "#6b6b6b", background: "none", border: "none", cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>Logout</button>
         </div>
       </div>
 
@@ -92,7 +92,7 @@ export default function InvoiceDashboard() {
             }}>
               <div style={{ position: "absolute", top: 0, left: 0, width: 3, height: "100%", background: s.color }} />
               <div style={{ fontSize: 12, color: "#6b6b6b", letterSpacing: ".06em", textTransform: "uppercase", marginBottom: 8 }}>{s.label}</div>
-              <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 32, color: s.color, lineHeight: 1 }}>{s.value}</div>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 32, color: s.color, lineHeight: 1 }}>{s.value}</div>
             </div>
           ))}
         </div>
@@ -100,7 +100,7 @@ export default function InvoiceDashboard() {
         {/* Monthly Summary */}
         {monthly.length > 0 && (
           <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "24px 20px", marginBottom: 32 }}>
-            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 20, letterSpacing: ".04em", marginBottom: 16 }}>MONTHLY SUMMARY</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 20, letterSpacing: ".04em", marginBottom: 16 }}>MONTHLY SUMMARY</div>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
@@ -135,7 +135,7 @@ export default function InvoiceDashboard() {
                 background: filter === f ? "#d4a017" : "#1e1e1e",
                 color: filter === f ? "#080808" : "#9a9a9a",
                 border: "1px solid " + (filter === f ? "#d4a017" : "rgba(255,255,255,.07)"),
-                fontFamily: "'Outfit',sans-serif", textTransform: "capitalize", transition: "all .2s",
+                fontFamily: "'Plus Jakarta Sans',sans-serif", textTransform: "capitalize", transition: "all .2s",
               }}>{f === "all" ? `All (${invoices.length})` : `${f} (${invoices.filter(i => i.status === f).length})`}</button>
             ))}
           </div>
@@ -146,12 +146,12 @@ export default function InvoiceDashboard() {
               style={{
                 padding: "10px 16px", background: "#1e1e1e", border: "1px solid rgba(255,255,255,.07)",
                 borderRadius: 12, color: "#f5f0e8", fontSize: 13, outline: "none", width: 220,
-                fontFamily: "'Outfit',sans-serif",
+                fontFamily: "'Plus Jakarta Sans',sans-serif",
               }}
             />
             <button onClick={() => setView("create")} style={{
               padding: "10px 24px", background: "#d4a017", color: "#080808", fontWeight: 700,
-              fontSize: 13, border: "none", borderRadius: 12, cursor: "pointer", fontFamily: "'Outfit',sans-serif",
+              fontSize: 13, border: "none", borderRadius: 12, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif",
               display: "flex", alignItems: "center", gap: 6, whiteSpace: "nowrap",
             }}>+ New Invoice</button>
           </div>
@@ -193,7 +193,7 @@ export default function InvoiceDashboard() {
                           padding: "6px 12px", borderRadius: 99, fontSize: 11, fontWeight: 700,
                           background: statusColor[inv.status] + "18", color: statusColor[inv.status],
                           border: `1px solid ${statusColor[inv.status]}40`, cursor: "pointer",
-                          fontFamily: "'Outfit',sans-serif", textTransform: "uppercase", letterSpacing: ".04em",
+                          fontFamily: "'Plus Jakarta Sans',sans-serif", textTransform: "uppercase", letterSpacing: ".04em",
                           appearance: "none", WebkitAppearance: "none",
                         }}
                       >
@@ -227,7 +227,7 @@ function Btn({ label, color, onClick }: { label: string; color: string; onClick:
     <button onClick={onClick} style={{
       padding: "6px 12px", borderRadius: 8, fontSize: 11, fontWeight: 600, cursor: "pointer",
       background: color + "15", color, border: `1px solid ${color}30`,
-      fontFamily: "'Outfit',sans-serif", transition: "all .2s",
+      fontFamily: "'Plus Jakarta Sans',sans-serif", transition: "all .2s",
     }}
       onMouseEnter={(e) => { e.currentTarget.style.background = color + "30"; }}
       onMouseLeave={(e) => { e.currentTarget.style.background = color + "15"; }}

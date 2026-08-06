@@ -63,7 +63,7 @@ export default function Navbar() {
         <a href="#home" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" className="nav-logo" style={{ width: 38, height: 38, objectFit: "contain" }} />
           <div>
-            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 16, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
             <div style={{ fontSize: 9, color: "#6b6b6b", letterSpacing: ".1em" }}>DIGITAL MARKETING EXPERT</div>
           </div>
         </a>
@@ -76,7 +76,7 @@ export default function Navbar() {
               background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
               padding: "10px 22px", borderRadius: 99, border: "2px solid #d4a017",
               letterSpacing: ".02em", display: "inline-flex", alignItems: "center", gap: 6,
-              textDecoration: "none", transition: "all .2s", fontFamily: "'Outfit',sans-serif",
+              textDecoration: "none", transition: "all .2s", fontFamily: "'Plus Jakarta Sans',sans-serif",
             }}
             onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#d4a017"; }}
             onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "#080808"; }}

@@ -99,7 +99,7 @@ export default function EcommercePage() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   return (
-    <main style={{ background: "#080808", color: "#f5f0e8", fontFamily: "'Outfit',sans-serif", overflowX: "hidden" }}>
+    <main style={{ background: "#080808", color: "#f5f0e8", fontFamily: "'Plus Jakarta Sans',sans-serif", overflowX: "hidden" }}>
       {/* Responsive + animations */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -132,7 +132,7 @@ export default function EcommercePage() {
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" style={{ width: 34, height: 34, objectFit: "contain" }} />
           <div>
-            <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 15, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 15, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
             <div style={{ fontSize: 8, color: "#6b6b6b", letterSpacing: ".12em" }}>E-COMMERCE MARKETING</div>
           </div>
         </a>
@@ -190,7 +190,7 @@ export default function EcommercePage() {
 
           {/* H1 */}
           <h1 className="hero-fade hero-fade-d2" style={{
-            fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(48px, 8vw, 90px)",
+            fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(48px, 8vw, 90px)",
             lineHeight: 0.95, letterSpacing: ".01em", color: "#f5f0e8", marginBottom: 8,
           }}>
             SCALE YOUR STORE TO
@@ -248,7 +248,7 @@ export default function EcommercePage() {
                 borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none"
               }}>
                 <div style={{ fontSize: 11, marginBottom: 4 }}>{s.icon}</div>
-                <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 28, color: "#d4a017", lineHeight: 1 }}>
+                <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "#d4a017", lineHeight: 1 }}>
                   {s.value}
                 </div>
                 <div style={{ fontSize: 10, color: "#6b6b6b", marginTop: 4, letterSpacing: ".03em" }}>{s.label}</div>
@@ -266,7 +266,7 @@ export default function EcommercePage() {
               WHAT IS INCLUDED
             </span>
             <h2 style={{
-              fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(36px, 5vw, 56px)",
+              fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 56px)",
               lineHeight: 1, marginTop: 12, color: "#f5f0e8"
             }}>
               A COMPLETE <span style={{ color: "#d4a017" }}>ADS SYSTEM</span> FOR YOUR STORE
@@ -291,7 +291,7 @@ export default function EcommercePage() {
               >
                 <div style={{
                   position: "absolute", top: -20, right: -10,
-                  fontFamily: "'Bebas Neue',sans-serif", fontSize: 120,
+                  fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 120,
                   color: "rgba(212,160,23,0.04)", lineHeight: 1, pointerEvents: "none"
                 }}>{s.num}</div>
                 <div style={{ position: "relative", zIndex: 1 }}>
@@ -299,7 +299,7 @@ export default function EcommercePage() {
                   <div style={{ fontSize: 11, color: "#d4a017", letterSpacing: ".15em", marginBottom: 8, fontWeight: 600 }}>
                     STEP {s.num}
                   </div>
-                  <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
                     {s.title}
                   </h3>
                   <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.7 }}>{s.desc}</p>
@@ -322,7 +322,7 @@ export default function EcommercePage() {
               >
                 <div style={{
                   position: "absolute", top: -20, right: -10,
-                  fontFamily: "'Bebas Neue',sans-serif", fontSize: 120,
+                  fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 120,
                   color: "rgba(212,160,23,0.04)", lineHeight: 1, pointerEvents: "none"
                 }}>{s.num}</div>
                 <div style={{ position: "relative", zIndex: 1 }}>
@@ -330,7 +330,7 @@ export default function EcommercePage() {
                   <div style={{ fontSize: 11, color: "#d4a017", letterSpacing: ".15em", marginBottom: 8, fontWeight: 600 }}>
                     STEP {s.num}
                   </div>
-                  <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
                     {s.title}
                   </h3>
                   <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.7 }}>{s.desc}</p>
@@ -353,7 +353,7 @@ export default function EcommercePage() {
               REAL CASE STUDIES
             </span>
             <h2 style={{
-              fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(32px, 4vw, 48px)",
+              fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(32px, 4vw, 48px)",
               lineHeight: 1.05, marginTop: 12, color: "#f5f0e8"
             }}>
               E-COMMERCE <span style={{ color: "#d4a017" }}>RESULTS THAT SPEAK</span>
@@ -380,7 +380,7 @@ export default function EcommercePage() {
                       background: "rgba(212,160,23,0.08)", border: "1px solid rgba(212,160,23,0.15)",
                       borderRadius: 4, padding: "3px 10px", letterSpacing: ".03em"
                     }}>{cs.tag}</span>
-                    <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 28, color: "#f5f0e8", marginTop: 10, lineHeight: 1 }}>
+                    <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "#f5f0e8", marginTop: 10, lineHeight: 1 }}>
                       {cs.name}
                     </h3>
                   </div>
@@ -398,7 +398,7 @@ export default function EcommercePage() {
                       background: "rgba(212,160,23,0.04)", border: "1px solid rgba(212,160,23,0.1)",
                       borderRadius: 12, padding: "18px 16px", textAlign: "center"
                     }}>
-                      <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 24, color: "#d4a017", lineHeight: 1 }}>
+                      <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#d4a017", lineHeight: 1 }}>
                         {m.value}
                       </div>
                       <div style={{ fontSize: 10, color: "#6b6b6b", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>
@@ -417,7 +417,7 @@ export default function EcommercePage() {
                     width: 44, height: 44, borderRadius: "50%",
                     background: "rgba(212,160,23,0.1)", border: "1px solid rgba(212,160,23,0.2)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontFamily: "'Bebas Neue',sans-serif", fontSize: 14, color: "#d4a017"
+                    fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 14, color: "#d4a017"
                   }}>{cs.initials}</div>
                   <div>
                     <p style={{ fontSize: 14, fontWeight: 500, color: "#f5f0e8" }}>{cs.name}</p>
@@ -446,7 +446,7 @@ export default function EcommercePage() {
               padding: "4px 12px", borderRadius: 4, fontWeight: 700, letterSpacing: ".05em"
             }}>ONE PERSON. ONE SYSTEM.</span>
             <h3 style={{
-              fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(24px, 3vw, 32px)",
+              fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px, 3vw, 32px)",
               color: "#f5f0e8", marginTop: 16, marginBottom: 16, lineHeight: 1.1
             }}>
               WHY ONE EXPERT BEATS AN AGENCY FOR E-COMMERCE
@@ -472,7 +472,7 @@ export default function EcommercePage() {
             READY TO SCALE?
           </span>
           <h2 style={{
-            fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(36px, 5vw, 56px)",
+            fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 56px)",
             lineHeight: 1, marginTop: 12, marginBottom: 20, color: "#f5f0e8"
           }}>
             GET YOUR <span style={{ color: "#d4a017" }}>FREE ADS AUDIT</span>

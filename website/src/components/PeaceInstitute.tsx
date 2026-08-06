@@ -11,7 +11,7 @@ export default function PeaceInstitute() {
       }}>
         <div style={{ fontSize: 48, flexShrink: 0 }}>🕌</div>
         <div>
-          <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 32, letterSpacing: ".03em", marginBottom: 8 }}>Peace Institute</h3>
+          <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 32, letterSpacing: ".03em", marginBottom: 8 }}>Peace Institute</h3>
           <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 20, maxWidth: 440 }}>
             Structured Quran teaching, tarbiyah, and Shariah-conscious digital skills — all under one roof. Free trial class available for your family.
           </p>

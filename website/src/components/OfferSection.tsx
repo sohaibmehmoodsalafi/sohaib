@@ -35,7 +35,7 @@ export default function OfferSection() {
             <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Free Growth Audit
           </div>
 
-          <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(32px,5vw,52px)", lineHeight: .98, letterSpacing: ".02em", marginBottom: 14 }}>
+          <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(32px,5vw,52px)", lineHeight: .98, letterSpacing: ".02em", marginBottom: 14 }}>
             GET A FREE GROWTH<br />AUDIT FOR YOUR <span style={{ color: "#d4a017" }}>BUSINESS</span>
           </h2>
           <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 28 }}>
@@ -56,7 +56,7 @@ export default function OfferSection() {
               href="https://wa.me/923048885206?text=Hi%20Sohaib!%20I%20want%20a%20free%20growth%20audit%20for%20my%20business."
               target="_blank"
               rel="noopener noreferrer"
-              style={{ flex: "1 1 220px", textAlign: "center", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 14, padding: "15px 28px", borderRadius: 99, textDecoration: "none", fontFamily: "'Outfit',sans-serif" }}
+              style={{ flex: "1 1 220px", textAlign: "center", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 14, padding: "15px 28px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif" }}
             >
               Get Free Audit on WhatsApp →
             </a>
@@ -64,7 +64,7 @@ export default function OfferSection() {
               href="https://calendly.com/meetsohaib/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ flex: "1 1 180px", textAlign: "center", background: "transparent", color: "#f5f0e8", fontWeight: 500, fontSize: 14, padding: "15px 28px", borderRadius: 99, textDecoration: "none", border: "1px solid rgba(255,255,255,.14)", fontFamily: "'Outfit',sans-serif" }}
+              style={{ flex: "1 1 180px", textAlign: "center", background: "transparent", color: "#f5f0e8", fontWeight: 500, fontSize: 14, padding: "15px 28px", borderRadius: 99, textDecoration: "none", border: "1px solid rgba(255,255,255,.14)", fontFamily: "'Plus Jakarta Sans',sans-serif" }}
             >
               Book a Strategy Call
             </a>

@@ -20,7 +20,7 @@ export default function FAQ() {
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />FAQ
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 64 }}>QUESTIONS<br />CLIENTS ASK.</h2>
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 64 }}>QUESTIONS<br />CLIENTS ASK.</h2>
         <div>
           {FAQS.map((f, i) => (
             <details key={i} className="faq-item" style={{ borderBottom: "1px solid rgba(255,255,255,.07)" }}>
@@ -30,7 +30,7 @@ export default function FAQ() {
                   width: "100%", color: "#f5f0e8", textAlign: "left",
                   fontSize: 16, fontWeight: 500, padding: "24px 0",
                   display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20,
-                  cursor: "pointer", fontFamily: "'Outfit',sans-serif", transition: "color .2s",
+                  cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif", transition: "color .2s",
                 }}
               >
                 {f.q}

@@ -49,10 +49,10 @@ function CoreCard({ n, icon, title, subtitle, desc, results }: typeof CORE_SERVI
 
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24 }}>
         <span style={{ fontSize: 36, filter: hov ? "grayscale(0)" : "grayscale(0.5)", transition: "filter .3s" }}>{icon}</span>
-        <span style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 48, color: "rgba(212,160,23,.1)", lineHeight: 1 }}>{n}</span>
+        <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 48, color: "rgba(212,160,23,.1)", lineHeight: 1 }}>{n}</span>
       </div>
 
-      <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 32, letterSpacing: ".04em", lineHeight: 1, marginBottom: 4 }}>{title}</h3>
+      <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 32, letterSpacing: ".04em", lineHeight: 1, marginBottom: 4 }}>{title}</h3>
       <div style={{ fontSize: 12, color: "#d4a017", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 16 }}>{subtitle}</div>
       <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 24 }}>{desc}</p>
 
@@ -82,7 +82,7 @@ export default function Services() {
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />What I do
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
           COMPLETE DIGITAL<br />MARKETING ECOSYSTEM
         </h2>
         <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>
@@ -105,7 +105,7 @@ export default function Services() {
           <div style={{ position: "relative", zIndex: 1 }}>
             <div style={{ textAlign: "center", marginBottom: 40 }}>
               <span style={{ fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase" }}>INCLUDED IN EVERY PACKAGE</span>
-              <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(28px,4vw,44px)", letterSpacing: ".04em", marginTop: 8 }}>
+              <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,44px)", letterSpacing: ".04em", marginTop: 8 }}>
                 THE FULL FUNNEL — NOT JUST ADS
               </h3>
               <p style={{ fontSize: 14, color: "#9a9a9a", maxWidth: 500, margin: "12px auto 0", lineHeight: 1.7 }}>

@@ -12,7 +12,7 @@ function FloatBadge({ bottom, right, top, left, num, lbl, color }: { bottom?: nu
       borderRadius: 14, padding: "16px 20px", minWidth: 140,
       boxShadow: "0 20px 40px rgba(0,0,0,.4)",
     }}>
-      <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 30, color, lineHeight: 1 }}>{num}</div>
+      <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 30, color, lineHeight: 1 }}>{num}</div>
       <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4 }}>{lbl}</div>
     </div>
   );
@@ -38,7 +38,7 @@ export default function AboutSection() {
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 80%, rgba(212,160,23,.06) 0%, transparent 60%)" }} />
           {imgErr ? (
             <>
-              <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#d4a017", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Bebas Neue',sans-serif", fontSize: 34, color: "#080808", zIndex: 1 }}>SM</div>
+              <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#d4a017", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 34, color: "#080808", zIndex: 1 }}>SM</div>
               <p style={{ fontSize: 12, color: "#6b6b6b", textAlign: "center", maxWidth: 180, zIndex: 1, lineHeight: 1.5, marginTop: 16 }}>Meta Ads Expert<br />Based in Karachi, Pakistan</p>
             </>
           ) : (
@@ -60,7 +60,7 @@ export default function AboutSection() {
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />
           About me
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(40px,5vw,60px)", lineHeight: 1, letterSpacing: ".02em", marginBottom: 20 }}>
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,5vw,60px)", lineHeight: 1, letterSpacing: ".02em", marginBottom: 20 }}>
           ONE EXPERT.<br />FULL RESULTS.
         </h2>
         <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 14 }}>
@@ -79,7 +79,7 @@ export default function AboutSection() {
             { n: "12", s: "%", l: "Avg. conversion rate" },
           ].map((s, i) => (
             <div key={i}>
-              <div style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 36, color: "#f5f0e8", lineHeight: 1 }}>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, color: "#f5f0e8", lineHeight: 1 }}>
                 <Counter end={s.n} suffix={s.s} />
               </div>
               <div style={{ fontSize: 12, color: "#6b6b6b", marginTop: 4 }}>{s.l}</div>
