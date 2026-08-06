@@ -355,7 +355,7 @@ export default function Hero() {
                 boxShadow: "0 0 8px rgba(212,160,23,0.6)",
               }}
             />
-            Available for new clients — Pakistan · UAE · UK · USA
+            Now serving Quran academies, Islamic NGOs & EdTech — PK · UAE · UK · USA
           </div>
 
           {/* Name + #1 positioning */}
@@ -366,7 +366,7 @@ export default function Hero() {
             <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(20px,2.6vw,32px)", letterSpacing: ".04em", color: "#f5f0e8", lineHeight: 1 }}>SOHAIB MEHMOOD</span>
             <span style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "rgba(212,160,23,.12)", border: "1px solid rgba(212,160,23,.35)", borderRadius: 99, padding: "5px 13px" }}>
               <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 19, color: "#d4a017", lineHeight: 1 }}>#1</span>
-              <span style={{ fontSize: 12, fontWeight: 600, color: "#f5f0e8", letterSpacing: ".02em" }}>Meta Ads &amp; Funnel Expert</span>
+              <span style={{ fontSize: 12, fontWeight: 600, color: "#f5f0e8", letterSpacing: ".02em" }}>Growth Partner for Quran Academies & Islamic Brands</span>
             </span>
           </div>
 
@@ -382,7 +382,7 @@ export default function Hero() {
             }}
             className="hero-fade hero-fade-d2"
           >
-            ADS THAT
+            MORE STUDENTS.
             <br />
             <span
               style={{
@@ -390,9 +390,8 @@ export default function Hero() {
                 textShadow: "0 0 40px rgba(212,160,23,0.25)",
               }}
             >
-              CONVERT
-            </span>{" "}
-            &amp;
+              MORE DONATIONS.
+            </span>
             <br />
             <span
               style={{
@@ -400,7 +399,7 @@ export default function Hero() {
                 color: "transparent",
               }}
             >
-              FUNNELS THAT SCALE.
+              MORE IMPACT.
             </span>
           </h1>
 
@@ -416,9 +415,9 @@ export default function Hero() {
             className="hero-fade hero-fade-d3 hero-desc"
           >
             <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>
-              Pay per click campaigns, Google Ads optimization, Meta advertising solutions
+              Meta Ads, Google Ads &amp; full growth funnels
             </strong>{" "}
-            — your complete digital marketing consultant. No agency markup. No miscommunication. Just predictable growth from every paid search advertising dollar.
+            for Quran academies, Islamic NGOs, and education / EdTech brands. Get consistent students, leads, and donations — every month. One expert, no agency markup, rooted in your mission.
           </p>
 
           {/* CTAs */}
