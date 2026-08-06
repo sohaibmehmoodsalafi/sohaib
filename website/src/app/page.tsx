@@ -25,16 +25,17 @@ export default function Home() {
       <CustomCursor />
       <Navbar />
       <main>
+        {/* Order mirrors a proven conversion flow: hook → problem → solution → proof → offer */}
         <Hero />
         <MarqueeBar />
         <ProblemSection />
-        <AboutSection />
-        <Services />
         <MarkenExusSystem />
         <Results />
-        <Testimonials />
         <Portfolio />
+        <Services />
         <Pricing />
+        <AboutSection />
+        <Testimonials />
         <OfferSection />
         <FAQ />
         <Contact />
