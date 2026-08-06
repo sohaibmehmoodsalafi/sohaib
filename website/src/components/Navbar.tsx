@@ -3,13 +3,12 @@
 import { useState, useEffect } from "react";
 
 const links = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "System", href: "#system" },
-  { label: "Results", href: "#results" },
-  { label: "Work", href: "#work" },
-  { label: "Packages", href: "#packages" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contact", href: "#contact" },
+  { label: "Case Studies", href: "#work" },
+  { label: "Free Audit", href: "#audit" },
 ];
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -60,28 +59,28 @@ export default function Navbar() {
         borderBottom: `1px solid rgba(255,255,255,${scrolled ? ".1" : ".07"})`,
         transition: "all .3s",
       }}>
-        <a href="#home" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
-          <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" className="nav-logo" style={{ width: 38, height: 38, objectFit: "contain" }} />
-          <div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 16, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
-            <div style={{ fontSize: 9, color: "#6b6b6b", letterSpacing: ".1em" }}>DIGITAL MARKETING EXPERT</div>
-          </div>
+        <a href="#home" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}>
+          <img src="/images/sohaib-mehmood.jpg" alt="Sohaib Mehmood" className="nav-logo" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: "1.5px solid rgba(212,160,23,.5)" }} />
+          <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 17, letterSpacing: ".01em", color: "#f5f0e8", lineHeight: 1 }}>Sohaib Mehmood</div>
         </a>
 
-        <div className="desktop-nav-links" style={{ display: "flex", gap: 28, alignItems: "center" }}>
+        {/* Centered nav links */}
+        <div className="desktop-nav-links" style={{ position: "absolute", left: "50%", top: 0, height: "100%", transform: "translateX(-50%)", display: "flex", gap: 30, alignItems: "center" }}>
           {links.map((l) => <NavLink key={l.label} href={l.href}>{l.label}</NavLink>)}
-          <a href="https://calendly.com/meetsohaib/30min" target="_blank" rel="noopener noreferrer"
-            className="nav-cta"
-            style={{
-              background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
-              padding: "10px 22px", borderRadius: 99, border: "2px solid #d4a017",
-              letterSpacing: ".02em", display: "inline-flex", alignItems: "center", gap: 6,
-              textDecoration: "none", transition: "all .2s", fontFamily: "'Plus Jakarta Sans',sans-serif",
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#d4a017"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "#080808"; }}
-          >Book a Call</a>
         </div>
+
+        {/* Right: Free Audit button */}
+        <a href="#audit"
+          className="nav-cta"
+          style={{
+            background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
+            padding: "10px 22px", borderRadius: 99, border: "2px solid #d4a017",
+            letterSpacing: ".02em", display: "inline-flex", alignItems: "center", gap: 6,
+            textDecoration: "none", transition: "all .2s", fontFamily: "'Plus Jakarta Sans',sans-serif",
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#d4a017"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "#080808"; }}
+        >Free Audit</a>
 
         <label htmlFor="nav-toggle" className="hamburger-btn" aria-label="Toggle menu"
           style={{ display: "none", flexDirection: "column", gap: 5, background: "none", border: "none", padding: 4, cursor: "pointer" }}>

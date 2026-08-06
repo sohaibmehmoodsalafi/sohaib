@@ -322,85 +322,51 @@ export default function Hero() {
         }}
       />
 
-      {/* ══ CONTENT — Two Column Grid ══ */}
-      <div className="hero-grid" style={{ position: "relative", zIndex: 2, maxWidth: 1200, width: "100%", margin: "0 auto", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 48, alignItems: "center" }}>
-        {/* ── Left Column: Text ── */}
-        <div>
-          {/* Availability badge */}
+      {/* ══ CONTENT — Centered ══ */}
+      <div className="hero-grid" style={{ position: "relative", zIndex: 2, maxWidth: 920, width: "100%", margin: "0 auto", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+        {/* ── Centered Text ── */}
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
+          {/* #1 positioning pill (centered) */}
           <div
+            className="hero-fade hero-fade-d1 hero-badge"
             style={{
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "rgba(212,160,23,.08)",
-              border: "1px solid rgba(212,160,23,.2)",
+              background: "rgba(212,160,23,.1)",
+              border: "1px solid rgba(212,160,23,.3)",
               borderRadius: 99,
-              padding: "6px 16px",
-              fontSize: 12,
+              padding: "8px 18px",
+              fontSize: 13,
               fontWeight: 600,
-              color: "#d4a017",
-              letterSpacing: ".04em",
+              color: "#f5f0e8",
+              letterSpacing: ".02em",
               marginBottom: 28,
               backdropFilter: "blur(10px)",
             }}
-            className="hero-fade hero-fade-d1 hero-badge"
           >
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                background: "#d4a017",
-                borderRadius: "50%",
-                animation: "pulseAnim 2s infinite",
-                boxShadow: "0 0 8px rgba(212,160,23,0.6)",
-              }}
-            />
-            Now serving Quran academies, Islamic NGOs & EdTech — PK · UAE · UK · USA
-          </div>
-
-          {/* Name + #1 positioning */}
-          <div
-            className="hero-fade hero-fade-d2 hero-eyebrow"
-            style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 10, marginBottom: 16 }}
-          >
-            <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(20px,2.6vw,32px)", letterSpacing: ".04em", color: "#f5f0e8", lineHeight: 1 }}>SOHAIB MEHMOOD</span>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 7, background: "rgba(212,160,23,.12)", border: "1px solid rgba(212,160,23,.35)", borderRadius: 99, padding: "5px 13px" }}>
-              <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 19, color: "#d4a017", lineHeight: 1 }}>#1</span>
-              <span style={{ fontSize: 12, fontWeight: 600, color: "#f5f0e8", letterSpacing: ".02em" }}>Growth Partner for Quran Academies & Islamic Brands</span>
-            </span>
+            <span style={{ color: "#d4a017" }}>✦</span>
+            <span style={{ color: "#d4a017", fontWeight: 800 }}>#1</span> Growth Partner for Quran Academies &amp; Islamic Brands
           </div>
 
           {/* H1 */}
           <h1
             style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800,
-              fontSize: "clamp(52px,7vw,100px)",
-              lineHeight: 0.92,
-              letterSpacing: ".01em",
+              fontSize: "clamp(38px,5.4vw,74px)",
+              lineHeight: 1.02,
+              letterSpacing: "-.02em",
               color: "#f5f0e8",
               marginBottom: 8,
+              maxWidth: 880,
             }}
             className="hero-fade hero-fade-d2"
           >
-            MORE STUDENTS.
-            <br />
-            <span
-              style={{
-                color: "#d4a017",
-                textShadow: "0 0 40px rgba(212,160,23,0.25)",
-              }}
-            >
-              MORE DONATIONS.
-            </span>
-            <br />
-            <span
-              style={{
-                WebkitTextStroke: "2px rgba(245,240,232,0.85)",
-                color: "transparent",
-              }}
-            >
-              MORE IMPACT.
-            </span>
+            More students for your academy.{" "}
+            <span style={{ color: "#d4a017", textShadow: "0 0 40px rgba(212,160,23,0.25)" }}>
+              More donors for your cause.
+            </span>{" "}
+            More impact, every month.
           </h1>
 
           <p
@@ -408,8 +374,8 @@ export default function Hero() {
               fontSize: "clamp(15px,1.5vw,18px)",
               color: "#9a9a9a",
               fontWeight: 300,
-              maxWidth: 520,
-              margin: "20px 0 36px",
+              maxWidth: 600,
+              margin: "22px auto 36px",
               lineHeight: 1.7,
             }}
             className="hero-fade hero-fade-d3 hero-desc"
@@ -427,6 +393,7 @@ export default function Hero() {
               display: "flex",
               gap: 14,
               flexWrap: "wrap",
+              justifyContent: "center",
               marginBottom: 40,
             }}
           >
@@ -459,7 +426,7 @@ export default function Hero() {
                 e.currentTarget.style.boxShadow = "0 0 20px rgba(212,160,23,0.2)";
               }}
             >
-              Free Strategy Call
+              Get Free Growth Audit →
             </a>
             <a
               href="https://calendly.com/meetsohaib/30min"
@@ -491,7 +458,7 @@ export default function Hero() {
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              Book a Meeting
+              Book Strategy Call
             </a>
           </div>
 
@@ -507,6 +474,9 @@ export default function Hero() {
               background: "rgba(212,160,23,0.02)",
               backdropFilter: "blur(10px)",
               animation: "borderPulse 4s ease-in-out infinite",
+              maxWidth: 760,
+              width: "100%",
+              margin: "0 auto",
             }}
           >
             {stats.map((s, i) => (
@@ -515,64 +485,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right Column: Image ── */}
-        <div className="hero-image-col" style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <div style={{
-            position: "relative",
-            width: "100%",
-            maxWidth: 440,
-            aspectRatio: "3/4",
-            borderRadius: 24,
-            overflow: "hidden",
-            border: "1px solid rgba(212,160,23,0.2)",
-            boxShadow: "0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(212,160,23,0.08)",
-          }}>
-            <img
-              src="/images/sohaib-office.webp"
-              alt="Sohaib Mehmood — Digital Marketing Expert at his professional workspace"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                objectPosition: "center 20%",
-                transform: "scaleX(-1)",
-              }}
-            />
-            {/* Gold gradient overlay at bottom */}
-            <div style={{
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              height: "40%",
-              background: "linear-gradient(to top, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.3) 50%, transparent 100%)",
-              pointerEvents: "none",
-            }} />
-            {/* Name overlay at bottom */}
-            <div style={{
-              position: "absolute",
-              bottom: 20,
-              left: 24,
-              right: 24,
-              zIndex: 2,
-            }}>
-              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 22, letterSpacing: ".06em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
-              <div style={{ fontSize: 11, color: "#d4a017", fontWeight: 600, letterSpacing: ".08em", marginTop: 4 }}>DIGITAL MARKETING EXPERT</div>
-            </div>
-          </div>
-          {/* Decorative ring behind image */}
-          <div style={{
-            position: "absolute",
-            width: "110%",
-            height: "110%",
-            borderRadius: "50%",
-            border: "1px solid rgba(212,160,23,0.06)",
-            top: "-5%",
-            left: "-5%",
-            pointerEvents: "none",
-            animation: "rotateSlow 40s linear infinite",
-          }} />
-        </div>
       </div>
     </section>
   );
