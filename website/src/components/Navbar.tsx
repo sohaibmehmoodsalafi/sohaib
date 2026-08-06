@@ -3,12 +3,12 @@
 import { useState, useEffect } from "react";
 
 const links = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "System", href: "#system" },
-  { label: "Case Studies", href: "#work" },
-  { label: "Free Audit", href: "#audit" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "System", href: "/system" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Free Audit", href: "/free-audit" },
 ];
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -59,7 +59,7 @@ export default function Navbar() {
         borderBottom: `1px solid rgba(255,255,255,${scrolled ? ".1" : ".07"})`,
         transition: "all .3s",
       }}>
-        <a href="#home" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}>
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}>
           <img src="/images/sohaib-mehmood.jpg" alt="Sohaib Mehmood" className="nav-logo" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: "1.5px solid rgba(212,160,23,.5)" }} />
           <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 17, letterSpacing: ".01em", color: "#f5f0e8", lineHeight: 1 }}>Sohaib Mehmood</div>
         </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: Free Audit button */}
-        <a href="#audit"
+        <a href="/free-audit"
           className="nav-cta"
           style={{
             background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
