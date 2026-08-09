@@ -3,10 +3,10 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 const CHECKS = [
-  "Audit your current ads & funnel (or your competitors', if you're not running ads yet)",
-  "Pinpoint exactly where you're losing leads, students & money",
-  "Show the biggest growth opportunities for your business",
-  "Hand you a custom Meta & Google Ads game plan — free, no strings attached",
+  "Review your current marketing (or your competitors', if you're not running ads yet)",
+  "Show exactly where students and donations are leaking",
+  "Point out the biggest growth opportunities for your academy",
+  "Hand you a clear, custom plan — free, no obligation",
 ];
 
 export default function OfferSection() {
@@ -35,11 +35,11 @@ export default function OfferSection() {
             <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Free Growth Audit
           </div>
 
-          <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(32px,5vw,52px)", lineHeight: .98, letterSpacing: ".02em", marginBottom: 14 }}>
-            GET A FREE GROWTH<br />AUDIT FOR YOUR <span style={{ color: "#d4a017" }}>BUSINESS</span>
+          <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,4.6vw,50px)", lineHeight: 1.02, letterSpacing: "-.01em", marginBottom: 14 }}>
+            Let&apos;s fill your academy — <span style={{ color: "#d4a017" }}>start with a free audit.</span>
           </h2>
           <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 28 }}>
-            E-commerce store, Quran academy, or service business — send me your details and I&apos;ll review your marketing, find exactly what&apos;s leaking, and show you how to fix it. No cost, no obligation.
+            I&apos;ll review your current marketing (or your competitors&apos;, if you&apos;re not running ads yet), show you exactly where students and donations are leaking, and hand you a clear plan. No cost, no obligation.
           </p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>

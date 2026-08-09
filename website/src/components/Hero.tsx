@@ -346,7 +346,7 @@ export default function Hero() {
             }}
           >
             <span style={{ color: "#d4a017" }}>✦</span>
-            <span style={{ color: "#d4a017", fontWeight: 800 }}>#1</span> Growth Partner for Quran Academies &amp; Islamic Brands
+            Growth partner for Quran academies &amp; Islamic organizations
           </div>
 
           {/* H1 */}
@@ -365,8 +365,7 @@ export default function Hero() {
             More students for your academy.{" "}
             <span style={{ color: "#d4a017", textShadow: "0 0 40px rgba(212,160,23,0.25)" }}>
               More donors for your cause.
-            </span>{" "}
-            More impact, every month.
+            </span>
           </h1>
 
           <p
@@ -380,10 +379,7 @@ export default function Hero() {
             }}
             className="hero-fade hero-fade-d3 hero-desc"
           >
-            <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>
-              Meta Ads, Google Ads &amp; full growth funnels
-            </strong>{" "}
-            for Quran academies, Islamic NGOs, and education / EdTech brands. Get consistent students, leads, and donations — every month. One expert, no agency markup, rooted in your mission.
+            I help <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>Quran academies, Islamic institutes, and Muslim non-profits</strong> get a steady flow of students, leads, and donations — every month. Meta Ads, Google Ads, and complete funnels, built and run by one person who understands your mission.
           </p>
 
           {/* CTAs */}

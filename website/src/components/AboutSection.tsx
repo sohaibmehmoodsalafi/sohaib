@@ -60,17 +60,11 @@ export default function AboutSection() {
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />
           About me
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,5vw,60px)", lineHeight: 1, letterSpacing: ".02em", marginBottom: 20 }}>
-          ONE EXPERT.<br />FULL RESULTS.
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px,4.6vw,56px)", lineHeight: 1.02, letterSpacing: "-.01em", marginBottom: 20 }}>
+          One person.<br /><span style={{ color: "#d4a017" }}>Your mission first.</span>
         </h2>
-        <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 14 }}>
-          I&apos;m Sohaib Mehmood — a digital marketing consultant specializing in PPC advertising services, Google Ads optimization, and meta advertising solutions. Based in Pakistan, serving clients across USA, UK, UAE, and Canada for 5+ years.
-        </p>
-        <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 14 }}>
-          I deliver complete digital marketing campaigns: pay per click campaign management, paid search advertising, social media advertising campaigns, digital branding, and the automation that fills your calendar with paying clients. Every element aligned — one expert, one vision.
-        </p>
-        <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8 }}>
-          Most of my clients came from failed agency experiences. Agencies send juniors. I provide dedicated PPC consultancy and digital marketing consultancy services — predictable leads on autopilot.
+        <p style={{ fontSize: 16, color: "#9a9a9a", lineHeight: 1.85 }}>
+          I&apos;m Sohaib Mehmood. For over 5 years I&apos;ve helped academies and Islamic organizations across Pakistan, the UK, the USA, and the UAE grow — with honest, halal marketing and no agency markup. I also run my own institute, <strong style={{ color: "#f5f0e8", fontWeight: 600 }}>Peace Institute</strong>, so I care about your students as much as your numbers. When you work with me, you work with me — not a junior team.
         </p>
         <div className="about-counter-row" style={{ display: "flex", gap: 32, marginTop: 32, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,.07)", flexWrap: "wrap" }}>
           {[

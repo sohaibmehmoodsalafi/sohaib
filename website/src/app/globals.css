@@ -135,6 +135,24 @@ img { max-width: 100%; display: block; }
 .system-card:hover { transform: translateY(-6px); border-color: rgba(212,160,23,.35) !important; background: rgba(212,160,23,.035) !important; }
 .system-card:hover .system-num { background: #d4a017 !important; color: #080808 !important; box-shadow: 0 0 18px rgba(212,160,23,.35); }
 
+/* ── MarkenExus System accordion (native <details>, no JS) ── */
+.system-2col { }
+@media (max-width: 860px) { .system-2col { grid-template-columns: 1fr !important; gap: 40px !important; } }
+.sys-acc { background: #ffffff; border: 1px solid rgba(20,17,12,.1); border-radius: 16px; margin-bottom: 12px; overflow: hidden; transition: background .25s, border-color .25s; }
+.sys-acc[open] { background: #14110c; border-color: #14110c; }
+.sys-sum { list-style: none; display: flex; align-items: center; gap: 16px; padding: 20px 22px; cursor: pointer; }
+.sys-sum::-webkit-details-marker { display: none; }
+.sys-sum::marker { content: ""; }
+.sys-num { font-size: 11px; font-weight: 700; color: #b8860b; width: 18px; flex-shrink: 0; }
+.sys-acc[open] .sys-num { color: rgba(245,240,232,.45); }
+.sys-icon { width: 42px; height: 42px; border-radius: 12px; background: #d4a017; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.sys-title { font-size: 17px; font-weight: 700; color: #14110c; flex: 1; }
+.sys-acc[open] .sys-title { color: #f5f0e8; }
+.sys-chev { color: #a39c90; font-size: 18px; transition: transform .25s; flex-shrink: 0; }
+.sys-acc[open] .sys-chev { transform: rotate(180deg); color: #d4a017; }
+.sys-desc { padding: 0 24px 22px 76px; font-size: 14px; color: rgba(245,240,232,.72); line-height: 1.7; }
+@media (max-width: 480px) { .sys-desc { padding-left: 24px; } }
+
 /* ── Problem section grid ── */
 .problem-grid { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 700px) { .problem-grid { grid-template-columns: 1fr !important; } }

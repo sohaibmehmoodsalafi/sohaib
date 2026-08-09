@@ -27,10 +27,9 @@ function ResultCard({ n, s, title, sub }: { n: string; s: string; title: string;
 export default function Results() {
   const ref = useFadeIn();
   const stats = [
-    { n: "3", s: "×", title: "Average lead increase", sub: "Within first 60 days of campaigns" },
-    { n: "12", s: "%", title: "Average conversion rate", sub: "Industry average is just 2–3%" },
-    { n: "85", s: "%", title: "Client retention rate", sub: "Results make them stay" },
-    { n: "5.6", s: "×", title: "Average ROAS", sub: "Every Rs. 1 spent → Rs. 5.6 back" },
+    { n: "3", s: "×", title: "Admissions from USA, UK & Canada", sub: "Learn Quran Institute, after launch" },
+    { n: "80", s: "+", title: "New students per month", sub: "At under PKR 400 per enrollment" },
+    { n: "85", s: "%", title: "Of clients stay", sub: "Because the results keep coming" },
   ];
 
   return (
@@ -42,9 +41,9 @@ export default function Results() {
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Proof
         </div>
-        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>NUMBERS<br />DON&apos;T LIE.</h2>
-        <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 500, lineHeight: 1.7 }}>Average across 120+ digital marketing campaigns and pay per click campaigns. Not cherry-picked. Not estimated.</p>
-        <div className="results-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 20, marginTop: 64 }}>
+        <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(38px,5.4vw,66px)", lineHeight: 1.0, letterSpacing: "-.01em", marginBottom: 16 }}>Real results for<br /><span style={{ color: "#d4a017" }}>real academies.</span></h2>
+        <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 520, lineHeight: 1.7 }}>Real outcomes from real academies and Islamic organizations — not cherry-picked, not estimated.</p>
+        <div className="results-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginTop: 64 }}>
           {stats.map((s, i) => <ResultCard key={i} {...s} />)}
         </div>
       </div>

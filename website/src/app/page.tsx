@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import MarqueeBar from "@/components/MarqueeBar";
 import ProblemSection from "@/components/ProblemSection";
+import WhyDifferent from "@/components/WhyDifferent";
 import AboutSection from "@/components/AboutSection";
 import Services from "@/components/Services";
 import MarkenExusSystem from "@/components/MarkenExusSystem";
@@ -29,6 +30,7 @@ export default function Home() {
         <Hero />
         <MarqueeBar />
         <ProblemSection />
+        <WhyDifferent />
         <MarkenExusSystem />
         <Results />
         <Portfolio />
