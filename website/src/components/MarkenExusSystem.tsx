@@ -3,11 +3,11 @@
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 const STEPS = [
-  { n: "01", icon: "🔍", title: "Understand your families", desc: "I map the exact parents, students, or donors you want — their hopes and hesitations — so every rupee reaches people ready to act." },
-  { n: "02", icon: "🧭", title: "Build the funnel", desc: "A trust-building landing page and enrollment flow, designed so your ad and your page speak the same language." },
-  { n: "03", icon: "📣", title: "Launch the ads", desc: "Precisely targeted campaigns on Facebook, Instagram, and Google — the right message to the right family at the right time." },
-  { n: "04", icon: "🎯", title: "Test and improve", desc: "Creatives and copy refined on real data, pushing enrollment and donation rates well above average." },
-  { n: "05", icon: "🚀", title: "Retarget and grow", desc: "Winning campaigns scaled and warm audiences brought back, compounding your growth month over month." },
+  { n: "01", icon: "🔍", title: "Audience Research", desc: "I map the exact parents, students, and donors you want — their beliefs, hopes, and hesitations — so every rupee reaches families ready to enroll or give." },
+  { n: "02", icon: "🧭", title: "Funnel Setup", desc: "A trust-building landing page and enrollment flow, designed so your ad and your page tell one clear, convincing story." },
+  { n: "03", icon: "📣", title: "Paid Ads Strategy", desc: "Precisely targeted campaigns on Facebook, Instagram, and Google — reaching the right Muslim families at the right moment, in the right place." },
+  { n: "04", icon: "🎯", title: "Conversion Optimization", desc: "Creatives, copy, and pages refined on real data — turning more clicks into real enrollments and donations." },
+  { n: "05", icon: "🚀", title: "Scaling Systems", desc: "Winning campaigns scaled, warm audiences retargeted, and clear weekly reporting — so growth compounds without breaking your academy." },
 ];
 
 export default function MarkenExusSystem() {
@@ -38,7 +38,7 @@ export default function MarkenExusSystem() {
         {/* ── Right: accordion (native <details> — works without JS) ── */}
         <div>
           {STEPS.map((s, i) => (
-            <details key={i} className="sys-acc" open={i === 0}>
+            <details key={i} name="marken-system" className="sys-acc" open={i === 0}>
               <summary className="sys-sum">
                 <span className="sys-num">{s.n}</span>
                 <span className="sys-icon" aria-hidden="true">{s.icon}</span>
