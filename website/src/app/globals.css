@@ -153,6 +153,11 @@ img { max-width: 100%; display: block; }
 .sys-desc { padding: 0 24px 22px 76px; font-size: 14px; color: rgba(245,240,232,.72); line-height: 1.7; }
 @media (max-width: 480px) { .sys-desc { padding-left: 24px; } }
 
+/* ── Blog listing grid ── */
+.blog-card { transition: transform .2s ease, border-color .2s ease; }
+.blog-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,.3) !important; }
+@media (max-width: 720px) { .blog-grid { grid-template-columns: 1fr !important; } }
+
 /* ── Lead magnet grid ── */
 @media (max-width: 760px) { .lead-grid { grid-template-columns: 1fr !important; gap: 28px !important; } }
 
