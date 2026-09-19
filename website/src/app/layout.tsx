@@ -95,6 +95,11 @@ const jsonLd = {
       description:
         "Marketing for Quran academies, Islamic institutes, and Muslim non-profits. One expert runs Meta Ads, Google Ads, landing pages, and complete enrollment funnels that bring consistent students, leads, and donations.",
       founder: { "@id": "https://meetsohaib.com/#person" },
+      sameAs: [
+        "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
+        "https://www.facebook.com/sohaibmehmoodsalafi",
+        "https://www.instagram.com/sohaibsalafi1996/",
+      ],
       telephone: "+923048885206",
       areaServed: [
         { "@type": "Country", name: "United States" },
