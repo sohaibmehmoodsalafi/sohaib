@@ -153,6 +153,9 @@ img { max-width: 100%; display: block; }
 .sys-desc { padding: 0 24px 22px 76px; font-size: 14px; color: rgba(245,240,232,.72); line-height: 1.7; }
 @media (max-width: 480px) { .sys-desc { padding-left: 24px; } }
 
+/* ── Lead magnet grid ── */
+@media (max-width: 760px) { .lead-grid { grid-template-columns: 1fr !important; gap: 28px !important; } }
+
 /* ── Problem section grid ── */
 .problem-grid { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 700px) { .problem-grid { grid-template-columns: 1fr !important; } }

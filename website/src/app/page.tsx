@@ -13,6 +13,7 @@ import Testimonials from "@/components/Testimonials";
 import Portfolio from "@/components/Portfolio";
 import Pricing from "@/components/Pricing";
 import OfferSection from "@/components/OfferSection";
+import LeadMagnet from "@/components/LeadMagnet";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import PeaceInstitute from "@/components/PeaceInstitute";
@@ -33,6 +34,7 @@ export default function Home() {
         <WhyDifferent />
         <MarkenExusSystem />
         <Results />
+        <LeadMagnet />
         <Portfolio />
         <Services />
         <Pricing />
