@@ -245,6 +245,56 @@ export const POSTS: Post[] = [
       { q: "How do I handle the timezone difference for follow-up?", a: "Set expectations on your page (\"we'll reply within your daytime hours\") and follow up on WhatsApp promptly during the parent's local daytime. Considerate, timely follow-up is often what turns an international trial booking into an enrolled student." },
     ],
   },
+  {
+    slug: "whatsapp-follow-up-quran-academy-leads",
+    title: "How to Follow Up Quran Academy Leads on WhatsApp (and Enroll More Students)",
+    description:
+      "Most Quran academies lose students in the gap between a booking and the first reply. Here's a simple WhatsApp follow-up system — with message templates — that turns trial bookings into enrolled students.",
+    date: "2026-09-20",
+    readMins: 6,
+    excerpt:
+      "A booking is not a student. The academies that win are the ones that follow up fast and kindly on WhatsApp. Here's the exact system — with ready-to-use message templates.",
+    tags: ["WhatsApp", "Quran Academy", "Lead Follow-up"],
+    body: [
+      { p: "You can run perfect ads and get plenty of trial-class bookings — and still enroll almost no one. Why? Because a booking is not a student. The real work happens in the **follow-up**, and for Quran academies that follow-up lives on WhatsApp. Here's a simple system that consistently turns inquiries into enrolled students." },
+      { h2: "Speed wins: reply within the first hour" },
+      { p: "The single biggest factor is **how fast you reply**. A parent who fills your form is interested *right now*. Wait a day and that interest cools; a competitor may reach them first. Aim to send your first WhatsApp message **within 60 minutes** of every booking — even a short one." },
+      { h2: "A simple 4-touch follow-up sequence" },
+      { p: "Don't rely on a single message. Most enrollments happen after **2–4 gentle touches**. Here's a sequence that respects the parent without pestering them:" },
+      { ul: [
+        "**Touch 1 (within 1 hour):** Greet, confirm the trial, and offer a time",
+        "**Touch 2 (next day, if no reply):** A friendly reminder + one benefit",
+        "**Touch 3 (day 3):** Answer a likely concern (timings, fees, teacher)",
+        "**Touch 4 (day 7):** A final soft check-in, then leave the door open",
+      ] },
+      { h3: "Message templates you can adapt" },
+      { p: "Keep them warm, personal, and short. Examples:" },
+      { ul: [
+        "**Touch 1:** \"Assalamu alaikum [Name]! Thank you for booking a free trial class for your child. When suits you best — after Maghrib or on the weekend? I'll arrange a qualified teacher, in shaa Allah.\"",
+        "**Touch 2:** \"Assalamu alaikum [Name], just following up on your child's free trial. Many parents start with 2 classes a week — shall I set up a time this week?\"",
+        "**Touch 3:** \"[Name], a quick note — our teachers are qualified with ijazah, and timings are flexible around your child's school. Happy to answer any questions before the trial.\"",
+      ] },
+      { h2: "Keep it human — this audience values adab" },
+      { p: "Always open with salaam, use the parent's name, and keep the tone sincere, not salesy. You're inviting them to something good for their child's deen — let that come through. A respectful, unhurried tone builds the trust that closes the enrollment." },
+      { h2: "Use the free WhatsApp Business tools" },
+      { p: "The **WhatsApp Business app** (free) makes follow-up far easier:" },
+      { ul: [
+        "**Labels** — tag each lead as New, Trial Booked, Follow-up, or Enrolled",
+        "**Quick replies** — save your templates and send them in two taps",
+        "**Greeting & away messages** — auto-reply instantly, even outside hours",
+        "**Catalog** — show your programmes and fees cleanly",
+      ] },
+      { p: "For international parents (USA, UK, Canada), reply during **their** daytime and say so — considerate timing matters as much as speed." },
+      { h2: "Track it, so it actually happens" },
+      { p: "Follow-up fails when it's left to memory. Use the labels above so no lead is forgotten, and glance at your 'Follow-up' list daily. If you'd rather have this whole pipeline — ads, landing page, **and** the WhatsApp follow-up flow — built for you, that's exactly what I do in my [marketing services](/services)." },
+      { p: "Want me to review how your academy currently handles leads? [Get a free audit](/free-audit) and I'll show you where students are slipping through the cracks." },
+    ],
+    faqs: [
+      { q: "How fast should I reply to a new lead on WhatsApp?", a: "As fast as possible — ideally within an hour. Interest is highest right after a parent books, and fast replies dramatically increase the chance they enroll. Even a short 'Assalamu alaikum, thank you for booking — when suits you?' is enough to start." },
+      { q: "Should I use WhatsApp automation or reply manually?", a: "Use a hybrid. Automate instant greeting and away messages so no one waits, and save templates as 'quick replies' — but send the actual conversation personally. This audience values a real, respectful human, so keep the personal touch." },
+      { q: "What should I do if a parent doesn't reply?", a: "Follow up 2–4 times over about a week, spacing the messages out and adding value each time (answer a concern, mention flexible timings). If they still don't respond, send one warm final message and leave the door open — many come back later." },
+    ],
+  },
 ];
 
 export const getPost = (slug: string) => POSTS.find((p) => p.slug === slug);
