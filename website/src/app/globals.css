@@ -167,6 +167,15 @@ img { max-width: 100%; display: block; }
 .problem-card { transition: transform .25s ease, border-color .25s ease; }
 .problem-card:hover { transform: translateY(-4px); border-color: rgba(212,160,23,.25) !important; }
 
+/* ── /kit CTA buttons ── */
+.kit-btn { transition: background .2s ease, transform .2s ease; }
+.kit-btn:hover { background: #b8860b !important; transform: translateY(-2px); }
+.kit-btn-ghost { transition: border-color .2s ease, color .2s ease; }
+.kit-btn-ghost:hover { border-color: #d4a017 !important; color: #d4a017 !important; }
+.kit-card { transition: border-color .25s ease, transform .25s ease; }
+.kit-card:hover { transform: translateY(-4px); }
+@media (max-width: 760px) { .kit-2col { grid-template-columns: 1fr !important; gap: 24px !important; } }
+
 /* ── FAQ accordion (native <details> — works without JS) ── */
 .faq-q { list-style: none; }
 .faq-q::-webkit-details-marker { display: none; }
