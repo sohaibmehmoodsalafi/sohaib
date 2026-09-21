@@ -5,7 +5,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 
 const SITE = "https://meetsohaib.com";
 const OG_IMAGE = `${SITE}/images/sohaib-og.jpg`;
-const GUMROAD = "https://markenexus.gumroad.com/l/ouajlr";
+const GUMROAD = "https://meetsohaib.gumroad.com/l/ouajlr";
 
 const TITLE = "The Quran Academy Enrollment Kit";
 const DESC =
