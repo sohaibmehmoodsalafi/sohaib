@@ -95,6 +95,16 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const dateLabel = new Date(post.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 
+  // Native share links — work without JavaScript (live site strips all JS)
+  const su = encodeURIComponent(url);
+  const st = encodeURIComponent(post.title);
+  const shareLinks = [
+    { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${su}`, bg: "#0a66c2" },
+    { label: "WhatsApp", href: `https://wa.me/?text=${st}%20${su}`, bg: "#25d366" },
+    { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${su}`, bg: "#1877f2" },
+    { label: "X", href: `https://twitter.com/intent/tweet?url=${su}&text=${st}`, bg: "#1a1a1a" },
+  ];
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
@@ -115,6 +125,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </div>
 
           {post.body.map(renderBlock)}
+
+          {/* Share bar — native links, no-JS safe */}
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 44, paddingTop: 26, borderTop: "1px solid rgba(255,255,255,.08)" }}>
+            <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "#6b6b6b", marginRight: 4 }}>Share this</span>
+            {shareLinks.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
+                style={{ background: s.bg, color: "#fff", fontSize: 13, fontWeight: 700, padding: "9px 18px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
+                {s.label}
+              </a>
+            ))}
+          </div>
 
           {/* FAQ block */}
           <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", color: "#f5f0e8", margin: "52px 0 20px" }}>Frequently asked questions</h2>
