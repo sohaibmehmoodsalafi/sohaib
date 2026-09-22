@@ -99,7 +99,7 @@ export default function EcommercePage() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
 
   return (
-    <main style={{ background: "#080808", color: "#f5f0e8", fontFamily: "'Plus Jakarta Sans',sans-serif", overflowX: "hidden" }}>
+    <main style={{ background: "var(--bg)", color: "var(--text)", fontFamily: "'Plus Jakarta Sans',sans-serif", overflowX: "hidden" }}>
       {/* Responsive + animations */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -127,13 +127,13 @@ export default function EcommercePage() {
         padding: "0 4vw", height: 64,
         display: "flex", alignItems: "center", justifyContent: "space-between",
         background: "rgba(8,8,8,0.95)", backdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(255,255,255,.06)"
+        borderBottom: "1px solid var(--hairline)"
       }}>
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" style={{ width: 34, height: 34, objectFit: "contain" }} />
           <div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 15, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
-            <div style={{ fontSize: 8, color: "#6b6b6b", letterSpacing: ".12em" }}>E-COMMERCE MARKETING</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 15, letterSpacing: ".08em", color: "var(--text)", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
+            <div style={{ fontSize: 8, color: "var(--text-muted)", letterSpacing: ".12em" }}>E-COMMERCE MARKETING</div>
           </div>
         </a>
         <a
@@ -191,7 +191,7 @@ export default function EcommercePage() {
           {/* H1 */}
           <h1 className="hero-fade hero-fade-d2" style={{
             fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(48px, 8vw, 90px)",
-            lineHeight: 0.95, letterSpacing: ".01em", color: "#f5f0e8", marginBottom: 8,
+            lineHeight: 0.95, letterSpacing: ".01em", color: "var(--text)", marginBottom: 8,
           }}>
             SCALE YOUR STORE TO
             <br /><span style={{ color: "#d4a017", textShadow: "0 0 40px rgba(212,160,23,0.2)" }}>5× ROAS</span> WITH
@@ -199,10 +199,10 @@ export default function EcommercePage() {
           </h1>
 
           <p className="hero-fade hero-fade-d3" style={{
-            fontSize: "clamp(15px, 1.6vw, 18px)", color: "#9a9a9a", fontWeight: 300,
+            fontSize: "clamp(15px, 1.6vw, 18px)", color: "var(--text-muted2)", fontWeight: 300,
             maxWidth: 520, margin: "24px 0 40px", lineHeight: 1.7,
           }}>
-            <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>Full-funnel campaigns</strong>
+            <strong style={{ color: "var(--text)", fontWeight: 500 }}>Full-funnel campaigns</strong>
             {" "}— audience research, scroll-stopping creatives, and conversion-optimized landing pages. All by one expert.
           </p>
 
@@ -220,13 +220,13 @@ export default function EcommercePage() {
                 boxShadow: "0 0 20px rgba(212,160,23,0.2)",
               }}
             >
-              <svg width="18" height="18" fill="#080808" viewBox="0 0 24 24">
+              <svg width="18" height="18" fill="var(--bg)" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               Get Free E-commerce Ads Audit
             </a>
             <a href="/" style={{
-              background: "rgba(255,255,255,0.03)", color: "#d4a017", fontWeight: 500, fontSize: 15,
+              background: "var(--overlay-soft)", color: "#d4a017", fontWeight: 500, fontSize: 15,
               padding: "14px 32px", borderRadius: 99, textDecoration: "none",
               border: "1px solid rgba(212,160,23,0.3)", display: "inline-flex",
               alignItems: "center", gap: 10, backdropFilter: "blur(10px)",
@@ -245,13 +245,13 @@ export default function EcommercePage() {
             {stats.map((s, i) => (
               <div key={i} style={{
                 padding: "20px 16px", textAlign: "center",
-                borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none"
+                borderRight: i < 3 ? "1px solid var(--hairline)" : "none"
               }}>
                 <div style={{ fontSize: 11, marginBottom: 4 }}>{s.icon}</div>
                 <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "#d4a017", lineHeight: 1 }}>
                   {s.value}
                 </div>
-                <div style={{ fontSize: 10, color: "#6b6b6b", marginTop: 4, letterSpacing: ".03em" }}>{s.label}</div>
+                <div style={{ fontSize: 10, color: "var(--text-muted)", marginTop: 4, letterSpacing: ".03em" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function EcommercePage() {
       </section>
 
       {/* ── Services ── */}
-      <section style={{ padding: "100px 4vw", borderTop: "1px solid rgba(255,255,255,.05)" }}>
+      <section style={{ padding: "100px 4vw", borderTop: "1px solid var(--hairline)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span style={{ fontSize: 11, letterSpacing: ".2em", color: "#d4a017", textTransform: "uppercase", fontWeight: 600 }}>
@@ -267,11 +267,11 @@ export default function EcommercePage() {
             </span>
             <h2 style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 56px)",
-              lineHeight: 1, marginTop: 12, color: "#f5f0e8"
+              lineHeight: 1, marginTop: 12, color: "var(--text)"
             }}>
               A COMPLETE <span style={{ color: "#d4a017" }}>ADS SYSTEM</span> FOR YOUR STORE
             </h2>
-            <p style={{ fontSize: 15, color: "#9a9a9a", marginTop: 12, maxWidth: 480, margin: "12px auto 0" }}>
+            <p style={{ fontSize: 15, color: "var(--text-muted2)", marginTop: 12, maxWidth: 480, margin: "12px auto 0" }}>
               Not just ads — a full conversion engine designed to scale your revenue predictably.
             </p>
           </div>
@@ -283,8 +283,8 @@ export default function EcommercePage() {
                 onMouseEnter={() => setHoveredService(i)}
                 onMouseLeave={() => setHoveredService(null)}
                 style={{
-                  background: hoveredService === i ? "rgba(212,160,23,0.04)" : "rgba(255,255,255,0.02)",
-                  border: `1px solid ${hoveredService === i ? "rgba(212,160,23,0.25)" : "rgba(255,255,255,0.06)"}`,
+                  background: hoveredService === i ? "rgba(212,160,23,0.04)" : "var(--overlay-soft)",
+                  border: `1px solid ${hoveredService === i ? "rgba(212,160,23,0.25)" : "var(--hairline)"}`,
                   borderRadius: 16, padding: 32, transition: "all .3s ease",
                   position: "relative", overflow: "hidden"
                 }}
@@ -299,10 +299,10 @@ export default function EcommercePage() {
                   <div style={{ fontSize: 11, color: "#d4a017", letterSpacing: ".15em", marginBottom: 8, fontWeight: 600 }}>
                     STEP {s.num}
                   </div>
-                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "var(--text)", marginBottom: 12, lineHeight: 1.1 }}>
                     {s.title}
                   </h3>
-                  <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.7 }}>{s.desc}</p>
+                  <p style={{ fontSize: 13, color: "var(--text-muted2)", lineHeight: 1.7 }}>{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -314,8 +314,8 @@ export default function EcommercePage() {
                 onMouseEnter={() => setHoveredService(i + 3)}
                 onMouseLeave={() => setHoveredService(null)}
                 style={{
-                  background: hoveredService === i + 3 ? "rgba(212,160,23,0.04)" : "rgba(255,255,255,0.02)",
-                  border: `1px solid ${hoveredService === i + 3 ? "rgba(212,160,23,0.25)" : "rgba(255,255,255,0.06)"}`,
+                  background: hoveredService === i + 3 ? "rgba(212,160,23,0.04)" : "var(--overlay-soft)",
+                  border: `1px solid ${hoveredService === i + 3 ? "rgba(212,160,23,0.25)" : "var(--hairline)"}`,
                   borderRadius: 16, padding: 32, transition: "all .3s ease",
                   position: "relative", overflow: "hidden"
                 }}
@@ -330,10 +330,10 @@ export default function EcommercePage() {
                   <div style={{ fontSize: 11, color: "#d4a017", letterSpacing: ".15em", marginBottom: 8, fontWeight: 600 }}>
                     STEP {s.num}
                   </div>
-                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "var(--text)", marginBottom: 12, lineHeight: 1.1 }}>
                     {s.title}
                   </h3>
-                  <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.7 }}>{s.desc}</p>
+                  <p style={{ fontSize: 13, color: "var(--text-muted2)", lineHeight: 1.7 }}>{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -345,7 +345,7 @@ export default function EcommercePage() {
       <section style={{
         padding: "100px 4vw",
         background: "linear-gradient(180deg, rgba(212,160,23,0.03) 0%, transparent 100%)",
-        borderTop: "1px solid rgba(255,255,255,.05)"
+        borderTop: "1px solid var(--hairline)"
       }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
@@ -354,7 +354,7 @@ export default function EcommercePage() {
             </span>
             <h2 style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(32px, 4vw, 48px)",
-              lineHeight: 1.05, marginTop: 12, color: "#f5f0e8"
+              lineHeight: 1.05, marginTop: 12, color: "var(--text)"
             }}>
               E-COMMERCE <span style={{ color: "#d4a017" }}>RESULTS THAT SPEAK</span>
             </h2>
@@ -363,7 +363,7 @@ export default function EcommercePage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {caseStudies.map((cs) => (
               <div key={cs.name} style={{
-                background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+                background: "var(--overlay-soft)", border: "1px solid var(--hairline)",
                 borderRadius: 20, padding: "40px 36px", position: "relative", overflow: "hidden"
               }}>
                 {/* Glow accent */}
@@ -380,7 +380,7 @@ export default function EcommercePage() {
                       background: "rgba(212,160,23,0.08)", border: "1px solid rgba(212,160,23,0.15)",
                       borderRadius: 4, padding: "3px 10px", letterSpacing: ".03em"
                     }}>{cs.tag}</span>
-                    <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "#f5f0e8", marginTop: 10, lineHeight: 1 }}>
+                    <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "var(--text)", marginTop: 10, lineHeight: 1 }}>
                       {cs.name}
                     </h3>
                   </div>
@@ -401,7 +401,7 @@ export default function EcommercePage() {
                       <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#d4a017", lineHeight: 1 }}>
                         {m.value}
                       </div>
-                      <div style={{ fontSize: 10, color: "#6b6b6b", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>
+                      <div style={{ fontSize: 10, color: "var(--text-muted)", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>
                         {m.label}
                       </div>
                     </div>
@@ -412,7 +412,7 @@ export default function EcommercePage() {
                 <p style={{ fontSize: 14, color: "#bbb", lineHeight: 1.8 }}>{cs.story}</p>
 
                 {/* Client badge */}
-                <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", gap: 14 }}>
+                <div style={{ marginTop: 24, paddingTop: 20, borderTop: "1px solid var(--hairline)", display: "flex", alignItems: "center", gap: 14 }}>
                   <div style={{
                     width: 44, height: 44, borderRadius: "50%",
                     background: "rgba(212,160,23,0.1)", border: "1px solid rgba(212,160,23,0.2)",
@@ -420,8 +420,8 @@ export default function EcommercePage() {
                     fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 14, color: "#d4a017"
                   }}>{cs.initials}</div>
                   <div>
-                    <p style={{ fontSize: 14, fontWeight: 500, color: "#f5f0e8" }}>{cs.name}</p>
-                    <p style={{ fontSize: 11, color: "#6b6b6b" }}>{cs.url}</p>
+                    <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text)" }}>{cs.name}</p>
+                    <p style={{ fontSize: 11, color: "var(--text-muted)" }}>{cs.url}</p>
                   </div>
                 </div>
               </div>
@@ -431,7 +431,7 @@ export default function EcommercePage() {
       </section>
 
       {/* ── Why One Expert ── */}
-      <section style={{ padding: "100px 4vw", borderTop: "1px solid rgba(255,255,255,.05)" }}>
+      <section style={{ padding: "100px 4vw", borderTop: "1px solid var(--hairline)" }}>
         <div style={{ maxWidth: 800, margin: "0 auto" }}>
           <div style={{
             background: "rgba(212,160,23,0.03)", border: "1px solid rgba(212,160,23,0.15)",
@@ -447,14 +447,14 @@ export default function EcommercePage() {
             }}>ONE PERSON. ONE SYSTEM.</span>
             <h3 style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px, 3vw, 32px)",
-              color: "#f5f0e8", marginTop: 16, marginBottom: 16, lineHeight: 1.1
+              color: "var(--text)", marginTop: 16, marginBottom: 16, lineHeight: 1.1
             }}>
               WHY ONE EXPERT BEATS AN AGENCY FOR E-COMMERCE
             </h3>
-            <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 16 }}>
+            <p style={{ fontSize: 14, color: "var(--text-muted2)", lineHeight: 1.8, marginBottom: 16 }}>
               Agencies assign your store to a junior media buyer who has never designed an ad creative or built a landing page. Your ad says one thing, the page says another, and the creative does not match either.
             </p>
-            <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.8 }}>
+            <p style={{ fontSize: 14, color: "var(--text-muted2)", lineHeight: 1.8 }}>
               I personally handle every element — product research, ad creative design, landing page development, and campaign optimization. <strong style={{ color: "#d4a017" }}>One person, one vision, zero handoff gaps.</strong> That is why my clients achieve 5×+ ROAS consistently.
             </p>
           </div>
@@ -465,7 +465,7 @@ export default function EcommercePage() {
       <section style={{
         padding: "100px 4vw", textAlign: "center",
         background: "linear-gradient(180deg, transparent, rgba(212,160,23,0.04) 50%, transparent)",
-        borderTop: "1px solid rgba(255,255,255,.05)"
+        borderTop: "1px solid var(--hairline)"
       }}>
         <div style={{ maxWidth: 600, margin: "0 auto" }}>
           <span style={{ fontSize: 11, letterSpacing: ".2em", color: "#d4a017", textTransform: "uppercase", fontWeight: 600 }}>
@@ -473,12 +473,12 @@ export default function EcommercePage() {
           </span>
           <h2 style={{
             fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 56px)",
-            lineHeight: 1, marginTop: 12, marginBottom: 20, color: "#f5f0e8"
+            lineHeight: 1, marginTop: 12, marginBottom: 20, color: "var(--text)"
           }}>
             GET YOUR <span style={{ color: "#d4a017" }}>FREE ADS AUDIT</span>
             <br />FOR YOUR STORE
           </h2>
-          <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.7, maxWidth: 460, margin: "0 auto 40px" }}>
+          <p style={{ fontSize: 15, color: "var(--text-muted2)", lineHeight: 1.7, maxWidth: 460, margin: "0 auto 40px" }}>
             I will analyze your current ads, find where you are losing money, and give you a custom scaling strategy — free, no strings attached.
           </p>
 
@@ -493,7 +493,7 @@ export default function EcommercePage() {
                 boxShadow: "0 0 30px rgba(212,160,23,0.25)",
               }}
             >
-              <svg width="18" height="18" fill="#080808" viewBox="0 0 24 24">
+              <svg width="18" height="18" fill="var(--bg)" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               Get Free Ads Audit on WhatsApp
@@ -502,9 +502,9 @@ export default function EcommercePage() {
               href="https://calendly.com/meetsohaib/30min"
               target="_blank" rel="noopener noreferrer"
               style={{
-                background: "rgba(255,255,255,0.03)", color: "#f5f0e8", fontWeight: 500, fontSize: 15,
+                background: "var(--overlay-soft)", color: "var(--text)", fontWeight: 500, fontSize: 15,
                 padding: "15px 32px", borderRadius: 99, textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.1)", display: "inline-flex",
+                border: "1px solid var(--hairline-2)", display: "inline-flex",
                 alignItems: "center", gap: 8,
               }}
             >
@@ -514,7 +514,7 @@ export default function EcommercePage() {
 
           <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 24 }}>
             {["No commitment", "Free consultation", "Reply within 1 hour"].map((t) => (
-              <span key={t} style={{ fontSize: 11, color: "#6b6b6b", display: "flex", alignItems: "center", gap: 6 }}>
+              <span key={t} style={{ fontSize: 11, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 6 }}>
                 <span style={{ color: "#6db88a", fontSize: 10 }}>✓</span> {t}
               </span>
             ))}
@@ -523,11 +523,11 @@ export default function EcommercePage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer style={{ padding: "24px 4vw", borderTop: "1px solid rgba(255,255,255,.05)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span style={{ fontSize: 11, color: "#6b6b6b" }}>
+      <footer style={{ padding: "24px 4vw", borderTop: "1px solid var(--hairline)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
           © 2026 Sohaib Mehmood — Meta Ads Expert for E-commerce
         </span>
-        <a href="/" style={{ fontSize: 11, color: "#6b6b6b", textDecoration: "none" }}>
+        <a href="/" style={{ fontSize: 11, color: "var(--text-muted)", textDecoration: "none" }}>
           ← Back to Main Site
         </a>
       </footer>

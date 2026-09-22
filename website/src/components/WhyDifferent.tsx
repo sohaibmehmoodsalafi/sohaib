@@ -8,13 +8,13 @@ export default function WhyDifferent() {
     <section
       ref={ref as React.RefObject<HTMLElement>}
       className="section-pad"
-      style={{ padding: "110px 4vw", background: "#080808", borderTop: "1px solid rgba(255,255,255,.07)" }}
+      style={{ padding: "110px 4vw", background: "var(--bg)", borderTop: "1px solid var(--hairline)" }}
     >
       <div style={{ maxWidth: 920, margin: "0 auto" }}>
         <div
           style={{
             position: "relative",
-            background: "linear-gradient(160deg, #161310 0%, #12100c 100%)",
+            background: "linear-gradient(160deg, var(--surface-gold) 0%, var(--surface-gold2) 100%)",
             border: "1px solid rgba(212,160,23,.3)",
             borderRadius: 24,
             padding: "clamp(32px,5vw,56px)",
@@ -31,8 +31,8 @@ export default function WhyDifferent() {
             I&apos;ve run academies — <span style={{ color: "#d4a017" }}>not just ads for them.</span>
           </h2>
 
-          <p style={{ fontSize: "clamp(16px,1.7vw,19px)", color: "#c9c3b8", lineHeight: 1.75, maxWidth: 700 }}>
-            Alongside my client work, I run <strong style={{ color: "#f5f0e8", fontWeight: 600 }}>Peace Institute</strong>, my own online Quran and Islamic education platform. So when I build your enrollment funnel, I&apos;m not guessing — I&apos;m using what actually fills seats in a real academy. You get someone who understands both the deen and the numbers.
+          <p style={{ fontSize: "clamp(16px,1.7vw,19px)", color: "var(--text-soft)", lineHeight: 1.75, maxWidth: 700 }}>
+            Alongside my client work, I run <strong style={{ color: "var(--text)", fontWeight: 600 }}>Peace Institute</strong>, my own online Quran and Islamic education platform. So when I build your enrollment funnel, I&apos;m not guessing — I&apos;m using what actually fills seats in a real academy. You get someone who understands both the deen and the numbers.
           </p>
         </div>
       </div>

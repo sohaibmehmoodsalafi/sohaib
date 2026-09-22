@@ -195,7 +195,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#080808" />
+        <meta name="theme-color" content="var(--bg)" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -220,7 +220,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", background: "#080808", color: "#f5f0e8", overflowX: "hidden" }}>
+      <body style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", background: "var(--bg)", color: "var(--text)", overflowX: "hidden" }}>
         {children}
       </body>
     </html>

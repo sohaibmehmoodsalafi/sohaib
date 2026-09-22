@@ -8,12 +8,12 @@ function FloatBadge({ bottom, right, top, left, num, lbl, color }: { bottom?: nu
   return (
     <div className="about-float" style={{
       position: "absolute", bottom, right, top, left,
-      background: "#1e1e1e", border: "1px solid rgba(255,255,255,.12)",
+      background: "var(--bg-card2)", border: "1px solid var(--hairline-2)",
       borderRadius: 14, padding: "16px 20px", minWidth: 140,
       boxShadow: "0 20px 40px rgba(0,0,0,.4)",
     }}>
       <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 30, color, lineHeight: 1 }}>{num}</div>
-      <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4 }}>{lbl}</div>
+      <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 4 }}>{lbl}</div>
     </div>
   );
 }
@@ -30,7 +30,7 @@ export default function AboutSection() {
       {/* Visual */}
       <div style={{ position: "relative" }}>
         <div className="about-image" style={{
-          background: "#161616", border: "1px solid rgba(255,255,255,.12)",
+          background: "var(--bg-card)", border: "1px solid var(--hairline-2)",
           borderRadius: 20, aspectRatio: "3/4", display: "flex",
           flexDirection: "column", alignItems: "center", justifyContent: "center",
           overflow: "hidden", position: "relative",
@@ -39,7 +39,7 @@ export default function AboutSection() {
           {imgErr ? (
             <>
               <div style={{ width: 90, height: 90, borderRadius: "50%", background: "#d4a017", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 34, color: "#080808", zIndex: 1 }}>SM</div>
-              <p style={{ fontSize: 12, color: "#6b6b6b", textAlign: "center", maxWidth: 180, zIndex: 1, lineHeight: 1.5, marginTop: 16 }}>Meta Ads Expert<br />Based in Karachi, Pakistan</p>
+              <p style={{ fontSize: 12, color: "var(--text-muted)", textAlign: "center", maxWidth: 180, zIndex: 1, lineHeight: 1.5, marginTop: 16 }}>Meta Ads Expert<br />Based in Karachi, Pakistan</p>
             </>
           ) : (
             <img
@@ -63,20 +63,20 @@ export default function AboutSection() {
         <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px,4.6vw,56px)", lineHeight: 1.02, letterSpacing: "-.01em", marginBottom: 20 }}>
           One person.<br /><span style={{ color: "#d4a017" }}>Your mission first.</span>
         </h2>
-        <p style={{ fontSize: 16, color: "#9a9a9a", lineHeight: 1.85 }}>
-          I&apos;m Sohaib Mehmood. For over 5 years I&apos;ve helped academies and Islamic organizations across Pakistan, the UK, the USA, and the UAE grow — with honest, halal marketing and no agency markup. I also run my own institute, <strong style={{ color: "#f5f0e8", fontWeight: 600 }}>Peace Institute</strong>, so I care about your students as much as your numbers. When you work with me, you work with me — not a junior team.
+        <p style={{ fontSize: 16, color: "var(--text-muted2)", lineHeight: 1.85 }}>
+          I&apos;m Sohaib Mehmood. For over 5 years I&apos;ve helped academies and Islamic organizations across Pakistan, the UK, the USA, and the UAE grow — with honest, halal marketing and no agency markup. I also run my own institute, <strong style={{ color: "var(--text)", fontWeight: 600 }}>Peace Institute</strong>, so I care about your students as much as your numbers. When you work with me, you work with me — not a junior team.
         </p>
-        <div className="about-counter-row" style={{ display: "flex", gap: 32, marginTop: 32, paddingTop: 32, borderTop: "1px solid rgba(255,255,255,.07)", flexWrap: "wrap" }}>
+        <div className="about-counter-row" style={{ display: "flex", gap: 32, marginTop: 32, paddingTop: 32, borderTop: "1px solid var(--hairline)", flexWrap: "wrap" }}>
           {[
             { n: "5", s: "+", l: "Years experience" },
             { n: "4", s: "", l: "Countries served" },
             { n: "12", s: "%", l: "Avg. conversion rate" },
           ].map((s, i) => (
             <div key={i}>
-              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, color: "#f5f0e8", lineHeight: 1 }}>
+              <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, color: "var(--text)", lineHeight: 1 }}>
                 <Counter end={s.n} suffix={s.s} />
               </div>
-              <div style={{ fontSize: 12, color: "#6b6b6b", marginTop: 4 }}>{s.l}</div>
+              <div style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 4 }}>{s.l}</div>
             </div>
           ))}
         </div>

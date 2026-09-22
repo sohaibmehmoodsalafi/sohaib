@@ -16,13 +16,13 @@ export default function LeadMagnet() {
       ref={ref as React.RefObject<HTMLElement>}
       id="checklist"
       className="section-pad"
-      style={{ padding: "100px 4vw", background: "#080808", borderTop: "1px solid rgba(255,255,255,.07)" }}
+      style={{ padding: "100px 4vw", background: "var(--bg)", borderTop: "1px solid var(--hairline)" }}
     >
       <div
         className="lead-grid"
         style={{
           maxWidth: 960, margin: "0 auto",
-          background: "#161616", border: "1px solid rgba(255,255,255,.08)", borderRadius: 24,
+          background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 24,
           padding: "clamp(28px,4vw,48px)",
           display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 44, alignItems: "center",
         }}
@@ -37,7 +37,7 @@ export default function LeadMagnet() {
           </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {POINTS.map((p, i) => (
-              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, color: "#c9c3b8", lineHeight: 1.6 }}>
+              <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, color: "var(--text-soft)", lineHeight: 1.6 }}>
                 <span style={{ color: "#d4a017", fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>{p}
               </div>
             ))}
@@ -45,9 +45,9 @@ export default function LeadMagnet() {
         </div>
 
         {/* Right: email capture (native form → Web3Forms → redirects to the PDF) */}
-        <div style={{ background: "#0f0f0f", border: "1px solid rgba(255,255,255,.07)", borderRadius: 16, padding: "28px 24px" }}>
+        <div style={{ background: "var(--bg-dark)", border: "1px solid var(--hairline)", borderRadius: 16, padding: "28px 24px" }}>
           <div style={{ fontSize: 15, fontWeight: 700, marginBottom: 4 }}>Get the checklist (PDF)</div>
-          <div style={{ fontSize: 13, color: "#6b6b6b", marginBottom: 18 }}>Enter your email — it opens instantly.</div>
+          <div style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 18 }}>Enter your email — it opens instantly.</div>
           <form action={FORM_ENDPOINT} method="POST">
             <input type="hidden" name="_subject" value="New Checklist Download — meetsohaib.com" />
             <input type="hidden" name="_template" value="table" />
@@ -56,14 +56,14 @@ export default function LeadMagnet() {
             <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
             <input
               name="Email" type="email" required placeholder="you@academy.com"
-              style={{ width: "100%", background: "#1e1e1e", border: "1px solid rgba(255,255,255,.1)", borderRadius: 10, color: "#f5f0e8", fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: 15, padding: "14px 16px", outline: "none", marginBottom: 12 }}
+              style={{ width: "100%", background: "var(--bg-card2)", border: "1px solid var(--hairline-2)", borderRadius: 10, color: "var(--text)", fontFamily: "'Plus Jakarta Sans',sans-serif", fontSize: 15, padding: "14px 16px", outline: "none", marginBottom: 12 }}
             />
             <button type="submit"
               style={{ width: "100%", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15, padding: 15, borderRadius: 99, border: "none", cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
               Send me the checklist →
             </button>
           </form>
-          <p style={{ fontSize: 11, color: "#6b6b6b", textAlign: "center", marginTop: 12 }}>No spam. Unsubscribe anytime.</p>
+          <p style={{ fontSize: 11, color: "var(--text-muted)", textAlign: "center", marginTop: 12 }}>No spam. Unsubscribe anytime.</p>
         </div>
       </div>
     </section>

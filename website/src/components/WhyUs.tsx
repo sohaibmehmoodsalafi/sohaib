@@ -17,13 +17,13 @@ export default function WhyUs() {
           </h2>
         </div>
 
-        <div className="rounded-[2px] overflow-hidden" style={{ border: "0.5px solid rgba(255,255,255,0.06)" }}>
-          <div className="grid grid-cols-2 px-6 py-4" style={{ background: "#111111" }}>
+        <div className="rounded-[2px] overflow-hidden" style={{ border: "0.5px solid var(--hairline)" }}>
+          <div className="grid grid-cols-2 px-6 py-4" style={{ background: "var(--bg-card)" }}>
             <span className="text-[11px] text-[#666] uppercase tracking-[0.15em] font-medium">Typical Agency</span>
             <span className="text-[11px] text-[#D4A843] uppercase tracking-[0.15em] font-medium">Our System</span>
           </div>
           {rows.map((r, i) => (
-            <div key={i} className="grid grid-cols-2 px-6 py-4" style={{ background: i % 2 === 0 ? "transparent" : "rgba(255,255,255,0.015)", borderTop: "0.5px solid rgba(255,255,255,0.04)" }}>
+            <div key={i} className="grid grid-cols-2 px-6 py-4" style={{ background: i % 2 === 0 ? "transparent" : "var(--overlay-soft)", borderTop: "0.5px solid var(--hairline)" }}>
               <div className="flex items-center gap-2.5">
                 <span className="text-red-400/50 text-[10px]">✕</span>
                 <span className="text-[13px] text-[#777] font-light">{r.agency}</span>

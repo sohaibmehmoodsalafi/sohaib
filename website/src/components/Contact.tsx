@@ -9,20 +9,20 @@ function ContactOpt({ icon, title, sub, href }: { icon: string; title: string; s
     <a href={href} target="_blank" rel="noopener noreferrer"
       style={{
         display: "flex", alignItems: "center", gap: 16,
-        background: "#161616", border: "1px solid rgba(255,255,255,.07)",
+        background: "var(--bg-card)", border: "1px solid var(--hairline)",
         borderRadius: 14, padding: "18px 22px",
         transform: hov ? "translateX(4px)" : "none",
-        borderColor: hov ? "rgba(255,255,255,.12)" : "rgba(255,255,255,.07)",
-        transition: "all .2s", color: "#f5f0e8", textDecoration: "none",
+        borderColor: hov ? "var(--hairline-2)" : "var(--hairline)",
+        transition: "all .2s", color: "var(--text)", textDecoration: "none",
       }}
       onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
     >
-      <div style={{ width: 44, height: 44, borderRadius: 10, background: "#1e1e1e", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{icon}</div>
+      <div style={{ width: 44, height: 44, borderRadius: 10, background: "var(--bg-card2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>{icon}</div>
       <div>
         <div style={{ fontSize: 14, fontWeight: 600 }}>{title}</div>
-        <div style={{ fontSize: 12, color: "#6b6b6b", marginTop: 2 }}>{sub}</div>
+        <div style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 2 }}>{sub}</div>
       </div>
-      <span style={{ marginLeft: "auto", color: hov ? "#d4a017" : "#6b6b6b", fontSize: 18, transition: "color .2s, transform .2s", transform: hov ? "translateX(4px)" : "none" }}>→</span>
+      <span style={{ marginLeft: "auto", color: hov ? "#d4a017" : "var(--text-muted)", fontSize: 18, transition: "color .2s, transform .2s", transform: hov ? "translateX(4px)" : "none" }}>→</span>
     </a>
   );
 }
@@ -58,14 +58,14 @@ export default function Contact() {
   };
 
   const inputStyle = (id: string) => ({
-    width: "100%", background: "#1e1e1e",
-    border: `1px solid ${errors[id] ? "#f87171" : "rgba(255,255,255,.07)"}`,
-    borderRadius: 10, color: "#f5f0e8", fontFamily: "'Plus Jakarta Sans',sans-serif",
+    width: "100%", background: "var(--bg-card2)",
+    border: `1px solid ${errors[id] ? "#f87171" : "var(--hairline)"}`,
+    borderRadius: 10, color: "var(--text)", fontFamily: "'Plus Jakarta Sans',sans-serif",
     fontSize: 15, padding: "13px 16px", outline: "none",
   });
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="contact" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid var(--hairline)" }}>
       <div className="contact-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 100, alignItems: "start" }}>
         {/* Left */}
         <div>
@@ -75,7 +75,7 @@ export default function Contact() {
           <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,5vw,64px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 20 }}>
             LET&apos;S AUDIT YOUR<br /><span style={{ color: "#d4a017" }}>MARKETING FREE.</span>
           </h2>
-          <p style={{ fontSize: 16, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 44 }}>30-minute PPC consultancy call — I&apos;ll review your current digital marketing campaign setup, audit your Google Ads optimization, and tell you exactly what to fix. No commitment. No pressure. Just honest advice from an experienced digital marketing consultant.</p>
+          <p style={{ fontSize: 16, color: "var(--text-muted2)", lineHeight: 1.7, marginBottom: 44 }}>30-minute PPC consultancy call — I&apos;ll review your current digital marketing campaign setup, audit your Google Ads optimization, and tell you exactly what to fix. No commitment. No pressure. Just honest advice from an experienced digital marketing consultant.</p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 44 }}>
             <ContactOpt icon="💬" title="WhatsApp — fastest response" sub="Reply within 1 hour" href="https://wa.me/923048885206" />
@@ -85,7 +85,7 @@ export default function Contact() {
 
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
             {["100% Confidential", "No Commitment", "Reply in 1 Hour", "No Spam"].map((t) => (
-              <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "#6b6b6b" }}>
+              <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)" }}>
                 <span style={{ color: "#d4a017", fontWeight: 700 }}>✓</span>{t}
               </div>
             ))}
@@ -93,25 +93,25 @@ export default function Contact() {
         </div>
 
         {/* Form */}
-        <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.07)", borderRadius: 20, padding: 44 }}>
+        <div style={{ background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 20, padding: 44 }}>
           <div style={{ fontSize: 20, fontWeight: 700, marginBottom: 28 }}>Send a message</div>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#9a9a9a", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>Your name</label>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--text-muted2)", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>Your name</label>
             <input type="text" value={form.name} onChange={(e) => { setForm((f) => ({ ...f, name: e.target.value })); setErrors((er) => ({ ...er, name: "" })); }} placeholder="Muhammad Ahmed" style={inputStyle("name")} />
             {errors.name && <div style={{ color: "#f87171", fontSize: 12, marginTop: 4 }}>{errors.name}</div>}
           </div>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#9a9a9a", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>Email address</label>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--text-muted2)", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>Email address</label>
             <input type="email" value={form.email} onChange={(e) => { setForm((f) => ({ ...f, email: e.target.value })); setErrors((er) => ({ ...er, email: "" })); }} placeholder="you@example.com" style={inputStyle("email")} />
             {errors.email && <div style={{ color: "#f87171", fontSize: 12, marginTop: 4 }}>{errors.email}</div>}
           </div>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#9a9a9a", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>I need help with</label>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--text-muted2)", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>I need help with</label>
             <select value={form.service} onChange={(e) => { setForm((f) => ({ ...f, service: e.target.value })); setErrors((er) => ({ ...er, service: "" })); }}
-              style={{ ...inputStyle("service"), color: form.service ? "#f5f0e8" : "#6b6b6b", WebkitAppearance: "none" as const }}>
+              style={{ ...inputStyle("service"), color: form.service ? "var(--text)" : "var(--text-muted)", WebkitAppearance: "none" as const }}>
               <option value="">Select a service</option>
               {["Facebook & Instagram Ads", "Social Media Management", "Website or Landing Page", "Logo & Branding", "Complete Growth Package", "Quran Academy Marketing", "E-commerce Scaling"].map((o) => <option key={o} value={o}>{o}</option>)}
             </select>
@@ -119,7 +119,7 @@ export default function Contact() {
           </div>
 
           <div style={{ marginBottom: 20 }}>
-            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "#9a9a9a", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>Tell me about your business</label>
+            <label style={{ display: "block", fontSize: 12, fontWeight: 600, color: "var(--text-muted2)", letterSpacing: ".04em", textTransform: "uppercase", marginBottom: 8 }}>Tell me about your business</label>
             <textarea value={form.msg} onChange={(e) => setForm((f) => ({ ...f, msg: e.target.value }))} placeholder="What do you sell, who are your customers, and what's your main challenge right now?"
               style={{ ...inputStyle("msg"), resize: "vertical" as const, minHeight: 110 }} />
           </div>
@@ -139,7 +139,7 @@ export default function Contact() {
             }}>
             {status === "loading" ? "Sending..." : "Book Free Strategy Call →"}
           </button>
-          <p style={{ fontSize: 12, color: "#6b6b6b", textAlign: "center", marginTop: 14 }}>Your info is never shared. No spam ever.</p>
+          <p style={{ fontSize: 12, color: "var(--text-muted)", textAlign: "center", marginTop: 14 }}>Your info is never shared. No spam ever.</p>
         </div>
       </div>
     </section>

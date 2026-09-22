@@ -15,7 +15,7 @@ const logos = [
 
 export default function TrustBar() {
   return (
-    <section className="py-16 px-6" style={{ borderTop: "0.5px solid rgba(255,255,255,0.06)", borderBottom: "0.5px solid rgba(255,255,255,0.06)" }} data-animate>
+    <section className="py-16 px-6" style={{ borderTop: "0.5px solid var(--hairline)", borderBottom: "0.5px solid var(--hairline)" }} data-animate>
       <div className="max-w-[1140px] mx-auto">
         <p className="text-center text-[10px] uppercase tracking-[0.25em] text-[#555] mb-10">Trusted by 120+ businesses across Pakistan, UAE, UK &amp; USA</p>
 
@@ -38,7 +38,7 @@ export default function TrustBar() {
         </div>
 
         {/* Countries */}
-        <div className="flex flex-wrap items-center justify-center gap-8 pt-6" style={{ borderTop: "0.5px solid rgba(255,255,255,0.04)" }}>
+        <div className="flex flex-wrap items-center justify-center gap-8 pt-6" style={{ borderTop: "0.5px solid var(--hairline)" }}>
           {[
             { flag: "🇵🇰", name: "Pakistan" },
             { flag: "🇦🇪", name: "UAE" },

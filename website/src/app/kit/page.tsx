@@ -52,7 +52,7 @@ function JoinButton({ label, ghost = false, style }: { label: string; ghost?: bo
         fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 15,
         padding: "16px 34px", borderRadius: 99, textDecoration: "none",
         ...(ghost
-          ? { background: "transparent", color: "#f5f0e8", border: "1px solid rgba(255,255,255,.18)" }
+          ? { background: "transparent", color: "var(--text)", border: "1px solid var(--hairline-2)" }
           : { background: "#d4a017", color: "#080808", border: "2px solid #d4a017" }),
         ...style,
       }}
@@ -158,41 +158,41 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
-      <main style={{ background: "#080808", overflow: "hidden" }}>
+      <main style={{ background: "var(--bg)", overflow: "hidden" }}>
 
         {/* ─── 1. HERO ─── */}
-        <section className="section-pad" style={{ padding: "150px 4vw 90px", textAlign: "center", background: "radial-gradient(120% 80% at 50% 0%, #14110b 0%, #080808 60%)" }}>
+        <section className="section-pad" style={{ padding: "150px 4vw 90px", textAlign: "center", background: "radial-gradient(120% 80% at 50% 0%, var(--surface-gold) 0%, var(--bg) 60%)" }}>
           <div style={{ maxWidth: 860, margin: "0 auto" }}>
             <div style={{ ...KICKER, justifyContent: "center" }}>
               <span style={KICKER_LINE} />For Quran academies &amp; Islamic institutes<span style={KICKER_LINE} />
             </div>
-            <h1 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(34px,5.6vw,64px)", lineHeight: 1.05, letterSpacing: "-.02em", color: "#f5f0e8", marginBottom: 22 }}>
+            <h1 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(34px,5.6vw,64px)", lineHeight: 1.05, letterSpacing: "-.02em", color: "var(--text)", marginBottom: 22 }}>
               Fill Your Quran Academy With Students — <span style={{ color: "#d4a017" }}>Run My Proven Ad System Yourself</span>
             </h1>
-            <p style={{ fontSize: 17, color: "#b8b2a6", lineHeight: 1.75, maxWidth: 640, margin: "0 auto 32px" }}>
+            <p style={{ fontSize: 17, color: "var(--text-soft)", lineHeight: 1.75, maxWidth: 640, margin: "0 auto 32px" }}>
               The complete kit I use to grow academies — ready-made ad creatives, proven copy, targeting, WhatsApp scripts, and a launch checklist. Refreshed every month. For less than the cost of one hour of an agency&apos;s time.
             </p>
             <JoinButton label="Join the Kit — from $19/month" style={{ fontSize: 16, padding: "18px 40px" }} />
-            <p style={{ fontSize: 13, color: "#9a9a9a", marginTop: 26, letterSpacing: ".01em" }}>
+            <p style={{ fontSize: 13, color: "var(--text-muted2)", marginTop: 26, letterSpacing: ".01em" }}>
               5.6× average ROAS · 120+ clients grown · Halal &amp; Shariah-conscious
             </p>
           </div>
         </section>
 
         {/* ─── 2. PROBLEM & PROMISE ─── */}
-        <section className="section-pad" style={{ padding: "90px 4vw", background: "#0f0f0f", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "90px 4vw", background: "var(--bg-dark)", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 800, margin: "0 auto" }}>
-            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.1, letterSpacing: "-.01em", color: "#f5f0e8", marginBottom: 24 }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,44px)", lineHeight: 1.1, letterSpacing: "-.01em", color: "var(--text)", marginBottom: 24 }}>
               Great teaching. Empty seats. Sound familiar?
             </h2>
-            <p style={{ fontSize: 17, color: "#b8b2a6", lineHeight: 1.85, marginBottom: 18 }}>
+            <p style={{ fontSize: 17, color: "var(--text-soft)", lineHeight: 1.85, marginBottom: 18 }}>
               Most Quran academies don&apos;t have a teaching problem — they have a marketing problem. You know your classes change lives, but students aren&apos;t coming in fast enough, and a full agency costs more than you can commit to.
             </p>
-            <p style={{ fontSize: 17, color: "#b8b2a6", lineHeight: 1.85, marginBottom: 34 }}>
+            <p style={{ fontSize: 17, color: "var(--text-soft)", lineHeight: 1.85, marginBottom: 34 }}>
               The middle path: get the exact system an expert uses and run it yourself. Everything is done for you except pressing &ldquo;go&rdquo;.
             </p>
-            <div style={{ background: "linear-gradient(160deg, #161310 0%, #12100c 100%)", border: "1px solid rgba(212,160,23,.3)", borderRadius: 16, padding: "24px 28px" }}>
-              <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "clamp(18px,2.4vw,24px)", color: "#f5f0e8", lineHeight: 1.4, margin: 0 }}>
+            <div style={{ background: "linear-gradient(160deg, var(--surface-gold) 0%, var(--surface-gold2) 100%)", border: "1px solid rgba(212,160,23,.3)", borderRadius: 16, padding: "24px 28px" }}>
+              <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "clamp(18px,2.4vw,24px)", color: "var(--text)", lineHeight: 1.4, margin: 0 }}>
                 No agency. No guesswork. <span style={{ color: "#d4a017" }}>Just a proven system you control.</span>
               </p>
             </div>
@@ -200,28 +200,28 @@ export default function Page() {
         </section>
 
         {/* ─── 3. WHAT'S INSIDE ─── */}
-        <section className="section-pad" style={{ padding: "90px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "90px 4vw", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 1000, margin: "0 auto" }}>
             <div style={KICKER}><span style={KICKER_LINE} />What&apos;s inside</div>
-            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.05, letterSpacing: "-.01em", color: "#f5f0e8", marginBottom: 48 }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.05, letterSpacing: "-.01em", color: "var(--text)", marginBottom: 48 }}>
               Everything you need — done for you.
             </h2>
             <div className="kit-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
-              <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.08)", borderRadius: 18, padding: "34px 32px" }}>
-                <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 22, color: "#f5f0e8", marginBottom: 24 }}>The moment you join:</h3>
+              <div style={{ background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 18, padding: "34px 32px" }}>
+                <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 22, color: "var(--text)", marginBottom: 24 }}>The moment you join:</h3>
                 <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                   {INSIDE_NOW.map((it) => (
-                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "#c9c3b8", lineHeight: 1.6 }}>
+                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "var(--text-soft)", lineHeight: 1.6 }}>
                       <span style={{ color: "#d4a017", fontWeight: 800, flexShrink: 0 }}>✓</span>{it}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div style={{ background: "linear-gradient(160deg, #1a160f 0%, #141109 100%)", border: "1px solid rgba(212,160,23,.28)", borderRadius: 18, padding: "34px 32px" }}>
-                <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 22, color: "#f5f0e8", marginBottom: 24 }}>Every month you stay:</h3>
+              <div style={{ background: "linear-gradient(160deg, var(--surface-gold) 0%, var(--surface-gold2) 100%)", border: "1px solid rgba(212,160,23,.28)", borderRadius: 18, padding: "34px 32px" }}>
+                <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 22, color: "var(--text)", marginBottom: 24 }}>Every month you stay:</h3>
                 <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                   {INSIDE_MONTHLY.map((it) => (
-                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "#c9c3b8", lineHeight: 1.6 }}>
+                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "var(--text-soft)", lineHeight: 1.6 }}>
                       <span style={{ color: "#d4a017", fontWeight: 800, flexShrink: 0 }}>★</span>{it}
                     </li>
                   ))}
@@ -235,69 +235,69 @@ export default function Page() {
         </section>
 
         {/* ─── 4. WHO IT'S FOR ─── */}
-        <section className="section-pad" style={{ padding: "90px 4vw", background: "#0f0f0f", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "90px 4vw", background: "var(--bg-dark)", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 1000, margin: "0 auto" }}>
             <div style={KICKER}><span style={KICKER_LINE} />Is this for you?</div>
-            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.05, letterSpacing: "-.01em", color: "#f5f0e8", marginBottom: 48 }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,48px)", lineHeight: 1.05, letterSpacing: "-.01em", color: "var(--text)", marginBottom: 48 }}>
               Built for doers, not spectators.
             </h2>
             <div className="kit-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
-              <div style={{ background: "#161616", border: "1px solid rgba(212,160,23,.22)", borderRadius: 18, padding: "34px 32px" }}>
+              <div style={{ background: "var(--bg-card)", border: "1px solid rgba(212,160,23,.22)", borderRadius: 18, padding: "34px 32px" }}>
                 <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 19, color: "#d4a017", marginBottom: 22 }}>This is for you if…</h3>
                 <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                   {FOR_YOU.map((it) => (
-                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "#c9c3b8", lineHeight: 1.6 }}>
+                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "var(--text-soft)", lineHeight: 1.6 }}>
                       <span style={{ color: "#d4a017", fontWeight: 800, flexShrink: 0 }}>✓</span>{it}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.08)", borderRadius: 18, padding: "34px 32px" }}>
-                <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 19, color: "#9a9a9a", marginBottom: 22 }}>Not for you if…</h3>
+              <div style={{ background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 18, padding: "34px 32px" }}>
+                <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 19, color: "var(--text-muted2)", marginBottom: 22 }}>Not for you if…</h3>
                 <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: 14 }}>
                   {NOT_FOR_YOU.map((it) => (
-                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "#9a9a9a", lineHeight: 1.6 }}>
-                      <span style={{ color: "#6b6b6b", fontWeight: 800, flexShrink: 0 }}>✕</span>{it}
+                    <li key={it} style={{ display: "flex", gap: 12, fontSize: 15, color: "var(--text-muted2)", lineHeight: 1.6 }}>
+                      <span style={{ color: "var(--text-muted)", fontWeight: 800, flexShrink: 0 }}>✕</span>{it}
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
-            <p style={{ fontSize: 15, color: "#b8b2a6", lineHeight: 1.7, textAlign: "center", maxWidth: 620, margin: "36px auto 0" }}>
-              Never run an ad before? The <strong style={{ color: "#f5f0e8" }}>First Campaign Checklist</strong> walks you through it click by click.
+            <p style={{ fontSize: 15, color: "var(--text-soft)", lineHeight: 1.7, textAlign: "center", maxWidth: 620, margin: "36px auto 0" }}>
+              Never run an ad before? The <strong style={{ color: "var(--text)" }}>First Campaign Checklist</strong> walks you through it click by click.
             </p>
           </div>
         </section>
 
         {/* ─── 5. PRICING ─── */}
-        <section className="section-pad" style={{ padding: "90px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "90px 4vw", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 1100, margin: "0 auto" }}>
             <div style={{ ...KICKER, justifyContent: "center", width: "100%" }}><span style={KICKER_LINE} />Pricing<span style={KICKER_LINE} /></div>
-            <div style={{ background: "linear-gradient(160deg, #1a160f 0%, #141109 100%)", border: "1px solid rgba(212,160,23,.35)", borderRadius: 14, padding: "16px 24px", textAlign: "center", maxWidth: 720, margin: "0 auto 44px" }}>
-              <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "clamp(14px,2vw,17px)", color: "#f5f0e8", margin: 0, lineHeight: 1.5 }}>
+            <div style={{ background: "linear-gradient(160deg, var(--surface-gold) 0%, var(--surface-gold2) 100%)", border: "1px solid rgba(212,160,23,.35)", borderRadius: 14, padding: "16px 24px", textAlign: "center", maxWidth: 720, margin: "0 auto 44px" }}>
+              <p style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "clamp(14px,2vw,17px)", color: "var(--text)", margin: 0, lineHeight: 1.5 }}>
                 🚀 Founding offer — first members join at just <span style={{ color: "#d4a017" }}>$19/month, locked for life</span>. Limited spots.
               </p>
             </div>
             <div className="pkg-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
               {PLANS.map((p) => (
                 <div key={p.tier} className="kit-card" style={{
-                  border: `1px solid ${p.featured ? "#d4a017" : "rgba(255,255,255,.08)"}`,
-                  borderRadius: 20, padding: "40px 34px", background: p.featured ? "#1e1e1e" : "#161616",
+                  border: `1px solid ${p.featured ? "#d4a017" : "var(--hairline)"}`,
+                  borderRadius: 20, padding: "40px 34px", background: p.featured ? "var(--bg-card2)" : "var(--bg-card)",
                   position: "relative",
                 }}>
                   {p.featured && (
                     <div style={{ position: "absolute", top: -14, left: "50%", transform: "translateX(-50%)", background: "#d4a017", color: "#080808", fontSize: 10, fontWeight: 800, letterSpacing: ".1em", padding: "5px 18px", borderRadius: 99, whiteSpace: "nowrap", textTransform: "uppercase" }}>Most Popular</div>
                   )}
-                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".12em", color: "#6b6b6b", textTransform: "uppercase", marginBottom: 12 }}>{p.tagline}</div>
-                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 26, letterSpacing: ".01em", color: "#f5f0e8", marginBottom: 10 }}>{p.tier}</h3>
+                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".12em", color: "var(--text-muted)", textTransform: "uppercase", marginBottom: 12 }}>{p.tagline}</div>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 26, letterSpacing: ".01em", color: "var(--text)", marginBottom: 10 }}>{p.tier}</h3>
                   <div style={{ display: "flex", alignItems: "baseline", gap: 6, marginBottom: 4 }}>
-                    <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 40, color: "#f5f0e8" }}>{p.price}</span>
-                    <span style={{ fontSize: 15, color: "#9a9a9a" }}>{p.cadence}</span>
+                    <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 40, color: "var(--text)" }}>{p.price}</span>
+                    <span style={{ fontSize: 15, color: "var(--text-muted2)" }}>{p.cadence}</span>
                     {p.note && <span style={{ fontSize: 11, fontWeight: 700, color: "#d4a017", background: "rgba(212,160,23,.12)", border: "1px solid rgba(212,160,23,.25)", borderRadius: 6, padding: "3px 8px", marginLeft: 4 }}>{p.note}</span>}
                   </div>
                   <ul style={{ listStyle: "none", margin: "28px 0 32px", padding: 0 }}>
                     {p.items.map((it, i) => (
-                      <li key={it} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, color: "#9a9a9a", padding: "10px 0", borderBottom: i < p.items.length - 1 ? "1px solid rgba(255,255,255,.07)" : "none" }}>
+                      <li key={it} style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: 14, color: "var(--text-muted2)", padding: "10px 0", borderBottom: i < p.items.length - 1 ? "1px solid var(--hairline)" : "none" }}>
                         <span style={{ color: "#d4a017", fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>{it}
                       </li>
                     ))}
@@ -306,44 +306,44 @@ export default function Page() {
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 13, color: "#6b6b6b", textAlign: "center", marginTop: 24 }}>
+            <p style={{ fontSize: 13, color: "var(--text-muted)", textAlign: "center", marginTop: 24 }}>
               Cancel anytime · Halal &amp; Shariah-conscious · 30-day money-back guarantee
             </p>
           </div>
         </section>
 
         {/* ─── 6. WHY ME ─── */}
-        <section className="section-pad" style={{ padding: "90px 4vw", background: "#0f0f0f", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "90px 4vw", background: "var(--bg-dark)", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 1000, margin: "0 auto" }}>
             <div className="kit-2col" style={{ display: "grid", gridTemplateColumns: "1.4fr 1fr", gap: 44, alignItems: "center" }}>
               <div>
                 <div style={KICKER}><span style={KICKER_LINE} />Why me</div>
-                <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(26px,3.6vw,42px)", lineHeight: 1.1, letterSpacing: "-.01em", color: "#f5f0e8", marginBottom: 22 }}>
+                <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(26px,3.6vw,42px)", lineHeight: 1.1, letterSpacing: "-.01em", color: "var(--text)", marginBottom: 22 }}>
                   I&apos;ve run academies — not just ads for them.
                 </h2>
-                <p style={{ fontSize: 16, color: "#b8b2a6", lineHeight: 1.85, marginBottom: 30 }}>
+                <p style={{ fontSize: 16, color: "var(--text-soft)", lineHeight: 1.85, marginBottom: 30 }}>
                   I&apos;m Sohaib Mehmood. For 5+ years I&apos;ve helped Quran academies, Islamic institutes, and Muslim nonprofits turn ad spend into enrolled students and donors — across Pakistan, UAE, UK, and USA. This kit is that exact system.
                 </p>
                 <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 16 }}>
                   {STATS.map((s) => (
                     <div key={s.l}>
                       <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(22px,3vw,30px)", color: "#d4a017", lineHeight: 1 }}>{s.n}</div>
-                      <div style={{ fontSize: 12, color: "#9a9a9a", marginTop: 6, lineHeight: 1.3 }}>{s.l}</div>
+                      <div style={{ fontSize: 12, color: "var(--text-muted2)", marginTop: 6, lineHeight: 1.3 }}>{s.l}</div>
                     </div>
                   ))}
                 </div>
               </div>
               <div>
                 {/* Photo placeholder — swap src for a portrait when ready */}
-                <div style={{ borderRadius: 20, overflow: "hidden", border: "1px solid rgba(255,255,255,.1)", marginBottom: 18 }}>
+                <div style={{ borderRadius: 20, overflow: "hidden", border: "1px solid var(--hairline-2)", marginBottom: 18 }}>
                   <img src="/images/sohaib-mehmood.jpg" alt="Sohaib Mehmood" style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
                 {/* Testimonial placeholder — replace with 1–2 real client quotes */}
-                <div style={{ background: "#161616", border: "1px solid rgba(255,255,255,.08)", borderRadius: 14, padding: "20px 22px" }}>
-                  <p style={{ fontSize: 14, color: "#c9c3b8", lineHeight: 1.7, fontStyle: "italic", margin: 0 }}>
+                <div style={{ background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 14, padding: "20px 22px" }}>
+                  <p style={{ fontSize: 14, color: "var(--text-soft)", lineHeight: 1.7, fontStyle: "italic", margin: 0 }}>
                     &ldquo;Add a short client testimonial here — the result they got and how the kit helped.&rdquo;
                   </p>
-                  <p style={{ fontSize: 12, color: "#6b6b6b", marginTop: 12, fontWeight: 600 }}>— Client name, Academy</p>
+                  <p style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 12, fontWeight: 600 }}>— Client name, Academy</p>
                 </div>
               </div>
             </div>
@@ -351,20 +351,20 @@ export default function Page() {
         </section>
 
         {/* ─── 7. FAQ ─── */}
-        <section className="section-pad" style={{ padding: "90px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "90px 4vw", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 800, margin: "0 auto" }}>
             <div style={KICKER}><span style={KICKER_LINE} />FAQ</div>
-            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4.4vw,52px)", lineHeight: 1.05, letterSpacing: "-.01em", color: "#f5f0e8", marginBottom: 44 }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4.4vw,52px)", lineHeight: 1.05, letterSpacing: "-.01em", color: "var(--text)", marginBottom: 44 }}>
               Questions before you join.
             </h2>
             <div>
               {FAQS.map((f, i) => (
-                <details key={i} className="faq-item" style={{ borderBottom: "1px solid rgba(255,255,255,.07)" }}>
-                  <summary className="faq-q" style={{ width: "100%", color: "#f5f0e8", textAlign: "left", fontSize: 16, fontWeight: 500, padding: "24px 0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
+                <details key={i} className="faq-item" style={{ borderBottom: "1px solid var(--hairline)" }}>
+                  <summary className="faq-q" style={{ width: "100%", color: "var(--text)", textAlign: "left", fontSize: 16, fontWeight: 500, padding: "24px 0", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 20, cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
                     {f.q}
-                    <span className="faq-icon" style={{ width: 28, height: 28, borderRadius: "50%", border: "1px solid rgba(255,255,255,.12)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, color: "#9a9a9a", flexShrink: 0 }}>+</span>
+                    <span className="faq-icon" style={{ width: 28, height: 28, borderRadius: "50%", border: "1px solid var(--hairline-2)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 16, color: "var(--text-muted2)", flexShrink: 0 }}>+</span>
                   </summary>
-                  <div style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.8, paddingBottom: 24 }}>{f.a}</div>
+                  <div style={{ fontSize: 15, color: "var(--text-muted2)", lineHeight: 1.8, paddingBottom: 24 }}>{f.a}</div>
                 </details>
               ))}
             </div>
@@ -372,12 +372,12 @@ export default function Page() {
         </section>
 
         {/* ─── 8. FINAL CTA ─── */}
-        <section className="section-pad" style={{ padding: "100px 4vw", textAlign: "center", background: "radial-gradient(120% 90% at 50% 100%, #14110b 0%, #080808 60%)", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+        <section className="section-pad" style={{ padding: "100px 4vw", textAlign: "center", background: "radial-gradient(120% 90% at 50% 100%, var(--surface-gold) 0%, var(--bg) 60%)", borderTop: "1px solid var(--hairline)" }}>
           <div style={{ maxWidth: 720, margin: "0 auto" }}>
-            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,5vw,56px)", lineHeight: 1.05, letterSpacing: "-.02em", color: "#f5f0e8", marginBottom: 20 }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,5vw,56px)", lineHeight: 1.05, letterSpacing: "-.02em", color: "var(--text)", marginBottom: 20 }}>
               Ready to fill your academy?
             </h2>
-            <p style={{ fontSize: 17, color: "#b8b2a6", lineHeight: 1.8, maxWidth: 560, margin: "0 auto 34px" }}>
+            <p style={{ fontSize: 17, color: "var(--text-soft)", lineHeight: 1.8, maxWidth: 560, margin: "0 auto 34px" }}>
               Join the Enrollment Kit today and get your first campaign live this week, in sha&apos; Allah. Founding spots at $19/month won&apos;t last.
             </p>
             <JoinButton label="Join the Kit — from $19/month" style={{ fontSize: 16, padding: "18px 40px" }} />

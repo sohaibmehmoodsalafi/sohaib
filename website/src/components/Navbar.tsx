@@ -20,7 +20,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
       href={href}
       className="nav-link-item"
       style={{
-        fontSize: 13, fontWeight: 500, color: hov ? "#f5f0e8" : "#aaa",
+        fontSize: 13, fontWeight: 500, color: hov ? "var(--text)" : "#aaa",
         letterSpacing: ".03em", transition: "color .2s", textDecoration: "none",
       }}
       onMouseEnter={() => setHov(true)}
@@ -63,7 +63,7 @@ export default function Navbar() {
       }}>
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}>
           <img src="/images/sohaib-mehmood.jpg" alt="Sohaib Mehmood" className="nav-logo" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: "1.5px solid rgba(212,160,23,.5)" }} />
-          <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 17, letterSpacing: ".01em", color: "#f5f0e8", lineHeight: 1 }}>Sohaib Mehmood</div>
+          <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 17, letterSpacing: ".01em", color: "var(--text)", lineHeight: 1 }}>Sohaib Mehmood</div>
         </a>
 
         {/* Centered nav links */}
@@ -81,14 +81,14 @@ export default function Navbar() {
             textDecoration: "none", transition: "all .2s", fontFamily: "'Plus Jakarta Sans',sans-serif",
           }}
           onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#d4a017"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "#080808"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "var(--bg)"; }}
         >Free Audit</a>
 
         <label htmlFor="nav-toggle" className="hamburger-btn" aria-label="Toggle menu"
           style={{ display: "none", flexDirection: "column", gap: 5, background: "none", border: "none", padding: 4, cursor: "pointer" }}>
           {[0, 1, 2].map((i) => (
             <span key={i} className={`ham-bar ham-bar-${i}`} style={{
-              display: "block", width: 22, height: 1.5, background: "#f5f0e8", transition: "all .3s",
+              display: "block", width: 22, height: 1.5, background: "var(--text)", transition: "all .3s",
             }} />
           ))}
         </label>
@@ -96,12 +96,12 @@ export default function Navbar() {
 
       <div className="mobile-menu" style={{
         position: "fixed", top: 68, left: 0, right: 0, bottom: 0,
-        background: "#080808", zIndex: 99, padding: "40px 4vw",
+        background: "var(--bg)", zIndex: 99, padding: "40px 4vw",
         flexDirection: "column", gap: 28, display: "none",
       }}>
         {links.map((l) => (
           <a key={l.label} href={l.href} onClick={closeMenu}
-            style={{ fontSize: 22, fontWeight: 600, color: "#9a9a9a", textDecoration: "none" }}>{l.label}</a>
+            style={{ fontSize: 22, fontWeight: 600, color: "var(--text-muted2)", textDecoration: "none" }}>{l.label}</a>
         ))}
         <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer" onClick={closeMenu}
           style={{

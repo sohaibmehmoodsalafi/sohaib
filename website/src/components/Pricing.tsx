@@ -22,8 +22,8 @@ function PkgCard({ tier, name, price, featured, items }: { tier: string; name: s
   const [hov, setHov] = useState(false);
   return (
     <div style={{
-      border: `1px solid ${featured ? "#d4a017" : hov ? "rgba(255,255,255,.12)" : "rgba(255,255,255,.07)"}`,
-      borderRadius: 20, padding: "40px 36px", background: featured ? "#1e1e1e" : "#161616",
+      border: `1px solid ${featured ? "#d4a017" : hov ? "var(--hairline-2)" : "var(--hairline)"}`,
+      borderRadius: 20, padding: "40px 36px", background: featured ? "var(--bg-card2)" : "var(--bg-card)",
       position: "relative", transition: "border-color .25s",
     }} onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
       {featured && (
@@ -34,15 +34,15 @@ function PkgCard({ tier, name, price, featured, items }: { tier: string; name: s
           whiteSpace: "nowrap", textTransform: "uppercase",
         }}>MOST POPULAR</div>
       )}
-      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".12em", color: "#6b6b6b", textTransform: "uppercase", marginBottom: 12 }}>{tier}</div>
+      <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".12em", color: "var(--text-muted)", textTransform: "uppercase", marginBottom: 12 }}>{tier}</div>
       <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 30, letterSpacing: ".04em", marginBottom: 6 }}>{name}</h3>
-      <p style={{ fontSize: 13, color: "#9a9a9a", marginBottom: 32 }}>Starting from <strong style={{ color: "#f5f0e8", fontSize: 15 }}>{price}</strong></p>
+      <p style={{ fontSize: 13, color: "var(--text-muted2)", marginBottom: 32 }}>Starting from <strong style={{ color: "var(--text)", fontSize: 15 }}>{price}</strong></p>
       <ul style={{ listStyle: "none", marginBottom: 36 }}>
         {items.map((item, i) => (
           <li key={i} style={{
             display: "flex", alignItems: "flex-start", gap: 10,
-            fontSize: 14, color: "#9a9a9a", padding: "10px 0",
-            borderBottom: i < items.length - 1 ? "1px solid rgba(255,255,255,.07)" : "none",
+            fontSize: 14, color: "var(--text-muted2)", padding: "10px 0",
+            borderBottom: i < items.length - 1 ? "1px solid var(--hairline)" : "none",
           }}>
             <span style={{ color: "#d4a017", fontWeight: 700, flexShrink: 0, marginTop: 1 }}>✓</span>{item}
           </li>
@@ -54,15 +54,15 @@ function PkgCard({ tier, name, price, featured, items }: { tier: string; name: s
           fontWeight: 700, fontSize: 14, textDecoration: "none", transition: "all .2s",
           ...(featured
             ? { background: "#d4a017", color: "#080808" }
-            : { background: "transparent", color: "#f5f0e8", border: "1px solid rgba(255,255,255,.12)" }),
+            : { background: "transparent", color: "var(--text)", border: "1px solid var(--hairline-2)" }),
         }}
         onMouseEnter={(e) => {
           if (featured) e.currentTarget.style.background = "#b8860b";
-          else e.currentTarget.style.borderColor = "rgba(255,255,255,.3)";
+          else e.currentTarget.style.borderColor = "var(--hairline-2)";
         }}
         onMouseLeave={(e) => {
           if (featured) e.currentTarget.style.background = "#d4a017";
-          else e.currentTarget.style.borderColor = "rgba(255,255,255,.12)";
+          else e.currentTarget.style.borderColor = "var(--hairline-2)";
         }}
       >Get Started →</a>
     </div>
@@ -72,17 +72,17 @@ function PkgCard({ tier, name, price, featured, items }: { tier: string; name: s
 export default function Pricing() {
   const ref = useFadeIn();
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="packages" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="packages" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid var(--hairline)" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Pricing
         </div>
         <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>SIMPLE PLANS.<br />REAL RESULTS.</h2>
-        <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 500, lineHeight: 1.7, marginBottom: 64 }}>Pick what fits. Scale when ready. All prices are starting points — final quote based on your scope.</p>
+        <p style={{ fontSize: 16, color: "var(--text-muted2)", maxWidth: 500, lineHeight: 1.7, marginBottom: 64 }}>Pick what fits. Scale when ready. All prices are starting points — final quote based on your scope.</p>
         <div className="pkg-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {PACKAGES.map((p) => <PkgCard key={p.name} {...p} />)}
         </div>
-        <p style={{ fontSize: 12, color: "#6b6b6b", textAlign: "center", marginTop: 20 }}>
+        <p style={{ fontSize: 12, color: "var(--text-muted)", textAlign: "center", marginTop: 20 }}>
           International clients (USA/UK/UAE) — pricing in USD/AED on request via WhatsApp.
         </p>
       </div>

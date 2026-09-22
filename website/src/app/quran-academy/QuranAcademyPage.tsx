@@ -68,7 +68,7 @@ export default function QuranAcademyPage() {
   const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   return (
-    <main style={{ background: "#080808", color: "#f5f0e8", fontFamily: "'Plus Jakarta Sans',sans-serif", overflowX: "hidden" }}>
+    <main style={{ background: "var(--bg)", color: "var(--text)", fontFamily: "'Plus Jakarta Sans',sans-serif", overflowX: "hidden" }}>
       {/* Responsive + animation styles */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes rotateSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
@@ -96,13 +96,13 @@ export default function QuranAcademyPage() {
         padding: "0 4vw", height: 64,
         display: "flex", alignItems: "center", justifyContent: "space-between",
         background: "rgba(8,8,8,0.95)", backdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(255,255,255,.06)"
+        borderBottom: "1px solid var(--hairline)"
       }}>
         <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
           <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" style={{ width: 34, height: 34, objectFit: "contain" }} />
           <div>
-            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 15, letterSpacing: ".08em", color: "#f5f0e8", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
-            <div style={{ fontSize: 8, color: "#6b6b6b", letterSpacing: ".12em" }}>QURAN ACADEMY MARKETING</div>
+            <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 15, letterSpacing: ".08em", color: "var(--text)", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
+            <div style={{ fontSize: 8, color: "var(--text-muted)", letterSpacing: ".12em" }}>QURAN ACADEMY MARKETING</div>
           </div>
         </a>
         <a
@@ -161,7 +161,7 @@ export default function QuranAcademyPage() {
           {/* H1 */}
           <h1 style={{
             fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(48px, 8vw, 90px)",
-            lineHeight: 0.95, letterSpacing: ".01em", color: "#f5f0e8", marginBottom: 8,
+            lineHeight: 0.95, letterSpacing: ".01em", color: "var(--text)", marginBottom: 8,
           }} className="hero-fade hero-fade-d2">
             GET <span style={{ color: "#d4a017", textShadow: "0 0 40px rgba(212,160,23,0.2)" }}>80+ STUDENTS</span>
             <br />EVERY MONTH FOR
@@ -169,10 +169,10 @@ export default function QuranAcademyPage() {
           </h1>
 
           <p style={{
-            fontSize: "clamp(15px, 1.6vw, 18px)", color: "#9a9a9a", fontWeight: 300,
+            fontSize: "clamp(15px, 1.6vw, 18px)", color: "var(--text-muted2)", fontWeight: 300,
             maxWidth: 520, margin: "24px 0 40px", lineHeight: 1.7,
           }} className="hero-fade hero-fade-d3">
-            <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>Targeted Meta Ads in USA, UK & Canada</strong>
+            <strong style={{ color: "var(--text)", fontWeight: 500 }}>Targeted Meta Ads in USA, UK & Canada</strong>
             {" "}— reaching parents who want online Quran classes for their children. One expert handles everything.
           </p>
 
@@ -190,7 +190,7 @@ export default function QuranAcademyPage() {
                 boxShadow: "0 0 20px rgba(212,160,23,0.2)", transition: "all .2s"
               }}
             >
-              <svg width="18" height="18" fill="#080808" viewBox="0 0 24 24">
+              <svg width="18" height="18" fill="var(--bg)" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               Book Free Strategy Call
@@ -198,7 +198,7 @@ export default function QuranAcademyPage() {
             <a
               href="/"
               style={{
-                background: "rgba(255,255,255,0.03)", color: "#d4a017", fontWeight: 500, fontSize: 15,
+                background: "var(--overlay-soft)", color: "#d4a017", fontWeight: 500, fontSize: 15,
                 padding: "14px 32px", borderRadius: 99, textDecoration: "none",
                 border: "1px solid rgba(212,160,23,0.3)", display: "inline-flex",
                 alignItems: "center", gap: 10, backdropFilter: "blur(10px)", transition: "all .2s"
@@ -218,13 +218,13 @@ export default function QuranAcademyPage() {
             {stats.map((s, i) => (
               <div key={i} style={{
                 padding: "20px 16px", textAlign: "center",
-                borderRight: i < 3 ? "1px solid rgba(255,255,255,0.06)" : "none"
+                borderRight: i < 3 ? "1px solid var(--hairline)" : "none"
               }}>
                 <div style={{ fontSize: 11, marginBottom: 4 }}>{s.icon}</div>
                 <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "#d4a017", lineHeight: 1 }}>
                   {s.value}
                 </div>
-                <div style={{ fontSize: 10, color: "#6b6b6b", marginTop: 4, letterSpacing: ".03em" }}>{s.label}</div>
+                <div style={{ fontSize: 10, color: "var(--text-muted)", marginTop: 4, letterSpacing: ".03em" }}>{s.label}</div>
               </div>
             ))}
           </div>
@@ -232,7 +232,7 @@ export default function QuranAcademyPage() {
       </section>
 
       {/* ── How It Works ── */}
-      <section style={{ padding: "100px 4vw", borderTop: "1px solid rgba(255,255,255,.05)" }}>
+      <section style={{ padding: "100px 4vw", borderTop: "1px solid var(--hairline)" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span style={{ fontSize: 11, letterSpacing: ".2em", color: "#d4a017", textTransform: "uppercase", fontWeight: 600 }}>
@@ -240,7 +240,7 @@ export default function QuranAcademyPage() {
             </span>
             <h2 style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 56px)",
-              lineHeight: 1, marginTop: 12, color: "#f5f0e8"
+              lineHeight: 1, marginTop: 12, color: "var(--text)"
             }}>
               ZERO TO <span style={{ color: "#d4a017" }}>FULL ACADEMY</span> IN 3 STEPS
             </h2>
@@ -253,8 +253,8 @@ export default function QuranAcademyPage() {
                 onMouseEnter={() => setHoveredStep(i)}
                 onMouseLeave={() => setHoveredStep(null)}
                 style={{
-                  background: hoveredStep === i ? "rgba(212,160,23,0.04)" : "rgba(255,255,255,0.02)",
-                  border: `1px solid ${hoveredStep === i ? "rgba(212,160,23,0.25)" : "rgba(255,255,255,0.06)"}`,
+                  background: hoveredStep === i ? "rgba(212,160,23,0.04)" : "var(--overlay-soft)",
+                  border: `1px solid ${hoveredStep === i ? "rgba(212,160,23,0.25)" : "var(--hairline)"}`,
                   borderRadius: 16, padding: 32,
                   transition: "all .3s ease", cursor: "default",
                   position: "relative", overflow: "hidden"
@@ -273,10 +273,10 @@ export default function QuranAcademyPage() {
                   <div style={{ fontSize: 11, color: "#d4a017", letterSpacing: ".15em", marginBottom: 8, fontWeight: 600 }}>
                     STEP {step.num}
                   </div>
-                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#f5f0e8", marginBottom: 12, lineHeight: 1.1 }}>
+                  <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "var(--text)", marginBottom: 12, lineHeight: 1.1 }}>
                     {step.title}
                   </h3>
-                  <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.7 }}>
+                  <p style={{ fontSize: 13, color: "var(--text-muted2)", lineHeight: 1.7 }}>
                     {step.desc}
                   </p>
                 </div>
@@ -290,7 +290,7 @@ export default function QuranAcademyPage() {
       <section style={{
         padding: "100px 4vw",
         background: "linear-gradient(180deg, rgba(212,160,23,0.03) 0%, transparent 100%)",
-        borderTop: "1px solid rgba(255,255,255,.05)"
+        borderTop: "1px solid var(--hairline)"
       }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
@@ -299,17 +299,17 @@ export default function QuranAcademyPage() {
             </span>
             <h2 style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(32px, 4vw, 48px)",
-              lineHeight: 1.05, marginTop: 12, color: "#f5f0e8"
+              lineHeight: 1.05, marginTop: 12, color: "var(--text)"
             }}>
               LEARN QURAN INSTITUTE — <span style={{ color: "#d4a017" }}>3× ADMISSIONS</span>
             </h2>
-            <p style={{ fontSize: 15, color: "#9a9a9a", marginTop: 12, maxWidth: 500, margin: "12px auto 0" }}>
+            <p style={{ fontSize: 15, color: "var(--text-muted2)", marginTop: 12, maxWidth: 500, margin: "12px auto 0" }}>
               International student enrollments from USA, UK & Canada after launching the complete Meta Ads system.
             </p>
           </div>
 
           <div style={{
-            background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+            background: "var(--overlay-soft)", border: "1px solid var(--hairline)",
             borderRadius: 20, padding: "40px 36px", position: "relative", overflow: "hidden"
           }}>
             {/* Glow accent */}
@@ -328,7 +328,7 @@ export default function QuranAcademyPage() {
                   <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, color: "#d4a017", lineHeight: 1 }}>
                     {m.value}
                   </div>
-                  <div style={{ fontSize: 10, color: "#6b6b6b", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>
+                  <div style={{ fontSize: 10, color: "var(--text-muted)", marginTop: 6, letterSpacing: ".05em", textTransform: "uppercase" }}>
                     {m.label}
                   </div>
                 </div>
@@ -350,7 +350,7 @@ export default function QuranAcademyPage() {
             </div>
 
             {/* Client badge */}
-            <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", alignItems: "center", gap: 14 }}>
+            <div style={{ marginTop: 28, paddingTop: 24, borderTop: "1px solid var(--hairline)", display: "flex", alignItems: "center", gap: 14 }}>
               <div style={{
                 width: 44, height: 44, borderRadius: "50%",
                 background: "rgba(212,160,23,0.1)", border: "1px solid rgba(212,160,23,0.2)",
@@ -358,8 +358,8 @@ export default function QuranAcademyPage() {
                 fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 14, color: "#d4a017"
               }}>LQI</div>
               <div>
-                <p style={{ fontSize: 14, fontWeight: 500, color: "#f5f0e8" }}>Learn Quran Institute</p>
-                <p style={{ fontSize: 11, color: "#6b6b6b" }}>learnquraninstitute.org</p>
+                <p style={{ fontSize: 14, fontWeight: 500, color: "var(--text)" }}>Learn Quran Institute</p>
+                <p style={{ fontSize: 11, color: "var(--text-muted)" }}>learnquraninstitute.org</p>
               </div>
               <span style={{
                 marginLeft: "auto", fontSize: 10, color: "#6db88a", fontWeight: 600,
@@ -374,7 +374,7 @@ export default function QuranAcademyPage() {
       </section>
 
       {/* ── What You Get ── */}
-      <section style={{ padding: "100px 4vw", borderTop: "1px solid rgba(255,255,255,.05)" }}>
+      <section style={{ padding: "100px 4vw", borderTop: "1px solid var(--hairline)" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
             <span style={{ fontSize: 11, letterSpacing: ".2em", color: "#d4a017", textTransform: "uppercase", fontWeight: 600 }}>
@@ -382,7 +382,7 @@ export default function QuranAcademyPage() {
             </span>
             <h2 style={{
               fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(32px, 4vw, 48px)",
-              lineHeight: 1.05, marginTop: 12, color: "#f5f0e8"
+              lineHeight: 1.05, marginTop: 12, color: "var(--text)"
             }}>
               EVERYTHING YOUR <span style={{ color: "#d4a017" }}>ACADEMY NEEDS</span>
             </h2>
@@ -391,7 +391,7 @@ export default function QuranAcademyPage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 16 }} className="results-grid">
             {includes.map((item, i) => (
               <div key={i} style={{
-                background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
+                background: "var(--overlay-soft)", border: "1px solid var(--hairline)",
                 borderRadius: 14, padding: "24px 24px", display: "flex", gap: 16,
                 alignItems: "flex-start", transition: "all .3s"
               }}>
@@ -402,8 +402,8 @@ export default function QuranAcademyPage() {
                   color: "#d4a017", fontSize: 14
                 }}>✓</div>
                 <div>
-                  <h4 style={{ fontSize: 14, fontWeight: 600, color: "#f5f0e8", marginBottom: 4 }}>{item.title}</h4>
-                  <p style={{ fontSize: 13, color: "#9a9a9a", lineHeight: 1.6 }}>{item.desc}</p>
+                  <h4 style={{ fontSize: 14, fontWeight: 600, color: "var(--text)", marginBottom: 4 }}>{item.title}</h4>
+                  <p style={{ fontSize: 13, color: "var(--text-muted2)", lineHeight: 1.6 }}>{item.desc}</p>
                 </div>
               </div>
             ))}
@@ -415,7 +415,7 @@ export default function QuranAcademyPage() {
       <section style={{
         padding: "100px 4vw", textAlign: "center",
         background: "linear-gradient(180deg, transparent, rgba(212,160,23,0.04) 50%, transparent)",
-        borderTop: "1px solid rgba(255,255,255,.05)"
+        borderTop: "1px solid var(--hairline)"
       }}>
         <div style={{ maxWidth: 600, margin: "0 auto" }}>
           <span style={{ fontSize: 11, letterSpacing: ".2em", color: "#d4a017", textTransform: "uppercase", fontWeight: 600 }}>
@@ -423,12 +423,12 @@ export default function QuranAcademyPage() {
           </span>
           <h2 style={{
             fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px, 5vw, 56px)",
-            lineHeight: 1, marginTop: 12, marginBottom: 20, color: "#f5f0e8"
+            lineHeight: 1, marginTop: 12, marginBottom: 20, color: "var(--text)"
           }}>
             GET YOUR <span style={{ color: "#d4a017" }}>FREE STRATEGY</span>
             <br />FOR YOUR ACADEMY
           </h2>
-          <p style={{ fontSize: 15, color: "#9a9a9a", lineHeight: 1.7, marginBottom: 40, maxWidth: 460, margin: "0 auto 40px" }}>
+          <p style={{ fontSize: 15, color: "var(--text-muted2)", lineHeight: 1.7, marginBottom: 40, maxWidth: 460, margin: "0 auto 40px" }}>
             I will analyze your current setup, show you where students are being lost, and give you a custom Meta Ads strategy — free, no strings attached.
           </p>
 
@@ -443,7 +443,7 @@ export default function QuranAcademyPage() {
                 boxShadow: "0 0 30px rgba(212,160,23,0.25)", transition: "all .2s"
               }}
             >
-              <svg width="18" height="18" fill="#080808" viewBox="0 0 24 24">
+              <svg width="18" height="18" fill="var(--bg)" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               Book Free Strategy Call
@@ -452,9 +452,9 @@ export default function QuranAcademyPage() {
               href="https://calendly.com/meetsohaib/30min"
               target="_blank" rel="noopener noreferrer"
               style={{
-                background: "rgba(255,255,255,0.03)", color: "#f5f0e8", fontWeight: 500, fontSize: 15,
+                background: "var(--overlay-soft)", color: "var(--text)", fontWeight: 500, fontSize: 15,
                 padding: "15px 32px", borderRadius: 99, textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.1)", display: "inline-flex",
+                border: "1px solid var(--hairline-2)", display: "inline-flex",
                 alignItems: "center", gap: 8, transition: "all .2s"
               }}
             >
@@ -464,7 +464,7 @@ export default function QuranAcademyPage() {
 
           <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 24 }}>
             {["No commitment", "Free consultation", "Reply within 1 hour"].map((t) => (
-              <span key={t} style={{ fontSize: 11, color: "#6b6b6b", display: "flex", alignItems: "center", gap: 6 }}>
+              <span key={t} style={{ fontSize: 11, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 6 }}>
                 <span style={{ color: "#6db88a", fontSize: 10 }}>✓</span> {t}
               </span>
             ))}
@@ -473,11 +473,11 @@ export default function QuranAcademyPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer style={{ padding: "24px 4vw", borderTop: "1px solid rgba(255,255,255,.05)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <span style={{ fontSize: 11, color: "#6b6b6b" }}>
+      <footer style={{ padding: "24px 4vw", borderTop: "1px solid var(--hairline)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
           © 2026 Sohaib Mehmood — Digital Marketing Expert
         </span>
-        <a href="/" style={{ fontSize: 11, color: "#6b6b6b", textDecoration: "none", transition: "color .2s" }}>
+        <a href="/" style={{ fontSize: 11, color: "var(--text-muted)", textDecoration: "none", transition: "color .2s" }}>
           ← Back to Main Site
         </a>
       </footer>

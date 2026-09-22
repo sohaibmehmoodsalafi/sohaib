@@ -128,8 +128,8 @@ function HeroStat({ num, suf, lbl, last }: { num: string; suf: string; lbl: stri
     <div
       style={{
         padding: "22px 24px",
-        borderRight: last ? "none" : "1px solid rgba(255,255,255,0.07)",
-        background: hov ? "rgba(255,255,255,.02)" : "transparent",
+        borderRight: last ? "none" : "1px solid var(--hairline)",
+        background: hov ? "var(--overlay-soft)" : "transparent",
         transition: "background .2s",
       }}
       onMouseEnter={() => setHov(true)}
@@ -138,7 +138,7 @@ function HeroStat({ num, suf, lbl, last }: { num: string; suf: string; lbl: stri
       <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, color: "#d4a017", lineHeight: 1, letterSpacing: ".02em" }}>
         <Counter end={num} suffix={suf} />
       </div>
-      <div style={{ fontSize: 11, color: "#6b6b6b", marginTop: 4, letterSpacing: ".03em" }}>{lbl}</div>
+      <div style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 4, letterSpacing: ".03em" }}>{lbl}</div>
     </div>
   );
 }
@@ -339,7 +339,7 @@ export default function Hero() {
               padding: "8px 18px",
               fontSize: 13,
               fontWeight: 600,
-              color: "#f5f0e8",
+              color: "var(--text)",
               letterSpacing: ".02em",
               marginBottom: 28,
               backdropFilter: "blur(10px)",
@@ -356,7 +356,7 @@ export default function Hero() {
               fontSize: "clamp(38px,5.4vw,74px)",
               lineHeight: 1.02,
               letterSpacing: "-.02em",
-              color: "#f5f0e8",
+              color: "var(--text)",
               marginBottom: 8,
               maxWidth: 880,
             }}
@@ -371,7 +371,7 @@ export default function Hero() {
           <p
             style={{
               fontSize: "clamp(15px,1.5vw,18px)",
-              color: "#9a9a9a",
+              color: "var(--text-muted2)",
               fontWeight: 300,
               maxWidth: 600,
               margin: "22px auto 36px",
@@ -379,7 +379,7 @@ export default function Hero() {
             }}
             className="hero-fade hero-fade-d3 hero-desc"
           >
-            I help <strong style={{ color: "#f5f0e8", fontWeight: 500 }}>Quran academies, Islamic institutes, and Muslim non-profits</strong> get a steady flow of students, leads, and donations — every month. Meta Ads, Google Ads, and complete funnels, built and run by one person who understands your mission.
+            I help <strong style={{ color: "var(--text)", fontWeight: 500 }}>Quran academies, Islamic institutes, and Muslim non-profits</strong> get a steady flow of students, leads, and donations — every month. Meta Ads, Google Ads, and complete funnels, built and run by one person who understands your mission.
           </p>
 
           {/* CTAs */}
@@ -429,7 +429,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                background: "rgba(255,255,255,0.03)",
+                background: "var(--overlay-soft)",
                 color: "#d4a017",
                 fontWeight: 500,
                 fontSize: 15,
@@ -449,7 +449,7 @@ export default function Hero() {
                 e.currentTarget.style.boxShadow = "0 0 20px rgba(212,160,23,0.1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+                e.currentTarget.style.background = "var(--overlay-soft)";
                 e.currentTarget.style.borderColor = "rgba(212,160,23,0.3)";
                 e.currentTarget.style.boxShadow = "none";
               }}

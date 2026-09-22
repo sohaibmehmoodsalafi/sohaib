@@ -35,8 +35,8 @@ function CoreCard({ n, icon, title, subtitle, desc, results }: typeof CORE_SERVI
   return (
     <div
       style={{
-        background: hov ? "rgba(212,160,23,.04)" : "#161616",
-        border: `1px solid ${hov ? "rgba(212,160,23,.25)" : "rgba(255,255,255,.07)"}`,
+        background: hov ? "rgba(212,160,23,.04)" : "var(--bg-card)",
+        border: `1px solid ${hov ? "rgba(212,160,23,.25)" : "var(--hairline)"}`,
         borderRadius: 20, padding: "44px 36px",
         position: "relative", overflow: "hidden",
         transition: "all .3s ease",
@@ -54,13 +54,13 @@ function CoreCard({ n, icon, title, subtitle, desc, results }: typeof CORE_SERVI
 
       <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 32, letterSpacing: ".04em", lineHeight: 1, marginBottom: 4 }}>{title}</h3>
       <div style={{ fontSize: 12, color: "#d4a017", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", marginBottom: 16 }}>{subtitle}</div>
-      <p style={{ fontSize: 14, color: "#9a9a9a", lineHeight: 1.8, marginBottom: 24 }}>{desc}</p>
+      <p style={{ fontSize: 14, color: "var(--text-muted2)", lineHeight: 1.8, marginBottom: 24 }}>{desc}</p>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
         {results.map((r) => (
           <div key={r} style={{
             display: "flex", alignItems: "center", gap: 8, fontSize: 12,
-            color: hov ? "#f5f0e8" : "#6b6b6b", transition: "color .3s",
+            color: hov ? "var(--text)" : "var(--text-muted)", transition: "color .3s",
           }}>
             <span style={{ width: 5, height: 5, borderRadius: "50%", background: "#d4a017", flexShrink: 0 }} />
             {r}
@@ -76,7 +76,7 @@ export default function Services() {
   const [funnelHov, setFunnelHov] = useState<number | null>(null);
 
   return (
-    <section ref={ref as React.RefObject<HTMLElement>} id="services" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid rgba(255,255,255,.07)" }}>
+    <section ref={ref as React.RefObject<HTMLElement>} id="services" className="section-pad" style={{ padding: "120px 4vw", borderTop: "1px solid var(--hairline)" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         {/* Header */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
@@ -85,8 +85,8 @@ export default function Services() {
         <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,6vw,72px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 16 }}>
           COMPLETE DIGITAL<br />MARKETING ECOSYSTEM
         </h2>
-        <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>
-          I don&apos;t just run one pay per click campaign — I build your <strong style={{ color: "#f5f0e8" }}>entire digital marketing campaign</strong>. From PPC advertising services to the final conversion, every step is designed, optimized, and managed by your dedicated digital marketing consultant.
+        <p style={{ fontSize: 16, color: "var(--text-muted2)", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>
+          I don&apos;t just run one pay per click campaign — I build your <strong style={{ color: "var(--text)" }}>entire digital marketing campaign</strong>. From PPC advertising services to the final conversion, every step is designed, optimized, and managed by your dedicated digital marketing consultant.
         </p>
 
         {/* 3 Core Services */}
@@ -96,7 +96,7 @@ export default function Services() {
 
         {/* Ecosystem / Funnel Section */}
         <div style={{
-          background: "#161616", border: "1px solid rgba(255,255,255,.07)",
+          background: "var(--bg-card)", border: "1px solid var(--hairline)",
           borderRadius: 20, padding: "48px 44px", position: "relative", overflow: "hidden",
         }}>
           {/* Background glow */}
@@ -108,7 +108,7 @@ export default function Services() {
               <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,4vw,44px)", letterSpacing: ".04em", marginTop: 8 }}>
                 THE FULL FUNNEL — NOT JUST ADS
               </h3>
-              <p style={{ fontSize: 14, color: "#9a9a9a", maxWidth: 500, margin: "12px auto 0", lineHeight: 1.7 }}>
+              <p style={{ fontSize: 14, color: "var(--text-muted2)", maxWidth: 500, margin: "12px auto 0", lineHeight: 1.7 }}>
                 Every client gets the complete ecosystem. Ads alone don&apos;t work — you need the full pipeline to convert clicks into customers.
               </p>
             </div>
@@ -118,8 +118,8 @@ export default function Services() {
                 <div
                   key={i}
                   style={{
-                    background: funnelHov === i ? "rgba(212,160,23,.08)" : "rgba(255,255,255,.02)",
-                    border: `1px solid ${funnelHov === i ? "rgba(212,160,23,.2)" : "rgba(255,255,255,.05)"}`,
+                    background: funnelHov === i ? "rgba(212,160,23,.08)" : "var(--overlay-soft)",
+                    border: `1px solid ${funnelHov === i ? "rgba(212,160,23,.2)" : "var(--hairline)"}`,
                     borderRadius: 14, padding: "24px 20px",
                     transition: "all .25s", cursor: "default",
                   }}
@@ -128,7 +128,7 @@ export default function Services() {
                 >
                   <span style={{ fontSize: 24, marginBottom: 12, display: "block" }}>{step.icon}</span>
                   <div style={{ fontSize: 14, fontWeight: 600, marginBottom: 6 }}>{step.label}</div>
-                  <div style={{ fontSize: 12, color: "#6b6b6b", lineHeight: 1.6 }}>{step.desc}</div>
+                  <div style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.6 }}>{step.desc}</div>
                 </div>
               ))}
             </div>
@@ -138,7 +138,7 @@ export default function Services() {
         {/* CTA Banner */}
         <div className="featured-card" style={{
           marginTop: 40,
-          background: "linear-gradient(135deg, #161616 0%, rgba(212,160,23,.08) 100%)",
+          background: "linear-gradient(135deg, var(--bg-card) 0%, rgba(212,160,23,.08) 100%)",
           border: "1px solid rgba(212,160,23,.15)",
           borderRadius: 20, padding: "40px 44px",
           display: "flex", alignItems: "center", justifyContent: "space-between",
@@ -151,7 +151,7 @@ export default function Services() {
               borderRadius: 99, letterSpacing: ".06em", display: "inline-block", marginBottom: 10,
             }}>ONE EXPERT. ONE INVOICE. FULL FUNNEL.</span>
             <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8 }}>Ready to scale with a complete ecosystem?</h3>
-            <p style={{ fontSize: 14, color: "#9a9a9a", maxWidth: 500 }}>
+            <p style={{ fontSize: 14, color: "var(--text-muted2)", maxWidth: 500 }}>
               No agencies, no juniors, no miscommunication. Just results.
             </p>
           </div>

@@ -8,8 +8,8 @@ function ResultCard({ n, s, title, sub }: { n: string; s: string; title: string;
   const [hov, setHov] = useState(false);
   return (
     <div className="result-card" style={{
-      border: `1px solid ${hov ? "rgba(212,160,23,.3)" : "rgba(255,255,255,.07)"}`,
-      borderRadius: 16, padding: "36px 30px", background: "#161616",
+      border: `1px solid ${hov ? "rgba(212,160,23,.3)" : "var(--hairline)"}`,
+      borderRadius: 16, padding: "36px 30px", background: "var(--bg-card)",
       position: "relative", overflow: "hidden",
       transform: hov ? "translateY(-3px)" : "none",
       transition: "border-color .25s, transform .25s",
@@ -19,7 +19,7 @@ function ResultCard({ n, s, title, sub }: { n: string; s: string; title: string;
         <Counter end={n} suffix={s} />
       </div>
       <div style={{ fontSize: 15, fontWeight: 600, marginBottom: 6 }}>{title}</div>
-      <div style={{ fontSize: 13, color: "#6b6b6b" }}>{sub}</div>
+      <div style={{ fontSize: 13, color: "var(--text-muted)" }}>{sub}</div>
     </div>
   );
 }
@@ -34,15 +34,15 @@ export default function Results() {
 
   return (
     <section ref={ref as React.RefObject<HTMLElement>} id="results" className="section-pad" style={{
-      padding: "120px 4vw", background: "#0f0f0f",
-      borderTop: "1px solid rgba(255,255,255,.07)", borderBottom: "1px solid rgba(255,255,255,.07)",
+      padding: "120px 4vw", background: "var(--bg-dark)",
+      borderTop: "1px solid var(--hairline)", borderBottom: "1px solid var(--hairline)",
     }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 11, fontWeight: 700, letterSpacing: ".12em", color: "#d4a017", textTransform: "uppercase", marginBottom: 18 }}>
           <span style={{ width: 24, height: 1, background: "#d4a017", display: "block" }} />Proof
         </div>
         <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(38px,5.4vw,66px)", lineHeight: 1.0, letterSpacing: "-.01em", marginBottom: 16 }}>Real results for<br /><span style={{ color: "#d4a017" }}>real academies.</span></h2>
-        <p style={{ fontSize: 16, color: "#9a9a9a", maxWidth: 520, lineHeight: 1.7 }}>Real outcomes from real academies and Islamic organizations — not cherry-picked, not estimated.</p>
+        <p style={{ fontSize: 16, color: "var(--text-muted2)", maxWidth: 520, lineHeight: 1.7 }}>Real outcomes from real academies and Islamic organizations — not cherry-picked, not estimated.</p>
         <div className="results-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20, marginTop: 64 }}>
           {stats.map((s, i) => <ResultCard key={i} {...s} />)}
         </div>

@@ -11,7 +11,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <div className="py-4 overflow-hidden" style={{ borderTop: "0.5px solid #1e1e1e", borderBottom: "0.5px solid #1e1e1e" }}>
+    <div className="py-4 overflow-hidden" style={{ borderTop: "0.5px solid var(--bg-card2)", borderBottom: "0.5px solid var(--bg-card2)" }}>
       <div className="flex marquee-track w-max">
         {[...items, ...items].map((item, i) => (
           <span key={i} className="flex items-center gap-4 px-4 whitespace-nowrap">

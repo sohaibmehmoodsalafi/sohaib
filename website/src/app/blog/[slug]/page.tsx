@@ -47,7 +47,7 @@ function renderInline(text: string, kp: string): React.ReactNode[] {
   while ((m = re.exec(text)) !== null) {
     if (m.index > last) nodes.push(text.slice(last, m.index));
     if (m[1]) nodes.push(<a key={kp + i} href={m[2]} style={{ color: "#d4a017", textDecoration: "underline" }}>{m[1]}</a>);
-    else if (m[3]) nodes.push(<strong key={kp + i} style={{ color: "#f5f0e8", fontWeight: 600 }}>{m[3]}</strong>);
+    else if (m[3]) nodes.push(<strong key={kp + i} style={{ color: "var(--text)", fontWeight: 600 }}>{m[3]}</strong>);
     last = m.index + m[0].length; i++;
   }
   if (last < text.length) nodes.push(text.slice(last));
@@ -55,10 +55,10 @@ function renderInline(text: string, kp: string): React.ReactNode[] {
 }
 
 function renderBlock(b: Block, i: number) {
-  if ("h2" in b) return <h2 key={i} style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.2, letterSpacing: "-.01em", color: "#f5f0e8", margin: "44px 0 14px" }}>{b.h2}</h2>;
-  if ("h3" in b) return <h3 key={i} style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "clamp(18px,2.2vw,22px)", color: "#f5f0e8", margin: "28px 0 10px" }}>{b.h3}</h3>;
-  if ("ul" in b) return <ul key={i} style={{ margin: "0 0 18px", paddingLeft: 22, display: "flex", flexDirection: "column", gap: 8 }}>{b.ul.map((li, j) => <li key={j} style={{ fontSize: 16, color: "#c9c3b8", lineHeight: 1.7 }}>{renderInline(li, `${i}-${j}-`)}</li>)}</ul>;
-  return <p key={i} style={{ fontSize: 16, color: "#c9c3b8", lineHeight: 1.85, margin: "0 0 18px" }}>{renderInline(b.p, `${i}-`)}</p>;
+  if ("h2" in b) return <h2 key={i} style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", lineHeight: 1.2, letterSpacing: "-.01em", color: "var(--text)", margin: "44px 0 14px" }}>{b.h2}</h2>;
+  if ("h3" in b) return <h3 key={i} style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: "clamp(18px,2.2vw,22px)", color: "var(--text)", margin: "28px 0 10px" }}>{b.h3}</h3>;
+  if ("ul" in b) return <ul key={i} style={{ margin: "0 0 18px", paddingLeft: 22, display: "flex", flexDirection: "column", gap: 8 }}>{b.ul.map((li, j) => <li key={j} style={{ fontSize: 16, color: "var(--text-soft)", lineHeight: 1.7 }}>{renderInline(li, `${i}-${j}-`)}</li>)}</ul>;
+  return <p key={i} style={{ fontSize: 16, color: "var(--text-soft)", lineHeight: 1.85, margin: "0 0 18px" }}>{renderInline(b.p, `${i}-`)}</p>;
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -102,14 +102,14 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     { label: "LinkedIn", href: `https://www.linkedin.com/sharing/share-offsite/?url=${su}`, bg: "#0a66c2" },
     { label: "WhatsApp", href: `https://wa.me/?text=${st}%20${su}`, bg: "#25d366" },
     { label: "Facebook", href: `https://www.facebook.com/sharer/sharer.php?u=${su}`, bg: "#1877f2" },
-    { label: "X", href: `https://twitter.com/intent/tweet?url=${su}&text=${st}`, bg: "#1a1a1a" },
+    { label: "X", href: `https://twitter.com/intent/tweet?url=${su}&text=${st}`, bg: "var(--bg-card)" },
   ];
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
-      <main style={{ background: "#080808", paddingTop: 96 }}>
+      <main style={{ background: "var(--bg)", paddingTop: 96 }}>
         <article style={{ maxWidth: 760, margin: "0 auto", padding: "40px 4vw 80px" }}>
           <a href="/blog" style={{ fontSize: 13, color: "#d4a017", textDecoration: "none", fontWeight: 600 }}>← All articles</a>
 
@@ -119,16 +119,16 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             ))}
           </div>
 
-          <h1 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,4.4vw,48px)", lineHeight: 1.08, letterSpacing: "-.02em", color: "#f5f0e8", marginBottom: 16 }}>{post.title}</h1>
-          <div style={{ fontSize: 13, color: "#6b6b6b", marginBottom: 40, borderBottom: "1px solid rgba(255,255,255,.08)", paddingBottom: 24 }}>
+          <h1 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(30px,4.4vw,48px)", lineHeight: 1.08, letterSpacing: "-.02em", color: "var(--text)", marginBottom: 16 }}>{post.title}</h1>
+          <div style={{ fontSize: 13, color: "var(--text-muted)", marginBottom: 40, borderBottom: "1px solid var(--hairline)", paddingBottom: 24 }}>
             By Sohaib Mehmood · {dateLabel} · {post.readMins} min read
           </div>
 
           {post.body.map(renderBlock)}
 
           {/* Share bar — native links, no-JS safe */}
-          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 44, paddingTop: 26, borderTop: "1px solid rgba(255,255,255,.08)" }}>
-            <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "#6b6b6b", marginRight: 4 }}>Share this</span>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10, marginTop: 44, paddingTop: 26, borderTop: "1px solid var(--hairline)" }}>
+            <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "var(--text-muted)", marginRight: 4 }}>Share this</span>
             {shareLinks.map((s) => (
               <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer"
                 style={{ background: s.bg, color: "#fff", fontSize: 13, fontWeight: 700, padding: "9px 18px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>
@@ -138,23 +138,23 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </div>
 
           {/* FAQ block */}
-          <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", color: "#f5f0e8", margin: "52px 0 20px" }}>Frequently asked questions</h2>
+          <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", color: "var(--text)", margin: "52px 0 20px" }}>Frequently asked questions</h2>
           <div>
             {post.faqs.map((f, i) => (
-              <details key={i} className="sys-acc" name="blog-faq" open={i === 0} style={{ background: "#161616", border: "1px solid rgba(255,255,255,.08)", borderRadius: 14, marginBottom: 10 }}>
+              <details key={i} className="sys-acc" name="blog-faq" open={i === 0} style={{ background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 14, marginBottom: 10 }}>
                 <summary className="sys-sum" style={{ padding: "18px 20px", gap: 12 }}>
-                  <span className="sys-title" style={{ fontSize: 16, color: "#f5f0e8" }}>{f.q}</span>
+                  <span className="sys-title" style={{ fontSize: 16, color: "var(--text)" }}>{f.q}</span>
                   <span className="sys-chev" aria-hidden="true">⌄</span>
                 </summary>
-                <div style={{ padding: "0 20px 20px", fontSize: 15, color: "#c9c3b8", lineHeight: 1.7 }}>{f.a}</div>
+                <div style={{ padding: "0 20px 20px", fontSize: 15, color: "var(--text-soft)", lineHeight: 1.7 }}>{f.a}</div>
               </details>
             ))}
           </div>
 
           {/* CTA — internal links */}
-          <div style={{ marginTop: 52, background: "linear-gradient(160deg, #161310 0%, #12100c 100%)", border: "1px solid rgba(212,160,23,.3)", borderRadius: 20, padding: "clamp(28px,4vw,40px)" }}>
-            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "#f5f0e8", marginBottom: 10 }}>Want this done for your academy?</h2>
-            <p style={{ fontSize: 15, color: "#b8b2a6", lineHeight: 1.7, marginBottom: 22 }}>
+          <div style={{ marginTop: 52, background: "linear-gradient(160deg, var(--surface-gold) 0%, var(--surface-gold2) 100%)", border: "1px solid rgba(212,160,23,.3)", borderRadius: 20, padding: "clamp(28px,4vw,40px)" }}>
+            <h2 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 24, color: "var(--text)", marginBottom: 10 }}>Want this done for your academy?</h2>
+            <p style={{ fontSize: 15, color: "var(--text-soft)", lineHeight: 1.7, marginBottom: 22 }}>
               See <a href="/services" style={{ color: "#d4a017", textDecoration: "underline" }}>how I help academies grow</a>, or start with a free review of your marketing.
             </p>
             <a href="/free-audit" style={{ display: "inline-block", background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15, padding: "14px 30px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif" }}>Get a free growth audit →</a>

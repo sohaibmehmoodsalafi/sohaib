@@ -4,13 +4,13 @@ const PILLARS = ["Education", "Dawah", "Media", "Welfare"];
 
 export default function PeaceInstitute() {
   return (
-    <section className="peace-section" style={{ padding: "90px 4vw", borderTop: "1px solid rgba(255,255,255,.07)", background: "#080808", position: "relative", overflow: "hidden" }}>
+    <section className="peace-section" style={{ padding: "90px 4vw", borderTop: "1px solid var(--hairline)", background: "var(--bg)", position: "relative", overflow: "hidden" }}>
       <div
         style={{
           position: "relative",
           maxWidth: 980,
           margin: "0 auto",
-          background: "linear-gradient(155deg, #17140f 0%, #121110 100%)",
+          background: "linear-gradient(155deg, #17140f 0%, var(--surface-gold) 100%)",
           border: "1px solid rgba(212,160,23,.28)",
           borderRadius: 26,
           padding: "clamp(32px,5vw,56px)",
@@ -23,7 +23,7 @@ export default function PeaceInstitute() {
         {/* Founder badge */}
         <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(212,160,23,.12)", border: "1px solid rgba(212,160,23,.3)", borderRadius: 99, padding: "7px 16px", marginBottom: 28 }}>
           <span style={{ fontSize: 13 }}>⭐</span>
-          <span style={{ fontSize: 12, fontWeight: 600, color: "#f5f0e8", letterSpacing: ".02em" }}>Sohaib&apos;s own institute — I practice what I teach</span>
+          <span style={{ fontSize: 12, fontWeight: 600, color: "var(--text)", letterSpacing: ".02em" }}>Sohaib&apos;s own institute — I practice what I teach</span>
         </div>
 
         <div className="peace-row" style={{ display: "flex", alignItems: "center", gap: 40, flexWrap: "wrap" }}>
@@ -34,11 +34,11 @@ export default function PeaceInstitute() {
 
           {/* Content */}
           <div style={{ flex: 1, minWidth: 260 }}>
-            <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,3.4vw,40px)", letterSpacing: "-.01em", marginBottom: 12, color: "#f5f0e8" }}>
+            <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(28px,3.4vw,40px)", letterSpacing: "-.01em", marginBottom: 12, color: "var(--text)" }}>
               Peace Institute
             </h3>
-            <p style={{ fontSize: 15, color: "#b8b2a6", lineHeight: 1.75, marginBottom: 20, maxWidth: 560 }}>
-              Structured Quran teaching, tarbiyah, and Shariah-conscious digital skills — all under one roof. A modern Islamic institution building faith-rooted, future-ready Muslims. <strong style={{ color: "#f5f0e8", fontWeight: 600 }}>Free trial class available for your family.</strong>
+            <p style={{ fontSize: 15, color: "var(--text-soft)", lineHeight: 1.75, marginBottom: 20, maxWidth: 560 }}>
+              Structured Quran teaching, tarbiyah, and Shariah-conscious digital skills — all under one roof. A modern Islamic institution building faith-rooted, future-ready Muslims. <strong style={{ color: "var(--text)", fontWeight: 600 }}>Free trial class available for your family.</strong>
             </p>
 
             {/* Pillars */}

@@ -90,7 +90,7 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Navbar />
-      <main style={{ background: "#080808", overflow: "hidden" }}>
+      <main style={{ background: "var(--bg)", overflow: "hidden" }}>
         <section
           id="products"
           className="section-pad"
@@ -110,18 +110,18 @@ export default function Page() {
                 display: "inline-flex", alignItems: "center", gap: 8,
                 background: "rgba(212,160,23,.1)", border: "1px solid rgba(212,160,23,.3)",
                 borderRadius: 99, padding: "8px 18px", fontSize: 13, fontWeight: 600,
-                color: "#f5f0e8", letterSpacing: ".02em", marginBottom: 26,
+                color: "var(--text)", letterSpacing: ".02em", marginBottom: 26,
               }}>
                 <span style={{ color: "#d4a017" }}>✦</span>Shop
               </div>
               <h1 style={{
                 fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800,
                 fontSize: "clamp(34px,5.2vw,60px)", lineHeight: 1.04, letterSpacing: "-.02em",
-                color: "#f5f0e8", marginBottom: 18,
+                color: "var(--text)", marginBottom: 18,
               }}>
                 Tools to grow your academy<span style={{ color: "#d4a017" }}>.</span>
               </h1>
-              <p style={{ fontSize: "clamp(15px,1.5vw,18px)", color: "#9a9a9a", fontWeight: 300, lineHeight: 1.7 }}>
+              <p style={{ fontSize: "clamp(15px,1.5vw,18px)", color: "var(--text-muted2)", fontWeight: 300, lineHeight: 1.7 }}>
                 Ready-made systems and designs you can put to work today — no agency required.
               </p>
             </div>
@@ -131,9 +131,9 @@ export default function Page() {
               {PRODUCTS.map((p) => (
                 <div key={p.title} className="kit-card" style={{
                   display: "flex", flexDirection: "column",
-                  border: `1px solid ${p.featured ? "#d4a017" : "rgba(255,255,255,.08)"}`,
+                  border: `1px solid ${p.featured ? "#d4a017" : "var(--hairline)"}`,
                   borderRadius: 22, padding: "38px 34px",
-                  background: p.featured ? "#1e1e1e" : "#161616",
+                  background: p.featured ? "var(--bg-card2)" : "var(--bg-card)",
                   position: "relative",
                 }}>
                   {/* Badge pill */}
@@ -149,15 +149,15 @@ export default function Page() {
                   <h2 style={{
                     fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800,
                     fontSize: "clamp(22px,2.6vw,28px)", lineHeight: 1.15, letterSpacing: "-.01em",
-                    color: "#f5f0e8", marginBottom: 14,
+                    color: "var(--text)", marginBottom: 14,
                   }}>{p.title}</h2>
 
-                  <p style={{ fontSize: 15, color: "#b8b2a6", lineHeight: 1.75, marginBottom: 26, flex: 1 }}>
+                  <p style={{ fontSize: 15, color: "var(--text-soft)", lineHeight: 1.75, marginBottom: 26, flex: 1 }}>
                     {p.line}
                   </p>
 
                   <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
-                    <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", color: "#f5f0e8" }}>{p.price}</span>
+                    <span style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(24px,3vw,32px)", color: "var(--text)" }}>{p.price}</span>
                   </div>
 
                   <a
@@ -171,7 +171,7 @@ export default function Page() {
                       padding: "15px 30px", borderRadius: 99, textDecoration: "none",
                       ...(p.featured
                         ? { background: "#d4a017", color: "#080808", border: "2px solid #d4a017", boxShadow: "0 0 20px rgba(212,160,23,0.2)" }
-                        : { background: "rgba(255,255,255,0.03)", color: "#d4a017", border: "1px solid rgba(212,160,23,0.3)" }),
+                        : { background: "var(--overlay-soft)", color: "#d4a017", border: "1px solid rgba(212,160,23,0.3)" }),
                     }}
                   >
                     {p.cta} <span aria-hidden="true">→</span>
@@ -180,7 +180,7 @@ export default function Page() {
               ))}
             </div>
 
-            <p style={{ fontSize: 13, color: "#6b6b6b", textAlign: "center", marginTop: 28 }}>
+            <p style={{ fontSize: 13, color: "var(--text-muted)", textAlign: "center", marginTop: 28 }}>
               Secure checkout via Gumroad · Instant access · Halal &amp; Shariah-conscious
             </p>
           </div>

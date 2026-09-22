@@ -2,18 +2,58 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: dark;
+  /* Surfaces (dark theme defaults) */
   --bg: #080808;
   --bg-dark: #0f0f0f;
+  --bg-deep: #0a0a0a;
   --bg-card: #161616;
   --bg-card2: #1e1e1e;
+  --surface-gold: #161310;   /* warm gold-tinted panels / CTA callouts */
+  --surface-gold2: #12100c;
+  /* Text */
+  --text: #f5f0e8;
+  --text-soft: #c9c3b8;       /* body copy on dark */
+  --text-muted2: #9a9a9a;
+  --text-muted: #6b6b6b;
+  --on-gold: #080808;         /* text sitting on a gold fill — same in both modes */
+  /* Accents (unchanged across modes) */
   --gold: #d4a017;
   --gold-hover: #b8860b;
-  --text: #f5f0e8;
-  --text-muted: #6b6b6b;
-  --text-muted2: #9a9a9a;
   --orange: #ff5c35;
+  /* Hairlines / subtle overlays */
   --border: rgba(255,255,255,0.07);
+  --hairline: rgba(255,255,255,0.08);
+  --hairline-2: rgba(255,255,255,0.12);
+  --overlay-soft: rgba(255,255,255,0.03);
 }
+
+/* ── Light theme — follows the visitor's device setting (no JS; works on the static deploy) ── */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    color-scheme: light;
+    --bg: #faf7f1;
+    --bg-dark: #f3eee4;
+    --bg-deep: #f3eee4;
+    --bg-card: #ffffff;
+    --bg-card2: #f7f1e7;
+    --surface-gold: #fbf3df;
+    --surface-gold2: #fdf8ec;
+    --text: #17130c;
+    --text-soft: #45402f;
+    --text-muted2: #5f5a4e;
+    --text-muted: #857f70;
+    /* --on-gold stays #080808 — gold fills are identical in both modes */
+    --gold: #a9790a;          /* slightly deeper gold for contrast on light */
+    --gold-hover: #8a6207;
+    --border: rgba(20,15,5,0.10);
+    --hairline: rgba(20,15,5,0.10);
+    --hairline-2: rgba(20,15,5,0.16);
+    --overlay-soft: rgba(20,15,5,0.04);
+  }
+}
+/* Explicit dark override hook (future manual toggle) keeps dark values even under light OS */
+:root[data-theme="dark"] { color-scheme: dark; }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
