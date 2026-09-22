@@ -52,6 +52,8 @@ export default function Navbar() {
     <>
       {/* CSS-only toggle — works without JavaScript (live site strips all JS) */}
       <input type="checkbox" id="nav-toggle" className="nav-toggle" aria-hidden="true" tabIndex={-1} />
+      {/* CSS-only light/dark theme switch — flips the whole site via :has(), no JS */}
+      <input type="checkbox" id="theme-switch" className="theme-switch-input" aria-label="Switch light or dark theme" />
       <nav aria-label="Main navigation" className="main-nav" style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
         padding: "0 4vw", height: 68,
@@ -71,7 +73,13 @@ export default function Navbar() {
           {links.map((l) => <NavLink key={l.label} href={l.href}>{l.label}</NavLink>)}
         </div>
 
-        {/* Right: Free Audit button */}
+        {/* Right cluster: theme toggle + Free Audit button */}
+        <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+        <label htmlFor="theme-switch" className="theme-toggle" title="Toggle light / dark">
+          <span className="t-ico" aria-hidden="true">🌙</span>
+          <span className="t-ico" aria-hidden="true">☀️</span>
+          <span className="t-knob" aria-hidden="true" />
+        </label>
         <a href="/free-audit"
           className="nav-cta"
           style={{
@@ -81,8 +89,9 @@ export default function Navbar() {
             textDecoration: "none", transition: "all .2s", fontFamily: "'Plus Jakarta Sans',sans-serif",
           }}
           onMouseEnter={(e) => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#d4a017"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "var(--bg)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = "#d4a017"; e.currentTarget.style.color = "#080808"; }}
         >Free Audit</a>
+        </div>
 
         <label htmlFor="nav-toggle" className="hamburger-btn" aria-label="Toggle menu"
           style={{ display: "none", flexDirection: "column", gap: 5, background: "none", border: "none", padding: 4, cursor: "pointer" }}>
