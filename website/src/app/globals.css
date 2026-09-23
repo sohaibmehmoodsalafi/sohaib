@@ -26,6 +26,7 @@
   --hairline: rgba(255,255,255,0.08);
   --hairline-2: rgba(255,255,255,0.12);
   --overlay-soft: rgba(255,255,255,0.03);
+  --nav-bg: rgba(8,8,8,0.72);   /* minimal translucent header */
 }
 
 /* ── Light theme — toggled by the header switch (pure CSS via :has(), no JS; works on the static deploy).
@@ -50,6 +51,7 @@ html:has(#theme-switch:checked) {
   --hairline: rgba(20,15,5,0.10);
   --hairline-2: rgba(20,15,5,0.16);
   --overlay-soft: rgba(20,15,5,0.04);
+  --nav-bg: rgba(250,247,241,0.78);   /* light translucent header */
 }
 
 /* ── Header light/dark toggle (CSS-only) ── */

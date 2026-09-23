@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const links = [
   { label: "Home", href: "/" },
@@ -20,7 +20,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
       href={href}
       className="nav-link-item"
       style={{
-        fontSize: 13, fontWeight: 500, color: hov ? "var(--text)" : "#aaa",
+        fontSize: 13, fontWeight: 500, color: hov ? "var(--text)" : "var(--text-muted2)",
         letterSpacing: ".03em", transition: "color .2s", textDecoration: "none",
       }}
       onMouseEnter={() => setHov(true)}
@@ -40,14 +40,6 @@ function closeMenu() {
 }
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 30);
-    window.addEventListener("scroll", fn);
-    return () => window.removeEventListener("scroll", fn);
-  }, []);
-
   return (
     <>
       {/* CSS-only toggle — works without JavaScript (live site strips all JS) */}
@@ -56,16 +48,15 @@ export default function Navbar() {
       <input type="checkbox" id="theme-switch" className="theme-switch-input" aria-label="Switch light or dark theme" />
       <nav aria-label="Main navigation" className="main-nav" style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-        padding: "0 4vw", height: 68,
+        padding: "0 4vw", height: 64,
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        background: scrolled ? "rgba(8,8,8,0.99)" : "rgba(8,8,8,0.97)",
-        backdropFilter: "blur(20px)",
-        borderBottom: `1px solid rgba(255,255,255,${scrolled ? ".1" : ".07"})`,
-        transition: "all .3s",
+        background: "var(--nav-bg)",
+        backdropFilter: "blur(18px)", WebkitBackdropFilter: "blur(18px)",
+        borderBottom: "1px solid var(--hairline)",
       }}>
-        <a href="/" style={{ display: "flex", alignItems: "center", gap: 11, textDecoration: "none" }}>
-          <img src="/images/sohaib-mehmood.jpg" alt="Sohaib Mehmood" className="nav-logo" style={{ width: 40, height: 40, borderRadius: "50%", objectFit: "cover", border: "1.5px solid rgba(212,160,23,.5)" }} />
-          <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 17, letterSpacing: ".01em", color: "var(--text)", lineHeight: 1 }}>Sohaib Mehmood</div>
+        <a href="/" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none" }}>
+          <img src="/images/sohaib-avatar.jpg" alt="Sohaib Mehmood" className="nav-logo" style={{ width: 36, height: 36, borderRadius: "50%", objectFit: "cover", border: "1px solid var(--hairline-2)" }} />
+          <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 700, fontSize: 16, letterSpacing: ".01em", color: "var(--text)", lineHeight: 1 }}>Sohaib Mehmood</div>
         </a>
 
         {/* Centered nav links */}
@@ -104,7 +95,7 @@ export default function Navbar() {
       </nav>
 
       <div className="mobile-menu" style={{
-        position: "fixed", top: 68, left: 0, right: 0, bottom: 0,
+        position: "fixed", top: 64, left: 0, right: 0, bottom: 0,
         background: "var(--bg)", zIndex: 99, padding: "40px 4vw",
         flexDirection: "column", gap: 28, display: "none",
       }}>
