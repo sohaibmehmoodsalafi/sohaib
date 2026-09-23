@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AVATAR } from "@/lib/brand";
 
 function FooterCol({ title, links }: { title: string; links: Array<{ label: string; href?: string; ext?: boolean; onClick?: () => void }> }) {
   return (
@@ -48,7 +49,7 @@ export default function Footer() {
         <div className="footer-grid" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "2.5fr 1fr 1fr 1fr", gap: 60, marginBottom: 60 }}>
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-              <img src="/images/sohaib-logo.png" alt="Sohaib Mehmood Logo" style={{ width: 44, height: 44, objectFit: "contain", flexShrink: 0 }} />
+              <img src={AVATAR} alt="Sohaib Mehmood" style={{ width: 44, height: 44, borderRadius: "50%", objectFit: "cover", border: "1px solid var(--hairline-2)", flexShrink: 0 }} />
               <div>
                 <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 18, letterSpacing: ".08em", color: "var(--text)", lineHeight: 1.1 }}>SOHAIB MEHMOOD</div>
                 <div style={{ fontSize: 11, color: "var(--text-muted)", letterSpacing: ".06em" }}>SCALING BRANDS. EMPOWERING SOULS</div>

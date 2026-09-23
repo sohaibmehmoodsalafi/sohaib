@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { AVATAR, ICON_180 } from "@/lib/brand";
 
 export const metadata: Metadata = {
   title: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
@@ -197,10 +198,11 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="var(--bg)" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        {/* Favicon = header avatar. Data URIs ship inside the HTML so they update
+            on the static deploy (which excludes image files); .ico is a fallback. */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/jpeg" href={AVATAR} />
+        <link rel="apple-touch-icon" href={ICON_180} />
 
         <script
           type="application/ld+json"
