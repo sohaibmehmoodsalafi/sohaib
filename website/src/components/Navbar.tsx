@@ -71,8 +71,8 @@ export default function Navbar() {
         {/* Right cluster: theme toggle + Free Audit button */}
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
         <label htmlFor="theme-switch" className="theme-toggle" title="Toggle light / dark">
-          <span className="t-ico" aria-hidden="true">🌙</span>
           <span className="t-ico" aria-hidden="true">☀️</span>
+          <span className="t-ico" aria-hidden="true">🌙</span>
           <span className="t-knob" aria-hidden="true" />
         </label>
         <a href="/free-audit"
