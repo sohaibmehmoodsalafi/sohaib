@@ -17,21 +17,21 @@ export default function MarkenExusSystem() {
       ref={ref as React.RefObject<HTMLElement>}
       id="system"
       className="section-pad"
-      style={{ padding: "120px 4vw", background: "#f5f0e8", color: "#14110c" }}
+      style={{ padding: "120px 4vw", background: "var(--bg-dark)", color: "var(--text)" }}
     >
       <div className="system-2col" style={{ maxWidth: 1200, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.15fr", gap: 64, alignItems: "start" }}>
         {/* ── Left: heading ── */}
         <div>
-          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".18em", color: "#8a8378", textTransform: "uppercase", marginBottom: 20 }}>The System</div>
-          <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px,4.2vw,58px)", lineHeight: 1.03, letterSpacing: "-.02em", marginBottom: 22, color: "#14110c" }}>
-            The MarkenExus<br /><span style={{ color: "#b8860b" }}>Growth System</span><span style={{ color: "#b8860b", fontSize: ".55em", verticalAlign: "top" }}>™</span>
+          <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".18em", color: "var(--text-muted)", textTransform: "uppercase", marginBottom: 20 }}>The System</div>
+          <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px,4.2vw,58px)", lineHeight: 1.03, letterSpacing: "-.02em", marginBottom: 22, color: "var(--text)" }}>
+            The MarkenExus<br /><span style={{ color: "var(--gold)" }}>Growth System</span><span style={{ color: "var(--gold)", fontSize: ".55em", verticalAlign: "top" }}>™</span>
           </h2>
-          <p style={{ fontSize: 16, color: "#5a5348", maxWidth: 440, lineHeight: 1.7, marginBottom: 28 }}>
+          <p style={{ fontSize: 16, color: "var(--text-soft)", maxWidth: 440, lineHeight: 1.7, marginBottom: 28 }}>
             A simple system that turns ad spend into students and donations — refined across academies and Islamic organizations to bring you predictable enrollments and support, not just clicks.
           </p>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "#14110c", borderRadius: 99, padding: "10px 20px" }}>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "var(--text)", borderRadius: 99, padding: "10px 20px" }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#d4a017", display: "block" }} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: "#f5f0e8", letterSpacing: ".01em" }}>Proven across 4 continents · 5.6× ROAS</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "var(--bg)", letterSpacing: ".01em" }}>Proven across 4 continents · 5.6× ROAS</span>
           </div>
         </div>
 
