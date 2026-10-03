@@ -2,15 +2,16 @@
 
 import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
+import { QURAN_TONGUE, VIU, JAMAT, PEACE } from "@/lib/portfolioThumbs";
 
 type Project = { type: string; title: string; result: string; url: string; img?: string; placeholder?: string; icon?: string; linkLabel?: string };
 
 const PORTFOLIO: Project[] = [
   { type: "Quran Academy · Student Acquisition", title: "Learn Quran Institute", result: "3× admissions from USA, UK & Canada after launch", url: "https://learnquraninstitute.org/", img: "https://meetsohaib.com/portfolio/learn-quran-institute.jpg", placeholder: "Learn Quran Institute", icon: "📖" },
-  { type: "Quran Academy · Enrollment Funnels", title: "Quran Tongue", result: "Online Quran academy — enrollment funnels & Meta Ads campaigns", url: "https://www.qurantongue.com/", placeholder: "Quran Tongue", icon: "📖" },
-  { type: "Islamic Education · Lead Generation", title: "Virtual Islamic University (VIU)", result: "Student lead generation for online Islamic courses & programs", url: "https://viuedu.com/", placeholder: "Virtual Islamic University", icon: "🎓" },
-  { type: "Islamic NGO · Awareness & Donations", title: "Jamat-e-Ahle Hadis", result: "Awareness and donation campaigns for an Islamic organization", url: "https://jahofficial.org/", placeholder: "Jamat-e-Ahle Hadis", icon: "🕌" },
-  { type: "Islamic Institute · Growth (my own)", title: "Peace Institute", result: "My own institute — education, dawah, media & welfare growth", url: "https://peace.org.pk/", placeholder: "Peace Institute", icon: "🕌" },
+  { type: "Quran Academy · Enrollment Funnels", title: "Quran Tongue", result: "Online Quran academy — enrollment funnels & Meta Ads campaigns", url: "https://www.qurantongue.com/", img: QURAN_TONGUE, placeholder: "Quran Tongue", icon: "📖" },
+  { type: "Islamic Education · Lead Generation", title: "Virtual Islamic University (VIU)", result: "Student lead generation for online Islamic courses & programs", url: "https://viuedu.com/", img: VIU, placeholder: "Virtual Islamic University", icon: "🎓" },
+  { type: "Islamic NGO · Awareness & Donations", title: "Jamat-e-Ahle Hadis", result: "Awareness and donation campaigns for an Islamic organization", url: "https://jahofficial.org/", img: JAMAT, placeholder: "Jamat-e-Ahle Hadis", icon: "🕌" },
+  { type: "Islamic Institute · Growth (my own)", title: "Peace Institute", result: "My own institute — education, dawah, media & welfare growth", url: "https://peace.org.pk/", img: PEACE, placeholder: "Peace Institute", icon: "🕌" },
   { type: "Islamic Platform · Full Build", title: "Hijra Online", result: "Complete platform with an integrated lead-capture system", url: "https://hijraonline.com/", img: "https://meetsohaib.com/portfolio/hijra-online.jpg", placeholder: "Hijra Online", icon: "🌙" },
 ];
 
