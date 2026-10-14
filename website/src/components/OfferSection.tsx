@@ -58,9 +58,9 @@ export default function OfferSection() {
             rel="noopener noreferrer"
             style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "#25d366", color: "#052e16", fontWeight: 800, fontSize: 16, padding: "17px 28px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif", marginBottom: 12 }}
           >
-            <span style={{ fontSize: 20 }}>💬</span> Get my free audit on WhatsApp
+            <span style={{ fontSize: 20 }}>💬</span> Get my free 5-minute video audit
           </a>
-          <p style={{ fontSize: 12, color: "var(--text-muted)", textAlign: "center", marginBottom: 26 }}>Fastest — reply within 1 hour</p>
+          <p style={{ fontSize: 12, color: "var(--text-muted)", textAlign: "center", marginBottom: 26 }}>Fastest — reply within 1 day</p>
 
           {/* Divider */}
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 26 }}>

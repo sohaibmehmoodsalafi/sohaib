@@ -148,7 +148,6 @@ export default function Hero() {
 
   const stats = [
     { num: "120", suf: "+", lbl: "Businesses grown" },
-    { num: "5.6", suf: "×", lbl: "Average ROAS" },
     { num: "85", suf: "%", lbl: "Client retention" },
     { num: "5", suf: "+", lbl: "Years experience" },
   ];
@@ -394,7 +393,7 @@ export default function Hero() {
             }}
           >
             <a
-              href="https://wa.me/923048885206"
+              href="https://wa.me/923048885206?text=Assalamu%20Alaikum%20Sohaib!%20I%20want%20my%20free%205-minute%20video%20audit%20for%20my%20academy."
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -422,7 +421,7 @@ export default function Hero() {
                 e.currentTarget.style.boxShadow = "0 0 20px rgba(212,160,23,0.2)";
               }}
             >
-              Get Free Growth Audit →
+              Get my free 5-minute video audit →
             </a>
             <a
               href="https://calendly.com/meetsohaib/30min"
@@ -463,7 +462,7 @@ export default function Hero() {
             className="hero-stats"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(4,1fr)",
+              gridTemplateColumns: "repeat(3,1fr)",
               border: "1px solid rgba(212,160,23,0.15)",
               borderRadius: 16,
               overflow: "hidden",

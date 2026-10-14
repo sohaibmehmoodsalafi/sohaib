@@ -3,7 +3,6 @@ import Image from "next/image";
 const logos = [
   { name: "VeeTrends", src: "https://meetsohaib.com/client-logos/veetrends.png" },
   { name: "Learn Quran Institute", src: "https://meetsohaib.com/client-logos/learn-quran-institute.png" },
-  { name: "Peace Institute", src: "https://meetsohaib.com/client-logos/peace-institute.png" },
   { name: "Skycon Travel", src: "https://meetsohaib.com/client-logos/skycon-travel.png" },
   { name: "Virtual Islamic University", src: "https://meetsohaib.com/client-logos/virtual-islamic-university.png" },
   { name: "Soft Desk Solution", src: "https://meetsohaib.com/client-logos/soft-desk-solution.png" },

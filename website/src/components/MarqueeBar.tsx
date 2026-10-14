@@ -1,6 +1,6 @@
 "use client";
 
-const clients = ["Learn Quran Institute", "Peace Institute", "Virtual Islamic University", "Hijra Online"];
+const clients = ["Learn Quran Institute", "Virtual Islamic University", "Hijra Online"];
 
 export default function MarqueeBar() {
   const doubled = [...clients, ...clients];

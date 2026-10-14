@@ -24,14 +24,14 @@ export default function MarkenExusSystem() {
         <div>
           <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: ".18em", color: "var(--text-muted)", textTransform: "uppercase", marginBottom: 20 }}>The System</div>
           <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(36px,4.2vw,58px)", lineHeight: 1.03, letterSpacing: "-.02em", marginBottom: 22, color: "var(--text)" }}>
-            The MarkenExus<br /><span style={{ color: "var(--gold)" }}>Growth System</span><span style={{ color: "var(--gold)", fontSize: ".55em", verticalAlign: "top" }}>™</span>
+            The Markenexus<br /><span style={{ color: "var(--gold)" }}>Growth System</span>
           </h2>
           <p style={{ fontSize: 16, color: "var(--text-soft)", maxWidth: 440, lineHeight: 1.7, marginBottom: 28 }}>
             A simple system that turns ad spend into students and donations — refined across academies and Islamic organizations to bring you predictable enrollments and support, not just clicks.
           </p>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 9, background: "var(--text)", borderRadius: 99, padding: "10px 20px" }}>
             <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#d4a017", display: "block" }} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: "var(--bg)", letterSpacing: ".01em" }}>Proven across 4 continents · 5.6× ROAS</span>
+            <span style={{ fontSize: 13, fontWeight: 700, color: "var(--bg)", letterSpacing: ".01em" }}>Pakistan, UAE, UK &amp; USA</span>
           </div>
         </div>
 

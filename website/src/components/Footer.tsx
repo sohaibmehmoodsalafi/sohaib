@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { AVATAR } from "@/lib/brand";
 
-function FooterCol({ title, links }: { title: string; links: Array<{ label: string; href?: string; ext?: boolean; onClick?: () => void }> }) {
+function FooterCol({ title, links }: { title: string; links: Array<{ label?: string; href?: string; ext?: boolean; onClick?: () => void; heading?: string }> }) {
   return (
     <div>
       <h4 style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".12em", color: "var(--text-muted)", textTransform: "uppercase", marginBottom: 20 }}>{title}</h4>
       {links.map((l, i) =>
-        l.onClick ? (
+        l.heading ? (
+          <div key={i} style={{ fontSize: 10, fontWeight: 700, letterSpacing: ".1em", color: "var(--text-muted)", textTransform: "uppercase", margin: "16px 0 10px", opacity: .75 }}>{l.heading}</div>
+        ) : l.onClick ? (
           <button key={i} onClick={l.onClick} style={{ display: "block", fontSize: 14, color: "var(--text-muted2)", marginBottom: 12, background: "none", border: "none", cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif", padding: 0, textAlign: "left", transition: "color .2s" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted2)")}>{l.label}</button>
         ) : (
@@ -38,11 +40,6 @@ function SocialBtn({ label, href }: { label: string; href: string }) {
 }
 
 export default function Footer() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState({ title: "", body: "" });
-
-  const openModal = (title: string, body: string) => { setModalContent({ title, body }); setModalOpen(true); };
-
   return (
     <>
       <footer className="footer-section" style={{ borderTop: "1px solid var(--hairline)", padding: "72px 4vw 40px" }}>
@@ -55,7 +52,7 @@ export default function Footer() {
                 <div style={{ fontSize: 11, color: "var(--text-muted)", letterSpacing: ".06em" }}>SCALING BRANDS. EMPOWERING SOULS</div>
               </div>
             </div>
-            <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.75, maxWidth: 300, marginBottom: 24 }}>Digital marketing consultant and PPC advertising company specializing in pay per click campaigns, Google Ads optimization, and meta advertising solutions. 120+ businesses grown across Pakistan, UAE, UK & USA.</p>
+            <p style={{ fontSize: 14, color: "var(--text-muted)", lineHeight: 1.75, maxWidth: 300, marginBottom: 24 }}>Founder-led marketing for Quran academies and Islamic organizations. 120+ businesses grown across Pakistan, UAE, UK & USA.</p>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
               {["🇵🇰 Pakistan", "🇦🇪 UAE", "🇬🇧 UK", "🇺🇸 USA"].map((f) => (
                 <span key={f} style={{ fontSize: 12, color: "var(--text-muted)", display: "flex", alignItems: "center", gap: 4 }}>{f}</span>
@@ -72,15 +69,16 @@ export default function Footer() {
           ]} />
           <FooterCol title="Portfolio" links={[
             { label: "Learn Quran Institute", href: "https://learnquraninstitute.org/", ext: true },
+            { label: "Peace Institute", href: "https://peace.org.pk", ext: true },
+            { heading: "Other industries" },
             { label: "VeeTrends", href: "https://veetrends.com/", ext: true },
             { label: "Skycon Travel", href: "https://skycontravel.com/", ext: true },
-            { label: "Peace Institute", href: "https://peace.org.pk", ext: true },
           ]} />
           <FooterCol title="Legal" links={[
             { label: "WhatsApp", href: "https://wa.me/923048885206", ext: true },
             { label: "Book a Call", href: "https://calendly.com/meetsohaib/30min", ext: true },
-            { label: "Privacy Policy", onClick: () => openModal("Privacy Policy", "Your data is never shared with third parties. Contact information is used solely for business communication purposes. We do not sell, rent, or share personal information with any third party.") },
-            { label: "Terms of Service", onClick: () => openModal("Terms of Service", "All services are subject to a written agreement. Results may vary based on business niche, budget, and market conditions. Sohaib Mehmood reserves the right to decline any project at his discretion.") },
+            { label: "Privacy Policy", href: "/privacy" },
+            { label: "Terms of Service", href: "/terms" },
           ]} />
         </div>
 
@@ -93,26 +91,6 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-
-      {/* Legal Modal */}
-      {modalOpen && (
-        <div onClick={() => setModalOpen(false)} style={{
-          position: "fixed", inset: 0, background: "rgba(0,0,0,.8)",
-          zIndex: 999, display: "flex", alignItems: "center", justifyContent: "center", padding: 20,
-        }}>
-          <div onClick={(e) => e.stopPropagation()} style={{
-            background: "var(--bg-card2)", border: "1px solid var(--hairline-2)",
-            borderRadius: 20, padding: "40px 44px", maxWidth: 500, width: "100%", position: "relative",
-          }}>
-            <button onClick={() => setModalOpen(false)} style={{
-              position: "absolute", top: 16, right: 16, background: "none",
-              border: "none", color: "var(--text-muted)", fontSize: 20, cursor: "pointer", lineHeight: 1,
-            }}>&times;</button>
-            <h3 style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 28, letterSpacing: ".04em", marginBottom: 16 }}>{modalContent.title}</h3>
-            <p style={{ fontSize: 14, color: "var(--text-muted2)", lineHeight: 1.8 }}>{modalContent.body}</p>
-          </div>
-        </div>
-      )}
     </>
   );
 }

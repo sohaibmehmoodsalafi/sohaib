@@ -5,19 +5,19 @@ import { useFadeIn } from "@/hooks/useFadeIn";
 
 const CORE_SERVICES = [
   {
-    n: "01", icon: "📢", title: "Meta Ads", subtitle: "Meta Advertising Solutions",
-    desc: "Expert meta advertising solutions for Facebook & Instagram — social media advertising campaigns with audience research, ad creatives, retargeting funnels, and daily optimization. I turn your ad spend into predictable leads.",
-    results: ["5.6× Average ROAS", "Retargeting Funnels", "Daily Optimization", "Custom Audiences"],
+    n: "01", icon: "📢", title: "Meta Ads", subtitle: "Facebook & Instagram Ads",
+    desc: "Facebook and Instagram ads that reach the right Muslim parents and donors — audience research, scroll-stopping creatives, retargeting, and daily optimization. I turn your ad spend into steady enrollments and support.",
+    results: ["Parent & Donor Targeting", "Retargeting Funnels", "Daily Optimization", "Custom Audiences"],
   },
   {
-    n: "02", icon: "🎯", title: "Google Ads", subtitle: "Google Pay Per Click Advertising",
-    desc: "Google Ads optimization and paid search advertising that captures high-intent buyers. Pay per click campaign management with Search ads, Display ads, and remarketing — complete PPC advertising services.",
-    results: ["Google Ads Optimization", "Paid Search Ads", "Display & Remarketing", "Conversion Tracking"],
+    n: "02", icon: "🎯", title: "Google Ads", subtitle: "Google Search & Display Ads",
+    desc: "Google ads that put you in front of families already searching for Quran classes and Islamic programs — Search, Display, and remarketing — so the right people find you first.",
+    results: ["Search Campaigns", "High-Intent Keywords", "Display & Remarketing", "Conversion Tracking"],
   },
   {
-    n: "03", icon: "📱", title: "Social Media Marketing", subtitle: "Social Media Advertising Campaign",
-    desc: "Strategic social media advertising campaigns that build trust and generate leads. Digital branding, content strategy, reels, stories, engagement — your brand stays active 24/7.",
-    results: ["Content Strategy", "Reels & Stories", "Community Growth", "Digital Branding"],
+    n: "03", icon: "📱", title: "Social Media Marketing", subtitle: "Content That Builds Trust",
+    desc: "Social media that builds trust and brings in enquiries — content strategy, reels, stories, and engagement that keep your academy or organization visible every day.",
+    results: ["Content Strategy", "Reels & Stories", "Community Growth", "Brand Building"],
   },
 ];
 
@@ -86,7 +86,7 @@ export default function Services() {
           COMPLETE DIGITAL<br />MARKETING ECOSYSTEM
         </h2>
         <p style={{ fontSize: 16, color: "var(--text-muted2)", maxWidth: 560, lineHeight: 1.7, marginBottom: 64 }}>
-          I don&apos;t just run one pay per click campaign — I build your <strong style={{ color: "var(--text)" }}>entire digital marketing campaign</strong>. From PPC advertising services to the final conversion, every step is designed, optimized, and managed by your dedicated digital marketing consultant.
+          I don&apos;t just run one ad campaign — I build your <strong style={{ color: "var(--text)" }}>entire growth system</strong>. From the first ad to the final enrollment or donation, every step is designed, optimized, and managed by one person who understands your mission.
         </p>
 
         {/* 3 Core Services */}

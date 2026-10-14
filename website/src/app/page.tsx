@@ -34,8 +34,8 @@ export default function Home() {
         <WhyDifferent />
         <MarkenExusSystem />
         <Results />
-        <LeadMagnet />
         <Portfolio />
+        <LeadMagnet />
         <Services />
         <Pricing />
         <AboutSection />

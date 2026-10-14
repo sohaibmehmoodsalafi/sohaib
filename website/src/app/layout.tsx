@@ -140,7 +140,7 @@ const jsonLd = {
           name: "How do you get international students for my Quran academy?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "I run targeted Meta Ads and Google Ads across the USA, UK, and Canada, reaching Muslim parents actively looking for online Quran classes. I build a trust-focused landing page with a free trial offer and testimonials, then send qualified traffic to it. My academy clients typically see 80+ new student enrollments per month.",
+            text: "I run targeted Meta Ads and Google Ads across the USA, UK, and Canada, reaching Muslim parents actively looking for online Quran classes. I build a trust-focused landing page with a free trial offer and testimonials, then send qualified traffic to it.",
           },
         },
         {

@@ -51,7 +51,7 @@ export default function AboutSection() {
           )}
         </div>
         <FloatBadge bottom={-20} right={-20} num="120+" lbl="Clients worldwide" color="#d4a017" />
-        <FloatBadge top={24} left={-24} num="5.6×" lbl="Avg. ROAS" color="#ff5c35" />
+        <FloatBadge top={24} left={-24} num="5.6×" lbl="ROAS — VeeTrends (e-commerce)" color="#ff5c35" />
       </div>
 
       {/* Text */}
@@ -70,7 +70,7 @@ export default function AboutSection() {
           {[
             { n: "5", s: "+", l: "Years experience" },
             { n: "4", s: "", l: "Countries served" },
-            { n: "12", s: "%", l: "Avg. conversion rate" },
+            { n: "12", s: "%", l: "conversion rate — Luxurious.pk" },
           ].map((s, i) => (
             <div key={i}>
               <div style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: 36, color: "var(--text)", lineHeight: 1 }}>

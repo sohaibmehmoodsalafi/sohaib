@@ -5,15 +5,15 @@ import { useFadeIn } from "@/hooks/useFadeIn";
 
 const PACKAGES = [
   {
-    tier: "Starter", name: "Single Platform", price: "PKR 25,000/mo", featured: false,
+    tier: "Starter", name: "Single Platform", price: "PKR 25,000/mo · from $90", featured: false,
     items: ["Meta Ads OR Google Ads (1 platform)", "Campaign Setup & Optimization", "Ad Creatives (5/month)", "Landing Page Setup", "Monthly Performance Report"],
   },
   {
-    tier: "Growth", name: "Full Funnel", price: "PKR 55,000/mo", featured: true,
+    tier: "Growth", name: "Full Funnel", price: "PKR 55,000/mo · from $195", featured: true,
     items: ["Meta Ads + Google Ads (both platforms)", "Complete Funnel Setup", "Ad Creatives (15/month)", "Landing Pages & Lead Forms", "Social Media Management (15 posts)", "Retargeting & Lookalike Audiences", "Weekly Reports & Strategy Calls"],
   },
   {
-    tier: "Scale", name: "Ecosystem Package", price: "PKR 90,000/mo", featured: false,
+    tier: "Scale", name: "Ecosystem Package", price: "PKR 90,000/mo · from $320", featured: false,
     items: ["Everything in Growth", "Full SMM (30 posts/month + reels)", "WhatsApp Automation & Follow-ups", "Multi-funnel Strategy", "Priority Support & Weekly Calls", "Dedicated Account Management"],
   },
 ];

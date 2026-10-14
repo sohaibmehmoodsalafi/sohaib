@@ -4,8 +4,11 @@ import { useState } from "react";
 import { useFadeIn } from "@/hooks/useFadeIn";
 
 const TESTIMONIALS = [
+  // TODO: Replace with full name + photo/video after client permission
   { init: "MK", name: "Muhammad K.", role: "Founder, E-commerce Brand — Pakistan", text: "Sohaib ran our Facebook Ads and built the landing page. Conversion rate hit 12% — revenue doubled in 3 months. Best marketing decision we made.", highlight: "Conversion rate hit 12% — revenue doubled in 3 months." },
-  { init: "DA", name: "Dr. Ahmed", role: "Director, Quran Academy — Pakistan", text: "We hired agencies before but nothing worked. Sohaib handled our ads, social media, and website. Admissions went up 3×. Best investment we ever made.", highlight: "Admissions went up 3×. Best investment we ever made." },
+  // TODO: Replace with full name + photo/video after client permission
+  { init: "AW", name: "Dr. Amil Whadwan", role: "Psychologist", text: "We hired agencies before but nothing worked. Sohaib handled our ads, social media, and website. Admissions went up 3×. Best investment we ever made.", highlight: "Admissions went up 3×. Best investment we ever made." },
+  // TODO: Replace with full name + photo/video after client permission
   { init: "SM", name: "Sarah M.", role: "E-commerce Owner — UK", text: "Within 2 months, our ROAS went from 1.8× to 5.2×. Sohaib rebuilt our entire funnel — ads, landing page, retargeting. Complete transformation.", highlight: "Complete transformation." },
 ];
 
@@ -52,7 +55,7 @@ export default function Testimonials() {
             alignItems: "center", justifyContent: "center", textAlign: "center", gap: 14,
           }}>
             <div style={{ fontSize: 36 }}>⭐</div>
-            <p style={{ fontSize: 14, color: "var(--text-muted2)", lineHeight: 1.7 }}>47+ verified clients across Pakistan, UAE, UK and USA. References available on request.</p>
+            <p style={{ fontSize: 14, color: "var(--text-muted2)", lineHeight: 1.7 }}>120+ verified clients across Pakistan, UAE, UK and USA. References available on request.</p>
             <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer"
               style={{ background: "transparent", color: "var(--text)", fontWeight: 500, fontSize: 13, padding: "10px 22px", borderRadius: 99, border: "1px solid var(--hairline-2)", textDecoration: "none", transition: "border-color .2s" }}
               onMouseEnter={(e) => e.currentTarget.style.borderColor = "var(--hairline-2)"}

@@ -75,16 +75,15 @@ export default function Contact() {
           <h2 className="section-title" style={{ fontFamily: "'Plus Jakarta Sans',sans-serif", fontWeight: 800, fontSize: "clamp(40px,5vw,64px)", lineHeight: .95, letterSpacing: ".02em", marginBottom: 20 }}>
             LET&apos;S AUDIT YOUR<br /><span style={{ color: "#d4a017" }}>MARKETING FREE.</span>
           </h2>
-          <p style={{ fontSize: 16, color: "var(--text-muted2)", lineHeight: 1.7, marginBottom: 44 }}>30-minute PPC consultancy call — I&apos;ll review your current digital marketing campaign setup, audit your Google Ads optimization, and tell you exactly what to fix. No commitment. No pressure. Just honest advice from an experienced digital marketing consultant.</p>
+          <p style={{ fontSize: 16, color: "var(--text-muted2)", lineHeight: 1.7, marginBottom: 44 }}>30-minute strategy call — I&apos;ll review your current ads, funnel, and landing page, and tell you exactly what to fix to get more students or donors. No commitment. No pressure. Just honest advice from someone who runs an academy too.</p>
 
           <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 44 }}>
-            <ContactOpt icon="💬" title="WhatsApp — fastest response" sub="Reply within 1 hour" href="https://wa.me/923048885206" />
+            <ContactOpt icon="💬" title="WhatsApp — fastest response" sub="Reply within 1 day" href="https://wa.me/923048885206" />
             <ContactOpt icon="📅" title="Book a meeting on Calendly" sub="Pick a time that works for you" href="https://calendly.com/meetsohaib/30min" />
-            <ContactOpt icon="💼" title="Connect on LinkedIn" sub="International clients preferred here" href="https://www.linkedin.com/in/sohaibmehmoodsalafi/" />
           </div>
 
           <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-            {["100% Confidential", "No Commitment", "Reply in 1 Hour", "No Spam"].map((t) => (
+            {["100% Confidential", "No Commitment", "Reply in 1 Day", "No Spam"].map((t) => (
               <div key={t} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13, color: "var(--text-muted)" }}>
                 <span style={{ color: "#d4a017", fontWeight: 700 }}>✓</span>{t}
               </div>
@@ -113,7 +112,7 @@ export default function Contact() {
             <select value={form.service} onChange={(e) => { setForm((f) => ({ ...f, service: e.target.value })); setErrors((er) => ({ ...er, service: "" })); }}
               style={{ ...inputStyle("service"), color: form.service ? "var(--text)" : "var(--text-muted)", WebkitAppearance: "none" as const }}>
               <option value="">Select a service</option>
-              {["Facebook & Instagram Ads", "Social Media Management", "Website or Landing Page", "Logo & Branding", "Complete Growth Package", "Quran Academy Marketing", "E-commerce Scaling"].map((o) => <option key={o} value={o}>{o}</option>)}
+              {["Facebook & Instagram Ads", "Social Media Management", "Website or Landing Page", "Complete Growth Package", "Quran Academy Marketing"].map((o) => <option key={o} value={o}>{o}</option>)}
             </select>
             {errors.service && <div style={{ color: "#f87171", fontSize: 12, marginTop: 4 }}>{errors.service}</div>}
           </div>
@@ -126,7 +125,7 @@ export default function Contact() {
 
           {status === "success" && (
             <div style={{ background: "rgba(0,200,100,0.1)", border: "1px solid rgba(0,200,100,0.3)", borderRadius: 10, padding: "14px 18px", color: "#4ade80", fontSize: 14, marginBottom: 16 }}>
-              ✓ Message sent! Opening WhatsApp — I&apos;ll reply within 1 hour.
+              ✓ Message sent! Opening WhatsApp — I&apos;ll reply within 1 day.
             </div>
           )}
 

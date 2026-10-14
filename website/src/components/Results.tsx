@@ -28,7 +28,7 @@ export default function Results() {
   const ref = useFadeIn();
   const stats = [
     { n: "3", s: "×", title: "Admissions from USA, UK & Canada", sub: "Learn Quran Institute, after launch" },
-    { n: "80", s: "+", title: "New students per month", sub: "At under PKR 400 per enrollment" },
+    { n: "30", s: "+", title: "New students", sub: "Maira Abbas — UK" },
     { n: "85", s: "%", title: "Of clients stay", sub: "Because the results keep coming" },
   ];
 

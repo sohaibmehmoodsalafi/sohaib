@@ -11,8 +11,10 @@ const links = [
   { label: "Case Studies", href: "/case-studies" },
   { label: "Products", href: "/products" },
   { label: "Blog", href: "/blog" },
-  { label: "Free Audit", href: "/free-audit" },
 ];
+
+// Primary CTA → free video audit on WhatsApp (same destination as the hero button)
+const AUDIT_WA = "https://wa.me/923048885206?text=Assalamu%20Alaikum%20Sohaib!%20I%20want%20my%20free%205-minute%20video%20audit%20for%20my%20academy.";
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   const [hov, setHov] = useState(false);
@@ -72,7 +74,8 @@ export default function Navbar() {
           <span className="t-ico" aria-hidden="true">🌙</span>
           <span className="t-knob" aria-hidden="true" />
         </label>
-        <a href="/free-audit"
+        <a href={AUDIT_WA}
+          target="_blank" rel="noopener noreferrer"
           className="nav-cta"
           style={{
             background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
