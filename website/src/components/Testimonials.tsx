@@ -7,7 +7,7 @@ const TESTIMONIALS = [
   // TODO: Replace with full name + photo/video after client permission
   { init: "MK", name: "Muhammad K.", role: "Founder, E-commerce Brand — Pakistan", text: "Sohaib ran our Facebook Ads and built the landing page. Conversion rate hit 12% — revenue doubled in 3 months. Best marketing decision we made.", highlight: "Conversion rate hit 12% — revenue doubled in 3 months." },
   // TODO: Replace with full name + photo/video after client permission
-  { init: "AW", name: "Dr. Amil Whadwan", role: "Psychologist", text: "We hired agencies before but nothing worked. Sohaib handled our ads, social media, and website. Admissions went up 3×. Best investment we ever made.", highlight: "Admissions went up 3×. Best investment we ever made." },
+  { init: "DA", name: "Dr. Ahmed", role: "Director, Quran Academy", text: "We hired agencies before but nothing worked. Sohaib handled our ads, social media, and website. Admissions went up 3×. Best investment we ever made.", highlight: "Admissions went up 3×. Best investment we ever made." },
   // TODO: Replace with full name + photo/video after client permission
   { init: "SM", name: "Sarah M.", role: "E-commerce Owner — UK", text: "Within 2 months, our ROAS went from 1.8× to 5.2×. Sohaib rebuilt our entire funnel — ads, landing page, retargeting. Complete transformation.", highlight: "Complete transformation." },
 ];
