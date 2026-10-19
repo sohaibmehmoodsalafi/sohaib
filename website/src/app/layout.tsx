@@ -196,7 +196,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="var(--bg)" />
+        <meta name="theme-color" content="#faf7f1" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         {/* Favicon = header avatar. Data URIs ship inside the HTML so they update
             on the static deploy (which excludes image files); .ico is a fallback. */}
