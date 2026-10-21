@@ -5,7 +5,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 import { POSTS } from "@/lib/posts";
 
 const TITLE = "Blog — Marketing for Quran Academies & Islamic Organizations | Sohaib Mehmood";
-const DESC = "Practical guides on getting more students, leads, and donations for Quran academies, Islamic institutes, and Muslim non-profits — Meta Ads, Google Ads, funnels, and more.";
+const DESC = "Practical guides on getting more students, leads, and donations for Quran academies and Islamic organizations — Meta Ads, Google Ads, funnels & more.";
 
 export const metadata: Metadata = {
   title: TITLE,

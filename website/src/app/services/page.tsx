@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
 const TITLE = "Services — Marketing for Quran Academies, Islamic NGOs & EdTech | Sohaib Mehmood";
-const DESC = "Meta Ads, Google Ads, social media marketing, landing pages, and complete enrollment funnels for Quran academies, Islamic organizations, and education/EdTech brands. One expert, no agency markup.";
+const DESC = "Meta Ads, Google Ads, social media, landing pages, and enrollment funnels for Quran academies and Islamic organizations. One expert, no agency markup.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -61,6 +61,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }} />
       <Navbar />
       <main style={{ paddingTop: 40 }}>
+        <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>Marketing Services for Quran Academies &amp; Islamic Organizations</h1>
         <Services />
       </main>
       <Footer />

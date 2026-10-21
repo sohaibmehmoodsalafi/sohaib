@@ -7,7 +7,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 export const metadata: Metadata = {
   title: "Free Growth Audit for Your Academy or Organization | Sohaib Mehmood",
   description:
-    "Get a free growth audit for your Quran academy, Islamic NGO, or education/EdTech brand. I'll review your marketing, find what's leaking, and show you exactly what to fix — no cost, no obligation.",
+    "Get a free growth audit for your Quran academy or Islamic organization. I'll review your marketing and show exactly what to fix — no cost, no obligation.",
   alternates: { canonical: "https://meetsohaib.com/free-audit" },
   openGraph: {
     title: "Free Growth Audit for Your Quran Academy or Islamic Organization",
@@ -28,6 +28,7 @@ export default function Page() {
     <>
       <Navbar />
       <main style={{ paddingTop: 40 }}>
+        <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>Free Growth Audit for Your Quran Academy or Islamic Organization</h1>
         <OfferSection />
       </main>
       <Footer />

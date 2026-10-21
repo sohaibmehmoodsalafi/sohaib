@@ -7,7 +7,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 export const metadata: Metadata = {
   title: "Case Studies — Real Results for Academies & Islamic Brands | Sohaib Mehmood",
   description:
-    "Real marketing results: Quran academy student growth, e-commerce ROAS, and lead-generation campaigns for Islamic organizations and education brands — handled end to end by one expert.",
+    "Real marketing results: Quran academy student growth and lead-generation campaigns for Islamic organizations — handled end to end by one expert.",
   alternates: { canonical: "https://meetsohaib.com/case-studies" },
   openGraph: {
     title: "Case Studies — Real Results for Academies & Islamic Organizations",
@@ -28,6 +28,7 @@ export default function Page() {
     <>
       <Navbar />
       <main style={{ paddingTop: 40 }}>
+        <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>Case Studies — Marketing Results for Quran Academies &amp; Islamic Organizations</h1>
         <Portfolio />
       </main>
       <Footer />

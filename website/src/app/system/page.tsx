@@ -7,7 +7,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 export const metadata: Metadata = {
   title: "The Markenexus Growth System — 5-Step Framework | Sohaib Mehmood",
   description:
-    "The Markenexus Growth System — a proprietary 5-step framework (research, funnels, ads, optimization, scaling) that turns ad spend into predictable students, leads, and donations for academies and Islamic organizations.",
+    "The Markenexus Growth System: a 5-step framework that turns ad spend into predictable students, leads, and donations for Quran academies & Islamic orgs.",
   alternates: { canonical: "https://meetsohaib.com/system" },
   openGraph: {
     title: "The Markenexus Growth System — a 5-step framework for academies & Islamic organizations",
@@ -28,6 +28,7 @@ export default function Page() {
     <>
       <Navbar />
       <main style={{ paddingTop: 40 }}>
+        <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>The Markenexus Growth System — Marketing Framework for Quran Academies &amp; Islamic Organizations</h1>
         <MarkenExusSystem />
       </main>
       <Footer />

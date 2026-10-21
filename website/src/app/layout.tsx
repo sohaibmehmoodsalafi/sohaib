@@ -5,7 +5,7 @@ import { AVATAR, ICON_180 } from "@/lib/brand";
 export const metadata: Metadata = {
   title: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
   description:
-    "Growth partner for Quran academies and Islamic organizations. Meta Ads, Google Ads, and complete funnels that bring consistent students, leads, and donations — by one expert.",
+    "Growth partner for Quran academies & Islamic organizations. Meta Ads, Google Ads, and funnels that bring steady students, leads, and donations.",
   keywords: [
     "Quran academy marketing",
     "Islamic organization marketing",
@@ -123,12 +123,6 @@ const jsonLd = {
         "Retargeting Campaigns",
         "WhatsApp Automation",
       ],
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "5.0",
-        reviewCount: "47",
-        bestRating: "5",
-      },
       priceRange: "$$",
     },
     {

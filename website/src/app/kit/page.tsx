@@ -9,7 +9,7 @@ const GUMROAD = "https://meetsohaib.gumroad.com/l/ouajlr";
 
 const TITLE = "The Quran Academy Enrollment Kit";
 const DESC =
-  "The complete, done-for-you ad system I use to fill Quran academies with students — ready-made creatives, proven copy, targeting, WhatsApp scripts and a launch checklist. Refreshed monthly, from $19/month.";
+  "The done-for-you ad system to fill your Quran academy with students: ready-made creatives, copy, targeting, WhatsApp scripts & a checklist. From $19/mo.";
 
 export const metadata: Metadata = {
   title: `${TITLE} — Run My Proven Ad System Yourself | Sohaib Mehmood`,

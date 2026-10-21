@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import QuranAcademyPage from "./QuranAcademyPage";
 
 export const metadata: Metadata = {
-  title: "Get 80+ Students/Month for Your Quran Academy | Digital Marketing Expert — Sohaib Mehmood",
+  title: "Marketing for Online Quran Academies — Get More Students | Sohaib Mehmood",
   description:
-    "Targeted Meta Ads & Google Ads campaigns in USA, UK & Canada to get international students for your online Quran Academy. 85+ students/month, PKR 352 cost per student, 12.6% landing page conversion rate.",
+    "Get more students for your online Quran academy with targeted Meta Ads and Google Ads reaching Muslim parents in the USA, UK, and Canada.",
   keywords: [
     "Quran Academy marketing",
     "online Quran Academy leads",
@@ -20,23 +20,23 @@ export const metadata: Metadata = {
     canonical: "https://meetsohaib.com/quran-academy",
   },
   openGraph: {
-    title: "Get 80+ Students/Month for Your Quran Academy | Digital Marketing Expert",
+    title: "Marketing for Online Quran Academies — Get More Students",
     description:
-      "Targeted Meta Ads & Google Ads in USA, UK & Canada reaching parents who want online Quran classes. 85+ students/month. 12.6% conversion rate.",
+      "Targeted Meta Ads & Google Ads in the USA, UK & Canada reaching Muslim parents who want online Quran classes for their children.",
     url: "https://meetsohaib.com/quran-academy",
     images: [
       {
         url: "https://meetsohaib.com/images/sohaib-og.jpg",
         width: 1200,
         height: 630,
-        alt: "Get 80+ Students/Month for Your Quran Academy — Sohaib Mehmood",
+        alt: "Marketing for online Quran academies — Sohaib Mehmood",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get 80+ Students/Month for Your Quran Academy",
-    description: "Targeted Meta Ads in USA, UK & Canada. 85+ students/month, PKR 352 cost per student.",
+    title: "Marketing for Online Quran Academies — Get More Students",
+    description: "Targeted Meta Ads & Google Ads in the USA, UK & Canada reaching Muslim parents who want online Quran classes.",
     images: ["https://meetsohaib.com/images/sohaib-og.jpg"],
   },
 };
