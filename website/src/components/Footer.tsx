@@ -14,7 +14,7 @@ function FooterCol({ title, links }: { title: string; links: Array<{ label?: str
           <button key={i} onClick={l.onClick} style={{ display: "block", fontSize: 14, color: "var(--text-muted2)", marginBottom: 12, background: "none", border: "none", cursor: "pointer", fontFamily: "'Plus Jakarta Sans',sans-serif", padding: 0, textAlign: "left", transition: "color .2s" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted2)")}>{l.label}</button>
         ) : (
-          <a key={i} href={l.href} target={l.ext ? "_blank" : undefined} rel={l.ext ? "noopener noreferrer" : undefined}
+          <a key={i} href={l.href} target={l.ext ? "_blank" : undefined} rel={l.ext ? "noopener noreferrer" : undefined} data-loc="footer"
             style={{ display: "block", fontSize: 14, color: "var(--text-muted2)", marginBottom: 12, transition: "color .2s", textDecoration: "none" }}
             onMouseEnter={(e) => (e.currentTarget.style.color = "var(--text)")} onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted2)")}>{l.label}</a>
         )

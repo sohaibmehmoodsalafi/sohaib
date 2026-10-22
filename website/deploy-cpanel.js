@@ -181,7 +181,22 @@ console.log(`\n[5.5] Injecting Google tag (${GA_ID} + ${GT_ID})`);
 const gaSnippet =
   `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_ID}"></script>` +
   `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}` +
-  `gtag('js',new Date());gtag('config','${GA_ID}');gtag('config','${GT_ID}');</script>`;
+  `gtag('js',new Date());gtag('config','${GA_ID}');gtag('config','${GT_ID}');</script>` +
+  // Conversion events — injected alongside GA so they survive script-stripping (the live
+  // site runs no React, so these use delegated vanilla-JS listeners, not onClick handlers).
+  `<script>(function(){` +
+  `document.addEventListener('click',function(e){` +
+  `var a=e.target&&e.target.closest?e.target.closest('a[href]'):null;if(!a)return;` +
+  `var h=a.getAttribute('href')||'';var loc=a.getAttribute('data-loc')||'other';` +
+  `if(/wa\\.me|api\\.whatsapp\\.com/i.test(h)){gtag('event','whatsapp_click',{link_location:loc});}` +
+  `else if(/calendly\\.com/i.test(h)){gtag('event','booking_click',{link_location:loc});}` +
+  `},true);` +
+  `if(/\\/audit-thank-you\\/?($|[?#])/.test(location.pathname)){gtag('event','generate_lead',{form_name:'growth_audit'});}` +
+  `})();</script>` +
+  // Microsoft Clarity (session recording + heatmaps) — injected here so it survives script-stripping
+  `<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};` +
+  `t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;` +
+  `y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z1ra549en5");</script>`;
 for (const htmlFile of walkFiles(BUILD).filter(f => f.endsWith(".html"))) {
   // Skip the private admin panel — no need to track its usage
   if (path.basename(htmlFile) === "admin.html") continue;

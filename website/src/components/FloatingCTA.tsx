@@ -20,6 +20,7 @@ export default function FloatingCTA() {
       rel="noopener noreferrer"
       className="whatsapp-pulse"
       aria-label="Chat on WhatsApp"
+      data-loc="floating"
       style={{
         position: "fixed",
         bottom: 24,

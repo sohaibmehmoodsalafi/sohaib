@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Portfolio from "@/components/Portfolio";
+import AuditCTA from "@/components/AuditCTA";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
@@ -30,6 +31,8 @@ export default function Page() {
       <main style={{ paddingTop: 40 }}>
         <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>Case Studies — Marketing Results for Quran Academies &amp; Islamic Organizations</h1>
         <Portfolio />
+        {/* Audit CTA after the case studies */}
+        <AuditCTA heading="Want results like these for your academy?" />
       </main>
       <Footer />
       <FloatingCTA />

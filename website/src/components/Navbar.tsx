@@ -76,6 +76,7 @@ export default function Navbar() {
         </label>
         <a href={AUDIT_WA}
           target="_blank" rel="noopener noreferrer"
+          data-loc="nav"
           className="nav-cta"
           style={{
             background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 13,
@@ -107,7 +108,7 @@ export default function Navbar() {
           <a key={l.label} href={l.href} onClick={closeMenu}
             style={{ fontSize: 22, fontWeight: 600, color: "var(--text-muted2)", textDecoration: "none" }}>{l.label}</a>
         ))}
-        <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer" onClick={closeMenu}
+        <a href="https://wa.me/923048885206" target="_blank" rel="noopener noreferrer" onClick={closeMenu} data-loc="nav_mobile"
           style={{
             background: "#d4a017", color: "#080808", fontWeight: 700, fontSize: 15,
             padding: "15px 32px", borderRadius: 99, textAlign: "center", textDecoration: "none",

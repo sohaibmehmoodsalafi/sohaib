@@ -56,6 +56,7 @@ export default function OfferSection() {
             href={WA}
             target="_blank"
             rel="noopener noreferrer"
+            data-loc="audit"
             style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "#25d366", color: "#052e16", fontWeight: 800, fontSize: 16, padding: "17px 28px", borderRadius: 99, textDecoration: "none", fontFamily: "'Plus Jakarta Sans',sans-serif", marginBottom: 12 }}
           >
             <span style={{ fontSize: 20 }}>💬</span> Get my free 5-minute video audit
@@ -74,6 +75,8 @@ export default function OfferSection() {
             <input type="hidden" name="_subject" value="New Free Audit Request — meetsohaib.com" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_captcha" value="false" />
+            {/* On successful submit, FormSubmit redirects here — the thank-you page fires the GA4 generate_lead conversion */}
+            <input type="hidden" name="_next" value="https://meetsohaib.com/audit-thank-you" />
             {/* Honeypot spam trap */}
             <input type="text" name="_honey" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
 

@@ -393,9 +393,7 @@ export default function Hero() {
             }}
           >
             <a
-              href="https://wa.me/923048885206?text=Assalamu%20Alaikum%20Sohaib!%20I%20want%20my%20free%205-minute%20video%20audit%20for%20my%20academy."
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/free-audit"
               style={{
                 background: "#d4a017",
                 color: "#080808",
@@ -421,12 +419,13 @@ export default function Hero() {
                 e.currentTarget.style.boxShadow = "0 0 20px rgba(212,160,23,0.2)";
               }}
             >
-              Get my free 5-minute video audit →
+              Get Your Free Growth Audit →
             </a>
             <a
               href="https://calendly.com/meetsohaib/30min"
               target="_blank"
               rel="noopener noreferrer"
+              data-loc="hero"
               style={{
                 background: "var(--overlay-soft)",
                 color: "#d4a017",

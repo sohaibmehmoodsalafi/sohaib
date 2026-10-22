@@ -13,6 +13,7 @@ import Testimonials from "@/components/Testimonials";
 import Portfolio from "@/components/Portfolio";
 import Pricing from "@/components/Pricing";
 import OfferSection from "@/components/OfferSection";
+import AuditCTA from "@/components/AuditCTA";
 import LeadMagnet from "@/components/LeadMagnet";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -38,12 +39,16 @@ export default function Home() {
         <LeadMagnet />
         <Services />
         <Pricing />
+        {/* Mid-page audit CTA */}
+        <AuditCTA />
         <AboutSection />
         <Testimonials />
         <OfferSection />
         <FAQ />
         <Contact />
         <PeaceInstitute />
+        {/* Pre-footer audit CTA */}
+        <AuditCTA heading="Let's fill your academy with students." />
       </main>
       <Footer />
       <FloatingCTA />
