@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
 export const metadata: Metadata = {
-  title: "The Markenexus Growth System — 5-Step Framework | Sohaib Mehmood",
+  title: "The Markenexus Growth System | Sohaib Mehmood",
   description:
     "The Markenexus Growth System: a 5-step framework that turns ad spend into predictable students, leads, and donations for Quran academies & Islamic orgs.",
   alternates: { canonical: "https://meetsohaib.com/system" },

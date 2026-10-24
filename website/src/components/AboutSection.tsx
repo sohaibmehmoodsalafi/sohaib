@@ -44,8 +44,12 @@ export default function AboutSection() {
           ) : (
             <img
               src="/images/sohaib-office.webp"
-              alt="Sohaib Mehmood working at his professional office — dual monitors, Islamic calligraphy, warm workspace"
+              alt="Sohaib Mehmood — digital marketing strategist — working at his office in Karachi"
               onError={() => setImgErr(true)}
+              width={1254}
+              height={1254}
+              loading="lazy"
+              decoding="async"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%", borderRadius: 20, transform: "scaleX(-1)" }}
             />
           )}

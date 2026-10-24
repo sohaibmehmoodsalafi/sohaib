@@ -12,7 +12,7 @@ const DESC =
   "The done-for-you ad system to fill your Quran academy with students: ready-made creatives, copy, targeting, WhatsApp scripts & a checklist. From $19/mo.";
 
 export const metadata: Metadata = {
-  title: `${TITLE} — Run My Proven Ad System Yourself | Sohaib Mehmood`,
+  title: `${TITLE} | Sohaib Mehmood`,
   description: DESC,
   keywords: [
     "Quran academy marketing kit",
@@ -336,7 +336,7 @@ export default function Page() {
               <div>
                 {/* Photo placeholder — swap src for a portrait when ready */}
                 <div style={{ borderRadius: 20, overflow: "hidden", border: "1px solid var(--hairline-2)", marginBottom: 18 }}>
-                  <img src="/images/sohaib-mehmood.jpg" alt="Sohaib Mehmood" style={{ width: "100%", height: "auto", display: "block" }} />
+                  <img src="/images/sohaib-mehmood.webp" alt="Sohaib Mehmood — digital marketing strategist and founder of Markenexus" width={1080} height={1080} loading="lazy" decoding="async" style={{ width: "100%", height: "auto", display: "block" }} />
                 </div>
                 {/* Testimonial placeholder — replace with 1–2 real client quotes */}
                 <div style={{ background: "var(--bg-card)", border: "1px solid var(--hairline)", borderRadius: 14, padding: "20px 22px" }}>

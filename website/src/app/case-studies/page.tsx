@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
 export const metadata: Metadata = {
-  title: "Case Studies — Real Results for Academies & Islamic Brands | Sohaib Mehmood",
+  title: "Case Studies — Marketing Results | Sohaib Mehmood",
   description:
     "Real marketing results: Quran academy student growth and lead-generation campaigns for Islamic organizations — handled end to end by one expert.",
   alternates: { canonical: "https://meetsohaib.com/case-studies" },

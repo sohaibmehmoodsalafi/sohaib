@@ -193,10 +193,11 @@ const gaSnippet =
   `},true);` +
   `if(/\\/audit-thank-you\\/?($|[?#])/.test(location.pathname)){gtag('event','generate_lead',{form_name:'growth_audit'});}` +
   `})();</script>` +
-  // Microsoft Clarity (session recording + heatmaps) — injected here so it survives script-stripping
-  `<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};` +
+  // Microsoft Clarity (session recording + heatmaps) — deferred to window 'load' so it
+  // doesn't compete with first paint (helps mobile TTI). Injected here so it survives stripping.
+  `<script>window.addEventListener('load',function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};` +
   `t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;` +
-  `y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z1ra549en5");</script>`;
+  `y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z1ra549en5");});</script>`;
 for (const htmlFile of walkFiles(BUILD).filter(f => f.endsWith(".html"))) {
   // Skip the private admin panel — no need to track its usage
   if (path.basename(htmlFile) === "admin.html") continue;

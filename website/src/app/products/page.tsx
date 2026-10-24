@@ -6,7 +6,7 @@ import FloatingCTA from "@/components/FloatingCTA";
 const SITE = "https://meetsohaib.com";
 const OG_IMAGE = `${SITE}/images/sohaib-og.jpg`;
 
-const TITLE = "Products — Tools to Grow Your Quran Academy | Sohaib Mehmood";
+const TITLE = "Products for Quran Academies | Sohaib Mehmood";
 const DESC =
   "Digital products to fill your Quran academy with students: the monthly Enrollment Kit (ad system) and the one-time Islamic Academy Social Media Design Pack.";
 

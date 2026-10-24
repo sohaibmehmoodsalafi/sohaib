@@ -5,12 +5,12 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
 export const metadata: Metadata = {
-  title: "About Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
+  title: "About — Sohaib Mehmood, Founder of Markenexus",
   description:
     "Sohaib Mehmood helps Quran academies and Islamic organizations get steady students, leads, and donations with Meta Ads, Google Ads, and growth funnels.",
   alternates: { canonical: "https://meetsohaib.com/about" },
   openGraph: {
-    title: "About Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
+    title: "About — Sohaib Mehmood, Founder of Markenexus",
     description: "Sohaib Mehmood helps Quran academies, Islamic institutes, and Muslim non-profits grow with honest, halal marketing — and runs his own institute, Peace Institute.",
     url: "https://meetsohaib.com/about",
     images: ["https://meetsohaib.com/images/sohaib-og.jpg"],

@@ -4,7 +4,7 @@ import Services from "@/components/Services";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
-const TITLE = "Services — Marketing for Quran Academies, Islamic NGOs & EdTech | Sohaib Mehmood";
+const TITLE = "Marketing Services for Quran Academies | Sohaib Mehmood";
 const DESC = "Meta Ads, Google Ads, social media, landing pages, and enrollment funnels for Quran academies and Islamic organizations. One expert, no agency markup.";
 
 export const metadata: Metadata = {

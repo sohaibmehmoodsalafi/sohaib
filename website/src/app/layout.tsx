@@ -3,15 +3,18 @@ import "./globals.css";
 import { AVATAR, ICON_180 } from "@/lib/brand";
 
 export const metadata: Metadata = {
-  title: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
+  title: "Quran Academy Marketing & Meta Ads | Sohaib Mehmood",
   description:
-    "Growth partner for Quran academies & Islamic organizations. Meta Ads, Google Ads, and funnels that bring steady students, leads, and donations.",
+    "Digital marketing for Quran academies & Islamic education — Meta Ads, Google Ads, lead generation & funnels that bring steady students and leads.",
   keywords: [
     "Quran academy marketing",
-    "Islamic organization marketing",
+    "digital marketing for Quran academy",
     "Meta Ads for Quran academy",
-    "online Quran class ads",
-    "Islamic NGO fundraising ads",
+    "Google Ads for Quran academy",
+    "lead generation",
+    "AI automation",
+    "Islamic education marketing",
+    "Markenexus",
     "Sohaib Mehmood",
   ],
   authors: [{ name: "Sohaib Mehmood", url: "https://meetsohaib.com" }],
@@ -25,10 +28,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://meetsohaib.com",
-    siteName: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
-    title: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
+    siteName: "Sohaib Mehmood",
+    title: "Quran Academy Marketing & Meta Ads — Sohaib Mehmood",
     description:
-      "Meta Ads, Google Ads, and complete funnels that bring Quran academies and Islamic organizations consistent students, leads, and donations — by one expert who runs an academy too.",
+      "Digital marketing for Quran academies and Islamic education — Meta Ads, Google Ads, lead generation, and funnels that bring steady students and leads.",
     images: [
       {
         url: "https://meetsohaib.com/images/sohaib-og.jpg",
@@ -40,9 +43,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
+    title: "Quran Academy Marketing & Meta Ads — Sohaib Mehmood",
     description:
-      "Consistent students, leads, and donations for Quran academies and Islamic organizations — Meta Ads, Google Ads, and complete funnels by one expert.",
+      "Digital marketing for Quran academies — Meta Ads, Google Ads, lead generation, and funnels that bring steady students and leads.",
     images: ["https://meetsohaib.com/images/sohaib-og.jpg"],
   },
   robots: {
@@ -71,9 +74,10 @@ const jsonLd = {
       name: "Sohaib Mehmood",
       url: "https://meetsohaib.com",
       image: "https://meetsohaib.com/images/sohaib-office.webp",
-      jobTitle: "Growth Partner for Quran Academies & Islamic Organizations",
+      jobTitle: "Digital Marketing Strategist & Founder of Markenexus",
+      worksFor: { "@id": "https://meetsohaib.com/#business" },
       description:
-        "Marketing growth partner for Quran academies, Islamic institutes, and Muslim non-profits. Runs Meta Ads, Google Ads, and complete enrollment funnels that bring consistent students, leads, and donations. Also founder of Peace Institute, an online Quran and Islamic education platform.",
+        "Digital marketing strategist based in Karachi, Pakistan. Founder of Markenexus (digital marketing and AI automation agency) and Peace Institute (online Quran and Islamic education). Helps Quran academies and Islamic education businesses get more students with Meta Ads, Google Ads, lead generation, and funnels.",
       sameAs: [
         "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
         "https://www.facebook.com/sohaibmehmoodsalafi",
@@ -85,16 +89,18 @@ const jsonLd = {
         "Student Enrollment Funnels", "Donation Campaigns", "Facebook Advertising", "Instagram Advertising",
         "Landing Page Optimization", "Ad Creative Design", "Retargeting Funnels", "Lead Generation",
         "Islamic Education Marketing", "EdTech Marketing", "WhatsApp Automation", "Marketing Funnel Strategy",
+        "Digital Marketing Strategy", "AI Automation",
       ],
     },
     {
       "@type": "ProfessionalService",
       "@id": "https://meetsohaib.com/#business",
-      name: "Sohaib Mehmood — Growth Partner for Quran Academies & Islamic Organizations",
+      name: "Markenexus — Digital Marketing & AI Automation",
+      alternateName: "Sohaib Mehmood",
       url: "https://meetsohaib.com",
       image: "https://meetsohaib.com/images/sohaib-logo.png",
       description:
-        "Marketing for Quran academies, Islamic institutes, and Muslim non-profits. One expert runs Meta Ads, Google Ads, landing pages, and complete enrollment funnels that bring consistent students, leads, and donations.",
+        "Digital marketing and AI automation agency founded by Sohaib Mehmood. Meta Ads, Google Ads, lead generation, landing pages, and funnels — focused on Quran academies and Islamic education businesses in the UK, USA, Canada, and Australia.",
       founder: { "@id": "https://meetsohaib.com/#person" },
       sameAs: [
         "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
@@ -103,9 +109,10 @@ const jsonLd = {
       ],
       telephone: "+923048885206",
       areaServed: [
-        { "@type": "Country", name: "United States" },
         { "@type": "Country", name: "United Kingdom" },
+        { "@type": "Country", name: "United States" },
         { "@type": "Country", name: "Canada" },
+        { "@type": "Country", name: "Australia" },
         { "@type": "Country", name: "United Arab Emirates" },
         { "@type": "Country", name: "Pakistan" },
       ],
@@ -190,6 +197,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Speed up Google Fonts (the font CSS is @import'd in globals; preconnect cuts mobile LCP) */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="theme-color" content="#faf7f1" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         {/* Favicon = header avatar. Data URIs ship inside the HTML so they update

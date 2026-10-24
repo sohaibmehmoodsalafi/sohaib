@@ -10,13 +10,11 @@ AddType font/woff .woff
 # Enable Rewrite Engine
 RewriteEngine On
 
-# Force HTTPS
-RewriteCond %{HTTPS} off
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Remove www (canonical domain)
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# ── Canonical redirect: force HTTPS + strip www in a SINGLE 301 hop ──
+# (any of http / https / www variants → https://meetsohaib.com/… in one redirect)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://meetsohaib.com%{REQUEST_URI} [L,R=301]
 
 # Remove trailing slash (except root)
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -31,8 +29,8 @@ RewriteRule ^ - [L]
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ $1.html [L]
 
-# Fallback to index.html for SPA routing (React handles client-side)
-RewriteRule ^ /index.html [L]
+# No SPA fallback — this is a static site (no client-side routing).
+# Unknown URLs fall through to the ErrorDocument 404 handler at the bottom.
 
 # ── Cache static assets (SEO: page speed) ──
 <IfModule mod_expires.c>

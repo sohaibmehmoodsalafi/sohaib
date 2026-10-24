@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import QuranAcademyPage from "./QuranAcademyPage";
 
 export const metadata: Metadata = {
-  title: "Marketing for Online Quran Academies — Get More Students | Sohaib Mehmood",
+  title: "Marketing for Online Quran Academies | Sohaib Mehmood",
   description:
     "Get more students for your online Quran academy with targeted Meta Ads and Google Ads reaching Muslim parents in the USA, UK, and Canada.",
   keywords: [

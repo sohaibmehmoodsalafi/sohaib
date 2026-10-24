@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 
 export const metadata: Metadata = {
-  title: "Free Growth Audit for Your Academy or Organization | Sohaib Mehmood",
+  title: "Free Growth Audit for Your Academy | Sohaib Mehmood",
   description:
     "Get a free growth audit for your Quran academy or Islamic organization. I'll review your marketing and show exactly what to fix — no cost, no obligation.",
   alternates: { canonical: "https://meetsohaib.com/free-audit" },
