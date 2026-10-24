@@ -94,10 +94,13 @@ for (const f of allFiles) {
   if (f.endsWith(".html") || f.endsWith(".css")) {
     let content = fs.readFileSync(f, "utf-8");
     const before = content;
-    // Only fix tildes inside asset filenames (alphanumeric~alphanumeric, e.g. 03~yq9q).
+    // Fix tildes inside asset filenames, e.g. "03~yq9q" and "...iok4n~.css".
     // Do NOT touch CSS sibling combinators like ".nav-toggle:checked ~ .mobile-menu"
-    // (there ~ is followed by a space or selector char like '.', never a word char).
+    // (there ~ is followed by a space, never by a word char or a .css/.js extension).
     content = content.replace(/(\w)~(\w)/g, "$1_t_$2");
+    // Also fix a tilde that sits right before an asset extension (word~.css / word~.js),
+    // and must match the renamed file on disk — this was the case the regex above missed.
+    content = content.replace(/~(\.(?:css|js)\b)/g, "_t_$1");
     if (content !== before) {
       fs.writeFileSync(f, content, "utf-8");
       console.log(`  Fixed ~ refs in: ${path.relative(BUILD, f)}`);
