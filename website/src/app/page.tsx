@@ -15,6 +15,7 @@ import Pricing from "@/components/Pricing";
 import OfferSection from "@/components/OfferSection";
 import AuditCTA from "@/components/AuditCTA";
 import AcademySection from "@/components/AcademySection";
+import AdResults from "@/components/AdResults";
 import LeadMagnet from "@/components/LeadMagnet";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -36,6 +37,7 @@ export default function Home() {
         <WhyDifferent />
         <MarkenExusSystem />
         <Results />
+        <AdResults />
         <Portfolio />
         <LeadMagnet />
         <Services />
