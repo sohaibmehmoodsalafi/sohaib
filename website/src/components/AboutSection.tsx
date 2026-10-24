@@ -68,7 +68,10 @@ export default function AboutSection() {
           One person.<br /><span style={{ color: "#d4a017" }}>Your mission first.</span>
         </h2>
         <p style={{ fontSize: 16, color: "var(--text-muted2)", lineHeight: 1.85 }}>
-          I&apos;m Sohaib Mehmood. For over 5 years I&apos;ve helped academies and Islamic organizations across Pakistan, the UK, the USA, and the UAE grow — with honest, halal marketing and no agency markup. I also run my own institute, <strong style={{ color: "var(--text)", fontWeight: 600 }}>Peace Institute</strong>, so I care about your students as much as your numbers. When you work with me, you work with me — not a junior team.
+          I&apos;m Sohaib Mehmood — a digital marketing strategist and founder of <strong style={{ color: "var(--text)", fontWeight: 600 }}>Markenexus</strong>. For over 5 years I&apos;ve helped Quran academies and Islamic education businesses across the UK, USA, Canada, and Pakistan grow — with honest, halal marketing and no agency markup. When you work with me, you work with me — not a junior team.
+        </p>
+        <p style={{ fontSize: 16, color: "var(--text-muted2)", lineHeight: 1.85, marginTop: 16 }}>
+          But I don&apos;t just market Islamic education — I live it. I&apos;m a graduate of <strong style={{ color: "var(--text)", fontWeight: 600 }}>Ma&apos;had As-Salafi</strong> and <strong style={{ color: "var(--text)", fontWeight: 600 }}>Karachi University</strong>, I teach Quran and Hadith, and I run my own institute, <strong style={{ color: "var(--text)", fontWeight: 600 }}>Peace Institute</strong>. So when I build your campaigns, I understand your students, your parents, and your deen — not just the numbers.
         </p>
         <div className="about-counter-row" style={{ display: "flex", gap: 32, marginTop: 32, paddingTop: 32, borderTop: "1px solid var(--hairline)", flexWrap: "wrap" }}>
           {[

@@ -76,8 +76,12 @@ const jsonLd = {
       image: "https://meetsohaib.com/images/sohaib-office.webp",
       jobTitle: "Digital Marketing Strategist & Founder of Markenexus",
       worksFor: { "@id": "https://meetsohaib.com/#business" },
+      alumniOf: [
+        { "@type": "EducationalOrganization", name: "Ma'had As-Salafi" },
+        { "@type": "CollegeOrUniversity", name: "University of Karachi" },
+      ],
       description:
-        "Digital marketing strategist based in Karachi, Pakistan. Founder of Markenexus (digital marketing and AI automation agency) and Peace Institute (online Quran and Islamic education). Helps Quran academies and Islamic education businesses get more students with Meta Ads, Google Ads, lead generation, and funnels.",
+        "Digital marketing strategist based in Karachi, Pakistan, and founder of Markenexus (digital marketing and AI automation agency). A graduate of Ma'had As-Salafi and the University of Karachi, he also teaches Quran and Hadith and runs his own institute, Peace Institute. He helps Quran academies and Islamic education businesses get more students with Meta Ads, Google Ads, lead generation, and funnels.",
       sameAs: [
         "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
         "https://www.facebook.com/sohaibmehmoodsalafi",
