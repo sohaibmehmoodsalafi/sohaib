@@ -103,6 +103,7 @@ const jsonLd = {
         "Digital marketing and AI automation agency founded by Sohaib Mehmood. Meta Ads, Google Ads, lead generation, landing pages, and funnels — focused on Quran academies and Islamic education businesses in the UK, USA, Canada, and Australia.",
       founder: { "@id": "https://meetsohaib.com/#person" },
       sameAs: [
+        "https://markenexus.com",
         "https://www.linkedin.com/in/sohaibmehmoodsalafi/",
         "https://www.facebook.com/sohaibmehmoodsalafi",
         "https://www.instagram.com/sohaibsalafi1996/",

@@ -31,6 +31,13 @@ export default function Page() {
       <main style={{ paddingTop: 40 }}>
         <h1 style={{ position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap", border: 0 }}>Case Studies — Marketing Results for Quran Academies &amp; Islamic Organizations</h1>
         <Portfolio />
+        {/* Real results — WhatsApp channel */}
+        <div style={{ textAlign: "center", padding: "0 4vw 20px" }}>
+          <a href="https://whatsapp.com/channel/0029VbE3G3P1t90cv0tBXY0T/110" target="_blank" rel="noopener noreferrer"
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, fontSize: 15, fontWeight: 600, color: "#25d366", textDecoration: "none" }}>
+            <span style={{ fontSize: 18 }}>💬</span> See real client results on our WhatsApp channel →
+          </a>
+        </div>
         {/* Audit CTA after the case studies */}
         <AuditCTA heading="Want results like these for your academy?" />
       </main>
