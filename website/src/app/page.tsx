@@ -14,6 +14,7 @@ import Portfolio from "@/components/Portfolio";
 import Pricing from "@/components/Pricing";
 import OfferSection from "@/components/OfferSection";
 import AuditCTA from "@/components/AuditCTA";
+import AcademySection from "@/components/AcademySection";
 import LeadMagnet from "@/components/LeadMagnet";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
@@ -42,6 +43,7 @@ export default function Home() {
         {/* Mid-page audit CTA */}
         <AuditCTA />
         <AboutSection />
+        <AcademySection />
         <Testimonials />
         <OfferSection />
         <FAQ />
